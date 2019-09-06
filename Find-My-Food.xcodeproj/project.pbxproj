@@ -7,16 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B69E337F2322909000A4477E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E337E2322909000A4477E /* AppDelegate.swift */; };
-		B69E33812322909000A4477E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33802322909000A4477E /* ViewController.swift */; };
-		B69E33842322909000A4477E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69E33822322909000A4477E /* Main.storyboard */; };
-		B69E33862322909100A4477E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69E33852322909100A4477E /* Assets.xcassets */; };
-		B69E33892322909100A4477E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69E33872322909100A4477E /* LaunchScreen.storyboard */; };
-		B69E33942322909100A4477E /* Find_My_FoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33932322909100A4477E /* Find_My_FoodTests.swift */; };
+		B69E33E72322912F00A4477E /* BusinessesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A12322912F00A4477E /* BusinessesModel.swift */; };
+		B69E33E82322912F00A4477E /* BusinessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A22322912F00A4477E /* BusinessesView.swift */; };
+		B69E33E92322912F00A4477E /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A32322912F00A4477E /* BusinessTableViewCell.swift */; };
+		B69E33EA2322912F00A4477E /* Businesses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69E33A42322912F00A4477E /* Businesses.storyboard */; };
+		B69E33EB2322912F00A4477E /* BusinessesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A52322912F00A4477E /* BusinessesViewController.swift */; };
+		B69E33EC2322912F00A4477E /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69E33A72322912F00A4477E /* Map.storyboard */; };
+		B69E33ED2322912F00A4477E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A82322912F00A4477E /* MapViewController.swift */; };
+		B69E33EE2322912F00A4477E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A92322912F00A4477E /* MapView.swift */; };
+		B69E33EF2322912F00A4477E /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AA2322912F00A4477E /* MapModel.swift */; };
+		B69E33F02322912F00A4477E /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AB2322912F00A4477E /* Segue.swift */; };
+		B69E33F12322912F00A4477E /* BusinessSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */; };
+		B69E33F22322912F00A4477E /* BusinessSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */; };
+		B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AF2322912F00A4477E /* BusinessSearchView.swift */; };
+		B69E33F42322912F00A4477E /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33B12322912F00A4477E /* Coordinate.swift */; };
+		B69E33F52322912F00A4477E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33B22322912F00A4477E /* Response.swift */; };
+		B69E33F62322912F00A4477E /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33B32322912F00A4477E /* Business.swift */; };
+		B69E33F72322912F00A4477E /* UIApplicationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33B52322912F00A4477E /* UIApplicationWrapper.swift */; };
+		B69E33F82322912F00A4477E /* YelpRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33B62322912F00A4477E /* YelpRoutes.swift */; };
+		B69E33F92322912F00A4477E /* BusinessSearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33B72322912F00A4477E /* BusinessSearchClient.swift */; };
+		B69E33FA2322912F00A4477E /* URLSessionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33B82322912F00A4477E /* URLSessionWrapper.swift */; };
+		B69E33FB2322912F00A4477E /* BaseServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33B92322912F00A4477E /* BaseServiceClient.swift */; };
+		B69E33FC2322912F00A4477E /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33BB2322912F00A4477E /* Array+Extension.swift */; };
+		B69E33FD2322912F00A4477E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69E33BD2322912F00A4477E /* Assets.xcassets */; };
+		B69E33FE2322912F00A4477E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69E33BE2322912F00A4477E /* LaunchScreen.storyboard */; };
+		B69E33FF2322912F00A4477E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33C02322912F00A4477E /* AppDelegate.swift */; };
+		B69E34222322936F00A4477E /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = B69E34202322936F00A4477E /* Cartfile.resolved */; };
+		B69E34232322936F00A4477E /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = B69E34212322936F00A4477E /* Cartfile.private */; };
+		B69E3449232294BB00A4477E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E3448232294BB00A4477E /* Secret.swift */; };
+		B69E346C2322EF3700A4477E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69E34262322939D00A4477E /* Nimble.framework */; };
+		B69E346D2322EF3700A4477E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69E34252322939D00A4477E /* Quick.framework */; };
+		B69E346E2322F1F700A4477E /* BusinessesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33C62322912F00A4477E /* BusinessesSpec.swift */; };
+		B69E346F2322F1FC00A4477E /* MockMapModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33CA2322912F00A4477E /* MockMapModelDelegate.swift */; };
+		B69E34702322F1FC00A4477E /* MapModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33CB2322912F00A4477E /* MapModelSpec.swift */; };
+		B69E34712322F1FF00A4477E /* BusinessSearchModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33CD2322912F00A4477E /* BusinessSearchModelSpec.swift */; };
+		B69E34722322F1FF00A4477E /* MockBusinessSearchModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33CF2322912F00A4477E /* MockBusinessSearchModelDelegate.swift */; };
+		B69E34732322F20500A4477E /* businesses.json in Resources */ = {isa = PBXBuildFile; fileRef = B69E33D22322912F00A4477E /* businesses.json */; };
+		B69E34742322F20500A4477E /* IncompleteMockBusiness.json in Resources */ = {isa = PBXBuildFile; fileRef = B69E33D32322912F00A4477E /* IncompleteMockBusiness.json */; };
+		B69E34752322F21000A4477E /* IncompleteMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B69E33DB2322912F00A4477E /* IncompleteMockResponse.json */; };
+		B69E34762322F21000A4477E /* MockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B69E33D52322912F00A4477E /* MockResponse.json */; };
+		B69E34772322F21000A4477E /* BusinessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33D62322912F00A4477E /* BusinessSpec.swift */; };
+		B69E34782322F21000A4477E /* ResponseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33D82322912F00A4477E /* ResponseSpec.swift */; };
+		B69E34792322F21000A4477E /* IncompleteMockCoordinate.json in Resources */ = {isa = PBXBuildFile; fileRef = B69E33D72322912F00A4477E /* IncompleteMockCoordinate.json */; };
+		B69E347A2322F21000A4477E /* MockBusinesses.json in Resources */ = {isa = PBXBuildFile; fileRef = B69E33DA2322912F00A4477E /* MockBusinesses.json */; };
+		B69E347B2322F21000A4477E /* MockCoordinate.json in Resources */ = {isa = PBXBuildFile; fileRef = B69E33D92322912F00A4477E /* MockCoordinate.json */; };
+		B69E347C2322F21000A4477E /* CoordinateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33DC2322912F00A4477E /* CoordinateSpec.swift */; };
+		B69E347D2322F21000A4477E /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33DD2322912F00A4477E /* TestData.swift */; };
+		B69E347E2322F21400A4477E /* BaseServiceClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33D02322912F00A4477E /* BaseServiceClientSpec.swift */; };
+		B69E347F2322F21400A4477E /* YelpRoutesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33DF2322912F00A4477E /* YelpRoutesSpec.swift */; };
+		B69E34802322F21400A4477E /* MockBusinessSearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E02322912F00A4477E /* MockBusinessSearchClient.swift */; };
+		B69E34812322F21400A4477E /* MockServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E12322912F00A4477E /* MockServiceClient.swift */; };
+		B69E34822322F21400A4477E /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E22322912F00A4477E /* MockURLSession.swift */; };
+		B69E34832322F21400A4477E /* MockNetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E32322912F00A4477E /* MockNetworkIndicator.swift */; };
+		B69E34842322F21400A4477E /* BusinessSearchClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E42322912F00A4477E /* BusinessSearchClientSpec.swift */; };
+		B69E34852322F21700A4477E /* Array+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E62322912F00A4477E /* Array+ExtensionSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B69E33902322909100A4477E /* PBXContainerItemProxy */ = {
+		B69E34562322977900A4477E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B69E33732322909000A4477E /* Project object */;
 			proxyType = 1;
@@ -27,15 +75,62 @@
 
 /* Begin PBXFileReference section */
 		B69E337B2322909000A4477E /* Find-My-Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-My-Food.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B69E337E2322909000A4477E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B69E33802322909000A4477E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B69E33832322909000A4477E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B69E33852322909100A4477E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B69E33882322909100A4477E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B69E338A2322909100A4477E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B69E338F2322909100A4477E /* Find-My-FoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find-My-FoodTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B69E33932322909100A4477E /* Find_My_FoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Find_My_FoodTests.swift; sourceTree = "<group>"; };
-		B69E33952322909100A4477E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B69E33A12322912F00A4477E /* BusinessesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesModel.swift; sourceTree = "<group>"; };
+		B69E33A22322912F00A4477E /* BusinessesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesView.swift; sourceTree = "<group>"; };
+		B69E33A32322912F00A4477E /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
+		B69E33A42322912F00A4477E /* Businesses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Businesses.storyboard; sourceTree = "<group>"; };
+		B69E33A52322912F00A4477E /* BusinessesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesViewController.swift; sourceTree = "<group>"; };
+		B69E33A72322912F00A4477E /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		B69E33A82322912F00A4477E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B69E33A92322912F00A4477E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B69E33AA2322912F00A4477E /* MapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		B69E33AB2322912F00A4477E /* Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
+		B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchViewController.swift; sourceTree = "<group>"; };
+		B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchModel.swift; sourceTree = "<group>"; };
+		B69E33AF2322912F00A4477E /* BusinessSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchView.swift; sourceTree = "<group>"; };
+		B69E33B12322912F00A4477E /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		B69E33B22322912F00A4477E /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		B69E33B32322912F00A4477E /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		B69E33B52322912F00A4477E /* UIApplicationWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationWrapper.swift; sourceTree = "<group>"; };
+		B69E33B62322912F00A4477E /* YelpRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpRoutes.swift; sourceTree = "<group>"; };
+		B69E33B72322912F00A4477E /* BusinessSearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchClient.swift; sourceTree = "<group>"; };
+		B69E33B82322912F00A4477E /* URLSessionWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionWrapper.swift; sourceTree = "<group>"; };
+		B69E33B92322912F00A4477E /* BaseServiceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServiceClient.swift; sourceTree = "<group>"; };
+		B69E33BB2322912F00A4477E /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		B69E33BD2322912F00A4477E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B69E33BF2322912F00A4477E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B69E33C02322912F00A4477E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B69E33C62322912F00A4477E /* BusinessesSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesSpec.swift; sourceTree = "<group>"; };
+		B69E33CA2322912F00A4477E /* MockMapModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMapModelDelegate.swift; sourceTree = "<group>"; };
+		B69E33CB2322912F00A4477E /* MapModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapModelSpec.swift; sourceTree = "<group>"; };
+		B69E33CD2322912F00A4477E /* BusinessSearchModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchModelSpec.swift; sourceTree = "<group>"; };
+		B69E33CF2322912F00A4477E /* MockBusinessSearchModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBusinessSearchModelDelegate.swift; sourceTree = "<group>"; };
+		B69E33D02322912F00A4477E /* BaseServiceClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseServiceClientSpec.swift; sourceTree = "<group>"; };
+		B69E33D22322912F00A4477E /* businesses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = businesses.json; sourceTree = "<group>"; };
+		B69E33D32322912F00A4477E /* IncompleteMockBusiness.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncompleteMockBusiness.json; sourceTree = "<group>"; };
+		B69E33D52322912F00A4477E /* MockResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockResponse.json; sourceTree = "<group>"; };
+		B69E33D62322912F00A4477E /* BusinessSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSpec.swift; sourceTree = "<group>"; };
+		B69E33D72322912F00A4477E /* IncompleteMockCoordinate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncompleteMockCoordinate.json; sourceTree = "<group>"; };
+		B69E33D82322912F00A4477E /* ResponseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSpec.swift; sourceTree = "<group>"; };
+		B69E33D92322912F00A4477E /* MockCoordinate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockCoordinate.json; sourceTree = "<group>"; };
+		B69E33DA2322912F00A4477E /* MockBusinesses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockBusinesses.json; sourceTree = "<group>"; };
+		B69E33DB2322912F00A4477E /* IncompleteMockResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IncompleteMockResponse.json; sourceTree = "<group>"; };
+		B69E33DC2322912F00A4477E /* CoordinateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateSpec.swift; sourceTree = "<group>"; };
+		B69E33DD2322912F00A4477E /* TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		B69E33DF2322912F00A4477E /* YelpRoutesSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpRoutesSpec.swift; sourceTree = "<group>"; };
+		B69E33E02322912F00A4477E /* MockBusinessSearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBusinessSearchClient.swift; sourceTree = "<group>"; };
+		B69E33E12322912F00A4477E /* MockServiceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockServiceClient.swift; sourceTree = "<group>"; };
+		B69E33E22322912F00A4477E /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		B69E33E32322912F00A4477E /* MockNetworkIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkIndicator.swift; sourceTree = "<group>"; };
+		B69E33E42322912F00A4477E /* BusinessSearchClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchClientSpec.swift; sourceTree = "<group>"; };
+		B69E33E62322912F00A4477E /* Array+ExtensionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ExtensionSpec.swift"; sourceTree = "<group>"; };
+		B69E34202322936F00A4477E /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
+		B69E34212322936F00A4477E /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = SOURCE_ROOT; };
+		B69E34252322939D00A4477E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		B69E34262322939D00A4477E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		B69E3448232294BB00A4477E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		B69E34512322977900A4477E /* Find-My-FoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find-My-FoodTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69E346423229A1E00A4477E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +141,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B69E338C2322909100A4477E /* Frameworks */ = {
+		B69E344E2322977900A4477E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69E346C2322EF3700A4477E /* Nimble.framework in Frameworks */,
+				B69E346D2322EF3700A4477E /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +156,10 @@
 		B69E33722322909000A4477E = {
 			isa = PBXGroup;
 			children = (
-				B69E337D2322909000A4477E /* Find-My-Food */,
-				B69E33922322909100A4477E /* Find-My-FoodTests */,
+				B69E339E2322912E00A4477E /* Find-My-Food */,
+				B69E34522322977900A4477E /* Find-My-FoodTests */,
 				B69E337C2322909000A4477E /* Products */,
+				B69E34242322939D00A4477E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,29 +167,219 @@
 			isa = PBXGroup;
 			children = (
 				B69E337B2322909000A4477E /* Find-My-Food.app */,
-				B69E338F2322909100A4477E /* Find-My-FoodTests.xctest */,
+				B69E34512322977900A4477E /* Find-My-FoodTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B69E337D2322909000A4477E /* Find-My-Food */ = {
+		B69E339E2322912E00A4477E /* Find-My-Food */ = {
 			isa = PBXGroup;
 			children = (
-				B69E337E2322909000A4477E /* AppDelegate.swift */,
-				B69E33802322909000A4477E /* ViewController.swift */,
-				B69E33822322909000A4477E /* Main.storyboard */,
-				B69E33852322909100A4477E /* Assets.xcassets */,
-				B69E33872322909100A4477E /* LaunchScreen.storyboard */,
-				B69E338A2322909100A4477E /* Info.plist */,
+				B69E3447232294B200A4477E /* Config */,
+				B69E339F2322912E00A4477E /* UI */,
+				B69E33B02322912F00A4477E /* Types */,
+				B69E33B42322912F00A4477E /* Network */,
+				B69E33BA2322912F00A4477E /* Extensions */,
+				B69E33BC2322912F00A4477E /* Utilities */,
 			);
 			path = "Find-My-Food";
 			sourceTree = "<group>";
 		};
-		B69E33922322909100A4477E /* Find-My-FoodTests */ = {
+		B69E339F2322912E00A4477E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B69E33932322909100A4477E /* Find_My_FoodTests.swift */,
-				B69E33952322909100A4477E /* Info.plist */,
+				B69E33A02322912E00A4477E /* Businesses */,
+				B69E33A62322912F00A4477E /* Map */,
+				B69E33AB2322912F00A4477E /* Segue.swift */,
+				B69E33AC2322912F00A4477E /* Business Search */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B69E33A02322912E00A4477E /* Businesses */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33A12322912F00A4477E /* BusinessesModel.swift */,
+				B69E33A22322912F00A4477E /* BusinessesView.swift */,
+				B69E33A32322912F00A4477E /* BusinessTableViewCell.swift */,
+				B69E33A42322912F00A4477E /* Businesses.storyboard */,
+				B69E33A52322912F00A4477E /* BusinessesViewController.swift */,
+			);
+			path = Businesses;
+			sourceTree = "<group>";
+		};
+		B69E33A62322912F00A4477E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33A72322912F00A4477E /* Map.storyboard */,
+				B69E33A82322912F00A4477E /* MapViewController.swift */,
+				B69E33A92322912F00A4477E /* MapView.swift */,
+				B69E33AA2322912F00A4477E /* MapModel.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B69E33AC2322912F00A4477E /* Business Search */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */,
+				B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */,
+				B69E33AF2322912F00A4477E /* BusinessSearchView.swift */,
+			);
+			path = "Business Search";
+			sourceTree = "<group>";
+		};
+		B69E33B02322912F00A4477E /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33B12322912F00A4477E /* Coordinate.swift */,
+				B69E33B22322912F00A4477E /* Response.swift */,
+				B69E33B32322912F00A4477E /* Business.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		B69E33B42322912F00A4477E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33B52322912F00A4477E /* UIApplicationWrapper.swift */,
+				B69E33B62322912F00A4477E /* YelpRoutes.swift */,
+				B69E33B72322912F00A4477E /* BusinessSearchClient.swift */,
+				B69E33B82322912F00A4477E /* URLSessionWrapper.swift */,
+				B69E33B92322912F00A4477E /* BaseServiceClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B69E33BA2322912F00A4477E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33BB2322912F00A4477E /* Array+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B69E33BC2322912F00A4477E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33BD2322912F00A4477E /* Assets.xcassets */,
+				B69E33BE2322912F00A4477E /* LaunchScreen.storyboard */,
+				B69E33C02322912F00A4477E /* AppDelegate.swift */,
+				B69E34212322936F00A4477E /* Cartfile.private */,
+				B69E34202322936F00A4477E /* Cartfile.resolved */,
+				B69E346423229A1E00A4477E /* Info.plist */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B69E33C32322912F00A4477E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33C42322912F00A4477E /* Businesses */,
+				B69E33C72322912F00A4477E /* Map */,
+				B69E33CC2322912F00A4477E /* Business Search */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B69E33C42322912F00A4477E /* Businesses */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33C62322912F00A4477E /* BusinessesSpec.swift */,
+			);
+			path = Businesses;
+			sourceTree = "<group>";
+		};
+		B69E33C72322912F00A4477E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33CA2322912F00A4477E /* MockMapModelDelegate.swift */,
+				B69E33CB2322912F00A4477E /* MapModelSpec.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B69E33CC2322912F00A4477E /* Business Search */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33CD2322912F00A4477E /* BusinessSearchModelSpec.swift */,
+				B69E33CF2322912F00A4477E /* MockBusinessSearchModelDelegate.swift */,
+			);
+			path = "Business Search";
+			sourceTree = "<group>";
+		};
+		B69E33D12322912F00A4477E /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33D22322912F00A4477E /* businesses.json */,
+				B69E33D32322912F00A4477E /* IncompleteMockBusiness.json */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		B69E33D42322912F00A4477E /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33D52322912F00A4477E /* MockResponse.json */,
+				B69E33D62322912F00A4477E /* BusinessSpec.swift */,
+				B69E33D72322912F00A4477E /* IncompleteMockCoordinate.json */,
+				B69E33D82322912F00A4477E /* ResponseSpec.swift */,
+				B69E33D92322912F00A4477E /* MockCoordinate.json */,
+				B69E33DA2322912F00A4477E /* MockBusinesses.json */,
+				B69E33DB2322912F00A4477E /* IncompleteMockResponse.json */,
+				B69E33DC2322912F00A4477E /* CoordinateSpec.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		B69E33DE2322912F00A4477E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33D02322912F00A4477E /* BaseServiceClientSpec.swift */,
+				B69E33DF2322912F00A4477E /* YelpRoutesSpec.swift */,
+				B69E33E02322912F00A4477E /* MockBusinessSearchClient.swift */,
+				B69E33E12322912F00A4477E /* MockServiceClient.swift */,
+				B69E33E22322912F00A4477E /* MockURLSession.swift */,
+				B69E33E32322912F00A4477E /* MockNetworkIndicator.swift */,
+				B69E33E42322912F00A4477E /* BusinessSearchClientSpec.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B69E33E52322912F00A4477E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33E62322912F00A4477E /* Array+ExtensionSpec.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B69E34242322939D00A4477E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B69E34262322939D00A4477E /* Nimble.framework */,
+				B69E34252322939D00A4477E /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B69E3447232294B200A4477E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B69E3448232294BB00A4477E /* Secret.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B69E34522322977900A4477E /* Find-My-FoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				B69E33C32322912F00A4477E /* UI */,
+				B69E33D12322912F00A4477E /* TestData */,
+				B69E33D42322912F00A4477E /* Types */,
+				B69E33DD2322912F00A4477E /* TestData.swift */,
+				B69E33DE2322912F00A4477E /* Network */,
+				B69E33E52322912F00A4477E /* Extensions */,
 			);
 			path = "Find-My-FoodTests";
 			sourceTree = "<group>";
@@ -104,8 +392,9 @@
 			buildConfigurationList = B69E33982322909100A4477E /* Build configuration list for PBXNativeTarget "Find-My-Food" */;
 			buildPhases = (
 				B69E33772322909000A4477E /* Sources */,
-				B69E33782322909000A4477E /* Frameworks */,
+				B69E341D2322917500A4477E /* Swiftlint */,
 				B69E33792322909000A4477E /* Resources */,
+				B69E33782322909000A4477E /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -116,22 +405,23 @@
 			productReference = B69E337B2322909000A4477E /* Find-My-Food.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B69E338E2322909100A4477E /* Find-My-FoodTests */ = {
+		B69E34502322977900A4477E /* Find-My-FoodTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B69E339B2322909100A4477E /* Build configuration list for PBXNativeTarget "Find-My-FoodTests" */;
+			buildConfigurationList = B69E34582322977900A4477E /* Build configuration list for PBXNativeTarget "Find-My-FoodTests" */;
 			buildPhases = (
-				B69E338B2322909100A4477E /* Sources */,
-				B69E338C2322909100A4477E /* Frameworks */,
-				B69E338D2322909100A4477E /* Resources */,
+				B69E344D2322977900A4477E /* Sources */,
+				B69E346B2322EB7C00A4477E /* Carthage Copy */,
+				B69E344E2322977900A4477E /* Frameworks */,
+				B69E344F2322977900A4477E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B69E33912322909100A4477E /* PBXTargetDependency */,
+				B69E34572322977900A4477E /* PBXTargetDependency */,
 			);
 			name = "Find-My-FoodTests";
 			productName = "Find-My-FoodTests";
-			productReference = B69E338F2322909100A4477E /* Find-My-FoodTests.xctest */;
+			productReference = B69E34512322977900A4477E /* Find-My-FoodTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -147,7 +437,7 @@
 					B69E337A2322909000A4477E = {
 						CreatedOnToolsVersion = 10.3;
 					};
-					B69E338E2322909100A4477E = {
+					B69E34502322977900A4477E = {
 						CreatedOnToolsVersion = 10.3;
 						TestTargetID = B69E337A2322909000A4477E;
 					};
@@ -167,7 +457,7 @@
 			projectRoot = "";
 			targets = (
 				B69E337A2322909000A4477E /* Find-My-Food */,
-				B69E338E2322909100A4477E /* Find-My-FoodTests */,
+				B69E34502322977900A4477E /* Find-My-FoodTests */,
 			);
 		};
 /* End PBXProject section */
@@ -177,62 +467,143 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69E33892322909100A4477E /* LaunchScreen.storyboard in Resources */,
-				B69E33862322909100A4477E /* Assets.xcassets in Resources */,
-				B69E33842322909000A4477E /* Main.storyboard in Resources */,
+				B69E33EA2322912F00A4477E /* Businesses.storyboard in Resources */,
+				B69E34222322936F00A4477E /* Cartfile.resolved in Resources */,
+				B69E33FE2322912F00A4477E /* LaunchScreen.storyboard in Resources */,
+				B69E33FD2322912F00A4477E /* Assets.xcassets in Resources */,
+				B69E34232322936F00A4477E /* Cartfile.private in Resources */,
+				B69E33EC2322912F00A4477E /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B69E338D2322909100A4477E /* Resources */ = {
+		B69E344F2322977900A4477E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69E34732322F20500A4477E /* businesses.json in Resources */,
+				B69E34752322F21000A4477E /* IncompleteMockResponse.json in Resources */,
+				B69E34792322F21000A4477E /* IncompleteMockCoordinate.json in Resources */,
+				B69E347B2322F21000A4477E /* MockCoordinate.json in Resources */,
+				B69E347A2322F21000A4477E /* MockBusinesses.json in Resources */,
+				B69E34762322F21000A4477E /* MockResponse.json in Resources */,
+				B69E34742322F20500A4477E /* IncompleteMockBusiness.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B69E341D2322917500A4477E /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint lint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		B69E346B2322EB7C00A4477E /* Carthage Copy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			name = "Carthage Copy";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo ${TARGET_BUILD_DIR}\n\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B69E33772322909000A4477E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69E33812322909000A4477E /* ViewController.swift in Sources */,
-				B69E337F2322909000A4477E /* AppDelegate.swift in Sources */,
+				B69E33EB2322912F00A4477E /* BusinessesViewController.swift in Sources */,
+				B69E33F62322912F00A4477E /* Business.swift in Sources */,
+				B69E33EE2322912F00A4477E /* MapView.swift in Sources */,
+				B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */,
+				B69E33E82322912F00A4477E /* BusinessesView.swift in Sources */,
+				B69E33F12322912F00A4477E /* BusinessSearchViewController.swift in Sources */,
+				B69E33E72322912F00A4477E /* BusinessesModel.swift in Sources */,
+				B69E33F82322912F00A4477E /* YelpRoutes.swift in Sources */,
+				B69E33FB2322912F00A4477E /* BaseServiceClient.swift in Sources */,
+				B69E33F52322912F00A4477E /* Response.swift in Sources */,
+				B69E33EF2322912F00A4477E /* MapModel.swift in Sources */,
+				B69E33FC2322912F00A4477E /* Array+Extension.swift in Sources */,
+				B69E33ED2322912F00A4477E /* MapViewController.swift in Sources */,
+				B69E33F22322912F00A4477E /* BusinessSearchModel.swift in Sources */,
+				B69E33F72322912F00A4477E /* UIApplicationWrapper.swift in Sources */,
+				B69E3449232294BB00A4477E /* Secret.swift in Sources */,
+				B69E33E92322912F00A4477E /* BusinessTableViewCell.swift in Sources */,
+				B69E33FA2322912F00A4477E /* URLSessionWrapper.swift in Sources */,
+				B69E33F02322912F00A4477E /* Segue.swift in Sources */,
+				B69E33FF2322912F00A4477E /* AppDelegate.swift in Sources */,
+				B69E33F92322912F00A4477E /* BusinessSearchClient.swift in Sources */,
+				B69E33F42322912F00A4477E /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B69E338B2322909100A4477E /* Sources */ = {
+		B69E344D2322977900A4477E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69E33942322909100A4477E /* Find_My_FoodTests.swift in Sources */,
+				B69E34802322F21400A4477E /* MockBusinessSearchClient.swift in Sources */,
+				B69E347E2322F21400A4477E /* BaseServiceClientSpec.swift in Sources */,
+				B69E34812322F21400A4477E /* MockServiceClient.swift in Sources */,
+				B69E347D2322F21000A4477E /* TestData.swift in Sources */,
+				B69E34852322F21700A4477E /* Array+ExtensionSpec.swift in Sources */,
+				B69E34832322F21400A4477E /* MockNetworkIndicator.swift in Sources */,
+				B69E34842322F21400A4477E /* BusinessSearchClientSpec.swift in Sources */,
+				B69E34822322F21400A4477E /* MockURLSession.swift in Sources */,
+				B69E34772322F21000A4477E /* BusinessSpec.swift in Sources */,
+				B69E347F2322F21400A4477E /* YelpRoutesSpec.swift in Sources */,
+				B69E346E2322F1F700A4477E /* BusinessesSpec.swift in Sources */,
+				B69E347C2322F21000A4477E /* CoordinateSpec.swift in Sources */,
+				B69E346F2322F1FC00A4477E /* MockMapModelDelegate.swift in Sources */,
+				B69E34712322F1FF00A4477E /* BusinessSearchModelSpec.swift in Sources */,
+				B69E34702322F1FC00A4477E /* MapModelSpec.swift in Sources */,
+				B69E34782322F21000A4477E /* ResponseSpec.swift in Sources */,
+				B69E34722322F1FF00A4477E /* MockBusinessSearchModelDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B69E33912322909100A4477E /* PBXTargetDependency */ = {
+		B69E34572322977900A4477E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B69E337A2322909000A4477E /* Find-My-Food */;
-			targetProxy = B69E33902322909100A4477E /* PBXContainerItemProxy */;
+			targetProxy = B69E34562322977900A4477E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B69E33822322909000A4477E /* Main.storyboard */ = {
+		B69E33BE2322912F00A4477E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B69E33832322909000A4477E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B69E33872322909100A4477E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B69E33882322909100A4477E /* Base */,
+				B69E33BF2322912F00A4477E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -362,7 +733,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PKK87S6JNY;
-				INFOPLIST_FILE = "Find-My-Food/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Find-My-Food/Utilities/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +755,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PKK87S6JNY;
-				INFOPLIST_FILE = "Find-My-Food/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Find-My-Food/Utilities/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,14 +771,14 @@
 			};
 			name = Release;
 		};
-		B69E339C2322909100A4477E /* Debug */ = {
+		B69E34592322977900A4477E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PKK87S6JNY;
-				INFOPLIST_FILE = "Find-My-FoodTests/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = "Find-My-Food/Utilities/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -413,14 +792,14 @@
 			};
 			name = Debug;
 		};
-		B69E339D2322909100A4477E /* Release */ = {
+		B69E345A2322977900A4477E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PKK87S6JNY;
-				INFOPLIST_FILE = "Find-My-FoodTests/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = "Find-My-Food/Utilities/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,11 +834,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B69E339B2322909100A4477E /* Build configuration list for PBXNativeTarget "Find-My-FoodTests" */ = {
+		B69E34582322977900A4477E /* Build configuration list for PBXNativeTarget "Find-My-FoodTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B69E339C2322909100A4477E /* Debug */,
-				B69E339D2322909100A4477E /* Release */,
+				B69E34592322977900A4477E /* Debug */,
+				B69E345A2322977900A4477E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

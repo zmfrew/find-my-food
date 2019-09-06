@@ -1,0 +1,847 @@
+{
+    "businesses": [
+        {
+            "id": "X_V6MOX7gKk94TBUAF03JQ",
+            "alias": "the-wooden-nickel-pub-and-grill-glen-carbon",
+            "name": "The Wooden Nickel Pub & Grill",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/AdWFD6CNPdkaDSCK7s14ow/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/the-wooden-nickel-pub-and-grill-glen-carbon?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 59,
+            "categories": [
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                },
+                {
+                    "alias": "pubs",
+                    "title": "Pubs"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.7490158081055,
+                "longitude": -89.9807281494141
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "171 S Main St",
+                "address2": "",
+                "address3": "",
+                "city": "Glen Carbon",
+                "zip_code": "62034",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "171 S Main St",
+                    "Glen Carbon, IL 62034"
+                ]
+            },
+            "phone": "+16182882141",
+            "display_phone": "(618) 288-2141",
+            "distance": 626.2729506701766
+        },
+        {
+            "id": "MuL05rKkVBFg2BksY5XEWg",
+            "alias": "edgewild-edwardsville",
+            "name": "Edgewild",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/zApWvRVT4QEttc-kYhZ1wQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/edgewild-edwardsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 46,
+            "categories": [
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.78844,
+                "longitude": -89.98033
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1071 IL-157",
+                "address2": "",
+                "address3": null,
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "1071 IL-157",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16183079692",
+            "display_phone": "(618) 307-9692",
+            "distance": 4051.465418408623
+        },
+        {
+            "id": "wbLXXbI-T6Av71i9AoiZRQ",
+            "alias": "cleveland-heath-edwardsville",
+            "name": "Cleveland-Heath",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/5Bknb-8m7nM093LLiu70uA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cleveland-heath-edwardsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 388,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 38.8115500108733,
+                "longitude": -89.9557334430412
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "106 N Main St",
+                "address2": "",
+                "address3": "",
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "106 N Main St",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16183074830",
+            "display_phone": "(618) 307-4830",
+            "distance": 7120.541347070257
+        },
+        {
+            "id": "WCVFqK84i2H5EClSoow7ZA",
+            "alias": "itty-bitty-granite-city",
+            "name": "Itty-Bitty",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/x1WVUFPPG3BuTRxtgZGRSg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/itty-bitty-granite-city?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 32,
+            "categories": [
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                },
+                {
+                    "alias": "burgers",
+                    "title": "Burgers"
+                },
+                {
+                    "alias": "sandwiches",
+                    "title": "Sandwiches"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 38.761132,
+                "longitude": -90.084759
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "512 E Chain Of Rocks Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Granite City",
+                "zip_code": "62040",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "512 E Chain Of Rocks Rd",
+                    "Granite City, IL 62040"
+                ]
+            },
+            "phone": "+16187971337",
+            "display_phone": "(618) 797-1337",
+            "distance": 8568.23846201095
+        },
+        {
+            "id": "sjGGLcSdWdcQeTlLdusiGg",
+            "alias": "fire-n-smoke-wood-fired-kitchen-troy-3",
+            "name": "Fire-N-Smoke Wood Fired Kitchen",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/FVTV7Pc8j_tHwx5x_Oni3g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/fire-n-smoke-wood-fired-kitchen-troy-3?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 176,
+            "categories": [
+                {
+                    "alias": "bbq",
+                    "title": "Barbeque"
+                },
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                },
+                {
+                    "alias": "burgers",
+                    "title": "Burgers"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.7337,
+                "longitude": -89.91644
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "914 Edwardsville Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Troy",
+                "zip_code": "62294",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "914 Edwardsville Rd",
+                    "Troy, IL 62294"
+                ]
+            },
+            "phone": "+16185050815",
+            "display_phone": "(618) 505-0815",
+            "distance": 6415.7476509274775
+        },
+        {
+            "id": "tMsQnjwF4T8_a_JbfbaCFw",
+            "alias": "docs-smokehouse-and-catering-edwardsville-3",
+            "name": "Doc's Smokehouse & Catering",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/3a-sxfCcyYDAVnzcByXIQw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/docs-smokehouse-and-catering-edwardsville-3?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 168,
+            "categories": [
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                },
+                {
+                    "alias": "smokehouse",
+                    "title": "Smokehouse"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 38.7872317,
+                "longitude": -89.9815262
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1017 Century Dr",
+                "address2": "",
+                "address3": "",
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "1017 Century Dr",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16186566060",
+            "display_phone": "(618) 656-6060",
+            "distance": 3919.2032185124704
+        },
+        {
+            "id": "MwBblw8ikm55r3qm6bpUtg",
+            "alias": "the-cabin-at-judy-creek-glen-carbon",
+            "name": "The Cabin At Judy Creek",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/PAXL8oLZRnDduX-K3mUDBw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/the-cabin-at-judy-creek-glen-carbon?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 41,
+            "categories": [
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                },
+                {
+                    "alias": "divebars",
+                    "title": "Dive Bars"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 38.7427249992616,
+                "longitude": -90.0025678798556
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "3730 S State Rt 157",
+                "address2": "",
+                "address3": "",
+                "city": "Glen Carbon",
+                "zip_code": "62034",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "3730 S State Rt 157",
+                    "Glen Carbon, IL 62034"
+                ]
+            },
+            "phone": "+16182058556",
+            "display_phone": "(618) 205-8556",
+            "distance": 1739.915594151076
+        },
+        {
+            "id": "eNhbpnZ6p7TDvAKU4XTOyg",
+            "alias": "kyoto-sushi-steakhouse-edwardsville",
+            "name": "Kyoto Sushi Steakhouse",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/jReadyJEj1RlYEW9Nc3-Kg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kyoto-sushi-steakhouse-edwardsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 33,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "steak",
+                    "title": "Steakhouses"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.7977473238696,
+                "longitude": -89.9773372983778
+            },
+            "transactions": [],
+            "location": {
+                "address1": "441 S State Rte 157",
+                "address2": "Ste 103",
+                "address3": null,
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "441 S State Rte 157",
+                    "Ste 103",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16186598181",
+            "display_phone": "(618) 659-8181",
+            "distance": 5393.966191001332
+        },
+        {
+            "id": "BkIKCZdAF2_yGJ5lFucMLA",
+            "alias": "urban-farmhouse-eatery-and-pie-co-highland",
+            "name": "Urban Farmhouse Eatery & Pie Co",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/HB5nzDpq3Hmw3qlZUgowDQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/urban-farmhouse-eatery-and-pie-co-highland?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 53,
+            "categories": [
+                {
+                    "alias": "newamerican",
+                    "title": "American (New)"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.751199,
+                "longitude": -89.679643
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "15 Central Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Highland",
+                "zip_code": "62249",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "15 Central Blvd",
+                    "Highland, IL 62249"
+                ]
+            },
+            "phone": "+16186510007",
+            "display_phone": "(618) 651-0007",
+            "distance": 26619.49152199334
+        },
+        {
+            "id": "fD3IuxoCXY1B-cpMDcqmCw",
+            "alias": "bann-thai-edwardsville",
+            "name": "Bann Thai",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/liytiMg0CzDoTw8HTDpTcw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/bann-thai-edwardsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 42,
+            "categories": [
+                {
+                    "alias": "thai",
+                    "title": "Thai"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.77932,
+                "longitude": -89.98285
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "4 Club Centre Ct",
+                "address2": "Ste H",
+                "address3": null,
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "4 Club Centre Ct",
+                    "Ste H",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16183075894",
+            "display_phone": "(618) 307-5894",
+            "distance": 3028.4113746356397
+        },
+        {
+            "id": "pyaAOZpLDBnXlsWyHojaPg",
+            "alias": "mod-pizza-edwardsville",
+            "name": "MOD Pizza",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/E6Z73Mk-Cf--GbEVNrRyiQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mod-pizza-edwardsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 19,
+            "categories": [
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                },
+                {
+                    "alias": "hotdogs",
+                    "title": "Fast Food"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.78498,
+                "longitude": -89.94895
+            },
+            "transactions": [],
+            "location": {
+                "address1": "2300 Troy Rd",
+                "address2": "",
+                "address3": null,
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "2300 Troy Rd",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "",
+            "display_phone": "",
+            "distance": 4868.939921624864
+        },
+        {
+            "id": "RLaS9hQJXAc7ED2wr9dWeA",
+            "alias": "taqueria-z-edwardsville-2",
+            "name": "Taqueria Z",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/TxU43U_V6uNorH8vXpFZcg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/taqueria-z-edwardsville-2?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 70,
+            "categories": [
+                {
+                    "alias": "tacos",
+                    "title": "Tacos"
+                },
+                {
+                    "alias": "foodstands",
+                    "title": "Food Stands"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.8106682362947,
+                "longitude": -89.9550345373928
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "109 E Park St",
+                "address2": "",
+                "address3": null,
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "109 E Park St",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16183075018",
+            "display_phone": "(618) 307-5018",
+            "distance": 7053.0725392263375
+        },
+        {
+            "id": "UhNeXD7-v7wDZOqxNLgLXA",
+            "alias": "asia-garden-collinsville",
+            "name": "Asia Garden",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/JHB43znF8ldPtrUA0aU5Ig/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/asia-garden-collinsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 47,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                },
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.6961307,
+                "longitude": -89.967975
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1972 Vandalia St",
+                "address2": "",
+                "address3": "",
+                "city": "Collinsville",
+                "zip_code": "62234",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "1972 Vandalia St",
+                    "Collinsville, IL 62234"
+                ]
+            },
+            "phone": "+16183446666",
+            "display_phone": "(618) 344-6666",
+            "distance": 6441.76062409415
+        },
+        {
+            "id": "4v207dlK2eZWdg-qtboatg",
+            "alias": "railshake-brewery-highland",
+            "name": "Railshake Brewery",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/zmD-k_APtUIkTQqEsgS6OA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/railshake-brewery-highland?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 54,
+            "categories": [
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                },
+                {
+                    "alias": "cajun",
+                    "title": "Cajun/Creole"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.7437382497727,
+                "longitude": -89.6812193406788
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "504 Walnut St",
+                "address2": "",
+                "address3": "",
+                "city": "Highland",
+                "zip_code": "62249",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "504 Walnut St",
+                    "Highland, IL 62249"
+                ]
+            },
+            "phone": "+16186514900",
+            "display_phone": "(618) 651-4900",
+            "distance": 26500.687141666414
+        },
+        {
+            "id": "_aKr7POnacW_VizRKBpCiA",
+            "alias": "blues-city-deli-saint-louis",
+            "name": "Blues City Deli",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/7WS4yVqkmQg73IQUNM7PxA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/blues-city-deli-saint-louis?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 828,
+            "categories": [
+                {
+                    "alias": "delis",
+                    "title": "Delis"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 38.605057,
+                "longitude": -90.2184098
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "2438 McNair Ave",
+                "address2": null,
+                "address3": "",
+                "city": "Saint Louis",
+                "zip_code": "63104",
+                "country": "US",
+                "state": "MO",
+                "display_address": [
+                    "2438 McNair Ave",
+                    "Saint Louis, MO 63104"
+                ]
+            },
+            "phone": "+13147738225",
+            "display_phone": "(314) 773-8225",
+            "distance": 25934.697837112337
+        },
+        {
+            "id": "69MquJNC3BpgOZvHtutZ-w",
+            "alias": "catrinas-edwardsville",
+            "name": "Catrina's",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/84DdLn32FqugbpLMBYNFGA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/catrinas-edwardsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 98,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "latin",
+                    "title": "Latin American"
+                },
+                {
+                    "alias": "cocktailbars",
+                    "title": "Cocktail Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.788255,
+                "longitude": -89.982093
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1027 Century Dr",
+                "address2": "",
+                "address3": "",
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "1027 Century Dr",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16186925522",
+            "display_phone": "(618) 692-5522",
+            "distance": 4027.2123089749502
+        },
+        {
+            "id": "d0MDUX9gUR1gC7rmOsS0FQ",
+            "alias": "blue-springs-cafe-highland",
+            "name": "Blue Springs Cafe",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/Y68F8_G0INBY7ByxdtRpCA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/blue-springs-cafe-highland?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 176,
+            "categories": [
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.78353,
+                "longitude": -89.63212
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "3505 George St",
+                "address2": "",
+                "address3": "",
+                "city": "Highland",
+                "zip_code": "62249",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "3505 George St",
+                    "Highland, IL 62249"
+                ]
+            },
+            "phone": "+16186545788",
+            "display_phone": "(618) 654-5788",
+            "distance": 30941.390281270567
+        },
+        {
+            "id": "4wep1OfeJbpz0DvBsoDdVg",
+            "alias": "peel-wood-fired-pizza-edwardsville-edwardsville-2",
+            "name": "Peel Wood Fired Pizza - Edwardsville",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/sAgbhXiBtRCcckcSm7pzEA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/peel-wood-fired-pizza-edwardsville-edwardsville-2?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 315,
+            "categories": [
+                {
+                    "alias": "pizza",
+                    "title": "Pizza"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 38.80178,
+                "longitude": -89.95605
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "921 S Arbor Vitae",
+                "address2": "",
+                "address3": "",
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "921 S Arbor Vitae",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16186598561",
+            "display_phone": "(618) 659-8561",
+            "distance": 6081.2953633384195
+        },
+        {
+            "id": "OOaxVCZVCmw_kaDt1wIbnQ",
+            "alias": "foundry-public-house-edwardsville",
+            "name": "Foundry Public House",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/9C8N1xlfr-PGMWRy79IjAg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/foundry-public-house-edwardsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 93,
+            "categories": [
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                },
+                {
+                    "alias": "pubs",
+                    "title": "Pubs"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 38.8120833,
+                "longitude": -89.9562952
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "126 N Main St",
+                "address2": "",
+                "address3": "",
+                "city": "Edwardsville",
+                "zip_code": "62025",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "126 N Main St",
+                    "Edwardsville, IL 62025"
+                ]
+            },
+            "phone": "+16183079585",
+            "display_phone": "(618) 307-9585",
+            "distance": 7159.508970103581
+        },
+        {
+            "id": "X-tcDNuuEwUqJf9Sp9ELuA",
+            "alias": "fazzis-bar-and-grill-collinsville",
+            "name": "Fazzi's Bar & Grill",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/dZH1xvsWOTPsh1OZN4ivCw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/fazzis-bar-and-grill-collinsville?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA",
+            "review_count": 85,
+            "categories": [
+                {
+                    "alias": "greek",
+                    "title": "Greek"
+                },
+                {
+                    "alias": "italian",
+                    "title": "Italian"
+                },
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 38.69203,
+                "longitude": -89.971958
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1813 Vandalia St",
+                "address2": "",
+                "address3": "",
+                "city": "Collinsville",
+                "zip_code": "62234",
+                "country": "US",
+                "state": "IL",
+                "display_address": [
+                    "1813 Vandalia St",
+                    "Collinsville, IL 62234"
+                ]
+            },
+            "phone": "+16183445440",
+            "display_phone": "(618) 344-5440",
+            "distance": 6811.248803207453
+        }
+    ],
+    "total": 3500,
+    "region": {
+        "center": {
+            "longitude": -89.98661,
+            "latitude": 38.752209
+        }
+    }
+}

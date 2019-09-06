@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="495-fE-fPD">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Find My Food-->
+        <scene sceneID="d0r-Fg-545">
+            <objects>
+                <viewController id="9wf-fs-zgU" customClass="MapViewController" customModule="Find_My_Food" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Np-lv-Cp6" customClass="MapView" customModule="Find_My_Food" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="emU-8Q-CwI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYF-Dt-YEC">
+                                <rect key="frame" x="334" y="676" width="56" height="56"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="RGo-mh-rHz"/>
+                                    <constraint firstAttribute="height" constant="56" id="qHr-mM-9A0"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="0.5" height="0.5"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="5Np-lv-Cp6" eventType="touchUpInside" id="VgD-eR-VqK"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6T-l3-BjT">
+                                <rect key="frame" x="64" y="128" width="286" height="466"/>
+                                <connections>
+                                    <segue destination="BlI-pT-K45" kind="embed" id="Y2M-t1-KsH"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U6T-l3-BjT" firstAttribute="top" secondItem="KwP-wd-c1N" secondAttribute="top" constant="128" id="6or-5Q-DAf"/>
+                            <constraint firstItem="KwP-wd-c1N" firstAttribute="bottom" secondItem="U6T-l3-BjT" secondAttribute="bottom" constant="128" id="7JK-Vy-f7D"/>
+                            <constraint firstItem="KwP-wd-c1N" firstAttribute="trailing" secondItem="U6T-l3-BjT" secondAttribute="trailing" constant="64" id="KIP-R5-vbB"/>
+                            <constraint firstItem="emU-8Q-CwI" firstAttribute="top" secondItem="KwP-wd-c1N" secondAttribute="top" id="Wc8-BX-JvF"/>
+                            <constraint firstItem="U6T-l3-BjT" firstAttribute="leading" secondItem="KwP-wd-c1N" secondAttribute="leading" constant="64" id="ef8-1e-ScB"/>
+                            <constraint firstItem="KwP-wd-c1N" firstAttribute="trailing" secondItem="tYF-Dt-YEC" secondAttribute="trailing" constant="24" id="hXu-Hs-a93"/>
+                            <constraint firstItem="emU-8Q-CwI" firstAttribute="leading" secondItem="KwP-wd-c1N" secondAttribute="leading" id="ncW-8X-Spr"/>
+                            <constraint firstAttribute="bottom" secondItem="tYF-Dt-YEC" secondAttribute="bottom" constant="24" id="sAJ-0w-3ZN"/>
+                            <constraint firstAttribute="bottom" secondItem="emU-8Q-CwI" secondAttribute="bottom" id="sIF-FX-RVJ"/>
+                            <constraint firstItem="KwP-wd-c1N" firstAttribute="trailing" secondItem="emU-8Q-CwI" secondAttribute="trailing" id="zZC-jS-xeZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KwP-wd-c1N"/>
+                        <connections>
+                            <outlet property="containerView" destination="U6T-l3-BjT" id="mfZ-h8-idl"/>
+                            <outlet property="map" destination="emU-8Q-CwI" id="Ixj-Ql-EXh"/>
+                            <outlet property="searchButton" destination="tYF-Dt-YEC" id="whd-5i-Toh"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Find My Food" id="Pe4-Nk-2Hx"/>
+                    <connections>
+                        <segue destination="EhG-FV-ZbP" kind="show" identifier="showBusinesses" id="OUu-Cv-Bnk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZd-yS-TBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871.01449275362324" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="agp-8O-nDp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="495-fE-fPD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="MEw-bC-apt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9wf-fs-zgU" kind="relationship" relationship="rootViewController" id="z8t-Qa-ajU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5NB-WM-JL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39.130434782608695" y="97.767857142857139"/>
+        </scene>
+        <!--Business Search View Controller-->
+        <scene sceneID="UMW-H1-3Id">
+            <objects>
+                <viewController id="BlI-pT-K45" customClass="BusinessSearchViewController" customModule="Find_My_Food" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ucn-ng-zDf" customClass="BusinessSearchView" customModule="Find_My_Food" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="466"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZe-Xm-pHC">
+                                <rect key="frame" x="16" y="192" width="254" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6l-7x-2Bp">
+                                <rect key="frame" x="119" y="273.5" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="Ucn-ng-zDf" eventType="touchUpInside" id="HHE-Ac-Cly"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A6l-7x-2Bp" firstAttribute="centerX" secondItem="Ucn-ng-zDf" secondAttribute="centerX" id="TVD-Ll-tfe"/>
+                            <constraint firstAttribute="trailing" secondItem="fZe-Xm-pHC" secondAttribute="trailing" constant="16" id="e35-7U-ELx"/>
+                            <constraint firstItem="fZe-Xm-pHC" firstAttribute="leading" secondItem="Ucn-ng-zDf" secondAttribute="leading" constant="16" id="kiY-eg-FrO"/>
+                            <constraint firstItem="fZe-Xm-pHC" firstAttribute="top" secondItem="Ucn-ng-zDf" secondAttribute="top" constant="192" id="yLH-ki-gUP"/>
+                            <constraint firstItem="A6l-7x-2Bp" firstAttribute="top" secondItem="fZe-Xm-pHC" secondAttribute="bottom" constant="51.5" id="z3Q-nJ-HFY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B2O-It-2sT"/>
+                        <connections>
+                            <outlet property="searchButton" destination="A6l-7x-2Bp" id="XJQ-kD-QSr"/>
+                            <outlet property="searchTextField" destination="fZe-Xm-pHC" id="G2s-VE-6aG"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qn2-f3-Kh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1607" y="219"/>
+        </scene>
+        <!--Businesses-->
+        <scene sceneID="JKc-Uh-H3d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Businesses" id="EhG-FV-ZbP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZq-DB-g2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1607" y="-48"/>
+        </scene>
+    </scenes>
+</document>

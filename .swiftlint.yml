@@ -1,0 +1,16 @@
+disabled_rules:
+- identifier_name
+- trailing_whitespace
+opt_in_rules:
+- control_statement
+- empty_count
+- trailing_newline
+- colon
+- comma
+included:
+- Find-My-Food
+excluded:
+- Carthage
+- Find-My-Food/Find-My-FoodTests
+- Find-My-Food/Find-My-FoodUITests
+line_length: 150
