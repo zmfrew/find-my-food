@@ -78,10 +78,15 @@ extension MapViewController: BusinessSearchViewControllerDelegate {
     
     func downloadCompleted(with businesses: [Business]) {
         mapView.downloadDidEnd()
-        performSegue(withIdentifier: BusinessSearchSegue.showBusinesses.name, sender: businesses)
+        
+        if businesses.isEmpty {
+            presentNoBusinessesAlert()
+        } else {
+            performSegue(withIdentifier: BusinessSearchSegue.showBusinesses.name, sender: businesses)
+        }
     }
     
-    func presentNoBusinessesAlert() {
+    private func presentNoBusinessesAlert() {
         let alert = UIAlertController(title: "Oh no!",
                                       message: "We couldn't find any results. Please try a different search.",
                                       preferredStyle: .alert)

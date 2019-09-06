@@ -5,6 +5,28 @@ import Nimble
 
 final class ArrayExtensionSpec: QuickSpec {
     override func spec() {
+        // MARK: - isNotEmpty -> Bool
+        describe("isNotEmpty -> Bool") {
+            context("given a non-empty array") {
+                it("returns true") {
+                    let numArr = [4, 0, 3, 1, 2]
+                    let stringArr = ["one", "four", "two", "three", "zero"]
+                    
+                    expect(numArr.isNotEmpty).to(beTrue())
+                    expect(stringArr.isNotEmpty).to(beTrue())
+                }
+            }
+            
+            context("given an empty array") {
+                it("returns false") {
+                    let numArr: [Int] = []
+                    let stringArr: [String] = []
+                    
+                    expect(numArr.isNotEmpty).to(beFalse())
+                    expect(stringArr.isNotEmpty).to(beFalse())
+                }
+            }
+        }
         
         // MARK: - element(at index: Int) -> Element?
         describe("element(at index: Int) -> Element?") {
@@ -29,29 +51,6 @@ final class ArrayExtensionSpec: QuickSpec {
                     expect(stringArr.element(at: 2)).to(equal("two"))
                     expect(stringArr.element(at: 3)).to(equal("three"))
                     expect(stringArr.element(at: 4)).to(equal("zero"))
-                }
-            }
-        }
-        
-        // MARK: - isNotEmpty() -> Bool
-        describe("isNotEmpty() -> Bool") {
-            context("given a non-empty array") {
-                it("returns true") {
-                    let numArr = [4, 0, 3, 1, 2]
-                    let stringArr = ["one", "four", "two", "three", "zero"]
-                    
-                    expect(numArr.isNotEmpty()).to(beTrue())
-                    expect(stringArr.isNotEmpty()).to(beTrue())
-                }
-            }
-            
-            context("given an empty array") {
-                it("returns false") {
-                    let numArr: [Int] = []
-                    let stringArr: [String] = []
-                    
-                    expect(numArr.isNotEmpty()).to(beFalse())
-                    expect(stringArr.isNotEmpty()).to(beFalse())
                 }
             }
         }

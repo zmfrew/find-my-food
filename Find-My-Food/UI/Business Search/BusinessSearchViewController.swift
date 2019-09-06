@@ -3,7 +3,10 @@ import UIKit
 protocol BusinessSearchViewControllerDelegate: class {
     func downloadCompleted(with businesses: [Business])
     func downloadDidBegin()
-    func presentNoBusinessesAlert()
+}
+
+extension BusinessSearchViewControllerDelegate {
+    func downloadCompleted(with businesses: [Business]? = nil) { }
 }
 
 final class BusinessSearchViewController: UIViewController {
@@ -47,11 +50,6 @@ extension BusinessSearchViewController: BusinessSearchModelDelegate {
     }
     
     func downloadDidEnd() {
-		guard model.businesses.isNotEmpty() else {
-			delegate?.presentNoBusinessesAlert()
-			return
-		}
-		
         delegate?.downloadCompleted(with: model.businesses)
     }
 }
