@@ -37,7 +37,7 @@
 		B69E3449232294BB00A4477E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E3448232294BB00A4477E /* Secret.swift */; };
 		B69E346C2322EF3700A4477E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69E34262322939D00A4477E /* Nimble.framework */; };
 		B69E346D2322EF3700A4477E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69E34252322939D00A4477E /* Quick.framework */; };
-		B69E346E2322F1F700A4477E /* BusinessesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33C62322912F00A4477E /* BusinessesSpec.swift */; };
+		B69E346E2322F1F700A4477E /* BusinessesModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33C62322912F00A4477E /* BusinessesModelSpec.swift */; };
 		B69E346F2322F1FC00A4477E /* MockMapModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33CA2322912F00A4477E /* MockMapModelDelegate.swift */; };
 		B69E34702322F1FC00A4477E /* MapModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33CB2322912F00A4477E /* MapModelSpec.swift */; };
 		B69E34712322F1FF00A4477E /* BusinessSearchModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33CD2322912F00A4477E /* BusinessSearchModelSpec.swift */; };
@@ -100,7 +100,7 @@
 		B69E33BD2322912F00A4477E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B69E33BF2322912F00A4477E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B69E33C02322912F00A4477E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B69E33C62322912F00A4477E /* BusinessesSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesSpec.swift; sourceTree = "<group>"; };
+		B69E33C62322912F00A4477E /* BusinessesModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesModelSpec.swift; sourceTree = "<group>"; };
 		B69E33CA2322912F00A4477E /* MockMapModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMapModelDelegate.swift; sourceTree = "<group>"; };
 		B69E33CB2322912F00A4477E /* MapModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapModelSpec.swift; sourceTree = "<group>"; };
 		B69E33CD2322912F00A4477E /* BusinessSearchModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchModelSpec.swift; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 		B69E33C42322912F00A4477E /* Businesses */ = {
 			isa = PBXGroup;
 			children = (
-				B69E33C62322912F00A4477E /* BusinessesSpec.swift */,
+				B69E33C62322912F00A4477E /* BusinessesModelSpec.swift */,
 			);
 			path = Businesses;
 			sourceTree = "<group>";
@@ -579,7 +579,7 @@
 				B69E34822322F21400A4477E /* MockURLSession.swift in Sources */,
 				B69E34772322F21000A4477E /* BusinessSpec.swift in Sources */,
 				B69E347F2322F21400A4477E /* YelpRoutesSpec.swift in Sources */,
-				B69E346E2322F1F700A4477E /* BusinessesSpec.swift in Sources */,
+				B69E346E2322F1F700A4477E /* BusinessesModelSpec.swift in Sources */,
 				B69E347C2322F21000A4477E /* CoordinateSpec.swift in Sources */,
 				B69E346F2322F1FC00A4477E /* MockMapModelDelegate.swift in Sources */,
 				B69E34712322F1FF00A4477E /* BusinessSearchModelSpec.swift in Sources */,
