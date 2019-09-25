@@ -1,9 +1,10 @@
 import UIKit
 import CoreLocation
 // TODO: - Use local cache if the search params are the same.
-final class MapViewController: UIViewController {
+final class MapViewController: UIViewController, Storyboarded {
     private var model: MapModel!
     private var mapView: MapView { return view as! MapView } //swiftlint:disable:this force_cast
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -40,6 +40,6 @@ extension BusinessesView: UITableViewDataSource {
 
 extension BusinessesView: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		// TODO: - Allow more info about business and favorite option.
+		// TODO: - Add detail view.
 	}
 }
