@@ -20,18 +20,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your location to find restaurants around you!</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>We need your location to find restaurants around you!</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>We need your location to find restaurants around you!</string>
 	<key>NSLocationUsageDescription</key>
 	<string>We need your location to find restaurants around you!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to find restaurants around you!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Map</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

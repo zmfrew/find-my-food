@@ -1,9 +1,9 @@
 import UIKit
 
-final class BusinessesViewController: UIViewController {
+final class BusinessesViewController: UIViewController, Storyboarded {
 	private var businessesView: BusinessesView { return self.view as! BusinessesView } //swiftlint:disable:this force_cast
 	private var model: BusinessModelInterface!
-	var businesses: [Business] = []
+    weak var coordinator: MainCoordinator?
 	
 	override func viewDidLoad() {
 		businessesView.delegate = self

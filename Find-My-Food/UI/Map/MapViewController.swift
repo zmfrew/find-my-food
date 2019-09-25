@@ -1,9 +1,10 @@
 import UIKit
 import CoreLocation
 // TODO: - Use local cache if the search params are the same.
-final class MapViewController: UIViewController {
+final class MapViewController: UIViewController, Storyboarded {
     private var model: MapModel!
     private var mapView: MapView { return view as! MapView } //swiftlint:disable:this force_cast
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,6 @@ final class MapViewController: UIViewController {
         super.viewDidAppear(animated)
         
         mapView.setRegion()
-    }
-}
-
-extension MapViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let businessesVC = segue.destination as? BusinessesViewController,
-            let businesses = sender as? [Business] else { return }
-
-        let businessesModel = BusinessesModel(businesses: businesses)
-        businessesVC.configure(with: businessesModel)
     }
 }
 
@@ -62,11 +53,9 @@ extension MapViewController: MapViewDelegate {
     }
     
     func searchButtonTapped() {
-        if let businessSearchVC = children.first(where: { $0 is BusinessSearchViewController}) as? BusinessSearchViewController,
-            let latitude = model.location?.coordinate.latitude,
+        if let latitude = model.location?.coordinate.latitude,
             let longitude = model.location?.coordinate.longitude {
-        
-            businessSearchVC.configure(latitude: latitude, longitude: longitude)
+            coordinator?.searchButtonTapped(latitude: latitude, longitude: longitude)
         }
     }
 }
@@ -82,7 +71,7 @@ extension MapViewController: BusinessSearchViewControllerDelegate {
         if businesses.isEmpty {
             presentNoBusinessesAlert()
         } else {
-            performSegue(withIdentifier: BusinessSearchSegue.showBusinesses.name, sender: businesses)
+            coordinator?.downloadCompleted(with: businesses)
         }
     }
     
