@@ -16,7 +16,6 @@
 		B69E33ED2322912F00A4477E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A82322912F00A4477E /* MapViewController.swift */; };
 		B69E33EE2322912F00A4477E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A92322912F00A4477E /* MapView.swift */; };
 		B69E33EF2322912F00A4477E /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AA2322912F00A4477E /* MapModel.swift */; };
-		B69E33F02322912F00A4477E /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AB2322912F00A4477E /* Segue.swift */; };
 		B69E33F12322912F00A4477E /* BusinessSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */; };
 		B69E33F22322912F00A4477E /* BusinessSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */; };
 		B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AF2322912F00A4477E /* BusinessSearchView.swift */; };
@@ -64,6 +63,7 @@
 		B6D5D5FD233B06BA004138F5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D5FC233B06BA004138F5 /* Coordinator.swift */; };
 		B6D5D5FF233B06D5004138F5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D5FE233B06D5004138F5 /* Storyboarded.swift */; };
 		B6D5D601233B077C004138F5 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D600233B077C004138F5 /* MainCoordinator.swift */; };
+		B6D5D603233B0DFF004138F5 /* BusinessSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +87,6 @@
 		B69E33A82322912F00A4477E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B69E33A92322912F00A4477E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B69E33AA2322912F00A4477E /* MapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
-		B69E33AB2322912F00A4477E /* Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchViewController.swift; sourceTree = "<group>"; };
 		B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchModel.swift; sourceTree = "<group>"; };
 		B69E33AF2322912F00A4477E /* BusinessSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchView.swift; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		B6D5D5FC233B06BA004138F5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B6D5D5FE233B06D5004138F5 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		B6D5D600233B077C004138F5 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessSearch.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +197,6 @@
 				B6D5D5FB233B06AD004138F5 /* Coordinators */,
 				B69E33A02322912E00A4477E /* Businesses */,
 				B69E33A62322912F00A4477E /* Map */,
-				B69E33AB2322912F00A4477E /* Segue.swift */,
 				B69E33AC2322912F00A4477E /* Business Search */,
 			);
 			path = UI;
@@ -218,10 +217,10 @@
 		B69E33A62322912F00A4477E /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				B69E33A72322912F00A4477E /* Map.storyboard */,
 				B69E33A82322912F00A4477E /* MapViewController.swift */,
 				B69E33A92322912F00A4477E /* MapView.swift */,
 				B69E33AA2322912F00A4477E /* MapModel.swift */,
+				B69E33A72322912F00A4477E /* Map.storyboard */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -232,6 +231,7 @@
 				B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */,
 				B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */,
 				B69E33AF2322912F00A4477E /* BusinessSearchView.swift */,
+				B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */,
 			);
 			path = "Business Search";
 			sourceTree = "<group>";
@@ -488,6 +488,7 @@
 				B69E34222322936F00A4477E /* Cartfile.resolved in Resources */,
 				B69E33FE2322912F00A4477E /* LaunchScreen.storyboard in Resources */,
 				B69E33FD2322912F00A4477E /* Assets.xcassets in Resources */,
+				B6D5D603233B0DFF004138F5 /* BusinessSearch.storyboard in Resources */,
 				B69E34232322936F00A4477E /* Cartfile.private in Resources */,
 				B69E33EC2322912F00A4477E /* Map.storyboard in Resources */,
 			);
@@ -577,7 +578,6 @@
 				B69E33E92322912F00A4477E /* BusinessTableViewCell.swift in Sources */,
 				B6D5D5FD233B06BA004138F5 /* Coordinator.swift in Sources */,
 				B69E33FA2322912F00A4477E /* URLSessionWrapper.swift in Sources */,
-				B69E33F02322912F00A4477E /* Segue.swift in Sources */,
 				B69E33FF2322912F00A4477E /* AppDelegate.swift in Sources */,
 				B69E33F92322912F00A4477E /* BusinessSearchClient.swift in Sources */,
 				B69E33F42322912F00A4477E /* Coordinate.swift in Sources */,

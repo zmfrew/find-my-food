@@ -26,16 +26,6 @@ final class MapViewController: UIViewController, Storyboarded {
 }
 
 extension MapViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let businessesVC = segue.destination as? BusinessesViewController,
-            let businesses = sender as? [Business] else { return }
-
-        let businessesModel = BusinessesModel(businesses: businesses)
-        businessesVC.configure(with: businessesModel)
-    }
-}
-
-extension MapViewController {
     private func presentLocationAlert(title: String, message: String, enableSettingsLink: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -63,11 +53,9 @@ extension MapViewController: MapViewDelegate {
     }
     
     func searchButtonTapped() {
-        if let businessSearchVC = children.first(where: { $0 is BusinessSearchViewController}) as? BusinessSearchViewController,
-            let latitude = model.location?.coordinate.latitude,
+        if let latitude = model.location?.coordinate.latitude,
             let longitude = model.location?.coordinate.longitude {
-        
-            businessSearchVC.configure(latitude: latitude, longitude: longitude)
+            coordinator?.searchButtonTapped(latitude: latitude, longitude: longitude)
         }
     }
 }
@@ -83,7 +71,7 @@ extension MapViewController: BusinessSearchViewControllerDelegate {
         if businesses.isEmpty {
             presentNoBusinessesAlert()
         } else {
-            performSegue(withIdentifier: BusinessSearchSegue.showBusinesses.name, sender: businesses)
+            coordinator?.downloadCompleted(with: businesses)
         }
     }
     
