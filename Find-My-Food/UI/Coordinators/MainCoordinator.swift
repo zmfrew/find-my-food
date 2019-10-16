@@ -8,6 +8,10 @@ final class MainCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
+    func dismiss() {
+        navigationController.dismiss(animated: true)
+    }
+    
     func downloadCompleted(with businesses: [Business]) {
         let vc = BusinessesViewController.instantiate()
         vc.coordinator = self
@@ -27,9 +31,8 @@ final class MainCoordinator: Coordinator {
         vc.coordinator = self
         vc.delegate = mapVC
         vc.configure(latitude: latitude, longitude: longitude)
-        navigationController.modalPresentationStyle = UIModalPresentationStyle.formSheet
         
-        navigationController.pushViewController(vc, animated: true)
+        navigationController.present(vc, animated: true)
     }
     
     func start() {

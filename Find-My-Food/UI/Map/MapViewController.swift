@@ -28,6 +28,7 @@ final class MapViewController: UIViewController, Storyboarded {
 extension MapViewController {
     private func presentLocationAlert(title: String, message: String, enableSettingsLink: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive))
         
         if enableSettingsLink {
             alert.addAction(UIAlertAction(title: "Go to Settings", style: .default) { (_) in
@@ -36,6 +37,8 @@ extension MapViewController {
                 }
             })
         }
+        
+        present(alert, animated: true)
     }
 }
 
@@ -56,6 +59,8 @@ extension MapViewController: MapViewDelegate {
         if let latitude = model.location?.coordinate.latitude,
             let longitude = model.location?.coordinate.longitude {
             coordinator?.searchButtonTapped(latitude: latitude, longitude: longitude)
+        } else {
+            model.locationServicesDisabled()
         }
     }
 }

@@ -40,7 +40,7 @@ extension BusinessSearchViewController: BusinessSearchModelDelegate {
     }
     
     func downloadDidEnd() {
-        coordinator?.pop()
+        coordinator?.dismiss()
         delegate?.downloadCompleted(with: model.businesses)
     }
 }
