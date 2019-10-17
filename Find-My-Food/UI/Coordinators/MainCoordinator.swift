@@ -8,6 +8,13 @@ final class MainCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
+    func businessSelected(_ business: Business) {
+        let vc = BusinessDetailViewController.instantiate()
+        vc.coordinator = self
+        vc.configure(with: business)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
     func dismiss() {
         navigationController.dismiss(animated: true)
     }

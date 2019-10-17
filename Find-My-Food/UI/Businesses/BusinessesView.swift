@@ -2,6 +2,7 @@ import UIKit
 
 protocol BusinessesViewDelegate: class {
 	func business(for row: Int) -> Business?
+    func businessSelected(at index: Int)
     var businessCount: Int { get }
 }
 
@@ -40,6 +41,6 @@ extension BusinessesView: UITableViewDataSource {
 
 extension BusinessesView: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		// TODO: - Add detail view.
+        delegate?.businessSelected(at: indexPath.row)
 	}
 }

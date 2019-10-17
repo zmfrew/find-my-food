@@ -19,6 +19,12 @@ extension BusinessesViewController: BusinessesViewDelegate {
 	func business(for row: Int) -> Business? {
 		return model.business(for: row)
 	}
+    
+    func businessSelected(at index: Int) {
+        guard let business = business(for: index) else { return }
+        
+        coordinator?.businessSelected(business)
+    }
 	
 	var businessCount: Int {
 		return model.businessCount
