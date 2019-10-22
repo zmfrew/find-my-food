@@ -1,6 +1,7 @@
 protocol BusinessModelInterface {
-	func business(for row: Int) -> Business?
-	var businessCount: Int { get }
+    func business(for row: Int) -> Business?
+	func randomBusiness() -> Business?
+    var businessCount: Int { get }
 }
 
 final class BusinessesModel: BusinessModelInterface {
@@ -14,4 +15,8 @@ final class BusinessesModel: BusinessModelInterface {
 	func business(for row: Int) -> Business? {
 		return businesses.element(at: row)
 	}
+    // TODO: - Write tests around this.
+    func randomBusiness() -> Business? {
+        return businesses.randomElement()
+    }
 }

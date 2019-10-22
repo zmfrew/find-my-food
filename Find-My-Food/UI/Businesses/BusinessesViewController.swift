@@ -25,6 +25,12 @@ extension BusinessesViewController: BusinessesViewDelegate {
         
         coordinator?.businessSelected(business)
     }
+    
+    func randomizeButtonTapped() {
+        guard let business = model.randomBusiness() else { return }
+        
+        coordinator?.businessSelected(business)
+    }
 	
 	var businessCount: Int {
 		return model.businessCount

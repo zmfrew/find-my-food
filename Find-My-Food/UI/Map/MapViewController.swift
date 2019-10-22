@@ -66,13 +66,7 @@ extension MapViewController: MapViewDelegate {
 }
 
 extension MapViewController: BusinessSearchViewControllerDelegate {
-    func downloadDidBegin() {
-        mapView.downloadDidBegin()
-    }
-    
     func downloadCompleted(with businesses: [Business]) {
-        mapView.downloadDidEnd()
-        
         if businesses.isEmpty {
             presentNoBusinessesAlert()
         } else {

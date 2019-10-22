@@ -3,6 +3,7 @@ import UIKit
 protocol BusinessesViewDelegate: class {
 	func business(for row: Int) -> Business?
     func businessSelected(at index: Int)
+    func randomizeButtonTapped()
     var businessCount: Int { get }
 }
 
@@ -19,7 +20,7 @@ final class BusinessesView: UIView {
         randomizeButton.layer.cornerRadius = 12
 	}
     @IBAction func randomizeButtonTapped(_ sender: UIButton) {
-        
+        delegate?.randomizeButtonTapped()
     }
 }
 

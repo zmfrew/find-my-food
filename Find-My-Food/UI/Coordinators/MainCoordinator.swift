@@ -1,6 +1,7 @@
 import UIKit
 
 final class MainCoordinator: Coordinator {
+    // TODO: - Try writing tests for this.
     var navigationController: UINavigationController
     // TODO: - Use this class to display activity indicators and remove from other VC's.
     init(navigationController: UINavigationController) {

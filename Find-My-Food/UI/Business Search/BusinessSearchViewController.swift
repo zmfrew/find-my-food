@@ -2,7 +2,6 @@ import UIKit
 
 protocol BusinessSearchViewControllerDelegate: class {
     func downloadCompleted(with businesses: [Business])
-    func downloadDidBegin()
 }
 
 extension BusinessSearchViewControllerDelegate {
@@ -35,10 +34,6 @@ final class BusinessSearchViewController: UIViewController, Storyboarded {
 }
 
 extension BusinessSearchViewController: BusinessSearchModelDelegate {
-    func downloadDidBegin() {
-        delegate?.downloadDidBegin()
-    }
-    
     func downloadDidEnd() {
         coordinator?.dismiss()
         delegate?.downloadCompleted(with: model.businesses)
