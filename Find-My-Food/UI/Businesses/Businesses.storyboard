@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ko7-64-VuT">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ko7-64-VuT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,8 +11,8 @@
         <!--Businesses-->
         <scene sceneID="bfP-YO-gx8">
             <objects>
-                <viewController storyboardIdentifier="BusinessesViewController" id="Ko7-64-VuT" customClass="BusinessesViewController" customModule="Restaurant_Roulette" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vzm-LG-HTt" customClass="BusinessesView" customModule="Restaurant_Roulette" customModuleProvider="target">
+                <viewController storyboardIdentifier="BusinessesViewController" id="Ko7-64-VuT" customClass="BusinessesViewController" customModule="Find_My_Food" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vzm-LG-HTt" customClass="BusinessesView" customModule="Find_My_Food" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -22,15 +20,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="742"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="businessCell" rowHeight="122" id="gOf-8a-8SD" customClass="BusinessTableViewCell" customModule="Restaurant_Roulette" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="businessCell" rowHeight="122" id="gOf-8a-8SD" customClass="BusinessTableViewCell" customModule="Find_My_Food" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gOf-8a-8SD" id="e7b-AF-Ywj">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="121.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9L-Gk-xU0">
-                                                    <rect key="frame" x="16" y="16" width="382" height="89.5"/>
+                                                    <rect key="frame" x="16" y="16" width="382" height="90"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -66,19 +64,37 @@
                                     <constraint firstAttribute="height" constant="32" id="dLY-7B-8yi"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BU-lv-2Po">
+                                <rect key="frame" x="278" y="694" width="112" height="56"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="WGA-WI-E9s"/>
+                                    <constraint firstAttribute="height" constant="56" id="nPF-vD-OqJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Randomize!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="randomizeButtonTapped:" destination="vzm-LG-HTt" eventType="touchUpInside" id="4bF-tq-635"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fAr-OU-3tN" firstAttribute="trailing" secondItem="Gdn-qT-voi" secondAttribute="trailing" id="57a-zR-FvW"/>
                             <constraint firstItem="DQW-8n-nbO" firstAttribute="top" secondItem="Gdn-qT-voi" secondAttribute="bottom" id="5CK-QW-fJO"/>
                             <constraint firstItem="DQW-8n-nbO" firstAttribute="leading" secondItem="fAr-OU-3tN" secondAttribute="leading" id="PAU-5r-pjj"/>
+                            <constraint firstItem="fAr-OU-3tN" firstAttribute="trailing" secondItem="3BU-lv-2Po" secondAttribute="trailing" constant="24" id="bMF-Ga-iIM"/>
                             <constraint firstItem="fAr-OU-3tN" firstAttribute="trailing" secondItem="DQW-8n-nbO" secondAttribute="trailing" id="cbr-yG-hXl"/>
+                            <constraint firstItem="fAr-OU-3tN" firstAttribute="bottom" secondItem="3BU-lv-2Po" secondAttribute="bottom" constant="24" id="rAK-T2-g4D"/>
                             <constraint firstItem="Gdn-qT-voi" firstAttribute="top" secondItem="fAr-OU-3tN" secondAttribute="top" id="scE-zc-0cz"/>
                             <constraint firstItem="Gdn-qT-voi" firstAttribute="leading" secondItem="fAr-OU-3tN" secondAttribute="leading" id="ykW-rj-dFv"/>
                             <constraint firstItem="fAr-OU-3tN" firstAttribute="bottom" secondItem="DQW-8n-nbO" secondAttribute="bottom" id="zTy-AN-nWS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fAr-OU-3tN"/>
                         <connections>
+                            <outlet property="randomizeButton" destination="3BU-lv-2Po" id="Hrm-YD-uOb"/>
                             <outlet property="resultsCountLabel" destination="Xm0-RV-2iu" id="1Bw-ph-I06"/>
                             <outlet property="tableView" destination="Gdn-qT-voi" id="Vkw-YK-1zh"/>
                         </connections>

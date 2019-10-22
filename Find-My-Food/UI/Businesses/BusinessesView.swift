@@ -9,12 +9,18 @@ protocol BusinessesViewDelegate: class {
 final class BusinessesView: UIView {
 	@IBOutlet private weak var resultsCountLabel: UILabel!
 	@IBOutlet private weak var tableView: UITableView!
-	weak var delegate: BusinessesViewDelegate?
+    @IBOutlet private weak var randomizeButton: UIButton!
+    weak var delegate: BusinessesViewDelegate?
 	
 	override func awakeFromNib() {
         tableView.dataSource = self
         tableView.delegate = self
+        // TODO: - Shape this button, change the color, and add gesture recognizer to move it around the screen.
+        randomizeButton.layer.cornerRadius = 12
 	}
+    @IBAction func randomizeButtonTapped(_ sender: UIButton) {
+        
+    }
 }
 
 extension BusinessesView {
