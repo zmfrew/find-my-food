@@ -15,7 +15,7 @@ final class BusinessesModel: BusinessModelInterface {
 	func business(for row: Int) -> Business? {
 		return businesses.element(at: row)
 	}
-    // TODO: - Write tests around this.
+    
     func randomBusiness() -> Business? {
         return businesses.randomElement()
     }

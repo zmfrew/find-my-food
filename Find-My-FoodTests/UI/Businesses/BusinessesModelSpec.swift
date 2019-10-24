@@ -31,5 +31,21 @@ final class BusinessModelSpec: QuickSpec {
                 }
             }
         }
+        
+        // MARK: - randomBusiness() -> Business?
+        describe("randomBusiness()") {
+            context("given businesses is not empty") {
+                expect(testObject.randomBusiness()).toNot(beNil())
+                expect(testObject.randomBusiness()).to(beAKindOf(Business.self))
+            }
+            
+            context("given businesses is not empty") {
+                it("returns nil") {
+                    let emptyTestObject = BusinessesModel(businesses: [])
+                    
+                    expect(emptyTestObject.randomBusiness()).to(beNil())
+                }
+            }
+        }
     }
 }
