@@ -1,9 +1,8 @@
 import UIKit
 
 final class MainCoordinator: Coordinator {
-    // TODO: - Try writing tests for this.
     var navigationController: UINavigationController
-    // TODO: - Use this class to display activity indicators and remove from other VC's.
+    
     init(navigationController: UINavigationController) {
         // TODO: - Configure to style correctly.
         self.navigationController = navigationController
@@ -28,8 +27,8 @@ final class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func pop() {
-        navigationController.popViewController(animated: true)
+    func pop(_ animated: Bool = true) {
+        navigationController.popViewController(animated: animated)
     }
     
     func searchButtonTapped(latitude: Double, longitude: Double) {

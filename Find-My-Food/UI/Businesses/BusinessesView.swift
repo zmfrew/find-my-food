@@ -40,7 +40,9 @@ extension BusinessesView: UITableViewDataSource {
 			let business = delegate?.business(for: indexPath.row)
 		else { return UITableViewCell() }
 		
-		cell.decorateView(with: business.name)
+        let address = business.location.displayAddress.joined()
+        
+        cell.decorateView(with: business.name, address: address, rating: business.rating)
 		
 		return cell
 	}
