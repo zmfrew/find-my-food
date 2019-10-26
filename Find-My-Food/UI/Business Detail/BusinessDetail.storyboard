@@ -108,6 +108,7 @@
                         <viewLayoutGuide key="safeArea" id="flG-El-aPO"/>
                         <connections>
                             <outlet property="addressLabel" destination="iKa-gf-Hft" id="SPq-y2-Gam"/>
+                            <outlet property="businessImageView" destination="qml-90-zTM" id="i1C-qK-ial"/>
                             <outlet property="categoriesLabel" destination="ibR-9e-j9I" id="xTE-JN-A0J"/>
                             <outlet property="phoneNumberLabel" destination="jf9-rO-LCk" id="1Nv-yl-rRH"/>
                             <outlet property="ratingLabel" destination="NNc-Af-jTM" id="5ee-lC-NyX"/>

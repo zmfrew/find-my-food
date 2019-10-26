@@ -26,8 +26,6 @@ final class BusinessesView: UIView {
 }
 
 extension BusinessesView {
-    // TODO: - use an index to only update the specific cell & add loading spinner for images as they load.
-    // Look at Movies-Smooth repo
     func dataDidUpdate() {
         self.tableView.reloadData()
     }

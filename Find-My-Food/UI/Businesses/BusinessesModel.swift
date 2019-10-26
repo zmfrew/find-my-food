@@ -39,7 +39,7 @@ final class BusinessesModel: BusinessModelInterface {
     func randomBusiness() -> Business? {
         return businesses.randomElement()
     }
-    // TODO: - Write tests
+    // TODO: - Write tests for image(for business:)
     func image(for business: Business) {
         DispatchQueue.global(qos: .userInitiated).async {
             self.businessSearchClient.image(at: business.imageUrlString) { [weak self] data in
@@ -47,23 +47,8 @@ final class BusinessesModel: BusinessModelInterface {
                 
                 if let data = data,
                     let image = UIImage(data: data) {
-                    let newBusiness = Business(id: business.id,
-                                               alias: business.alias,
-                                               name: business.name,
-                                               imageUrlString: business.imageUrlString,
-                                               image: image,
-                                               isClosed: business.isClosed,
-                                               urlString: business.urlString,
-                                               reviewCount: business.reviewCount,
-                                               categories: business.categories,
-                                               rating: business.rating,
-                                               coordinates: business.coordinates,
-                                               transactions: business.transactions,
-                                               priceLevel: business.priceLevel,
-                                               location: business.location,
-                                               phone: business.phone,
-                                               displayPhone: business.displayPhone,
-                                               distance: business.distance)
+                    
+                    let newBusiness = business.copy(image: image)
                     
                     let index = self.businesses.firstIndex(of: business)!
                     self.businesses.remove(at: index)

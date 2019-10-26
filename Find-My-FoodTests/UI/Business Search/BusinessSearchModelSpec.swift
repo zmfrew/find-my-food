@@ -24,7 +24,7 @@ final class BusinessSearchModelSpec: QuickSpec {
                         TestData.createBusiness()
                     ]
                     
-                    mockBusinessSearchClient.stub.searchShouldReturn = expectedBusinesses
+                    mockBusinessSearchClient.stub.searchShouldCompleteWith = expectedBusinesses
                     
                     testObject.search(for: "Peel", latitude: 38.752209, longitude: -89.986610)
                     
@@ -37,7 +37,7 @@ final class BusinessSearchModelSpec: QuickSpec {
                 it("sets businesses as an empty array") {
                     let expectedBusinesses: [Business] = []
                     
-                    mockBusinessSearchClient.stub.searchShouldReturn = expectedBusinesses
+                    mockBusinessSearchClient.stub.searchShouldCompleteWith = expectedBusinesses
                     
                     testObject.search(for: "Chophouse", latitude: 38.752209, longitude: -89.986610)
                     

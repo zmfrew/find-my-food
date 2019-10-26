@@ -58,6 +58,45 @@ extension Business: Equatable {
     }
 }
 
+extension Business {
+    func copy(id: String? = nil,
+              alias: String? = nil,
+              name: String? = nil,
+              imageUrlString: String? = nil,
+              image: UIImage? = nil,
+              isClosed: Bool? = nil,
+              urlString: String? = nil,
+              reviewCount: Int? = nil,
+              categories: [Category]? = nil,
+              rating: Double? = nil,
+              coordinates: Coordinate? = nil,
+              transactions: [String]? = nil,
+              priceLevel: String? = nil,
+              location: Location? = nil,
+              phone: String? = nil,
+              displayPhone: String? = nil,
+              distance: Double? = nil) -> Business {
+        
+        return Business(id: id ?? self.id,
+                        alias: alias ?? self.alias,
+                        name: name ?? self.name,
+                        imageUrlString: imageUrlString ?? self.imageUrlString,
+                        image: image ?? self.image,
+                        isClosed: isClosed ?? self.isClosed,
+                        urlString: urlString ?? self.urlString,
+                        reviewCount: reviewCount ?? self.reviewCount,
+                        categories: categories ?? self.categories,
+                        rating: rating ?? self.rating,
+                        coordinates: coordinates ?? self.coordinates,
+                        transactions: transactions ?? self.transactions,
+                        priceLevel: priceLevel ?? self.priceLevel,
+                        location: location ?? self.location,
+                        phone: phone ?? self.phone,
+                        displayPhone: displayPhone ?? self.displayPhone,
+                        distance: distance ?? self.distance)
+    }
+}
+
 extension Business: Decodable {
     enum CodingKeys: String, CodingKey {
         case id, alias, name, image_url, is_closed, url, review_count, categories, rating, coordinates, transactions, price, location, phone, display_phone, distance //swiftlint:disable:this line_length
