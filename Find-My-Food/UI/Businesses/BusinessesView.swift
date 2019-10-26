@@ -3,6 +3,7 @@ import UIKit
 protocol BusinessesViewDelegate: class {
 	func business(for row: Int) -> Business?
     func businessSelected(at index: Int)
+    func image(for business: Business)
     func randomizeButtonTapped()
     var businessCount: Int { get }
 }
@@ -25,6 +26,12 @@ final class BusinessesView: UIView {
 }
 
 extension BusinessesView {
+    // TODO: - use an index to only update the specific cell & add loading spinner for images as they load.
+    // Look at Movies-Smooth repo
+    func dataDidUpdate() {
+        self.tableView.reloadData()
+    }
+    
     func updateResultsCount(_ results: Int) {
         resultsCountLabel.text = "\(results) results found"
     }
@@ -40,10 +47,10 @@ extension BusinessesView: UITableViewDataSource {
 			let business = delegate?.business(for: indexPath.row)
 		else { return UITableViewCell() }
 		
-        let address = business.location.displayAddress.joined()
+        let address = business.location.displayAddress.joined(separator: " ")
         
-        cell.decorateView(with: business.name, address: address, rating: business.rating)
-		
+        cell.decorateView(with: business.name, address: address, rating: business.rating, image: business.image)
+        
 		return cell
 	}
 }

@@ -15,6 +15,12 @@ final class BusinessesViewController: UIViewController, Storyboarded {
 	}
 }
 
+extension BusinessesViewController: BusinessesModelDelegate {
+    func dataDidUpdate() {
+        self.businessesView.dataDidUpdate()
+    }
+}
+
 extension BusinessesViewController: BusinessesViewDelegate {
 	func business(for row: Int) -> Business? {
 		return model.business(for: row)
@@ -24,6 +30,10 @@ extension BusinessesViewController: BusinessesViewDelegate {
         guard let business = business(for: index) else { return }
         
         coordinator?.businessSelected(business)
+    }
+    
+    func image(for business: Business) {
+        model.image(for: business)
     }
     
     func randomizeButtonTapped() {

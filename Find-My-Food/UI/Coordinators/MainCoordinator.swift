@@ -21,7 +21,10 @@ final class MainCoordinator: Coordinator {
     func downloadCompleted(with businesses: [Business]) {
         let vc = BusinessesViewController.instantiate()
         vc.coordinator = self
-        let businessesModel = BusinessesModel(businesses: businesses)
+        let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
+        let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient, networkIndicator: UIApplication.shared)
+        // TODO: - Test this portion
+        let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, delegate: vc)
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
     }

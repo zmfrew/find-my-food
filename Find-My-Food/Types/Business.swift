@@ -1,8 +1,11 @@
+import UIKit
+
 struct Business {
     let id: String
     let alias: String
     let name: String
     let imageUrlString: String
+    var image: UIImage?
     let isClosed: Bool
     let urlString: String
     let reviewCount: Int
