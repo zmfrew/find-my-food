@@ -39,7 +39,7 @@ final class BusinessSearchClient: BusinessSearchClientInterface {
             }
         }
     }
-    // TODO: - Tests for here
+    
     func image(at urlString: String, completion: @escaping (Data?) -> Void) {
         guard let url = URL(string: urlString) else {
             print("Invalid URL string for downloading image")

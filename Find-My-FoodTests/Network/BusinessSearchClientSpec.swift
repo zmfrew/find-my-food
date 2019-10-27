@@ -72,5 +72,43 @@ final class BusinessSearchClientSpec: QuickSpec {
                 }
             }
         }
+        
+        // MARK: - func image(at urlString: String, completion: @escaping (Data?) -> Void)
+        describe("image(at urlString: String, completion: @escaping (Data?) -> Void)") {
+            context("given a valid url and get completes with data") {
+                it("completes with data") {
+                    let expectedData = Data(capacity: 0)
+                    mockServiceClient.stub.getShouldReturn = .success(expectedData)
+                    
+                    testObject.image(at: "developer.apple.com") { data in
+                        expect(data).to(equal(expectedData))
+                        expect(mockServiceClient.stub.getCallCount).to(equal(1))
+                    }
+                }
+            }
+            
+            context("given a valid url and get completes with an error") {
+                it("completes with nil") {
+                    let expectedError = NSError(domain: "expected error", code: -1, userInfo: nil)
+                    mockServiceClient.stub.getShouldReturn = .failure(expectedError)
+                    
+                    testObject.image(at: "apple.com") { data in
+                        expect(data).to(beNil())
+                        expect(mockServiceClient.stub.getCallCount).to(equal(1))
+                    }
+                }
+            }
+            
+            context("given an invalid url") {
+                it("completes with nil") {
+                    let urlString = "invalid url string"
+                    
+                    testObject.image(at: urlString) { data in
+                        expect(data).to(beNil())
+                        expect(mockServiceClient.stub.getCallCount).to(equal(0))
+                    }
+                }
+            }
+        }
     }
 }
