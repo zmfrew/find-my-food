@@ -12,6 +12,6 @@ Find-My-Food is a complete rewrite and redesign of an existing app I created cal
 * MVC 
 * UI Coordinator for navigation 
 
-## Dependences
+## Dependencies
 * Quick
 * Nimble
