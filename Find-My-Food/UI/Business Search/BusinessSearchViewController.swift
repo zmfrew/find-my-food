@@ -2,20 +2,20 @@ import UIKit
 
 protocol BusinessSearchViewControllerDelegate: class {
     func downloadCompleted(with businesses: [Business])
-    func downloadDidBegin()
 }
 
 extension BusinessSearchViewControllerDelegate {
     func downloadCompleted(with businesses: [Business]? = nil) { }
 }
 
-final class BusinessSearchViewController: UIViewController {
+final class BusinessSearchViewController: UIViewController, Storyboarded {
     private var model: BusinessSearchModelInterface!
 	private var searchView: BusinessSearchView { return self.view as! BusinessSearchView } //swiftlint:disable:this force_cast
     private var latitude: Double!
     private var longitude: Double!
     
     weak var delegate: BusinessSearchViewControllerDelegate?
+    weak var coordinator: MainCoordinator?
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,29 +33,15 @@ final class BusinessSearchViewController: UIViewController {
     }
 }
 
-extension BusinessSearchViewController {
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		guard let businessesVC = segue.destination as? BusinessesViewController,
-			!model.businesses.isEmpty else { return }
-		
-		let businessesModel = BusinessesModel(businesses: model.businesses)
-		
-		businessesVC.configure(with: businessesModel)
-	}
-}
-
 extension BusinessSearchViewController: BusinessSearchModelDelegate {
-    func downloadDidBegin() {
-        delegate?.downloadDidBegin()
-    }
-    
     func downloadDidEnd() {
+        coordinator?.dismiss()
         delegate?.downloadCompleted(with: model.businesses)
     }
 }
 
 extension BusinessSearchViewController: BusinessSearchViewDelegate {
-	func search(for business: String) {
-		model.search(for: business, latitude: latitude, longitude: longitude)
-	}
+    func search(for business: String) {
+        model.search(for: business, latitude: latitude, longitude: longitude)
+    }
 }

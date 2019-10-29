@@ -2,17 +2,12 @@
 
 final class MockBusinessSearchModelDelegate: BusinessSearchModelDelegate {
 	final class Stub {
-		var downloadDidBeginCallCount = 0
 		var downloadDidEndCallCount = 0
 	}
 
 	var stub = Stub()
 
-	func downloadDidBegin() {
-		stub.downloadDidBeginCallCount += 1
-	}
-
-	func downloadDidEnd() {
+    func downloadDidEnd() {
 		stub.downloadDidEndCallCount += 1
 	}
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5701EC6F23623827004A4EAA /* MainCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701EC6E23623827004A4EAA /* MainCoordinatorSpec.swift */; };
+		57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */; };
+		57DCCA402357722E00CEA8DE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA3F2357722E00CEA8DE /* Secret.swift */; };
+		57DCCA672358EE6F00CEA8DE /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */; };
+		57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */; };
+		57EEC11F23590B410076B9FD /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EEC11E23590B410076B9FD /* BusinessDetailView.swift */; };
 		B69E33E72322912F00A4477E /* BusinessesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A12322912F00A4477E /* BusinessesModel.swift */; };
 		B69E33E82322912F00A4477E /* BusinessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A22322912F00A4477E /* BusinessesView.swift */; };
 		B69E33E92322912F00A4477E /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A32322912F00A4477E /* BusinessTableViewCell.swift */; };
@@ -16,7 +22,6 @@
 		B69E33ED2322912F00A4477E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A82322912F00A4477E /* MapViewController.swift */; };
 		B69E33EE2322912F00A4477E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A92322912F00A4477E /* MapView.swift */; };
 		B69E33EF2322912F00A4477E /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AA2322912F00A4477E /* MapModel.swift */; };
-		B69E33F02322912F00A4477E /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AB2322912F00A4477E /* Segue.swift */; };
 		B69E33F12322912F00A4477E /* BusinessSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */; };
 		B69E33F22322912F00A4477E /* BusinessSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */; };
 		B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33AF2322912F00A4477E /* BusinessSearchView.swift */; };
@@ -34,7 +39,6 @@
 		B69E33FF2322912F00A4477E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33C02322912F00A4477E /* AppDelegate.swift */; };
 		B69E34222322936F00A4477E /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = B69E34202322936F00A4477E /* Cartfile.resolved */; };
 		B69E34232322936F00A4477E /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = B69E34212322936F00A4477E /* Cartfile.private */; };
-		B69E3449232294BB00A4477E /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E3448232294BB00A4477E /* Secret.swift */; };
 		B69E346C2322EF3700A4477E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69E34262322939D00A4477E /* Nimble.framework */; };
 		B69E346D2322EF3700A4477E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69E34252322939D00A4477E /* Quick.framework */; };
 		B69E346E2322F1F700A4477E /* BusinessesModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33C62322912F00A4477E /* BusinessesModelSpec.swift */; };
@@ -61,6 +65,10 @@
 		B69E34832322F21400A4477E /* MockNetworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E32322912F00A4477E /* MockNetworkIndicator.swift */; };
 		B69E34842322F21400A4477E /* BusinessSearchClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E42322912F00A4477E /* BusinessSearchClientSpec.swift */; };
 		B69E34852322F21700A4477E /* Array+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E62322912F00A4477E /* Array+ExtensionSpec.swift */; };
+		B6D5D5FD233B06BA004138F5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D5FC233B06BA004138F5 /* Coordinator.swift */; };
+		B6D5D5FF233B06D5004138F5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D5FE233B06D5004138F5 /* Storyboarded.swift */; };
+		B6D5D601233B077C004138F5 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D600233B077C004138F5 /* MainCoordinator.swift */; };
+		B6D5D603233B0DFF004138F5 /* BusinessSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +82,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5701EC6E23623827004A4EAA /* MainCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorSpec.swift; sourceTree = "<group>"; };
+		57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessesModelDelegate.swift; sourceTree = "<group>"; };
+		57DCCA3F2357722E00CEA8DE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
+		57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
+		57EEC11E23590B410076B9FD /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		B69E337B2322909000A4477E /* Find-My-Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-My-Food.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69E33A12322912F00A4477E /* BusinessesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesModel.swift; sourceTree = "<group>"; };
 		B69E33A22322912F00A4477E /* BusinessesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesView.swift; sourceTree = "<group>"; };
@@ -84,7 +98,6 @@
 		B69E33A82322912F00A4477E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B69E33A92322912F00A4477E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		B69E33AA2322912F00A4477E /* MapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
-		B69E33AB2322912F00A4477E /* Segue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
 		B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchViewController.swift; sourceTree = "<group>"; };
 		B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchModel.swift; sourceTree = "<group>"; };
 		B69E33AF2322912F00A4477E /* BusinessSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearchView.swift; sourceTree = "<group>"; };
@@ -128,9 +141,12 @@
 		B69E34212322936F00A4477E /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = SOURCE_ROOT; };
 		B69E34252322939D00A4477E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		B69E34262322939D00A4477E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		B69E3448232294BB00A4477E /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		B69E34512322977900A4477E /* Find-My-FoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find-My-FoodTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69E346423229A1E00A4477E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D5D5FC233B06BA004138F5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B6D5D5FE233B06D5004138F5 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		B6D5D600233B077C004138F5 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessSearch.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +169,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5701EC6D2362381A004A4EAA /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				5701EC6E23623827004A4EAA /* MainCoordinatorSpec.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		57DCCA652358EE4500CEA8DE /* Business Detail */ = {
+			isa = PBXGroup;
+			children = (
+				57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */,
+				57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */,
+				57EEC11E23590B410076B9FD /* BusinessDetailView.swift */,
+			);
+			path = "Business Detail";
+			sourceTree = "<group>";
+		};
 		B69E33722322909000A4477E = {
 			isa = PBXGroup;
 			children = (
@@ -188,10 +222,11 @@
 		B69E339F2322912E00A4477E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B6D5D5FB233B06AD004138F5 /* Coordinators */,
 				B69E33A02322912E00A4477E /* Businesses */,
 				B69E33A62322912F00A4477E /* Map */,
-				B69E33AB2322912F00A4477E /* Segue.swift */,
 				B69E33AC2322912F00A4477E /* Business Search */,
+				57DCCA652358EE4500CEA8DE /* Business Detail */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -211,10 +246,10 @@
 		B69E33A62322912F00A4477E /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				B69E33A72322912F00A4477E /* Map.storyboard */,
 				B69E33A82322912F00A4477E /* MapViewController.swift */,
 				B69E33A92322912F00A4477E /* MapView.swift */,
 				B69E33AA2322912F00A4477E /* MapModel.swift */,
+				B69E33A72322912F00A4477E /* Map.storyboard */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -225,6 +260,7 @@
 				B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */,
 				B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */,
 				B69E33AF2322912F00A4477E /* BusinessSearchView.swift */,
+				B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */,
 			);
 			path = "Business Search";
 			sourceTree = "<group>";
@@ -275,6 +311,7 @@
 		B69E33C32322912F00A4477E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5701EC6D2362381A004A4EAA /* Coordinators */,
 				B69E33C42322912F00A4477E /* Businesses */,
 				B69E33C72322912F00A4477E /* Map */,
 				B69E33CC2322912F00A4477E /* Business Search */,
@@ -286,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				B69E33C62322912F00A4477E /* BusinessesModelSpec.swift */,
+				57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */,
 			);
 			path = Businesses;
 			sourceTree = "<group>";
@@ -366,7 +404,7 @@
 		B69E3447232294B200A4477E /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				B69E3448232294BB00A4477E /* Secret.swift */,
+				57DCCA3F2357722E00CEA8DE /* Secret.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -382,6 +420,16 @@
 				B69E33E52322912F00A4477E /* Extensions */,
 			);
 			path = "Find-My-FoodTests";
+			sourceTree = "<group>";
+		};
+		B6D5D5FB233B06AD004138F5 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B6D5D5FC233B06BA004138F5 /* Coordinator.swift */,
+				B6D5D5FE233B06D5004138F5 /* Storyboarded.swift */,
+				B6D5D600233B077C004138F5 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,8 +519,10 @@
 				B69E34222322936F00A4477E /* Cartfile.resolved in Resources */,
 				B69E33FE2322912F00A4477E /* LaunchScreen.storyboard in Resources */,
 				B69E33FD2322912F00A4477E /* Assets.xcassets in Resources */,
+				B6D5D603233B0DFF004138F5 /* BusinessSearch.storyboard in Resources */,
 				B69E34232322936F00A4477E /* Cartfile.private in Resources */,
 				B69E33EC2322912F00A4477E /* Map.storyboard in Resources */,
+				57DCCA672358EE6F00CEA8DE /* BusinessDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +591,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B69E33EB2322912F00A4477E /* BusinessesViewController.swift in Sources */,
+				57EEC11F23590B410076B9FD /* BusinessDetailView.swift in Sources */,
+				57DCCA402357722E00CEA8DE /* Secret.swift in Sources */,
 				B69E33F62322912F00A4477E /* Business.swift in Sources */,
 				B69E33EE2322912F00A4477E /* MapView.swift in Sources */,
 				B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */,
@@ -553,15 +605,17 @@
 				B69E33EF2322912F00A4477E /* MapModel.swift in Sources */,
 				B69E33FC2322912F00A4477E /* Array+Extension.swift in Sources */,
 				B69E33ED2322912F00A4477E /* MapViewController.swift in Sources */,
+				B6D5D601233B077C004138F5 /* MainCoordinator.swift in Sources */,
 				B69E33F22322912F00A4477E /* BusinessSearchModel.swift in Sources */,
 				B69E33F72322912F00A4477E /* UIApplicationWrapper.swift in Sources */,
-				B69E3449232294BB00A4477E /* Secret.swift in Sources */,
 				B69E33E92322912F00A4477E /* BusinessTableViewCell.swift in Sources */,
+				B6D5D5FD233B06BA004138F5 /* Coordinator.swift in Sources */,
 				B69E33FA2322912F00A4477E /* URLSessionWrapper.swift in Sources */,
-				B69E33F02322912F00A4477E /* Segue.swift in Sources */,
 				B69E33FF2322912F00A4477E /* AppDelegate.swift in Sources */,
 				B69E33F92322912F00A4477E /* BusinessSearchClient.swift in Sources */,
 				B69E33F42322912F00A4477E /* Coordinate.swift in Sources */,
+				B6D5D5FF233B06D5004138F5 /* Storyboarded.swift in Sources */,
+				57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,9 +630,11 @@
 				B69E34852322F21700A4477E /* Array+ExtensionSpec.swift in Sources */,
 				B69E34832322F21400A4477E /* MockNetworkIndicator.swift in Sources */,
 				B69E34842322F21400A4477E /* BusinessSearchClientSpec.swift in Sources */,
+				57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */,
 				B69E34822322F21400A4477E /* MockURLSession.swift in Sources */,
 				B69E34772322F21000A4477E /* BusinessSpec.swift in Sources */,
 				B69E347F2322F21400A4477E /* YelpRoutesSpec.swift in Sources */,
+				5701EC6F23623827004A4EAA /* MainCoordinatorSpec.swift in Sources */,
 				B69E346E2322F1F700A4477E /* BusinessesModelSpec.swift in Sources */,
 				B69E347C2322F21000A4477E /* CoordinateSpec.swift in Sources */,
 				B69E346F2322F1FC00A4477E /* MockMapModelDelegate.swift in Sources */,

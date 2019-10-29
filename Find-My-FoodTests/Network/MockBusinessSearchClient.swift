@@ -1,16 +1,27 @@
+import Foundation
+
 @testable import Find_My_Food
 
 final class MockBusinessSearchClient: BusinessSearchClientInterface {
-	final class Stub {
+    
+    final class Stub {
+        var imageCallCount: Int { return imageCalledWith.count }
+        var imageCalledWith = [(urlString: String, completion: (Data?) -> Void)]()
+        var imageShouldCompleteWith: Data? = Data(base64Encoded: "empty")
         var searchCallCount: Int { return searchCalledWith.count }
         var searchCalledWith = [(business: String, latitude: Double, longitude: Double, completion: ([Business]) -> Void)]()
-        var searchShouldReturn: [Business] = []
-	}
+        var searchShouldCompleteWith: [Business] = []
+    }
 
-	var stub = Stub()
+    var stub = Stub()
 
+    func image(at urlString: String, completion: @escaping (Data?) -> Void) {
+        stub.imageCalledWith.append((urlString: urlString, completion: completion))
+        completion(stub.imageShouldCompleteWith)
+    }
+    
 	func search(for business: String, latitude: Double, longitude: Double, completion: @escaping ([Business]) -> Void) {
 		stub.searchCalledWith.append((business, latitude, longitude, completion))
-        completion(stub.searchShouldReturn)
+        completion(stub.searchShouldCompleteWith)
 	}
 }

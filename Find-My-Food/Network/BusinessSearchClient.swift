@@ -2,6 +2,7 @@ import Foundation
 
 protocol BusinessSearchClientInterface {
     func search(for business: String, latitude: Double, longitude: Double, completion: @escaping ([Business]) -> Void)
+    func image(at urlString: String, completion: @escaping (Data?) -> Void)
 }
 
 final class BusinessSearchClient: BusinessSearchClientInterface {
@@ -33,8 +34,26 @@ final class BusinessSearchClient: BusinessSearchClientInterface {
                 let businesses = self.decodeBusinesses(data)
                 completion(businesses)
             case .failure(let error):
-                print("Error occurred in BaseServiceClient: \(error.localizedDescription)")
+                print("Error occurred searching for businesses: \(error.localizedDescription)")
                 completion([])
+            }
+        }
+    }
+    
+    func image(at urlString: String, completion: @escaping (Data?) -> Void) {
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL string for downloading image")
+            completion(nil)
+            return
+        }
+        
+        serviceClient.get(from: url, queryParams: [:], headers: [:]) { result in
+            switch result {
+            case .success(let data):
+                completion(data)
+            case .failure(let error):
+                print("Error occurred downloading image: \(error.localizedDescription)")
+                completion(nil)
             }
         }
     }

@@ -1,9 +1,9 @@
 import UIKit
 
-final class BusinessesViewController: UIViewController {
+final class BusinessesViewController: UIViewController, Storyboarded {
 	private var businessesView: BusinessesView { return self.view as! BusinessesView } //swiftlint:disable:this force_cast
 	private var model: BusinessModelInterface!
-	var businesses: [Business] = []
+    weak var coordinator: MainCoordinator?
 	
 	override func viewDidLoad() {
 		businessesView.delegate = self
@@ -15,10 +15,32 @@ final class BusinessesViewController: UIViewController {
 	}
 }
 
+extension BusinessesViewController: BusinessesModelDelegate {
+    func dataDidUpdate() {
+        self.businessesView.dataDidUpdate()
+    }
+}
+
 extension BusinessesViewController: BusinessesViewDelegate {
 	func business(for row: Int) -> Business? {
 		return model.business(for: row)
 	}
+    
+    func businessSelected(at index: Int) {
+        guard let business = business(for: index) else { return }
+        
+        coordinator?.businessSelected(business)
+    }
+    
+    func image(for business: Business) {
+        model.image(for: business)
+    }
+    
+    func randomizeButtonTapped() {
+        guard let business = model.randomBusiness() else { return }
+        
+        coordinator?.businessSelected(business)
+    }
 	
 	var businessCount: Int {
 		return model.businessCount

@@ -3,10 +3,19 @@ import Nimble
 
 @testable import Find_My_Food
 
-final class BusinessModelSpec: QuickSpec {
+final class BusinessesModelSpec: QuickSpec {
     override func spec() {
-        let businesses = TestData.businessesFromJson()
-        let testObject = BusinessesModel(businesses: businesses)
+        var testObject: BusinessesModel!
+        var businesses: [Business]!
+        var mockBusinessSearchClient: MockBusinessSearchClient!
+        var mockDelegate: MockBusinessesModelDelegate!
+        
+        beforeEach {
+            businesses = TestData.businessesFromJson()
+            mockBusinessSearchClient = MockBusinessSearchClient()
+            mockDelegate = MockBusinessesModelDelegate()
+            testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+        }
         
         // MARK: - businessCount: Int
         describe("businessCount: Int") {
@@ -28,6 +37,39 @@ final class BusinessModelSpec: QuickSpec {
                 it("returns nil") {
                     expect(testObject.business(for: 1000000)).to(beNil())
                     expect(testObject.business(for: -1)).to(beNil())
+                }
+            }
+        }
+        
+        // MARK: - func image(for business: Business)
+        describe("image(for business: Business") {
+            context("given data returns from image search") {
+                it("calls dataDidUpdate on the delegate")  {
+                    
+                }
+            }
+            
+            context("given no data returns from image search") {
+                it("does not call dataDidUpdate on the delegate") {
+                    
+                }
+            }
+        }
+        
+        // MARK: - randomBusiness() -> Business?
+        describe("randomBusiness()") {
+            context("given businesses is not empty") {
+                it("returns a business") {
+                    expect(testObject.randomBusiness()).toNot(beNil())
+                    expect(testObject.randomBusiness()).to(beAKindOf(Business.self))
+                }
+            }
+            
+            context("given businesses is not empty") {
+                it("returns nil") {
+                    let emptyTestObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+                    
+                    expect(emptyTestObject.randomBusiness()).to(beNil())
                 }
             }
         }

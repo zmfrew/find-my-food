@@ -2,21 +2,34 @@ import UIKit
 
 protocol BusinessesViewDelegate: class {
 	func business(for row: Int) -> Business?
+    func businessSelected(at index: Int)
+    func image(for business: Business)
+    func randomizeButtonTapped()
     var businessCount: Int { get }
 }
 
 final class BusinessesView: UIView {
 	@IBOutlet private weak var resultsCountLabel: UILabel!
 	@IBOutlet private weak var tableView: UITableView!
-	weak var delegate: BusinessesViewDelegate?
+    @IBOutlet private weak var randomizeButton: UIButton!
+    weak var delegate: BusinessesViewDelegate?
 	
 	override func awakeFromNib() {
         tableView.dataSource = self
         tableView.delegate = self
+        // TODO: - Shape this button, change the color, and add gesture recognizer to move it around the screen.
+        randomizeButton.layer.cornerRadius = 12
 	}
+    @IBAction func randomizeButtonTapped(_ sender: UIButton) {
+        delegate?.randomizeButtonTapped()
+    }
 }
 
 extension BusinessesView {
+    func dataDidUpdate() {
+        self.tableView.reloadData()
+    }
+    
     func updateResultsCount(_ results: Int) {
         resultsCountLabel.text = "\(results) results found"
     }
@@ -32,14 +45,16 @@ extension BusinessesView: UITableViewDataSource {
 			let business = delegate?.business(for: indexPath.row)
 		else { return UITableViewCell() }
 		
-		cell.decorateView(with: business.name)
-		
+        let address = business.location.displayAddress.joined(separator: " ")
+        
+        cell.decorateView(with: business.name, address: address, rating: business.rating, image: business.image)
+        
 		return cell
 	}
 }
 
 extension BusinessesView: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		// TODO: - Allow more info about business and favorite option.
+        delegate?.businessSelected(at: indexPath.row)
 	}
 }

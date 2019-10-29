@@ -6,12 +6,11 @@ protocol MapViewDelegate: class {
     func locationServicesDisabled()
     func searchButtonTapped()
 }
-// TODO: - Update use of activity indicator to custom animation.
+
 final class MapView: UIView {
     @IBOutlet private weak var map: MKMapView!
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var containerView: UIView!
-    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
     weak var delegate: MapViewDelegate?
     
     override func awakeFromNib() {
@@ -28,7 +27,6 @@ final class MapView: UIView {
         
         delegate?.searchButtonTapped()
         containerView.isHidden = false
-        setupActivityIndicator()
     }
 }
 
@@ -37,28 +35,11 @@ extension MapView {
         containerView.isHidden = !containerView.isHidden
     }
     
-    private func setupActivityIndicator() {
-        activityIndicator.center = self.center
-        activityIndicator.color = .gray
-        self.addSubview(activityIndicator)
-    }
-    
     func setRegion() {
         if let location = delegate?.location?.coordinate {
             let viewRegion = MKCoordinateRegion(center: location, latitudinalMeters: 200, longitudinalMeters: 200)
             map.setRegion(viewRegion, animated: false)
         }
-    }
-}
-
-extension MapView {
-    func downloadDidBegin() {
-        containerView.isHidden = true
-        activityIndicator.startAnimating()
-    }
-    
-    func downloadDidEnd() {
-        activityIndicator.stopAnimating()
     }
 }
 

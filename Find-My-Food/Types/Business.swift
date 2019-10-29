@@ -1,8 +1,11 @@
+import UIKit
+
 struct Business {
     let id: String
     let alias: String
     let name: String
     let imageUrlString: String
+    var image: UIImage?
     let isClosed: Bool
     let urlString: String
     let reviewCount: Int
@@ -52,6 +55,45 @@ extension Business: Equatable {
             lhs.phone == rhs.phone &&
             lhs.displayPhone == rhs.displayPhone &&
             lhs.distance == rhs.distance
+    }
+}
+
+extension Business {
+    func copy(id: String? = nil,
+              alias: String? = nil,
+              name: String? = nil,
+              imageUrlString: String? = nil,
+              image: UIImage? = nil,
+              isClosed: Bool? = nil,
+              urlString: String? = nil,
+              reviewCount: Int? = nil,
+              categories: [Category]? = nil,
+              rating: Double? = nil,
+              coordinates: Coordinate? = nil,
+              transactions: [String]? = nil,
+              priceLevel: String? = nil,
+              location: Location? = nil,
+              phone: String? = nil,
+              displayPhone: String? = nil,
+              distance: Double? = nil) -> Business {
+        
+        return Business(id: id ?? self.id,
+                        alias: alias ?? self.alias,
+                        name: name ?? self.name,
+                        imageUrlString: imageUrlString ?? self.imageUrlString,
+                        image: image ?? self.image,
+                        isClosed: isClosed ?? self.isClosed,
+                        urlString: urlString ?? self.urlString,
+                        reviewCount: reviewCount ?? self.reviewCount,
+                        categories: categories ?? self.categories,
+                        rating: rating ?? self.rating,
+                        coordinates: coordinates ?? self.coordinates,
+                        transactions: transactions ?? self.transactions,
+                        priceLevel: priceLevel ?? self.priceLevel,
+                        location: location ?? self.location,
+                        phone: phone ?? self.phone,
+                        displayPhone: displayPhone ?? self.displayPhone,
+                        distance: distance ?? self.distance)
     }
 }
 
