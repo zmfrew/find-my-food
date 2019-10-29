@@ -7,14 +7,16 @@ protocol MapModelDelegate: class {
 }
 
 final class MapModel {
-    private let geocoder = GeocoderWrapper()
-    private let locationManager = LocationManagerWrapper()
+    private let geocoder: GeocoderInterface!
+    private let locationManager: LocationManagerInterface!
     private weak var delegate: MapModelDelegate?
 
     var location: CLLocation? { return locationManager.location }
     
-    init(delegate: MapModelDelegate) {
+    init(delegate: MapModelDelegate, geocoder: GeocoderInterface, locationManager: LocationManagerInterface) {
         self.delegate = delegate
+        self.geocoder = geocoder
+        self.locationManager = locationManager
         
         configure()
     }
@@ -26,8 +28,11 @@ final class MapModel {
     
     func geocode(_ address: String) {
         geocoder.geocodeAddressString(address) { (placemarks, error) in
-            guard let placemarks = placemarks?.compactMap(MKPlacemark.init) else {
-                print("Error occurred geocoding: \(error!.localizedDescription)")
+            guard let placemarks = placemarks?.compactMap(MKPlacemark.init),
+                placemarks.isNotEmpty else {
+                if let error = error {
+                    print("Error occurred geocoding: \(error.localizedDescription)")
+                }
                 return
             }
             

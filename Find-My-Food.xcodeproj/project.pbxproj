@@ -13,6 +13,8 @@
 		579C21A52368B9110015D0BE /* GeocoderInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A42368B9110015D0BE /* GeocoderInterface.swift */; };
 		579C21A72368B91F0015D0BE /* LocationManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */; };
 		579C21A92368B92A0015D0BE /* LocationManagerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A82368B92A0015D0BE /* LocationManagerWrapper.swift */; };
+		579C21AB2368C9310015D0BE /* MockGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21AA2368C9310015D0BE /* MockGeocoder.swift */; };
+		579C21AD2368CAA40015D0BE /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21AC2368CAA40015D0BE /* MockLocationManager.swift */; };
 		57DCCA402357722E00CEA8DE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA3F2357722E00CEA8DE /* Secret.swift */; };
 		57DCCA672358EE6F00CEA8DE /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */; };
 		57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */; };
@@ -90,6 +92,8 @@
 		579C21A42368B9110015D0BE /* GeocoderInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderInterface.swift; sourceTree = "<group>"; };
 		579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerInterface.swift; sourceTree = "<group>"; };
 		579C21A82368B92A0015D0BE /* LocationManagerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerWrapper.swift; sourceTree = "<group>"; };
+		579C21AA2368C9310015D0BE /* MockGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeocoder.swift; sourceTree = "<group>"; };
+		579C21AC2368CAA40015D0BE /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
 		57DCCA3F2357722E00CEA8DE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
 		57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
@@ -348,6 +352,8 @@
 			children = (
 				B69E33CA2322912F00A4477E /* MockMapModelDelegate.swift */,
 				B69E33CB2322912F00A4477E /* MapModelSpec.swift */,
+				579C21AC2368CAA40015D0BE /* MockLocationManager.swift */,
+				579C21AA2368C9310015D0BE /* MockGeocoder.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -649,6 +655,8 @@
 				57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */,
 				B69E34822322F21400A4477E /* MockURLSession.swift in Sources */,
 				B69E34772322F21000A4477E /* BusinessSpec.swift in Sources */,
+				579C21AB2368C9310015D0BE /* MockGeocoder.swift in Sources */,
+				579C21AD2368CAA40015D0BE /* MockLocationManager.swift in Sources */,
 				B69E347F2322F21400A4477E /* YelpRoutesSpec.swift in Sources */,
 				5701EC6F23623827004A4EAA /* MainCoordinatorSpec.swift in Sources */,
 				B69E346E2322F1F700A4477E /* BusinessesModelSpec.swift in Sources */,

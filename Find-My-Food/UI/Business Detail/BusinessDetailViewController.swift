@@ -7,7 +7,6 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
 
     func configure(with business: Business) {
-        // TODO: - Make network call for businesses' images as they're loaded and inject here
         detailView.configure(with: business)
         title = business.name
         self.business = business

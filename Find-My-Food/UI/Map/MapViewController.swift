@@ -10,7 +10,7 @@ final class MapViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        model = MapModel(delegate: self)
+        model = MapModel(delegate: self, geocoder: GeocoderWrapper(), locationManager: LocationManagerWrapper())
         mapView.delegate = self
         
         if let businessSearchVC = children.first(where: { $0 is BusinessSearchViewController}) as? BusinessSearchViewController {
