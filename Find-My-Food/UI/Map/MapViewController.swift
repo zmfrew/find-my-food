@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import MapKit
 // TODO: - Use local cache if the search params are the same.
 final class MapViewController: UIViewController, Storyboarded {
     private var model: MapModel!
@@ -30,6 +31,12 @@ extension MapViewController {
         mapView.hideSearchButton()
     }
     
+    func setBusinessLocation(_ address: String) {
+        model.geocode(address)
+    }
+}
+    
+extension MapViewController {
     private func presentLocationAlert(title: String, message: String, enableSettingsLink: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive))
@@ -49,6 +56,10 @@ extension MapViewController {
 extension MapViewController: MapModelDelegate {
     func presentLocationDisabledAlert(title: String, message: String, enableSettingsLink: Bool) {
         presentLocationAlert(title: title, message: message, enableSettingsLink: enableSettingsLink)
+    }
+    
+    func set(_ placemarks: [MKPlacemark]) {
+        mapView.set(placemarks)
     }
 }
 

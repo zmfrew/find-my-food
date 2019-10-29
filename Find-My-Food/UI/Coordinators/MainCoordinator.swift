@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 final class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
@@ -40,10 +41,11 @@ final class MainCoordinator: Coordinator {
         businessSearchVC.downloadDidEnd()
     }
     
-    func locationButtonTapped() {
+    func locationButtonTapped(_ business: Business) {
         let vc = MapViewController.instantiate()
         vc.coordinator = self
         vc.hideSearchButton()
+        vc.setBusinessLocation(business.location.displayAddress.joined(separator: ", "))
         navigationController.pushViewController(vc, animated: false)
     }
     

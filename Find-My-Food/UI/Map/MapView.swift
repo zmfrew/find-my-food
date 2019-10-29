@@ -36,6 +36,10 @@ extension MapView {
         searchButton.isHidden = true
     }
     
+    func set(_ placemarks: [MKPlacemark]) {
+        self.map.addAnnotations(placemarks)
+    }
+    
     func setRegion() {
         if let location = delegate?.location?.coordinate {
             let viewRegion = MKCoordinateRegion(center: location, latitudinalMeters: 200, longitudinalMeters: 200)

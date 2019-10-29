@@ -3,10 +3,12 @@ import CoreLocation
 
 protocol MapModelDelegate: class {
     func presentLocationDisabledAlert(title: String, message: String, enableSettingsLink: Bool)
+    func set(_ placemarks: [MKPlacemark])
 }
 
 final class MapModel {
-    private let locationManager = CLLocationManager()
+    private let geocoder = GeocoderWrapper()
+    private let locationManager = LocationManagerWrapper()
     private weak var delegate: MapModelDelegate?
 
     var location: CLLocation? { return locationManager.location }
@@ -20,6 +22,17 @@ final class MapModel {
     private func configure() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    func geocode(_ address: String) {
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            guard let placemarks = placemarks?.compactMap(MKPlacemark.init) else {
+                print("Error occurred geocoding: \(error!.localizedDescription)")
+                return
+            }
+            
+            self.delegate?.set(placemarks)
+        }
     }
     
     func locationServicesDisabled() {
