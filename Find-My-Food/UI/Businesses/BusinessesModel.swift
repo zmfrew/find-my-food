@@ -16,6 +16,7 @@ final class BusinessesModel: BusinessModelInterface {
         didSet {
             DispatchQueue.main.async {
                 self.delegate?.dataDidUpdate()
+                print("data updated")
             }
         }
     }
@@ -39,7 +40,7 @@ final class BusinessesModel: BusinessModelInterface {
     func randomBusiness() -> Business? {
         return businesses.randomElement()
     }
-    // TODO: - Write tests for image(for business:)
+    
     func image(for business: Business) {
         DispatchQueue.global(qos: .userInitiated).async {
             self.businessSearchClient.image(at: business.imageUrlString) { [weak self] data in
@@ -51,8 +52,7 @@ final class BusinessesModel: BusinessModelInterface {
                     let newBusiness = business.copy(image: image)
                     
                     let index = self.businesses.firstIndex(of: business)!
-                    self.businesses.remove(at: index)
-                    self.businesses.insert(newBusiness, at: index)
+                    self.businesses[index] = newBusiness
                 }
             }
         }

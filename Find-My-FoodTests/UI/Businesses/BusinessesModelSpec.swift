@@ -17,6 +17,17 @@ final class BusinessesModelSpec: QuickSpec {
             testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
         }
         
+        // MARK: - init()
+        describe("init") {
+            context("given images are not downloaded yet") {
+                it("does not call dataDidUpdate after setting businesses") {
+                    testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+                    
+                    expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(0))
+                }
+            }
+        }
+        
         // MARK: - businessCount: Int
         describe("businessCount: Int") {
             it("returns correct number of businesses") {
@@ -45,7 +56,12 @@ final class BusinessesModelSpec: QuickSpec {
         describe("image(for business: Business") {
             context("given data returns from image search") {
                 it("calls dataDidUpdate on the delegate")  {
+                    let image = UIImage(named: "US", in: Bundle(for: BusinessesModelSpec.self), with: nil)
+                    mockBusinessSearchClient.stub.imageShouldCompleteWith = image?.jpegData(compressionQuality: 0.8)
                     
+                    testObject.image(for: businesses.first!)
+                    
+                    expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(1))
                 }
             }
             

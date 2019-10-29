@@ -6,7 +6,7 @@ final class MockBusinessSearchClient: BusinessSearchClientInterface {
     
     final class Stub {
         var imageCallCount: Int { return imageCalledWith.count }
-        var imageCalledWith = [(urlString: String, completion: (Data?) -> Void)]()
+        var imageCalledWith = [String]()
         var imageShouldCompleteWith: Data? = Data(base64Encoded: "empty")
         var searchCallCount: Int { return searchCalledWith.count }
         var searchCalledWith = [(business: String, latitude: Double, longitude: Double, completion: ([Business]) -> Void)]()
@@ -16,7 +16,7 @@ final class MockBusinessSearchClient: BusinessSearchClientInterface {
     var stub = Stub()
 
     func image(at urlString: String, completion: @escaping (Data?) -> Void) {
-        stub.imageCalledWith.append((urlString: urlString, completion: completion))
+        stub.imageCalledWith.append(urlString)
         completion(stub.imageShouldCompleteWith)
     }
     

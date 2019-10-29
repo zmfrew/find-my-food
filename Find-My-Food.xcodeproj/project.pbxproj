@@ -15,6 +15,7 @@
 		579C21A92368B92A0015D0BE /* LocationManagerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A82368B92A0015D0BE /* LocationManagerWrapper.swift */; };
 		579C21AB2368C9310015D0BE /* MockGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21AA2368C9310015D0BE /* MockGeocoder.swift */; };
 		579C21AD2368CAA40015D0BE /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21AC2368CAA40015D0BE /* MockLocationManager.swift */; };
+		579C21B12368D7400015D0BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579C21B02368D7400015D0BE /* Assets.xcassets */; };
 		57DCCA402357722E00CEA8DE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA3F2357722E00CEA8DE /* Secret.swift */; };
 		57DCCA672358EE6F00CEA8DE /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */; };
 		57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */; };
@@ -94,6 +95,7 @@
 		579C21A82368B92A0015D0BE /* LocationManagerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerWrapper.swift; sourceTree = "<group>"; };
 		579C21AA2368C9310015D0BE /* MockGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGeocoder.swift; sourceTree = "<group>"; };
 		579C21AC2368CAA40015D0BE /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
+		579C21B02368D7400015D0BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57DCCA3F2357722E00CEA8DE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
 		57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				B69E33DD2322912F00A4477E /* TestData.swift */,
 				B69E33DE2322912F00A4477E /* Network */,
 				B69E33E52322912F00A4477E /* Extensions */,
+				579C21B02368D7400015D0BE /* Assets.xcassets */,
 			);
 			path = "Find-My-FoodTests";
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				B69E347B2322F21000A4477E /* MockCoordinate.json in Resources */,
 				B69E347A2322F21000A4477E /* MockBusinesses.json in Resources */,
 				B69E34762322F21000A4477E /* MockResponse.json in Resources */,
+				579C21B12368D7400015D0BE /* Assets.xcassets in Resources */,
 				B69E34742322F20500A4477E /* IncompleteMockBusiness.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
