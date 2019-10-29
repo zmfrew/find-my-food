@@ -51,7 +51,7 @@ final class MainCoordinatorSpec: QuickSpec {
                 
                 let businessesVC = testObject.navigationController.viewControllers.first(where: { $0 is BusinessesViewController}) as! BusinessesViewController
                 let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
-                let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient, networkIndicator: UIApplication.shared)
+                let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient)
                 let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, delegate: businessesVC)
                
                 expect(businessesModel.delegate).to(be(businessesVC))

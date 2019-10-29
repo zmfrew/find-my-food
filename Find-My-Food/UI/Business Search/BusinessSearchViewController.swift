@@ -21,7 +21,7 @@ final class BusinessSearchViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         // TOOD: - Move BaseServiceClient's into an AppSession of some sort.
         let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
-		let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient, networkIndicator: UIApplication.shared)
+		let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient)
 		model = BusinessSearchModel(businessSearchClient: businessSearchClient, delegate: self)
 		
 		searchView.delegate = self
@@ -31,10 +31,19 @@ final class BusinessSearchViewController: UIViewController, Storyboarded {
         self.latitude = latitude
         self.longitude = longitude
     }
+    
+    func hideView() {
+        searchView.isHidden = true
+    }
 }
 
 extension BusinessSearchViewController: BusinessSearchModelDelegate {
+    func downloadDidBegin() {
+        searchView.downloadDidBegin()
+    }
+    
     func downloadDidEnd() {
+        searchView.downloadDidEnd()
         coordinator?.dismiss()
         delegate?.downloadCompleted(with: model.businesses)
     }

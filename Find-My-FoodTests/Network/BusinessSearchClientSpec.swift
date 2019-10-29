@@ -7,12 +7,10 @@ final class BusinessSearchClientSpec: QuickSpec {
     override func spec() {
         var testObject: BusinessSearchClient!
         var mockServiceClient: MockServiceClient!
-		var mockNetworkIndicator: MockNetworkIndicator!
         
         beforeEach {
             mockServiceClient = MockServiceClient()
-			mockNetworkIndicator = MockNetworkIndicator()
-			testObject = BusinessSearchClient(serviceClient: mockServiceClient, networkIndicator: mockNetworkIndicator)
+			testObject = BusinessSearchClient(serviceClient: mockServiceClient)
         }
         
         // MARK: - search(for business: String, completion: @escaping ([Business]) -> Void)
@@ -40,8 +38,6 @@ final class BusinessSearchClientSpec: QuickSpec {
                         expect(url).to(equal(YelpRoutes.businessSearch))
                         expect(queryParams).to(equal(expectedQueryParams))
                         expect(headers).to(equal(expectedHeaders))
-						expect(mockNetworkIndicator.stub.activityDidBeginCallCount).to(equal(1))
-						expect(mockNetworkIndicator.stub.activityDidEndCallCount).to(equal(1))
                     }
                 }
             }
@@ -66,8 +62,6 @@ final class BusinessSearchClientSpec: QuickSpec {
                         expect(url).to(equal(YelpRoutes.businessSearch))
                         expect(queryParams).to(equal(expectedQueryParams))
                         expect(headers).to(equal(expectedHeaders))
-						expect(mockNetworkIndicator.stub.activityDidBeginCallCount).to(equal(1))
-						expect(mockNetworkIndicator.stub.activityDidEndCallCount).to(equal(1))
                     }
                 }
             }

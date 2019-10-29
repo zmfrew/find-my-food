@@ -22,10 +22,29 @@ final class MainCoordinator: Coordinator {
         let vc = BusinessesViewController.instantiate()
         vc.coordinator = self
         let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
-        let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient, networkIndicator: UIApplication.shared)
+        let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient)
         let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, delegate: vc)
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func downloadDidBegin() {
+        guard let businessSearchVC = navigationController.presentedViewController as? BusinessSearchViewController else { return }
+        
+        businessSearchVC.downloadDidBegin()
+    }
+    
+    func downloadDidEnd() {
+        guard let businessSearchVC = navigationController.presentedViewController as? BusinessSearchViewController else { return }
+        
+        businessSearchVC.downloadDidEnd()
+    }
+    
+    func locationButtonTapped() {
+        let vc = MapViewController.instantiate()
+        vc.coordinator = self
+        vc.hideSearchButton()
+        navigationController.pushViewController(vc, animated: false)
     }
     
     func pop(_ animated: Bool = true) {

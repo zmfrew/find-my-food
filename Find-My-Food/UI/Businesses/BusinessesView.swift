@@ -17,7 +17,7 @@ final class BusinessesView: UIView {
 	override func awakeFromNib() {
         tableView.dataSource = self
         tableView.delegate = self
-        // TODO: - Shape this button, change the color, and add gesture recognizer to move it around the screen.
+        // TODO: - Shape this button, change the color, update the text, and add gesture recognizer to move it around the screen.
         randomizeButton.layer.cornerRadius = 12
 	}
     @IBAction func randomizeButtonTapped(_ sender: UIButton) {

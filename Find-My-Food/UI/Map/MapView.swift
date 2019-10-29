@@ -11,6 +11,7 @@ final class MapView: UIView {
     @IBOutlet private weak var map: MKMapView!
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var containerView: UIView!
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
     weak var delegate: MapViewDelegate?
     
     override func awakeFromNib() {
@@ -19,7 +20,7 @@ final class MapView: UIView {
         map.showsUserLocation = true
     }
         
-    @IBAction func searchButtonTapped(_ sender: Any) {
+    @IBAction private func searchButtonTapped(_ sender: Any) {
         guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
             delegate?.locationServicesDisabled()
             return
@@ -31,8 +32,8 @@ final class MapView: UIView {
 }
 
 extension MapView {
-    func toggleContainerView() {
-        containerView.isHidden = !containerView.isHidden
+    func hideSearchButton() {
+        searchButton.isHidden = true
     }
     
     func setRegion() {
@@ -40,6 +41,10 @@ extension MapView {
             let viewRegion = MKCoordinateRegion(center: location, latitudinalMeters: 200, longitudinalMeters: 200)
             map.setRegion(viewRegion, animated: false)
         }
+    }
+    
+    func toggleContainerView() {
+        containerView.isHidden = !containerView.isHidden
     }
 }
 

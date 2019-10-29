@@ -7,11 +7,9 @@ protocol BusinessSearchClientInterface {
 
 final class BusinessSearchClient: BusinessSearchClientInterface {
     private let serviceClient: ServiceClientInterface
-	private let networkIndicator: NetworkInterface
     
-	init(serviceClient: ServiceClientInterface, networkIndicator: NetworkInterface) {
+	init(serviceClient: ServiceClientInterface) {
         self.serviceClient = serviceClient
-		self.networkIndicator = networkIndicator
     }
     
     func search(for business: String, latitude: Double, longitude: Double, completion: @escaping ([Business]) -> Void) {
@@ -25,10 +23,6 @@ final class BusinessSearchClient: BusinessSearchClientInterface {
         let headers = ["Authorization": "Bearer \(Secret.apiKey)"]
         
         serviceClient.get(from: YelpRoutes.businessSearch, queryParams: queryParams, headers: headers) { result in
-			defer { self.networkIndicator.activityDidEnd() }
-			
-			self.networkIndicator.activityDidBegin()
-			
             switch result {
             case .success(let data):
                 let businesses = self.decodeBusinesses(data)

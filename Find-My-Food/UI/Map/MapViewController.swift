@@ -26,6 +26,10 @@ final class MapViewController: UIViewController, Storyboarded {
 }
 
 extension MapViewController {
+    func hideSearchButton() {
+        mapView.hideSearchButton()
+    }
+    
     private func presentLocationAlert(title: String, message: String, enableSettingsLink: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .destructive))
