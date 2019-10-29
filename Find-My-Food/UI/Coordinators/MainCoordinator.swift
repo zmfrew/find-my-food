@@ -23,7 +23,6 @@ final class MainCoordinator: Coordinator {
         vc.coordinator = self
         let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
         let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient, networkIndicator: UIApplication.shared)
-        // TODO: - Test this portion
         let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, delegate: vc)
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
