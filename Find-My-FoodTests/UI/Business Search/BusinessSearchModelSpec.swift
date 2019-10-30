@@ -15,7 +15,7 @@ final class BusinessSearchModelSpec: QuickSpec {
             testObject = BusinessSearchModel(businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
         }
         
-        // MARK: - search(for business: String)
+        // MARK: - func search(for business: String)
         describe("search(for business:)") {
             context("given businessSearchClient returns businesses") {
                 it("sets businesses") {

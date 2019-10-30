@@ -16,7 +16,7 @@ final class MainCoordinatorSpec: QuickSpec {
             window.makeKeyAndVisible()
         }
         
-        // MARK: - businessSelected(_ business: Business)
+        // MARK: - func businessSelected(_ business: Business)
         describe("businessSelected(_ business: Business)") {
             it("pushes a BusinessDetailViewController on the navigation stack") {
                 let business = TestData.businessesFromJson().first!
@@ -30,7 +30,7 @@ final class MainCoordinatorSpec: QuickSpec {
             }
         }
         
-        // MARK: - dismiss()
+        // MARK: - func dismiss()
         describe("dismiss") {
             it("dismisses a modal presentation from the navigation stack") {
                 let vc = UIViewController()
@@ -42,7 +42,7 @@ final class MainCoordinatorSpec: QuickSpec {
             }
         }
         
-        // MARK: - downloadCompleted(with businesses: [Business])
+        // MARK: - func downloadCompleted(with businesses: [Business])
         describe("downloadCompleted(with businesses: [Business])") {
             it("pushes a BusinessesViewController on the navigation stack and sets the coordinator") {
                 let businesses = TestData.businessesFromJson()
@@ -60,7 +60,7 @@ final class MainCoordinatorSpec: QuickSpec {
             }
         }
         
-        // MARK: - pop()
+        // MARK: - func pop()
         describe("pop()") {
             it("pops the top view controller off the navigation stack and sets the coordinator") {
                 let vc1 = BusinessDetailViewController()
@@ -76,7 +76,7 @@ final class MainCoordinatorSpec: QuickSpec {
             }
         }
         
-        // MARK: - searchButtonTapped(latitude: Double, longitude: Double)
+        // MARK: - func searchButtonTapped(latitude: Double, longitude: Double)
         describe("searchButtonTapped(latitude: Double, longitude: Double)") {
             context("given a MapViewController is in the navigation hierarchy") {
                 it("pushes a BusinessSearchViewController on the navigation stack, sets the coordinator, and sets the delegate as the MapViewController") {
@@ -104,7 +104,7 @@ final class MainCoordinatorSpec: QuickSpec {
             }
         }
         
-        // MARK: - start()
+        // MARK: - func start()
         describe("start()") {
             it("pushes a MapViewController on the navigation stack and sets the coordinator") {
                 testObject.start()

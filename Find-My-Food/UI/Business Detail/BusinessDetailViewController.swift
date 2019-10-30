@@ -7,7 +7,7 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
 
     func configure(with business: Business) {
-        detailView.configure(with: business)
+        detailView.configure(with: business, delegate: self)
         title = business.name
         self.business = business
     }
@@ -16,5 +16,20 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
         guard let business = business else { return }
         
         coordinator?.locationButtonTapped(business)
+    }
+}
+
+extension BusinessDetailViewController: BusinessDetailViewDelegate {
+    func call(_ phone: String?) {
+        guard let phone = phone?.phoneURL else { return }
+        
+        let alert = UIAlertController(title: "Call \(phone)", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Call", style: .default) { (action) in
+            phone.call()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        self.present(alert, animated: true)
     }
 }

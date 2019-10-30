@@ -21,7 +21,7 @@ final class MapModelSpec: QuickSpec {
             testObject = MapModel(delegate: mockDelegate, geocoder: mockGeocoder, locationManager: mockLocationManager)
         }
         
-        // MARK: - location: CLLocation?
+        // MARK: - var location: CLLocation?
         describe("location: CLLocation?") {
             context("given location manager returns a CLLocation") {
                 it("returns the same CLLocation") {
@@ -41,7 +41,7 @@ final class MapModelSpec: QuickSpec {
             }
         }
         
-        // MARK: - geocode(_ address: String)
+        // MARK: - func geocode(_ address: String)
         describe("geocode(_ address: String") {
             context("given placemarks that init to MKPlacemark") {
                 it("calls set on the delegate") {
@@ -74,7 +74,7 @@ final class MapModelSpec: QuickSpec {
             }
         }
         
-        // MARK: - locationServicesDisabled()
+        // MARK: - func locationServicesDisabled()
         describe("locationServicesDisabled()") {
             it("calls presentLocationDisabledAlert on the delegate") {
                 testObject.locationServicesDisabled()

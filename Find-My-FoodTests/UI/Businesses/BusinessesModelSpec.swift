@@ -28,14 +28,14 @@ final class BusinessesModelSpec: QuickSpec {
             }
         }
         
-        // MARK: - businessCount: Int
+        // MARK: - var businessCount: Int
         describe("businessCount: Int") {
             it("returns correct number of businesses") {
                 expect(testObject.businessCount).to(equal(3))
             }
         }
         
-        // MARK: - business(for row: Int) -> Business?
+        // MARK: - func business(for row: Int) -> Business?
         describe("business(for row: Int) -> Business?") {
             context("given a valid index") {
                 it("returns the expected business") {
@@ -72,7 +72,7 @@ final class BusinessesModelSpec: QuickSpec {
             }
         }
         
-        // MARK: - randomBusiness() -> Business?
+        // MARK: - func randomBusiness() -> Business?
         describe("randomBusiness()") {
             context("given businesses is not empty") {
                 it("returns a business") {

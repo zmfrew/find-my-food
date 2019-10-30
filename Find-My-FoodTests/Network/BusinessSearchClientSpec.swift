@@ -13,7 +13,7 @@ final class BusinessSearchClientSpec: QuickSpec {
 			testObject = BusinessSearchClient(serviceClient: mockServiceClient)
         }
         
-        // MARK: - search(for business: String, completion: @escaping ([Business]) -> Void)
+        // MARK: - func search(for business: String, completion: @escaping ([Business]) -> Void)
         describe("search(for business: String, completion: @escaping ([Business]) -> Void)") {
             context("given success and data is returned") {
                 it("decodes and returns an array of businesses") {
