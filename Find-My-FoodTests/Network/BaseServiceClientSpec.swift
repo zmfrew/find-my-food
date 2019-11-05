@@ -18,7 +18,7 @@ final class BaseServiceClientSpec: QuickSpec {
             context("given a valid url, queryParams, and headers") {
                 it("returns data") {
                     let url = URL(string: "https://apple.com")!
-                    testObject.get(from: url, queryParams: [:], headers: [:], completion: { result in
+                    testObject.get(from: url, queryParams: [:], headers: [:]) { result in
                         switch result {
                         case .success(let data):
                             let expectedRequest = URLRequest(url: url)
@@ -30,14 +30,14 @@ final class BaseServiceClientSpec: QuickSpec {
                         case .failure:
                             fail("This call should succeed.")
                         }
-                    })
+                    }
                 }
             }
             
             context("given an invalid url") {
                 it("returns an invalidUrl NetworkError") {
                     let url = URL(string: "//apple")!
-                    testObject.get(from: url, queryParams: [:], headers: [:], completion: { result in
+                    testObject.get(from: url, queryParams: [:], headers: [:]) { result in
                         switch result {
                         case .success:
                             fail("This call should not succeed.")
@@ -50,7 +50,7 @@ final class BaseServiceClientSpec: QuickSpec {
                             expect(actualRequest).to(equal(expectedRequest))
                             expect(actualError).to(equal(NetworkError.invalidUrl))
                         }
-                    })
+                    }
                 }
             }
         }

@@ -60,6 +60,19 @@ final class MainCoordinatorSpec: QuickSpec {
             }
         }
         
+        // MARK: - func locationButtonTapped(_ business: Business)
+        describe("locationButtonTapped(_ business: Business)") {
+            it("pushes a MapViewController on the navigation stack and sets the coordinator") {
+                let business = TestData.createBusiness()
+                
+                testObject.locationButtonTapped(business)
+                
+                let mapVC = testObject.navigationController.viewControllers.first(where: { $0 is MapViewController}) as! MapViewController
+                expect(testObject.navigationController.viewControllers).toNot(beEmpty())
+                expect(mapVC.coordinator).to(be(testObject))
+            }
+        }
+        
         // MARK: - func pop()
         describe("pop()") {
             it("pops the top view controller off the navigation stack and sets the coordinator") {
