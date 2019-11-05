@@ -9,14 +9,14 @@ enum NetworkError: Error, Equatable {
     case invalidUrl, invalidQueryParams, apiError, invalidApiResponse
 }
 
-protocol ServiceClientInterface {
+protocol ServiceClientProtocol {
     func get(from url: URL, queryParams: [String: String], headers: [String: String], completion: @escaping (Result<Data, Error>) -> Void)
 }
 
-final class BaseServiceClient: ServiceClientInterface {
-    private let urlSession: URLSessionWrapperInterface
+final class BaseServiceClient: ServiceClientProtocol {
+    private let urlSession: URLSessionWrapperProtocol
     
-    init(urlSession: URLSessionWrapperInterface) {
+    init(urlSession: URLSessionWrapperProtocol) {
         self.urlSession = urlSession
     }
     

@@ -2,7 +2,7 @@ import Foundation
 
 @testable import Find_My_Food
 
-final class MockBusinessSearchClient: BusinessSearchClientInterface {
+final class MockBusinessSearchClient: BusinessSearchClientProtocol {
     
     final class Stub {
         var imageCallCount: Int { imageCalledWith.count }

@@ -8,13 +8,13 @@ protocol MapModelDelegate: class {
 }
 
 final class MapModel {
-    private let geocoder: GeocoderInterface!
-    private let locationManager: LocationManagerInterface!
+    private let geocoder: GeocoderProtocol!
+    private let locationManager: LocationManagerProtocol!
     private weak var delegate: MapModelDelegate?
 
     var location: CLLocation? { locationManager.location }
     
-    init(delegate: MapModelDelegate, geocoder: GeocoderInterface, locationManager: LocationManagerInterface) {
+    init(delegate: MapModelDelegate, geocoder: GeocoderProtocol, locationManager: LocationManagerProtocol) {
         self.delegate = delegate
         self.geocoder = geocoder
         self.locationManager = locationManager

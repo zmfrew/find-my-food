@@ -1,6 +1,6 @@
 import UIKit
 
-protocol BusinessModelInterface {
+protocol BusinessModelProtocol {
     func business(for row: Int) -> Business?
     func image(for business: Business)
     func randomBusiness() -> Business?
@@ -11,7 +11,7 @@ protocol BusinessesModelDelegate: class {
     func dataDidUpdate()
 }
 
-final class BusinessesModel: BusinessModelInterface {
+final class BusinessesModel: BusinessModelProtocol {
     private var businesses: [Business] {
         didSet {
             DispatchQueue.main.async {
@@ -19,12 +19,12 @@ final class BusinessesModel: BusinessModelInterface {
             }
         }
     }
-    private let businessSearchClient: BusinessSearchClientInterface
+    private let businessSearchClient: BusinessSearchClientProtocol
     var businessCount: Int { businesses.count }
     
     weak var delegate: BusinessesModelDelegate?
     
-    init(businesses: [Business], businessSearchClient: BusinessSearchClientInterface, delegate: BusinessesModelDelegate) {
+    init(businesses: [Business], businessSearchClient: BusinessSearchClientProtocol, delegate: BusinessesModelDelegate) {
         self.businesses = businesses
         self.businessSearchClient = businessSearchClient
         self.delegate = delegate

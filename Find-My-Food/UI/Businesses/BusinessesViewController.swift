@@ -2,7 +2,7 @@ import UIKit
 
 final class BusinessesViewController: UIViewController, Storyboarded {
 	private var businessesView: BusinessesView { self.view as! BusinessesView } //swiftlint:disable:this force_cast
-	private var model: BusinessModelInterface!
+	private var model: BusinessModelProtocol!
     weak var coordinator: MainCoordinator?
 	
 	override func viewDidLoad() {
@@ -10,7 +10,7 @@ final class BusinessesViewController: UIViewController, Storyboarded {
         businessesView.updateResultsCount(model.businessCount)
 	}
 	
-	func configure(with model: BusinessModelInterface) {
+	func configure(with model: BusinessModelProtocol) {
 		self.model = model
 	}
 }

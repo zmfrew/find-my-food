@@ -41,5 +41,26 @@ final class StringExtensionSpec: QuickSpec {
                 }
             }
         }
+        
+        // MARK: - var priceToInt: Int?
+        describe("priceToInt: Int?") {
+            context("given $, $$, $$$, or $$$$") {
+                it("returns the number of $'s") {
+                    expect("$".priceToInt).to(equal(1))
+                    expect("$$".priceToInt).to(equal(2))
+                    expect("$$$".priceToInt).to(equal(3))
+                    expect("$$$$".priceToInt).to(equal(4))
+                }
+            }
+            
+            context("anything except $, $$, $$$, $$$$") {
+                it("returns nil") {
+                    expect("$#".priceToInt).to(beNil())
+                    expect("-$".priceToInt).to(beNil())
+                    expect("this".priceToInt).to(beNil())
+                    expect("1".priceToInt).to(beNil())
+                }
+            }
+        }
     }
 }

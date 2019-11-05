@@ -1,8 +1,9 @@
 import Foundation
+//swiftlint:disable function_parameter_count
 
-protocol BusinessSearchModelInterface {
+protocol BusinessSearchModelProtocol {
     var businesses: [Business] { get }
-    func search(for business: String, latitude: Double, longitude: Double)
+    func search(for business: String, latitude: Double, longitude: Double, radius: Int, price: String, openNow: Bool)
 }
 
 protocol BusinessSearchModelDelegate: class {
@@ -10,20 +11,22 @@ protocol BusinessSearchModelDelegate: class {
     func downloadDidEnd()
 }
 
-final class BusinessSearchModel: BusinessSearchModelInterface {
+final class BusinessSearchModel: BusinessSearchModelProtocol {
     private(set) var businesses = [Business]()
-    private let businessSearchClient: BusinessSearchClientInterface
+    private let businessSearchClient: BusinessSearchClientProtocol
     private weak var delegate: BusinessSearchModelDelegate?
     
-    init(businessSearchClient: BusinessSearchClientInterface, delegate: BusinessSearchModelDelegate) {
+    init(businessSearchClient: BusinessSearchClientProtocol, delegate: BusinessSearchModelDelegate) {
         self.businessSearchClient = businessSearchClient
         self.delegate = delegate
     }
     
-    func search(for business: String, latitude: Double, longitude: Double) {
+    func search(for business: String, latitude: Double, longitude: Double, radius: Int, price: String, openNow: Bool) {
+        guard let price = price.priceToInt else { return }
+        
         delegate?.downloadDidBegin()
         DispatchQueue.global(qos: .userInitiated).async {
-            self.businessSearchClient.search(for: business, latitude: latitude, longitude: longitude) { [weak self] businesses in
+            self.businessSearchClient.search(for: business, latitude: latitude, longitude: longitude, radius: radius.milesToMeters, price: price, openNow: openNow) { [weak self] businesses in
                 guard let `self` = self else { return }
                 
                 DispatchQueue.main.async {

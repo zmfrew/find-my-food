@@ -3,7 +3,7 @@ import CoreLocation
 
 @testable import Find_My_Food
 
-final class MockGeocoder: GeocoderInterface {
+final class MockGeocoder: GeocoderProtocol {
     final class Stub {
         var geocodeAddressStringCallCount: Int { geocodeAddressStringCalledWith.count }
         var geocodeAddressStringCalledWith: [(addressString: String, completionHandler: CLGeocodeCompletionHandler)] = []

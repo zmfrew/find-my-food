@@ -1,23 +1,26 @@
 import Foundation
 
-protocol BusinessSearchClientInterface {
-    func search(for business: String, latitude: Double, longitude: Double, completion: @escaping ([Business]) -> Void)
+protocol BusinessSearchClientProtocol {
+    func search(for business: String, latitude: Double, longitude: Double, radius: Int, price: Int, openNow: Bool, completion: @escaping ([Business]) -> Void)
     func image(at urlString: String, completion: @escaping (Data?) -> Void)
 }
 
-final class BusinessSearchClient: BusinessSearchClientInterface {
-    private let serviceClient: ServiceClientInterface
+final class BusinessSearchClient: BusinessSearchClientProtocol {
+    private let serviceClient: ServiceClientProtocol
     
-	init(serviceClient: ServiceClientInterface) {
+	init(serviceClient: ServiceClientProtocol) {
         self.serviceClient = serviceClient
     }
     
-    func search(for business: String, latitude: Double, longitude: Double, completion: @escaping ([Business]) -> Void) {
+    func search(for business: String, latitude: Double, longitude: Double, radius: Int, price: Int, openNow: Bool, completion: @escaping ([Business]) -> Void) {
 		let queryParams = [
             "term": business,
             "latitude": "\(latitude)",
             "longitude": "\(longitude)",
-            "radius": "40000" // This is the widest range given in meters, which is approximately 25 miles.
+            "radius": "\(radius)",
+            "price": "\(price)",
+            "openNow": "\(openNow)"
+            // TODO: - Add location string for people wanting to manually input location
         ]
         
         let headers = ["Authorization": "Bearer \(Secret.apiKey)"]

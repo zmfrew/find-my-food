@@ -2,7 +2,7 @@ import CoreLocation
 
 @testable import Find_My_Food
 
-final class MockLocationManager: LocationManagerInterface {
+final class MockLocationManager: LocationManagerProtocol {
     final class Stub {
         var locationShouldReturn: CLLocation? = nil
         var requestWhenInUseAuthorizationCallCount = 0

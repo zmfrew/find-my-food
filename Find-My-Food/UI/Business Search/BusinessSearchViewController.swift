@@ -9,7 +9,7 @@ extension BusinessSearchViewControllerDelegate {
 }
 
 final class BusinessSearchViewController: UIViewController, Storyboarded {
-    private var model: BusinessSearchModelInterface!
+    private var model: BusinessSearchModelProtocol!
 	private var searchView: BusinessSearchView { view as! BusinessSearchView } //swiftlint:disable:this force_cast
     private var latitude: Double!
     private var longitude: Double!
@@ -50,7 +50,8 @@ extension BusinessSearchViewController: BusinessSearchModelDelegate {
 }
 
 extension BusinessSearchViewController: BusinessSearchViewDelegate {
-    func search(for business: String) {
-        model.search(for: business, latitude: latitude, longitude: longitude)
+    func search(for business: String, radius: Int, price: String, openNow: Bool) {
+        
+        model.search(for: business, latitude: latitude, longitude: longitude, radius: radius, price: price, openNow: openNow)
     }
 }

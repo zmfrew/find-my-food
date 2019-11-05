@@ -2,7 +2,7 @@ import Foundation
 
 @testable import Find_My_Food
 
-final class MockServiceClient: ServiceClientInterface {
+final class MockServiceClient: ServiceClientProtocol {
 	final class Stub {
         var getCallCount: Int { return getCalledWith.count }
 		var getCalledWith = [(url: URL, queryParams: [String: String], headers: [String: String], completion: (Result<Data, Error>) -> Void)]()

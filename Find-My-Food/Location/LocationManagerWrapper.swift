@@ -2,7 +2,7 @@ import CoreLocation
 
 typealias Location = CLLocation
 
-final class LocationManagerWrapper: LocationManagerInterface {
+final class LocationManagerWrapper: LocationManagerProtocol {
     private let locationManager = CLLocationManager()
 
     var location: CLLocation? {
