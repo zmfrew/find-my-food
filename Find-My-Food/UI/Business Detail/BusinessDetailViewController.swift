@@ -20,11 +20,12 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
 }
 
 extension BusinessDetailViewController: BusinessDetailViewDelegate {
-    func call(_ phone: String?) {
-        guard let phone = phone?.phoneURL else { return }
+    func call(_ phone: String?, display: String?) {
+        guard let phone = phone?.phoneURL,
+            let display = display else { return }
         
-        let alert = UIAlertController(title: "Call \(phone)", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Call", style: .default) { (action) in
+        let alert = UIAlertController(title: "Call \(display)", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Call", style: .default) { (_) in
             phone.call()
         })
         

@@ -16,7 +16,6 @@ final class BusinessesModel: BusinessModelInterface {
         didSet {
             DispatchQueue.main.async {
                 self.delegate?.dataDidUpdate()
-                print("data updated")
             }
         }
     }

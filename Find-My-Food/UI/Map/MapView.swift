@@ -18,6 +18,7 @@ final class MapView: UIView {
         containerView.isHidden = true
         searchButton.layer.cornerRadius = searchButton.frame.width / 2
         map.showsUserLocation = true
+        map.delegate = self
     }
         
     @IBAction private func searchButtonTapped(_ sender: Any) {
@@ -37,7 +38,18 @@ extension MapView {
     }
     
     func set(_ placemarks: [MKPlacemark]) {
-        self.map.addAnnotations(placemarks)
+        map.addAnnotations(placemarks)
+        map.showAnnotations(placemarks, animated: true)
+        
+        guard let location = delegate?.location,
+            let maxLatitude = placemarks.max(by: { $0.coordinate.latitude > $1.coordinate.latitude })?.coordinate.latitude,
+            let maxLongitude = placemarks.max(by: { $0.coordinate.longitude > $1.coordinate.longitude })?.coordinate.longitude
+        else { return }
+        
+        let newDistance = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude).distance(from: CLLocation(latitude: maxLatitude, longitude: maxLongitude)) //swiftlint:disable:this line_length
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 2.2 * newDistance, longitudinalMeters: 2.2 * newDistance)
+        let adjustRegion = map.regionThatFits(region)
+        map.setRegion(adjustRegion, animated: true)
     }
     
     func setRegion() {
@@ -58,5 +70,38 @@ extension MapView {
         if touch?.view == self {
             self.resignFirstResponder()
         }
+    }
+}
+
+extension MapView: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let placemark = view.annotation as? MKPlacemark else { return }
+
+        let mapItem = MKMapItem(placemark: placemark)
+
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        mapItem.openInMaps(launchOptions: launchOptions)
+    }
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? MKPlacemark else { return nil }
+
+        let identifier = "marker"
+        var view: MKMarkerAnnotationView
+
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 50, height: 50)))
+            mapsButton.setBackgroundImage(UIImage(named: "car"), for: UIControl.State())
+            mapsButton.setTitle("Driving Directions", for: UIControl.State())
+            view.rightCalloutAccessoryView = mapsButton
+        }
+
+        return view
     }
 }
