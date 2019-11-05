@@ -45,25 +45,49 @@ final class MapModelSpec: QuickSpec {
         describe("fitRegion(to placemarks: [MKPlacemark])") {
             context("given a valid location, maxLatitude, and maxLongitude") {
                 it("calls set with a region on the delegate") {
+                    let expectedLocation = CLLocation(latitude: 10.0, longitude: 10.0)
+                    mockLocationManager.stub.locationShouldReturn = expectedLocation
+                    let expectedPlacemarks = [
+                        MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 100, longitude: 100)),
+                        MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 300, longitude: 300))
+                    ]
                     
+                    testObject.fitRegion(to: expectedPlacemarks)
+                    
+                    let distance = CLLocation(latitude: expectedLocation.coordinate.latitude, longitude: expectedLocation.coordinate.longitude).distance(from: CLLocation(latitude: expectedPlacemarks.max(by: { $0.coordinate.latitude > $1.coordinate.latitude })!.coordinate.latitude, longitude: expectedPlacemarks.max(by: { $0.coordinate.longitude > $1.coordinate.longitude })!.coordinate.longitude))
+                    let region = MKCoordinateRegion(center: expectedLocation.coordinate, latitudinalMeters: 2.2 * distance, longitudinalMeters: 2.2 * distance)
+                    expect(mockDelegate.stub.setRegionCallCount).to(equal(1))
+                    expect(mockDelegate.stub.setRegionCalledWith.first?.center.latitude).to(equal(region.center.latitude))
+                    expect(mockDelegate.stub.setRegionCalledWith.first?.center.longitude).to(equal(region.center.longitude))
+                    expect(mockDelegate.stub.setRegionCalledWith.first?.span.latitudeDelta).to(equal(region.span.latitudeDelta))
+                    expect(mockDelegate.stub.setRegionCalledWith.first?.span.longitudeDelta).to(equal(region.span.longitudeDelta))
                 }
             }
             
             context("given an invalid location") {
                 it("does not call set(region) on the delegate") {
+                    mockLocationManager.stub.locationShouldReturn = nil
+                    let expectedPlacemarks = [
+                        MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 100, longitude: 100)),
+                        MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 300, longitude: 300))
+                    ]
                     
+                    testObject.fitRegion(to: expectedPlacemarks)
+                    
+                    expect(mockDelegate.stub.setRegionCallCount).to(equal(0))
+                    expect(mockDelegate.stub.setRegionCalledWith).to(beEmpty())
                 }
             }
             
-            context("given an invalid maxLatitude") {
+            context("given an invalid maxLatitude and maxLongitude") {
                 it("does not call set(region) on the delegate") {
+                    mockLocationManager.stub.locationShouldReturn = CLLocation(latitude: 10.0, longitude: 10.0)
+                    let expectedPlacemarks = [MKPlacemark]()
                     
-                }
-            }
-            
-            context("given an invalid maxLongitude") {
-                it("does not call set(region) on the delegate") {
+                    testObject.fitRegion(to: expectedPlacemarks)
                     
+                    expect(mockDelegate.stub.setRegionCallCount).to(equal(0))
+                    expect(mockDelegate.stub.setRegionCalledWith).to(beEmpty())
                 }
             }
         }

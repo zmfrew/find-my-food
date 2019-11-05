@@ -23,7 +23,7 @@ final class MockMapModelDelegate: MapModelDelegate {
     }
     
     func set(_ region: MKCoordinateRegion) {
-        
+        stub.setRegionCalledWith.append(region)
     }
 }
 

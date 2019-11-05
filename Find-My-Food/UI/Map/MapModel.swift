@@ -42,12 +42,8 @@ final class MapModel {
     func geocode(_ address: String) {
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             guard let placemarks = placemarks?.compactMap(MKPlacemark.init),
-                placemarks.isNotEmpty else {
-                if let error = error {
-                    print("Error occurred geocoding: \(error.localizedDescription)")
-                }
-                return
-            }
+                placemarks.isNotEmpty,
+                error == nil else { return }
             
             self.delegate?.set(placemarks)
         }
