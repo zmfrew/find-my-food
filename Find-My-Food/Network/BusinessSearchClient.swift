@@ -1,7 +1,14 @@
 import Foundation
+//swiftlint:disable function_parameter_count
 
 protocol BusinessSearchClientProtocol {
-    func search(for business: String, latitude: Double, longitude: Double, radius: Int, price: Int, openNow: Bool, completion: @escaping ([Business]) -> Void)
+    func search(for business: String,
+                latitude: Double,
+                longitude: Double,
+                radius: Int,
+                price: Int,
+                openNow: Bool,
+                completion: @escaping ([Business]) -> Void)
     func image(at urlString: String, completion: @escaping (Data?) -> Void)
 }
 
@@ -12,7 +19,14 @@ final class BusinessSearchClient: BusinessSearchClientProtocol {
         self.serviceClient = serviceClient
     }
     
-    func search(for business: String, latitude: Double, longitude: Double, radius: Int, price: Int, openNow: Bool, completion: @escaping ([Business]) -> Void) {
+    func search(for business: String,
+                latitude: Double,
+                longitude: Double,
+                radius: Int,
+                price: Int,
+                openNow: Bool,
+                completion: @escaping ([Business]) -> Void) {
+        
 		let queryParams = [
             "term": business,
             "latitude": "\(latitude)",
