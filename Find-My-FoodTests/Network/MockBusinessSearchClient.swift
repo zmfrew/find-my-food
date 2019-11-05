@@ -5,12 +5,12 @@ import Foundation
 final class MockBusinessSearchClient: BusinessSearchClientInterface {
     
     final class Stub {
-        var imageCallCount: Int { return imageCalledWith.count }
+        var imageCallCount: Int { imageCalledWith.count }
         var imageCalledWith = [String]()
         var imageShouldCompleteWith: Data? = Data(base64Encoded: "empty")
-        var searchCallCount: Int { return searchCalledWith.count }
+        var searchCallCount: Int { searchCalledWith.count }
         var searchCalledWith = [(business: String, latitude: Double, longitude: Double, completion: ([Business]) -> Void)]()
-        var searchShouldCompleteWith: [Business] = []
+        var searchShouldCompleteWith = [Business]()
     }
 
     var stub = Stub()

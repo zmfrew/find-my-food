@@ -5,7 +5,7 @@ import Foundation
 final class MockUrlSession: URLSessionWrapperInterface {
 	final class Stub {
         var dataTaskCallCount: Int {
-            return dataTaskCalledWith.count
+            dataTaskCalledWith.count
         }
 		var dataTaskCalledWith = [(request: URLRequest, completionHandler: (Data?, URLResponse?, Error?) -> Void)]()
 	}

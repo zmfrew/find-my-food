@@ -20,7 +20,7 @@ final class BusinessesModel: BusinessModelInterface {
         }
     }
     private let businessSearchClient: BusinessSearchClientInterface
-    var businessCount: Int { return businesses.count }
+    var businessCount: Int { businesses.count }
     
     weak var delegate: BusinessesModelDelegate?
     
@@ -33,11 +33,11 @@ final class BusinessesModel: BusinessModelInterface {
     }
     
     func business(for row: Int) -> Business? {
-        return businesses.element(at: row)
+        businesses.element(at: row)
     }
     
     func randomBusiness() -> Business? {
-        return businesses.randomElement()
+        businesses.randomElement()
     }
     
     func image(for business: Business) {

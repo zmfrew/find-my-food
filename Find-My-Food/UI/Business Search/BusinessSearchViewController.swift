@@ -10,7 +10,7 @@ extension BusinessSearchViewControllerDelegate {
 
 final class BusinessSearchViewController: UIViewController, Storyboarded {
     private var model: BusinessSearchModelInterface!
-	private var searchView: BusinessSearchView { return self.view as! BusinessSearchView } //swiftlint:disable:this force_cast
+	private var searchView: BusinessSearchView { view as! BusinessSearchView } //swiftlint:disable:this force_cast
     private var latitude: Double!
     private var longitude: Double!
     

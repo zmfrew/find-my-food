@@ -37,7 +37,7 @@ extension BusinessesView {
 
 extension BusinessesView: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return delegate?.businessCount ?? 0
+		delegate?.businessCount ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

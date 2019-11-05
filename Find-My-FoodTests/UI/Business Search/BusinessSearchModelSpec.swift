@@ -36,7 +36,7 @@ final class BusinessSearchModelSpec: QuickSpec {
             
             context("given businessSearchClient returns an empty array") {
                 it("sets businesses as an empty array") {
-                    let expectedBusinesses: [Business] = []
+                    let expectedBusinesses = [Business]()
                     
                     mockBusinessSearchClient.stub.searchShouldCompleteWith = expectedBusinesses
                     

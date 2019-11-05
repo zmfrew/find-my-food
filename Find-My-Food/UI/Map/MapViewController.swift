@@ -4,7 +4,7 @@ import MapKit
 // TODO: - Use local cache if the search params are the same.
 final class MapViewController: UIViewController, Storyboarded {
     private var model: MapModel!
-    private var mapView: MapView { return view as! MapView } //swiftlint:disable:this force_cast
+    private var mapView: MapView { view as! MapView } //swiftlint:disable:this force_cast
     weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
@@ -61,10 +61,18 @@ extension MapViewController: MapModelDelegate {
     func set(_ placemarks: [MKPlacemark]) {
         mapView.set(placemarks)
     }
+    
+    func set(_ region: MKCoordinateRegion) {
+        mapView.set(region)
+    }
 }
 
 extension MapViewController: MapViewDelegate {
-    var location: CLLocation? { return model.location }
+    var location: CLLocation? { model.location }
+    
+    func fitRegion(to placemarks: [MKPlacemark]) {
+        model.fitRegion(to: placemarks)
+    }
     
     func locationServicesDisabled() {
         model.locationServicesDisabled()

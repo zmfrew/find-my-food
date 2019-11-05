@@ -1,6 +1,6 @@
 extension Array {
     var isNotEmpty: Bool {
-        return !self.isEmpty
+        !self.isEmpty
     }
     
     func element(at index: Int) -> Element? {

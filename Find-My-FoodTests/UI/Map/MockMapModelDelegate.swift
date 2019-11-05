@@ -6,8 +6,10 @@ final class MockMapModelDelegate: MapModelDelegate {
     final class Stub {
         var presentLocationDisabledAlertCallCount: Int { return presentLocationDisabledAlertCalledWith.count }
         var presentLocationDisabledAlertCalledWith = [(title: String, message: String, enableSettingsLink: Bool)]()
-        var setCallCount: Int { return setCalledWith.count }
-        var setCalledWith = [[MKPlacemark]]()
+        var setPlacemarksCallCount: Int { return setPlacemarksCalledWith.count }
+        var setPlacemarksCalledWith = [[MKPlacemark]]()
+        var setRegionCallCount: Int { setRegionCalledWith.count }
+        var setRegionCalledWith = [MKCoordinateRegion]()
     }
 
     var stub = Stub()
@@ -17,7 +19,11 @@ final class MockMapModelDelegate: MapModelDelegate {
     }
 
     func set(_ placemarks: [MKPlacemark]) {
-        stub.setCalledWith.append(placemarks)
+        stub.setPlacemarksCalledWith.append(placemarks)
+    }
+    
+    func set(_ region: MKCoordinateRegion) {
+        
     }
 }
 

@@ -6,7 +6,7 @@ final class LocationManagerWrapper: LocationManagerInterface {
     private let locationManager = CLLocationManager()
 
     var location: CLLocation? {
-        return locationManager.location
+        locationManager.location
     }
 
     func requestWhenInUseAuthorization() {

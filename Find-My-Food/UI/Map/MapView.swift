@@ -3,6 +3,7 @@ import MapKit
 
 protocol MapViewDelegate: class {
     var location: CLLocation? { get }
+    func fitRegion(to: [MKPlacemark])
     func locationServicesDisabled()
     func searchButtonTapped()
 }
@@ -41,13 +42,10 @@ extension MapView {
         map.addAnnotations(placemarks)
         map.showAnnotations(placemarks, animated: true)
         
-        guard let location = delegate?.location,
-            let maxLatitude = placemarks.max(by: { $0.coordinate.latitude > $1.coordinate.latitude })?.coordinate.latitude,
-            let maxLongitude = placemarks.max(by: { $0.coordinate.longitude > $1.coordinate.longitude })?.coordinate.longitude
-        else { return }
-        
-        let newDistance = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude).distance(from: CLLocation(latitude: maxLatitude, longitude: maxLongitude)) //swiftlint:disable:this line_length
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 2.2 * newDistance, longitudinalMeters: 2.2 * newDistance)
+        delegate?.fitRegion(to: placemarks)
+    }
+    
+    func set(_ region: MKCoordinateRegion) {
         let adjustRegion = map.regionThatFits(region)
         map.setRegion(adjustRegion, animated: true)
     }

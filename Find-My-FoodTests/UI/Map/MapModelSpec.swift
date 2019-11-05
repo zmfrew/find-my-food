@@ -41,6 +41,33 @@ final class MapModelSpec: QuickSpec {
             }
         }
         
+        //MARK: - func fitRegion(to placemarks: [MKPlacemark])
+        describe("fitRegion(to placemarks: [MKPlacemark])") {
+            context("given a valid location, maxLatitude, and maxLongitude") {
+                it("calls set with a region on the delegate") {
+                    
+                }
+            }
+            
+            context("given an invalid location") {
+                it("does not call set(region) on the delegate") {
+                    
+                }
+            }
+            
+            context("given an invalid maxLatitude") {
+                it("does not call set(region) on the delegate") {
+                    
+                }
+            }
+            
+            context("given an invalid maxLongitude") {
+                it("does not call set(region) on the delegate") {
+                    
+                }
+            }
+        }
+        
         // MARK: - func geocode(_ address: String)
         describe("geocode(_ address: String") {
             context("given placemarks that init to MKPlacemark") {
@@ -54,11 +81,11 @@ final class MapModelSpec: QuickSpec {
                     
                     testObject.geocode("test address")
                     
-                    expect(mockDelegate.stub.setCallCount).toEventually(equal(1))
-                    expect(mockDelegate.stub.setCalledWith.first?.first?.coordinate.latitude).toEventually(equal(expectedPlacemarks.first?.coordinate.latitude))
-                    expect(mockDelegate.stub.setCalledWith.first?.first?.coordinate.longitude).toEventually(equal(expectedPlacemarks.first?.coordinate.longitude))
-                    expect(mockDelegate.stub.setCalledWith.first?.last?.coordinate.latitude).toEventually(equal(expectedPlacemarks.last?.coordinate.latitude))
-                    expect(mockDelegate.stub.setCalledWith.first?.last?.coordinate.longitude).toEventually(equal(expectedPlacemarks.last?.coordinate.longitude))
+                    expect(mockDelegate.stub.setPlacemarksCallCount).toEventually(equal(1))
+                    expect(mockDelegate.stub.setPlacemarksCalledWith.first?.first?.coordinate.latitude).toEventually(equal(expectedPlacemarks.first?.coordinate.latitude))
+                    expect(mockDelegate.stub.setPlacemarksCalledWith.first?.first?.coordinate.longitude).toEventually(equal(expectedPlacemarks.first?.coordinate.longitude))
+                    expect(mockDelegate.stub.setPlacemarksCalledWith.first?.last?.coordinate.latitude).toEventually(equal(expectedPlacemarks.last?.coordinate.latitude))
+                    expect(mockDelegate.stub.setPlacemarksCalledWith.first?.last?.coordinate.longitude).toEventually(equal(expectedPlacemarks.last?.coordinate.longitude))
                 }
             }
             
@@ -68,8 +95,8 @@ final class MapModelSpec: QuickSpec {
                     
                     testObject.geocode("test address")
                     
-                    expect(mockDelegate.stub.setCallCount).toEventually(equal(0))
-                    expect(mockDelegate.stub.setCalledWith.first).toEventually(beNil())
+                    expect(mockDelegate.stub.setPlacemarksCallCount).toEventually(equal(0))
+                    expect(mockDelegate.stub.setPlacemarksCalledWith.first).toEventually(beNil())
                 }
             }
         }

@@ -1,7 +1,7 @@
 import UIKit
 
 final class BusinessesViewController: UIViewController, Storyboarded {
-	private var businessesView: BusinessesView { return self.view as! BusinessesView } //swiftlint:disable:this force_cast
+	private var businessesView: BusinessesView { self.view as! BusinessesView } //swiftlint:disable:this force_cast
 	private var model: BusinessModelInterface!
     weak var coordinator: MainCoordinator?
 	
@@ -23,7 +23,7 @@ extension BusinessesViewController: BusinessesModelDelegate {
 
 extension BusinessesViewController: BusinessesViewDelegate {
 	func business(for row: Int) -> Business? {
-		return model.business(for: row)
+		model.business(for: row)
 	}
     
     func businessSelected(at index: Int) {
@@ -43,6 +43,6 @@ extension BusinessesViewController: BusinessesViewDelegate {
     }
 	
 	var businessCount: Int {
-		return model.businessCount
+		model.businessCount
 	}
 }

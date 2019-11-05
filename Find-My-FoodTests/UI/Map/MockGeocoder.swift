@@ -5,7 +5,7 @@ import CoreLocation
 
 final class MockGeocoder: GeocoderInterface {
     final class Stub {
-        var geocodeAddressStringCallCount: Int { return geocodeAddressStringCalledWith.count }
+        var geocodeAddressStringCallCount: Int { geocodeAddressStringCalledWith.count }
         var geocodeAddressStringCalledWith: [(addressString: String, completionHandler: CLGeocodeCompletionHandler)] = []
         var geocodeAddressStringShouldCompleteWith: (placemark: [CLPlacemark]?, error: Error?) = (nil, nil)
     }

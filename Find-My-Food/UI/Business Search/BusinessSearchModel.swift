@@ -11,7 +11,7 @@ protocol BusinessSearchModelDelegate: class {
 }
 
 final class BusinessSearchModel: BusinessSearchModelInterface {
-    private(set) var businesses: [Business] = []
+    private(set) var businesses = [Business]()
     private let businessSearchClient: BusinessSearchClientInterface
     private weak var delegate: BusinessSearchModelDelegate?
     
