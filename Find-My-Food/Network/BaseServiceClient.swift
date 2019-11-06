@@ -1,10 +1,5 @@
 import Foundation
 
-enum Result<Value, Error: Swift.Error> {
-    case success(Value)
-    case failure(Error)
-}
-
 enum NetworkError: Error, Equatable {
     case invalidUrl, invalidQueryParams, apiError, invalidApiResponse
 }
@@ -14,9 +9,9 @@ protocol ServiceClientProtocol {
 }
 
 final class BaseServiceClient: ServiceClientProtocol {
-    private let urlSession: URLSessionWrapperProtocol
+    private let urlSession: URLSessionProtocol
     
-    init(urlSession: URLSessionWrapperProtocol) {
+    init(urlSession: URLSessionProtocol) {
         self.urlSession = urlSession
     }
     

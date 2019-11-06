@@ -2,7 +2,7 @@ import Foundation
 
 @testable import Find_My_Food
 
-final class MockUrlSession: URLSessionWrapperProtocol {
+final class MockUrlSession: URLSessionProtocol {
 	final class Stub {
         var dataTaskCallCount: Int {
             dataTaskCalledWith.count
