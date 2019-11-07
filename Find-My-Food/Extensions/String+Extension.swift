@@ -4,7 +4,7 @@ extension String {
     var phoneURL: URL? {
         URL(string: "tel://\(self)")
     }
-    
+
     var priceToInt: Int? {
         switch self {
         case "$":
@@ -15,6 +15,7 @@ extension String {
             return 3
         case "$$$$":
             return 4
+
         default:
             return nil
         }

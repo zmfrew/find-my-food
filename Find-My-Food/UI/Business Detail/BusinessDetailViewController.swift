@@ -11,10 +11,10 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
         title = business.name
         self.business = business
     }
-    
+
     @IBAction private func locationButtonTapped(_ sender: UIBarButtonItem) {
         guard let business = business else { return }
-        
+
         coordinator?.locationButtonTapped(business)
     }
 }
@@ -23,14 +23,14 @@ extension BusinessDetailViewController: BusinessDetailViewDelegate {
     func call(_ phone: String?, display: String?) {
         guard let phone = phone?.phoneURL,
             let display = display else { return }
-        
+
         let alert = UIAlertController(title: "Call \(display)", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Call", style: .default) { (_) in
+        alert.addAction(UIAlertAction(title: "Call", style: .default) { _ in
             phone.call()
         })
-        
+
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
+
         self.present(alert, animated: true)
     }
 }

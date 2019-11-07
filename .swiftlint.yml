@@ -1,16 +1,26 @@
 disabled_rules:
-- identifier_name
-- trailing_whitespace
-opt_in_rules:
-- control_statement
-- empty_count
-- trailing_newline
-- colon
-- comma
-included:
-- Find-My-Food
+  - identifier_name
 excluded:
-- Carthage
-- Find-My-Food/Find-My-FoodTests
-- Find-My-Food/Find-My-FoodUITests
+  - Carthage
+  - Find-My-Food/Find-My-FoodTests
+  - Find-My-Food/Find-My-FoodUITests
+included:
+  - Find-My-Food
 line_length: 150
+opt_in_rules:
+  - empty_count
+  - closure_spacing
+  - legacy_multiple
+  - legacy_random
+  - let_var_whitespace
+  - operator_usage_whitespace
+  - overridden_super_call
+  - override_in_extension
+  - private_action
+  - private_outlet
+  - redundant_type_annotation
+  - redundant_void_return
+  - sorted_imports
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - vertical_whitespace_between_cases

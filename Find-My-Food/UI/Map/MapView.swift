@@ -1,8 +1,9 @@
-import UIKit
 import MapKit
+import UIKit
 
 protocol MapViewDelegate: class {
     var location: CLLocation? { get }
+
     func fitRegion(to: [MKPlacemark])
     func locationServicesDisabled()
     func searchButtonTapped()
@@ -14,20 +15,21 @@ final class MapView: UIView {
     @IBOutlet private weak var containerView: UIView!
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     weak var delegate: MapViewDelegate?
-    
+
     override func awakeFromNib() {
+        super.awakeFromNib()
         containerView.isHidden = true
         searchButton.layer.cornerRadius = searchButton.frame.width / 2
         map.showsUserLocation = true
         map.delegate = self
     }
-        
+
     @IBAction private func searchButtonTapped(_ sender: Any) {
         guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
             delegate?.locationServicesDisabled()
             return
         }
-        
+
         delegate?.searchButtonTapped()
         containerView.isHidden = false
     }
@@ -37,28 +39,28 @@ extension MapView {
     func hideSearchButton() {
         searchButton.isHidden = true
     }
-    
+
     func set(_ placemarks: [MKPlacemark]) {
         map.addAnnotations(placemarks)
         map.showAnnotations(placemarks, animated: true)
-        
+
         delegate?.fitRegion(to: placemarks)
     }
-    
+
     func set(_ region: MKCoordinateRegion) {
         let adjustRegion = map.regionThatFits(region)
         map.setRegion(adjustRegion, animated: true)
     }
-    
+
     func setRegion() {
         if let location = delegate?.location?.coordinate {
             let viewRegion = MKCoordinateRegion(center: location, latitudinalMeters: 200, longitudinalMeters: 200)
             map.setRegion(viewRegion, animated: false)
         }
     }
-    
+
     func toggleContainerView() {
-        containerView.isHidden = !containerView.isHidden
+        containerView.isHidden.toggle()
     }
 }
 

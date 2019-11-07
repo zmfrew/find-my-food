@@ -18,12 +18,12 @@ struct Business {
     let phone: String
     let displayPhone: String
     let distance: Double
-    
+
     struct Category: Equatable {
         let alias: String
         let title: String
     }
-    
+
     struct Location: Equatable {
         let address1: String
         let address2: String?
@@ -76,7 +76,7 @@ extension Business {
               phone: String? = nil,
               displayPhone: String? = nil,
               distance: Double? = nil) -> Business {
-        
+
         return Business(id: id ?? self.id,
                         alias: alias ?? self.alias,
                         name: name ?? self.name,
@@ -101,10 +101,10 @@ extension Business: Decodable {
     enum CodingKeys: String, CodingKey {
         case id, alias, name, image_url, is_closed, url, review_count, categories, rating, coordinates, transactions, price, location, phone, display_phone, distance //swiftlint:disable:this line_length
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Business.CodingKeys.self)
-        
+
         let id = try container.decode(String.self, forKey: .id)
         let alias = try container.decode(String.self, forKey: .alias)
         let name = try container.decode(String.self, forKey: .name)
@@ -121,7 +121,7 @@ extension Business: Decodable {
         let phone = try container.decode(String.self, forKey: .phone)
         let displayPhone = try container.decode(String.self, forKey: .display_phone)
         let distance = try container.decode(Double.self, forKey: .distance)
-        
+
         self.init(id: id,
                   alias: alias,
                   name: name,
@@ -147,10 +147,10 @@ extension Business.Location: Decodable {
     enum CodingKeys: CodingKey {
         case address1, address2, address3, city, zip_code, country, state, display_address
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Business.Location.CodingKeys.self)
-        
+
         let address1 = try container.decode(String.self, forKey: .address1)
         let address2 = try container.decodeIfPresent(String.self, forKey: .address2)
         let address3 = try container.decodeIfPresent(String.self, forKey: .address3)
@@ -159,7 +159,7 @@ extension Business.Location: Decodable {
         let country = try container.decode(String.self, forKey: .country)
         let state = try container.decode(String.self, forKey: .state)
         let displayAddress = try container.decode([String].self, forKey: .display_address)
-        
+
         self.init(address1: address1,
                   address2: address2,
                   address3: address3,

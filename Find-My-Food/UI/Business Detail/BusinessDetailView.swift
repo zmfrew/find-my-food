@@ -13,20 +13,20 @@ final class BusinessDetailView: UIView {
     private var phoneNumber = ""
     private var displayPhoneNumber = ""
     private weak var delegate: BusinessDetailViewDelegate?
-    
+
     func configure(with business: Business, delegate: BusinessDetailViewDelegate) {
         self.delegate = delegate
         ratingLabel.text = "\(business.rating)"
         categoriesLabel.text = business.categories.map { $0.title }.joined(separator: ", ")
-        
+
         phoneNumberButton.setTitle(business.displayPhone, for: .normal)
         addressLabel.text = business.location.displayAddress.joined()
         businessImageView.image = business.image
-        
+
         phoneNumber = business.phone
         displayPhoneNumber = business.displayPhone
     }
-    @IBAction func phoneNumberButtonTapped(_ sender: UIButton) {
+    @IBAction private func phoneNumberButtonTapped(_ sender: UIButton) {
         delegate?.call(phoneNumber, display: displayPhoneNumber)
     }
 }

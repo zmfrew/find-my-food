@@ -1,24 +1,24 @@
-import UIKit
 import CoreLocation
+import UIKit
 
 final class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+
     func businessSelected(_ business: Business) {
         let vc = BusinessDetailViewController.instantiate()
         vc.coordinator = self
         vc.configure(with: business)
         navigationController.pushViewController(vc, animated: true)
     }
-    
+
     func dismiss() {
         navigationController.dismiss(animated: true)
     }
-    
+
     func downloadCompleted(with businesses: [Business]) {
         let vc = BusinessesViewController.instantiate()
         vc.coordinator = self
@@ -28,19 +28,19 @@ final class MainCoordinator: Coordinator {
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
     }
-    
+
     func downloadDidBegin() {
         guard let businessSearchVC = navigationController.presentedViewController as? BusinessSearchViewController else { return }
-        
+
         businessSearchVC.downloadDidBegin()
     }
-    
+
     func downloadDidEnd() {
         guard let businessSearchVC = navigationController.presentedViewController as? BusinessSearchViewController else { return }
-        
+
         businessSearchVC.downloadDidEnd()
     }
-    
+
     func locationButtonTapped(_ business: Business) {
         let vc = MapViewController.instantiate()
         vc.coordinator = self
@@ -48,11 +48,11 @@ final class MainCoordinator: Coordinator {
         vc.setBusinessLocation(business.location.displayAddress.joined(separator: ", "))
         navigationController.pushViewController(vc, animated: false)
     }
-    
+
     func pop(_ animated: Bool = true) {
         navigationController.popViewController(animated: animated)
     }
-    
+
     func searchButtonTapped(latitude: Double, longitude: Double) {
         guard let mapVC = navigationController.viewControllers.first(where: { $0 is MapViewController }) as? MapViewController else { return }
 
@@ -60,10 +60,10 @@ final class MainCoordinator: Coordinator {
         vc.coordinator = self
         vc.delegate = mapVC
         vc.configure(latitude: latitude, longitude: longitude)
-        
+
         navigationController.present(vc, animated: true)
     }
-    
+
     func start() {
         let vc = MapViewController.instantiate()
         vc.coordinator = self
