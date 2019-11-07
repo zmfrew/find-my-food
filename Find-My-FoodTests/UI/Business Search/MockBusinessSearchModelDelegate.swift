@@ -10,7 +10,6 @@ final class MockBusinessSearchModelDelegate: BusinessSearchModelDelegate {
     
     func downloadDidBegin() {
         stub.downloadDidBeginCallCount += 1
-
     }
 
     func downloadDidEnd() {

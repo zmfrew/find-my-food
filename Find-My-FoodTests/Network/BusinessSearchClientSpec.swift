@@ -23,13 +23,15 @@ final class BusinessSearchClientSpec: QuickSpec {
                         "term": searchText,
                         "latitude": "\(38.752209)",
                         "longitude": "\(-89.986610)",
-                        "radius": "40000"
+                        "radius": "40000",
+                        "price": "1",
+                        "openNow": "false"
                     ]
                     let expectedHeaders = ["Authorization": "Bearer \(Secret.apiKey)"]
                     
                     mockServiceClient.stub.getShouldReturn = .success(TestData.businessData())
                     
-                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610) { businesses in
+                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, price: 1, openNow: false) { businesses in
                         expect(businesses).to(equal(expectedBusinesses))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                        
@@ -49,11 +51,13 @@ final class BusinessSearchClientSpec: QuickSpec {
                         "term": searchText,
                         "latitude": "\(38.752209)",
                         "longitude": "\(-89.986610)",
-                        "radius": "40000"
+                        "radius": "40000",
+                        "price": "1",
+                        "openNow": "false"
                     ]
                     let expectedHeaders = ["Authorization": "Bearer \(Secret.apiKey)"]
                     
-                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610) { businesses in
+                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, price: 1, openNow: false) { businesses in
                         expect(businesses).to(equal([]))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                         

@@ -31,7 +31,7 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
                                              longitude: longitude,
                                              radius: radius.milesToMeters,
                                              price: price, openNow: openNow) { [weak self] businesses in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 
                 DispatchQueue.main.async {
                     self.businesses = businesses

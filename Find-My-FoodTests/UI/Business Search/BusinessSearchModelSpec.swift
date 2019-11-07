@@ -26,7 +26,7 @@ final class BusinessSearchModelSpec: QuickSpec {
                     
                     mockBusinessSearchClient.stub.searchShouldCompleteWith = expectedBusinesses
                     
-                    testObject.search(for: "Peel", latitude: 38.752209, longitude: -89.986610)
+                    testObject.search(for: "Peel", latitude: 38.752209, longitude: -89.986610, radius: 0, price: "$", openNow: false)
                    
                     expect(mockDelegate.stub.downloadDidBeginCallCount).toEventually(equal(1))
                     expect(mockDelegate.stub.downloadDidEndCallCount).toEventually(equal(1))
@@ -40,7 +40,7 @@ final class BusinessSearchModelSpec: QuickSpec {
                     
                     mockBusinessSearchClient.stub.searchShouldCompleteWith = expectedBusinesses
                     
-                    testObject.search(for: "Chophouse", latitude: 38.752209, longitude: -89.986610)
+                    testObject.search(for: "Chophouse", latitude: 38.752209, longitude: -89.986610, radius: 0, price: "$$", openNow: false)
                     
                     expect(mockDelegate.stub.downloadDidBeginCallCount).toEventually(equal(1))
                     expect(mockDelegate.stub.downloadDidEndCallCount).toEventually(equal(1))

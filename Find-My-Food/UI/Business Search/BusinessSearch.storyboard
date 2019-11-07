@@ -15,63 +15,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="l02-Ea-ZgZ">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="l02-Ea-ZgZ">
                                 <rect key="frame" x="32" y="76" width="350" height="788"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give us a restaurant or keyword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSv-1O-vH7">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="98"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tcp-Jp-vjg">
-                                        <rect key="frame" x="0.0" y="73" width="350" height="235.5"/>
+                                        <rect key="frame" x="0.0" y="138" width="350" height="98"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many miles away?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7E-wn-CWa">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="8"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz5-Iu-VT9">
-                                                <rect key="frame" x="0.0" y="27.5" width="350" height="208"/>
+                                                <rect key="frame" x="0.0" y="16" width="350" height="82"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NAu-aN-dsk">
-                                        <rect key="frame" x="0.0" y="348.5" width="350" height="244.5"/>
+                                        <rect key="frame" x="0.0" y="276" width="350" height="98"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How expensive?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsT-ki-eMu">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="8"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alG-nt-l3Y">
-                                                <rect key="frame" x="0.0" y="28.5" width="350" height="216"/>
+                                                <rect key="frame" x="0.0" y="16" width="350" height="82"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="182" translatesAutoresizingMaskIntoConstraints="NO" id="blj-uL-vPG">
-                                        <rect key="frame" x="0.0" y="633" width="350" height="29.5"/>
+                                        <rect key="frame" x="0.0" y="414" width="350" height="98"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Now?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hX-t8-0bp">
-                                                <rect key="frame" x="0.0" y="0.0" width="119" height="29.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="98"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RVU-OQ-pok">
-                                                <rect key="frame" x="301" y="0.0" width="51" height="29.5"/>
+                                                <rect key="frame" x="301" y="0.0" width="51" height="98"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where do you want to find restaurants?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5PI-H7-dos">
-                                        <rect key="frame" x="0.0" y="702.5" width="350" height="33"/>
+                                        <rect key="frame" x="0.0" y="552" width="350" height="98"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKz-zX-jB1">
-                                        <rect key="frame" x="0.0" y="775.5" width="350" height="12.5"/>
+                                        <rect key="frame" x="0.0" y="690" width="350" height="98"/>
                                         <state key="normal" title="Search"/>
                                         <connections>
                                             <action selector="searchButtonTapped:" destination="1Md-DA-Sfz" eventType="touchUpInside" id="TiO-W1-Goi"/>
