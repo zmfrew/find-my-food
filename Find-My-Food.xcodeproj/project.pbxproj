@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5701EC6F23623827004A4EAA /* MainCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701EC6E23623827004A4EAA /* MainCoordinatorSpec.swift */; };
+		57133BD12374BD3500DDB2D9 /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133BD02374BD3500DDB2D9 /* PriceButton.swift */; };
 		57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */; };
 		575225ED23722D600023085E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EC23722D600023085E /* Int+Extension.swift */; };
 		575225EF23722DF40023085E /* Int+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EE23722DF40023085E /* Int+ExtensionSpec.swift */; };
@@ -93,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 		5701EC6E23623827004A4EAA /* MainCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorSpec.swift; sourceTree = "<group>"; };
+		57133BD02374BD3500DDB2D9 /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessesModelDelegate.swift; sourceTree = "<group>"; };
 		575225EC23722D600023085E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		575225EE23722DF40023085E /* Int+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ExtensionSpec.swift"; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				B69E33AD2322912F00A4477E /* BusinessSearchViewController.swift */,
 				B69E33AE2322912F00A4477E /* BusinessSearchModel.swift */,
 				B69E33AF2322912F00A4477E /* BusinessSearchView.swift */,
+				57133BD02374BD3500DDB2D9 /* PriceButton.swift */,
 				B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */,
 			);
 			path = "Business Search";
@@ -635,6 +638,7 @@
 				57DCCA402357722E00CEA8DE /* Secret.swift in Sources */,
 				B69E33F62322912F00A4477E /* Business.swift in Sources */,
 				579C21A92368B92A0015D0BE /* LocationManagerWrapper.swift in Sources */,
+				57133BD12374BD3500DDB2D9 /* PriceButton.swift in Sources */,
 				B69E33EE2322912F00A4477E /* MapView.swift in Sources */,
 				B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */,
 				57C3CB8B236A314B007E1B9A /* String+Extension.swift in Sources */,

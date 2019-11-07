@@ -27,6 +27,11 @@ final class BusinessSearchViewController: UIViewController, Storyboarded {
 		searchView.delegate = self
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
     func configure(latitude: Double, longitude: Double) { 
         self.latitude = latitude
         self.longitude = longitude
@@ -50,8 +55,8 @@ extension BusinessSearchViewController: BusinessSearchModelDelegate {
 }
 
 extension BusinessSearchViewController: BusinessSearchViewDelegate {
-    func search(for business: String, radius: Int, price: String, openNow: Bool) {
+    func search(for business: String, radius: Int, prices: [String], openNow: Bool) {
         
-        model.search(for: business, latitude: latitude, longitude: longitude, radius: radius, price: price, openNow: openNow)
+        model.search(for: business, latitude: latitude, longitude: longitude, radius: radius, prices: prices, openNow: openNow)
     }
 }

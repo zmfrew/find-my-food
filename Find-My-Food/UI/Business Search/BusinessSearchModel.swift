@@ -3,7 +3,7 @@ import Foundation
 
 protocol BusinessSearchModelProtocol {
     var businesses: [Business] { get }
-    func search(for business: String, latitude: Double, longitude: Double, radius: Int, price: String, openNow: Bool)
+    func search(for business: String, latitude: Double, longitude: Double, radius: Int, prices: [String], openNow: Bool)
 }
 
 protocol BusinessSearchModelDelegate: class {
@@ -21,8 +21,8 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
         self.delegate = delegate
     }
     
-    func search(for business: String, latitude: Double, longitude: Double, radius: Int, price: String, openNow: Bool) {
-        guard let price = price.priceToInt else { return }
+    func search(for business: String, latitude: Double, longitude: Double, radius: Int, prices: [String], openNow: Bool) {
+        let prices = prices.compactMap { $0.priceToInt }
         
         delegate?.downloadDidBegin()
         DispatchQueue.global(qos: .userInitiated).async {
@@ -30,7 +30,7 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
                                              latitude: latitude,
                                              longitude: longitude,
                                              radius: radius.milesToMeters,
-                                             price: price, openNow: openNow) { [weak self] businesses in
+                                             prices: prices, openNow: openNow) { [weak self] businesses in
                 guard let self = self else { return }
                 
                 DispatchQueue.main.async {

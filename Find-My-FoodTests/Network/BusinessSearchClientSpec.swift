@@ -31,7 +31,7 @@ final class BusinessSearchClientSpec: QuickSpec {
                     
                     mockServiceClient.stub.getShouldReturn = .success(TestData.businessData())
                     
-                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, price: 1, openNow: false) { businesses in
+                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
                         expect(businesses).to(equal(expectedBusinesses))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                        
@@ -57,7 +57,7 @@ final class BusinessSearchClientSpec: QuickSpec {
                     ]
                     let expectedHeaders = ["Authorization": "Bearer \(Secret.apiKey)"]
                     
-                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, price: 1, openNow: false) { businesses in
+                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
                         expect(businesses).to(equal([]))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                         

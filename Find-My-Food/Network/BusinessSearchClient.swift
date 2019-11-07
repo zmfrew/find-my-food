@@ -6,7 +6,7 @@ protocol BusinessSearchClientProtocol {
                 latitude: Double,
                 longitude: Double,
                 radius: Int,
-                price: Int,
+                prices: [Int],
                 openNow: Bool,
                 completion: @escaping ([Business]) -> Void)
     func image(at urlString: String, completion: @escaping (Data?) -> Void)
@@ -23,16 +23,17 @@ final class BusinessSearchClient: BusinessSearchClientProtocol {
                 latitude: Double,
                 longitude: Double,
                 radius: Int,
-                price: Int,
+                prices: [Int],
                 openNow: Bool,
                 completion: @escaping ([Business]) -> Void) {
+        let prices = prices.map { String($0) }.joined(separator: ", ")
         
 		let queryParams = [
             "term": business,
             "latitude": "\(latitude)",
             "longitude": "\(longitude)",
             "radius": "\(radius)",
-            "price": "\(price)",
+            "price": prices,
             "openNow": "\(openNow)"
             // TODO: - Add location string for people wanting to manually input location
         ]
