@@ -15,6 +15,38 @@ final class BusinessSearchModelSpec: QuickSpec {
             testObject = BusinessSearchModel(businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
         }
         
+        // MARK: - func deSelected(_ price: String)
+        describe("deSelected(_ price: String)") {
+            context("given price is in selectedPrices") {
+                it("removes the price") {
+                    testObject.selected("$$")
+                    testObject.selected("$$$$")
+                    testObject.selected("$")
+                    
+                    testObject.deSelected("$$")
+                    testObject.deSelected("$$$$")
+                    testObject.deSelected("$")
+                    
+                    expect(testObject.selectedPrices).to(equal([]))
+                }
+            }
+            
+            context("given price is not in selectedPrices") {
+                it("does nothing") {
+                    let expectedPrices = ["$$", "$$$$", "$"]
+                    testObject.selected("$$")
+                    testObject.selected("$$$$")
+                    testObject.selected("$")
+                    
+                    testObject.deSelected("$$$")
+                    testObject.deSelected("$$$")
+                    testObject.deSelected("$$$")
+                    
+                    expect(testObject.selectedPrices).to(equal(expectedPrices))
+                }
+            }
+        }
+        
         // MARK: - func search(for business: String)
         describe("search(for business:)") {
             context("given businessSearchClient returns businesses") {
@@ -45,6 +77,33 @@ final class BusinessSearchModelSpec: QuickSpec {
                     expect(mockDelegate.stub.downloadDidBeginCallCount).toEventually(equal(1))
                     expect(mockDelegate.stub.downloadDidEndCallCount).toEventually(equal(1))
                     expect(testObject.businesses).toEventually(equal(expectedBusinesses))
+                }
+            }
+        }
+        
+        // MARK: - func selected(_ price: String)
+        describe("selected(_ price: String)") {
+            context("given price is not in selectedPrices") {
+                it("adds the price") {
+                    let expectedPrices = ["$$", "$$$$", "$"]
+                    
+                    testObject.selected("$$")
+                    testObject.selected("$$$$")
+                    testObject.selected("$")
+                    
+                    expect(testObject.selectedPrices).to(equal(expectedPrices))
+                }
+            }
+            
+            context("given price is in selectedPrices") {
+                it("does nothing") {
+                    let expectedPrices = ["$$$"]
+                    
+                    testObject.selected("$$$")
+                    testObject.selected("$$$")
+                    testObject.selected("$$$")
+                    
+                    expect(testObject.selectedPrices).to(equal(expectedPrices))
                 }
             }
         }

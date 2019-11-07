@@ -55,8 +55,16 @@ extension BusinessSearchViewController: BusinessSearchModelDelegate {
 }
 
 extension BusinessSearchViewController: BusinessSearchViewDelegate {
+    func deSelected(_ price: String) {
+        model.deSelected(price)
+    }
+    
     func search(for business: String, radius: Int, prices: [String], openNow: Bool) {
         
         model.search(for: business, latitude: latitude, longitude: longitude, radius: radius, prices: prices, openNow: openNow)
+    }
+    
+    func selected(_ price: String) {
+        model.selected(price)
     }
 }

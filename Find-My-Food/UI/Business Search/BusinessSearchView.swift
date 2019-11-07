@@ -1,7 +1,9 @@
 import UIKit
 
 protocol BusinessSearchViewDelegate: class {
+    func deSelected(_ price: String)
     func search(for business: String, radius: Int, prices: [String], openNow: Bool)
+    func selected(_ price: String)
 }
 
 final class BusinessSearchView: UIView {
@@ -120,16 +122,10 @@ extension BusinessSearchView: UIPickerViewDelegate {
 
 extension BusinessSearchView: PriceButtonDelegate {
     func selected(_ price: String) {
-        guard !selectedPrices.contains(price) else { return }
-        
-        selectedPrices.append(price)
+        delegate?.selected(price)
     }
     
     func deSelected(_ price: String) {
-        guard selectedPrices.contains(price) else { return }
-        
-        if let index = selectedPrices.firstIndex(of: price) {
-            selectedPrices.remove(at: index)            
-        }
+        delegate?.deSelected(price)
     }
 }

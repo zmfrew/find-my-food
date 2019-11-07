@@ -3,7 +3,10 @@ import Foundation
 
 protocol BusinessSearchModelProtocol {
     var businesses: [Business] { get }
+    var selectedPrices: [String] { get }
+    func deSelected(_ price: String)
     func search(for business: String, latitude: Double, longitude: Double, radius: Int, prices: [String], openNow: Bool)
+    func selected(_ price: String)
 }
 
 protocol BusinessSearchModelDelegate: class {
@@ -14,6 +17,7 @@ protocol BusinessSearchModelDelegate: class {
 final class BusinessSearchModel: BusinessSearchModelProtocol {
     private(set) var businesses = [Business]()
     private let businessSearchClient: BusinessSearchClientProtocol
+    private(set) var selectedPrices = [String]()
     private weak var delegate: BusinessSearchModelDelegate?
     
     init(businessSearchClient: BusinessSearchClientProtocol, delegate: BusinessSearchModelDelegate) {
@@ -21,8 +25,16 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
         self.delegate = delegate
     }
     
+    func deSelected(_ price: String) {
+        guard selectedPrices.contains(price) else { return }
+        
+        if let index = selectedPrices.firstIndex(of: price) {
+            selectedPrices.remove(at: index)
+        }
+    }
+    
     func search(for business: String, latitude: Double, longitude: Double, radius: Int, prices: [String], openNow: Bool) {
-        let prices = prices.compactMap { $0.priceToInt }
+        let prices = prices.compactMap { $0.priceToInt }.sorted()
         
         delegate?.downloadDidBegin()
         DispatchQueue.global(qos: .userInitiated).async {
@@ -39,5 +51,11 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
                 }
             }
         }
+    }
+    
+    func selected(_ price: String) {
+        guard !selectedPrices.contains(price) else { return }
+        
+        selectedPrices.append(price)
     }
 }
