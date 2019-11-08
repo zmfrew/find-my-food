@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,8 +19,8 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYF-Dt-YEC">
-                                <rect key="frame" x="334" y="816" width="56" height="56"/>
-                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="334" y="736" width="56" height="56"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="RGo-mh-rHz"/>
                                     <constraint firstAttribute="height" constant="56" id="qHr-mM-9A0"/>
@@ -48,7 +47,7 @@
                             <constraint firstItem="U6T-l3-BjT" firstAttribute="leading" secondItem="KwP-wd-c1N" secondAttribute="leading" constant="64" id="ef8-1e-ScB"/>
                             <constraint firstItem="KwP-wd-c1N" firstAttribute="trailing" secondItem="tYF-Dt-YEC" secondAttribute="trailing" constant="24" id="hXu-Hs-a93"/>
                             <constraint firstItem="emU-8Q-CwI" firstAttribute="leading" secondItem="KwP-wd-c1N" secondAttribute="leading" id="ncW-8X-Spr"/>
-                            <constraint firstAttribute="bottom" secondItem="tYF-Dt-YEC" secondAttribute="bottom" constant="24" id="sAJ-0w-3ZN"/>
+                            <constraint firstAttribute="bottom" secondItem="tYF-Dt-YEC" secondAttribute="bottom" constant="104" id="sAJ-0w-3ZN"/>
                             <constraint firstAttribute="bottom" secondItem="emU-8Q-CwI" secondAttribute="bottom" id="sIF-FX-RVJ"/>
                             <constraint firstItem="KwP-wd-c1N" firstAttribute="trailing" secondItem="emU-8Q-CwI" secondAttribute="trailing" id="zZC-jS-xeZ"/>
                         </constraints>

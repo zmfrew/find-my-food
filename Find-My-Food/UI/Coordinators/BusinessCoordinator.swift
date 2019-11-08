@@ -1,11 +1,23 @@
 import CoreLocation
 import UIKit
 
-final class MainCoordinator: Coordinator {
-    var navigationController: UINavigationController
+protocol BusinessCoordinatorProtocol {
+    var navigationController: UINavigationController { get set }
+    var rootViewController: MapViewController { get set }
 
-    init(navigationController: UINavigationController) {
+    func start()
+}
+// TOOD: - Update tests.
+final class BusinessCoordinator: BusinessCoordinatorProtocol {
+    var navigationController: UINavigationController
+    var rootViewController: MapViewController
+    weak var parentCoordinator: TabCoordinatorProtocol?
+
+    init(navigationController: UINavigationController, parentCoordinator: TabCoordinatorProtocol) {
         self.navigationController = navigationController
+        self.parentCoordinator = parentCoordinator
+        self.rootViewController = MapViewController.instantiate()
+
     }
 
     func businessSelected(_ business: Business) {
@@ -54,19 +66,15 @@ final class MainCoordinator: Coordinator {
     }
 
     func searchButtonTapped(latitude: Double, longitude: Double) {
-        guard let mapVC = navigationController.viewControllers.first(where: { $0 is MapViewController }) as? MapViewController else { return }
-
         let vc = BusinessSearchViewController.instantiate()
         vc.coordinator = self
-        vc.delegate = mapVC
+        vc.delegate = rootViewController
         vc.configure(latitude: latitude, longitude: longitude)
 
         navigationController.present(vc, animated: true)
     }
 
     func start() {
-        let vc = MapViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        rootViewController.coordinator = self
     }
 }

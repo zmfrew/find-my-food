@@ -35,7 +35,9 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
     }
 
     func search(for business: String, latitude: Double, longitude: Double, radius: Int, prices: [String], openNow: Bool) {
-        let prices = prices.compactMap { $0.priceToInt }.sorted()
+        let intPrices = prices.compactMap { $0.priceToInt }.sorted()
+        let prices = intPrices.isNotEmpty ? intPrices : [1, 2, 3, 4]
+        // TODO: - Replace price hard coding with enum.
 
         delegate?.downloadDidBegin()
         DispatchQueue.global(qos: .userInitiated).async {

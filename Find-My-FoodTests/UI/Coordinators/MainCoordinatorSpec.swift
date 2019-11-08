@@ -3,14 +3,14 @@ import Nimble
 
 @testable import Find_My_Food
 
-final class MainCoordinatorSpec: QuickSpec {
+final class BusinessCoordinatorSpec: QuickSpec {
     override func spec() {
-        var testObject: MainCoordinator!
+        var testObject: BusinessCoordinator!
         var navController: UINavigationController!
         
         beforeEach {
             navController = UINavigationController()
-            testObject = MainCoordinator(navigationController: navController)
+            testObject = BusinessCoordinator(navigationController: navController)
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = navController
             window.makeKeyAndVisible()
