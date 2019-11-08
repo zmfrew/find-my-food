@@ -11,7 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabController = UITabBarController()
         coordinator = TabCoordinator(navigationController: navigationController, tabController: tabController)
 
-        coordinator?.start()
+        let businessCoordinator = BusinessCoordinator(navigationController: navigationController, parentCoordinator: coordinator!)
+        coordinator?.start(with: businessCoordinator)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController

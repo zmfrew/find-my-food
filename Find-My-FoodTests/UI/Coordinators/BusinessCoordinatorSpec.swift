@@ -7,10 +7,12 @@ final class BusinessCoordinatorSpec: QuickSpec {
     override func spec() {
         var testObject: BusinessCoordinator!
         var navController: UINavigationController!
+        var mockTabCoordinator: MockTabCoordinator!
         
         beforeEach {
             navController = UINavigationController()
-            testObject = BusinessCoordinator(navigationController: navController)
+            mockTabCoordinator = MockTabCoordinator()
+            testObject = BusinessCoordinator(navigationController: navController, parentCoordinator: mockTabCoordinator)
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = navController
             window.makeKeyAndVisible()
@@ -91,40 +93,27 @@ final class BusinessCoordinatorSpec: QuickSpec {
         
         // MARK: - func searchButtonTapped(latitude: Double, longitude: Double)
         describe("searchButtonTapped(latitude: Double, longitude: Double)") {
-            context("given a MapViewController is in the navigation hierarchy") {
-                it("pushes a BusinessSearchViewController on the navigation stack, sets the coordinator, and sets the delegate as the MapViewController") {
-                    testObject.start()
-                    
-                    testObject.searchButtonTapped(latitude: 100, longitude: 100)
-                    
-                    let mapVC = testObject.navigationController.viewControllers.first(where: { $0 is MapViewController}) as! MapViewController
-                    let businessSearchVC = testObject.navigationController.presentedViewController as! BusinessSearchViewController
-                    
-                    expect(businessSearchVC.coordinator).to(be(testObject))
-                    expect(businessSearchVC.delegate).to(be(mapVC))
-                }
-            }
-            
-            context("given a MapViewController is NOT in the navigation hierarchy") {
-                it("does NOT push a view controller on the navigation stack") {
-                    testObject.searchButtonTapped(latitude: 100, longitude: 100)
-                    
-                    let mapVC = testObject.navigationController.viewControllers.first(where: { $0 is MapViewController}) as? MapViewController
-                    
-                    expect(mapVC).to(beNil())
-                    expect(testObject.navigationController.viewControllers).to(beEmpty())
-                }
+            it("pushes a BusinessSearchViewController on the navigation stack, sets the coordinator, and sets the delegate as the MapViewController") {
+                testObject.start()
+                
+                testObject.searchButtonTapped(latitude: 100, longitude: 100)
+                
+                let mapVC = testObject.rootViewController
+                let businessSearchVC = testObject.navigationController.presentedViewController as! BusinessSearchViewController
+                
+                expect(businessSearchVC.coordinator).to(be(testObject))
+                expect(businessSearchVC.delegate).to(be(mapVC))
             }
         }
         
         // MARK: - func start()
         describe("start()") {
-            it("pushes a MapViewController on the navigation stack and sets the coordinator") {
+            it("sets the coordinator on the MapViewController") {
                 testObject.start()
                 
-                let mapVC = testObject.navigationController.viewControllers.first(where: { $0 is MapViewController}) as! MapViewController
+                let mapVC = testObject.rootViewController
                 
-                expect(testObject.navigationController.viewControllers).toNot(beEmpty())
+//                expect(testObject.navigationController.viewControllers).toNot(beEmpty())
                 expect(mapVC.coordinator).to(be(testObject))
             }
         }

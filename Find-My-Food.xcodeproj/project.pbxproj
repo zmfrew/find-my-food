@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5701EC6F23623827004A4EAA /* MainCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701EC6E23623827004A4EAA /* MainCoordinatorSpec.swift */; };
+		5701EC6F23623827004A4EAA /* BusinessCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701EC6E23623827004A4EAA /* BusinessCoordinatorSpec.swift */; };
 		57133BD12374BD3500DDB2D9 /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133BD02374BD3500DDB2D9 /* PriceButton.swift */; };
 		57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */; };
 		575225ED23722D600023085E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EC23722D600023085E /* Int+Extension.swift */; };
@@ -23,6 +23,9 @@
 		57C3CB8B236A314B007E1B9A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3CB89236A3145007E1B9A /* String+Extension.swift */; };
 		57C3CB90236A31D2007E1B9A /* String+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3CB8E236A31A2007E1B9A /* String+ExtensionSpec.swift */; };
 		57C7B10023751451001AF112 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B0FF23751451001AF112 /* TabCoordinator.swift */; };
+		57C7B1052375AAF6001AF112 /* MockTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B1042375AAF6001AF112 /* MockTabCoordinator.swift */; };
+		57C7B1072375ADA3001AF112 /* TabCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B1062375ADA3001AF112 /* TabCoordinatorSpec.swift */; };
+		57C7B1092375AF2D001AF112 /* MockBusinessCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */; };
 		57DCCA402357722E00CEA8DE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA3F2357722E00CEA8DE /* Secret.swift */; };
 		57DCCA672358EE6F00CEA8DE /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */; };
 		57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */; };
@@ -93,7 +96,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5701EC6E23623827004A4EAA /* MainCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorSpec.swift; sourceTree = "<group>"; };
+		5701EC6E23623827004A4EAA /* BusinessCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCoordinatorSpec.swift; sourceTree = "<group>"; };
 		57133BD02374BD3500DDB2D9 /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessesModelDelegate.swift; sourceTree = "<group>"; };
 		575225EC23722D600023085E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
@@ -109,6 +112,9 @@
 		57C3CB89236A3145007E1B9A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		57C3CB8E236A31A2007E1B9A /* String+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		57C7B0FF23751451001AF112 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		57C7B1042375AAF6001AF112 /* MockTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabCoordinator.swift; sourceTree = "<group>"; };
+		57C7B1062375ADA3001AF112 /* TabCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorSpec.swift; sourceTree = "<group>"; };
+		57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessCoordinator.swift; sourceTree = "<group>"; };
 		57DCCA3F2357722E00CEA8DE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
 		57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +200,10 @@
 		5701EC6D2362381A004A4EAA /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				5701EC6E23623827004A4EAA /* MainCoordinatorSpec.swift */,
+				5701EC6E23623827004A4EAA /* BusinessCoordinatorSpec.swift */,
+				57C7B1062375ADA3001AF112 /* TabCoordinatorSpec.swift */,
+				57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */,
+				57C7B1042375AAF6001AF112 /* MockTabCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -673,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B69E34802322F21400A4477E /* MockBusinessSearchClient.swift in Sources */,
+				57C7B1072375ADA3001AF112 /* TabCoordinatorSpec.swift in Sources */,
 				B69E347E2322F21400A4477E /* BaseServiceClientSpec.swift in Sources */,
 				B69E34812322F21400A4477E /* MockServiceClient.swift in Sources */,
 				B69E347D2322F21000A4477E /* TestData.swift in Sources */,
@@ -685,15 +695,17 @@
 				575225EF23722DF40023085E /* Int+ExtensionSpec.swift in Sources */,
 				579C21AD2368CAA40015D0BE /* MockLocationManager.swift in Sources */,
 				B69E347F2322F21400A4477E /* YelpRoutesSpec.swift in Sources */,
-				5701EC6F23623827004A4EAA /* MainCoordinatorSpec.swift in Sources */,
+				5701EC6F23623827004A4EAA /* BusinessCoordinatorSpec.swift in Sources */,
 				B69E346E2322F1F700A4477E /* BusinessesModelSpec.swift in Sources */,
 				B69E347C2322F21000A4477E /* CoordinateSpec.swift in Sources */,
 				B69E346F2322F1FC00A4477E /* MockMapModelDelegate.swift in Sources */,
 				B69E34712322F1FF00A4477E /* BusinessSearchModelSpec.swift in Sources */,
+				57C7B1092375AF2D001AF112 /* MockBusinessCoordinator.swift in Sources */,
 				B69E34702322F1FC00A4477E /* MapModelSpec.swift in Sources */,
 				57C3CB90236A31D2007E1B9A /* String+ExtensionSpec.swift in Sources */,
 				B69E34782322F21000A4477E /* ResponseSpec.swift in Sources */,
 				B69E34722322F1FF00A4477E /* MockBusinessSearchModelDelegate.swift in Sources */,
+				57C7B1052375AAF6001AF112 /* MockTabCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,15 +2,15 @@ import CoreLocation
 import UIKit
 
 protocol BusinessCoordinatorProtocol {
-    var navigationController: UINavigationController { get set }
-    var rootViewController: MapViewController { get set }
+    var navigationController: UINavigationController { get }
+    var rootViewController: MapViewController { get }
 
     func start()
 }
-// TOOD: - Update tests.
+
 final class BusinessCoordinator: BusinessCoordinatorProtocol {
-    var navigationController: UINavigationController
-    var rootViewController: MapViewController
+    private(set) var navigationController: UINavigationController
+    private(set) var rootViewController: MapViewController
     weak var parentCoordinator: TabCoordinatorProtocol?
 
     init(navigationController: UINavigationController, parentCoordinator: TabCoordinatorProtocol) {
