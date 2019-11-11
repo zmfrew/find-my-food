@@ -5,7 +5,7 @@ import UIKit
 final class MapViewController: UIViewController, Storyboarded {
     private var model: MapModel!
     private var mapView: MapView { view as! MapView } //swiftlint:disable:this force_cast
-    weak var coordinator: BusinessCoordinator?
+    weak var coordinator: BusinessCoordinatorProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
