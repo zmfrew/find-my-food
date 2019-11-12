@@ -43,6 +43,7 @@
 		57E5072D237B40BF0061CBB6 /* UserDefaultKeySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5072C237B40BF0061CBB6 /* UserDefaultKeySpec.swift */; };
 		57E5072F237B414D0061CBB6 /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5072E237B414D0061CBB6 /* MockUserDefaults.swift */; };
 		57E50731237B43DC0061CBB6 /* MockSettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E50730237B43DC0061CBB6 /* MockSettingsCoordinator.swift */; };
+		57E50735237B52050061CBB6 /* SettingsCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E50734237B52050061CBB6 /* SettingsCoordinatorSpec.swift */; };
 		57EEC11F23590B410076B9FD /* BusinessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EEC11E23590B410076B9FD /* BusinessDetailView.swift */; };
 		B69E33E72322912F00A4477E /* BusinessesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A12322912F00A4477E /* BusinessesModel.swift */; };
 		B69E33E82322912F00A4477E /* BusinessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33A22322912F00A4477E /* BusinessesView.swift */; };
@@ -146,6 +147,7 @@
 		57E5072C237B40BF0061CBB6 /* UserDefaultKeySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeySpec.swift; sourceTree = "<group>"; };
 		57E5072E237B414D0061CBB6 /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
 		57E50730237B43DC0061CBB6 /* MockSettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingsCoordinator.swift; sourceTree = "<group>"; };
+		57E50734237B52050061CBB6 /* SettingsCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinatorSpec.swift; sourceTree = "<group>"; };
 		57EEC11E23590B410076B9FD /* BusinessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailView.swift; sourceTree = "<group>"; };
 		B69E337B2322909000A4477E /* Find-My-Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find-My-Food.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69E33A12322912F00A4477E /* BusinessesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessesModel.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				57E50730237B43DC0061CBB6 /* MockSettingsCoordinator.swift */,
 				57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */,
 				57C7B1042375AAF6001AF112 /* MockTabCoordinator.swift */,
+				57E50734237B52050061CBB6 /* SettingsCoordinatorSpec.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				B69E34702322F1FC00A4477E /* MapModelSpec.swift in Sources */,
 				57C3CB90236A31D2007E1B9A /* String+ExtensionSpec.swift in Sources */,
 				B69E34782322F21000A4477E /* ResponseSpec.swift in Sources */,
+				57E50735237B52050061CBB6 /* SettingsCoordinatorSpec.swift in Sources */,
 				B69E34722322F1FF00A4477E /* MockBusinessSearchModelDelegate.swift in Sources */,
 				57C7B1052375AAF6001AF112 /* MockTabCoordinator.swift in Sources */,
 			);

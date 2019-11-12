@@ -113,10 +113,8 @@ final class BusinessCoordinatorSpec: QuickSpec {
                 
                 let mapVC = testObject.rootViewController
                 
-//                expect(testObject.navigationController.viewControllers).toNot(beEmpty())
                 expect(mapVC.coordinator).to(be(testObject))
             }
         }
-        
     }
 }

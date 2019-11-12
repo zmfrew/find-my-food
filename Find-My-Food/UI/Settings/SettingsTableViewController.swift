@@ -52,9 +52,9 @@ extension SettingsTableViewController: UIPickerViewDelegate {
 }
 
 extension SettingsTableViewController: SettingsModelDelegate {
-    func dataDidUpdate(_ darkMode: Bool, selectRadius: Int, location: String?) {
+    func dataDidUpdate(_ darkMode: Bool, location: String?, selectRadius: Int) {
         darkModeSwitch.setOn(darkMode, animated: true)
-        radiusPickerView.selectRow(selectRadius, inComponent: 0, animated: true)
         defaultLocationTextField.text = location
+        radiusPickerView.selectRow(selectRadius, inComponent: 0, animated: true)
     }
 }

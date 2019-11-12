@@ -9,7 +9,7 @@ protocol SettingsModelProtocol {
 }
 
 protocol SettingsModelDelegate: class {
-    func dataDidUpdate(_ darkMode: Bool, selectRadius: Int, location: String?)
+    func dataDidUpdate(_ darkMode: Bool, location: String?, selectRadius: Int)
 }
 
 final class SettingsModel: SettingsModelProtocol {
@@ -29,11 +29,11 @@ final class SettingsModel: SettingsModelProtocol {
     }
 
     func loadDefaults() {
-        isDarkModeActive = userDefaults.object(forKey: UserDefaultKey.darkMode) as! Bool //swiftlint:disable:this force_cast
-        radiusIndex = userDefaults.object(forKey: UserDefaultKey.radiusIndex) as! Int //swiftlint:disable:this force_cast
+        isDarkModeActive = userDefaults.object(forKey: UserDefaultKey.darkMode) as? Bool ?? false
         defaultLocation = userDefaults.object(forKey: UserDefaultKey.defaultLocation) as? String
+        radiusIndex = userDefaults.object(forKey: UserDefaultKey.radiusIndex) as? Int ?? 24
 
-        delegate?.dataDidUpdate(isDarkModeActive, selectRadius: radiusIndex, location: defaultLocation)
+        delegate?.dataDidUpdate(isDarkModeActive, location: defaultLocation, selectRadius: radiusIndex)
     }
 
     func radius(at index: Int) -> Int {
@@ -42,7 +42,7 @@ final class SettingsModel: SettingsModelProtocol {
 
     func selectedDefaults(darkMode: Bool, defaultLocation: String?, radiusIndex: Int) {
         userDefaults.set(darkMode, forKey: UserDefaultKey.darkMode)
-        userDefaults.set(radiusIndex, forKey: UserDefaultKey.radiusIndex)
         userDefaults.set(defaultLocation, forKey: UserDefaultKey.defaultLocation)
+        userDefaults.set(radiusIndex, forKey: UserDefaultKey.radiusIndex)
     }
 }
