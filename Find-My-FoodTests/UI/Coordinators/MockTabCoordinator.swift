@@ -3,16 +3,17 @@ import UIKit
 @testable import Find_My_Food
 
 final class MockTabCoordinator: TabCoordinatorProtocol {
+    
     final class Stub {
-        var coordinatorsShouldReturn = [BusinessCoordinatorProtocol]()
+        var coordinatorsShouldReturn = [Coordinator]()
         var navigationControllerShouldReturn = UINavigationController()
         var tabControllerShouldReturn = UITabBarController()
-        var startCalledWith = [BusinessCoordinatorProtocol]()
+        var startCalledWith = [[Coordinator]]()
     }
     
     var stub = Stub()
     
-    var coordinators: [BusinessCoordinatorProtocol] {
+    var coordinators: [Coordinator] {
         stub.coordinatorsShouldReturn
     }
     
@@ -24,7 +25,7 @@ final class MockTabCoordinator: TabCoordinatorProtocol {
         stub.tabControllerShouldReturn
     }
     
-    func start(with coordinator: BusinessCoordinatorProtocol) {
-        stub.startCalledWith.append(coordinator)
+    func start(with coordinators: [Coordinator]) {
+        stub.startCalledWith.append(coordinators)
     }
 }

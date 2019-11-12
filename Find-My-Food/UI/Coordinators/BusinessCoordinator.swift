@@ -1,7 +1,7 @@
 import CoreLocation
 import UIKit
 
-protocol BusinessCoordinatorProtocol: class {
+protocol BusinessCoordinatorProtocol: Coordinator {
     var navigationController: UINavigationController { get }
     var rootViewController: MapViewController { get }
 

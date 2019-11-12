@@ -35,7 +35,7 @@ final class BusinessSearchClient: BusinessSearchClientProtocol {
             "radius": "\(radius)",
             "price": prices,
             "openNow": "\(openNow)"
-            // TODO: - Add location string for people wanting to manually input location
+            // TODO: - Add location string for people wanting to manually input location & make lat long optional.
         ]
 
         let headers = ["Authorization": "Bearer \(Secret.apiKey)"]

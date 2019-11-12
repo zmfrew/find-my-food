@@ -13,7 +13,7 @@ final class BusinessSearchView: UIView {
     @IBOutlet private weak var secondPriceButton: PriceButton!
     @IBOutlet private weak var thirdPriceButton: PriceButton!
     @IBOutlet private weak var fourthPriceButton: PriceButton!
-    @IBOutlet private weak var radiusPicker: UIPickerView!
+    @IBOutlet private weak var radiusPickerView: UIPickerView!
     @IBOutlet private weak var openNowSwitch: UISwitch!
     @IBOutlet private weak var locationTextField: UITextField! // TODO: - Hide and display this based on user's location being shared or not.
 	@IBOutlet private weak var searchButton: UIButton!
@@ -36,9 +36,10 @@ final class BusinessSearchView: UIView {
         thirdPriceButton.delegate = self
         fourthPriceButton.delegate = self
 
-        radiusPicker.delegate = self
-        radiusPicker.dataSource = self
-        radiusPicker.selectRow(24, inComponent: 0, animated: false)
+        radiusPickerView.delegate = self
+        radiusPickerView.dataSource = self
+        // TODO: - Use the default radius in UserDefaults here.
+        radiusPickerView.selectRow(Radius.rangeMax, inComponent: 0, animated: false)
 
         searchTextField.delegate = self
         locationTextField.delegate = self
@@ -60,7 +61,7 @@ final class BusinessSearchView: UIView {
 	@IBAction private func searchButtonTapped(_ sender: Any) {
 		guard let business = searchTextField.text, !business.isEmpty else { return }
 
-        let radius = radiusPickerData[radiusPicker.selectedRow(inComponent: 0)]
+        let radius = radiusPickerData[radiusPickerView.selectedRow(inComponent: 0)]
         let openNow = openNowSwitch.isOn
 
         delegate?.search(for: business, radius: radius, prices: selectedPrices, openNow: openNow)
