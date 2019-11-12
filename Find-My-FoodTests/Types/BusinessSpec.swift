@@ -8,7 +8,7 @@ final class BusinessSpec: QuickSpec {
         // MARK: init(from decoder:)
         describe("init(from decoder:)") {
             it("decodes properly") {
-                let businesses = TestData.businessesFromJson()
+                let businesses = TestData.businessesFromMockBusinessesFile()
                 
                 let firstBusiness = businesses.first!
                 expect(firstBusiness.id).to(equal("FmGF1B-Rpsjq1f5b56qMwg"))

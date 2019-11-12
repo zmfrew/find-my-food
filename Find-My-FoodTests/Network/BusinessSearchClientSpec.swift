@@ -6,11 +6,13 @@ import Nimble
 final class BusinessSearchClientSpec: QuickSpec {
     override func spec() {
         var testObject: BusinessSearchClient!
+        var mockDecoder: MockDecoder!
         var mockServiceClient: MockServiceClient!
         
         beforeEach {
+            mockDecoder = MockDecoder()
             mockServiceClient = MockServiceClient()
-			testObject = BusinessSearchClient(serviceClient: mockServiceClient)
+            testObject = BusinessSearchClient(decoder: mockDecoder, serviceClient: mockServiceClient)
         }
         
         // MARK: - func search(for business: String, completion: @escaping ([Business]) -> Void)
@@ -29,10 +31,10 @@ final class BusinessSearchClientSpec: QuickSpec {
                     ]
                     let expectedHeaders = ["Authorization": "Bearer \(Secret.apiKey)"]
                     
-                    mockServiceClient.stub.getShouldReturn = .success(TestData.businessData())
+                    mockServiceClient.stub.getShouldCompleteWith = .success(TestData.businessData())
                     
                     testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
-                        expect(businesses).to(equal(expectedBusinesses))
+                        expect(businesses).toEventually(equal(expectedBusinesses))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                        
                        let (url, queryParams, headers, _) = mockServiceClient.stub.getCalledWith.first!
@@ -76,7 +78,7 @@ final class BusinessSearchClientSpec: QuickSpec {
             context("given a valid url and get completes with data") {
                 it("completes with data") {
                     let expectedData = Data(capacity: 0)
-                    mockServiceClient.stub.getShouldReturn = .success(expectedData)
+                    mockServiceClient.stub.getShouldCompleteWith = .success(expectedData)
                     
                     testObject.image(at: "developer.apple.com") { data in
                         expect(data).to(equal(expectedData))
@@ -88,7 +90,7 @@ final class BusinessSearchClientSpec: QuickSpec {
             context("given a valid url and get completes with an error") {
                 it("completes with nil") {
                     let expectedError = NSError(domain: "expected error", code: -1, userInfo: nil)
-                    mockServiceClient.stub.getShouldReturn = .failure(expectedError)
+                    mockServiceClient.stub.getShouldCompleteWith = .failure(expectedError)
                     
                     testObject.image(at: "apple.com") { data in
                         expect(data).to(beNil())

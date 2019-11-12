@@ -42,8 +42,9 @@ final class BusinessCoordinator: BusinessCoordinatorProtocol {
     func downloadCompleted(with businesses: [Business]) {
         let vc = BusinessesViewController.instantiate()
         vc.coordinator = self
+        let decoder = DecoderWrapper(decoder: JSONDecoder())
         let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
-        let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient)
+        let businessSearchClient = BusinessSearchClient(decoder: decoder, serviceClient: serviceClient)
         let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, delegate: vc)
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
