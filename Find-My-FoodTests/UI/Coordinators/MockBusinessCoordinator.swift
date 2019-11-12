@@ -5,8 +5,8 @@ import UIKit
 final class MockBusinessCoordinator: BusinessCoordinatorProtocol {
     
     final class Stub {
-        var navigationControllerShouldReturn: UINavigationController = UINavigationController()
-        var rootViewControllerShouldReturn: MapViewController = MapViewController()
+        var navigationControllerShouldReturn = UINavigationController()
+        var rootViewControllerShouldReturn = MapViewController()
         var startCallCount = 0
     }
     
