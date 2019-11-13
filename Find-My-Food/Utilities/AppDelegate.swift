@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let businessCoordinator = BusinessCoordinator(navigationController: navigationController, parentCoordinator: coordinator!)
         let settingsCoordinator = SettingsCoordinator(navigationController: navigationController, parentCoordinator: coordinator!)
-        coordinator?.start(with: [businessCoordinator, settingsCoordinator])
+        let favoritesCoordinator = FavoritesCoordinator(navigationController: navigationController, parentCoordinator: coordinator!)
+        coordinator?.start(with: [businessCoordinator, settingsCoordinator, favoritesCoordinator])
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController

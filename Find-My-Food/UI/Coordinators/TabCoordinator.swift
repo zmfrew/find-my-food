@@ -25,12 +25,18 @@ final class TabCoordinator: TabCoordinatorProtocol {
         let businessSearchCoordinator = coordinators.first(where: { $0 is BusinessCoordinatorProtocol }) as! BusinessCoordinatorProtocol //swiftlint:disable:this force_cast line_length
         businessSearchCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
 
-        let settingsCoordinator = coordinators.first(where: { $0 is SettingsCoordinatorProtocol }) as! SettingsCoordinatorProtocol //swiftlint:disable:this force_cast line_length
-        settingsCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        let favoritesCoordinator = coordinators.first(where: { $0 is FavoritesCoordinatorProtocol }) as! FavoritesCoordinatorProtocol //swiftlint:disable:this force_cast line_length
+        favoritesCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
 
-        tabController.viewControllers = [businessSearchCoordinator.rootViewController, settingsCoordinator.rootViewController]
+        let settingsCoordinator = coordinators.first(where: { $0 is SettingsCoordinatorProtocol }) as! SettingsCoordinatorProtocol //swiftlint:disable:this force_cast line_length
+        settingsCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
+
+        tabController.viewControllers = [businessSearchCoordinator.rootViewController,
+                                         favoritesCoordinator.rootViewController,
+                                         settingsCoordinator.rootViewController]
 
         businessSearchCoordinator.start()
+        favoritesCoordinator.start()
         settingsCoordinator.start()
     }
 }

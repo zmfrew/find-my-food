@@ -18,6 +18,8 @@ final class SettingsTableViewController: UITableViewController, Storyboarded {
         radiusPickerView.delegate = self
         radiusPickerView.dataSource = self
         radiusPickerView.selectRow(Radius.rangeMax, inComponent: 0, animated: false)
+
+        tableView.tableFooterView = UIView()
     }
 
     @IBAction private func saveButtonTapped(_ sender: UIButton) {
