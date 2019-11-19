@@ -5,18 +5,13 @@ import UIKit
 final class MapViewController: UIViewController, Storyboarded {
     private var model: MapModel!
     private var mapView: MapView { view as! MapView } //swiftlint:disable:this force_cast
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: BusinessCoordinatorProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         model = MapModel(delegate: self, geocoder: GeocoderWrapper(), locationManager: LocationManagerWrapper())
         mapView.delegate = self
-
-        if let businessSearchVC = children.first(where: { $0 is BusinessSearchViewController }) as? BusinessSearchViewController {
-            businessSearchVC.delegate = self
-            businessSearchVC.view.layer.cornerRadius = 8
-        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

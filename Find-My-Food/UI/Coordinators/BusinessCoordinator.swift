@@ -1,11 +1,31 @@
 import CoreLocation
 import UIKit
 
-final class MainCoordinator: Coordinator {
-    var navigationController: UINavigationController
+protocol BusinessCoordinatorProtocol: Coordinator {
+    var navigationController: UINavigationController { get }
+    var rootViewController: MapViewController { get }
 
-    init(navigationController: UINavigationController) {
+    func businessSelected(_ business: Business)
+    func dismiss()
+    func downloadCompleted(with businesses: [Business])
+    func downloadDidBegin()
+    func downloadDidEnd()
+    func locationButtonTapped(_ business: Business)
+    func pop(_ animated: Bool)
+    func searchButtonTapped(latitude: Double, longitude: Double)
+    func start()
+}
+
+final class BusinessCoordinator: BusinessCoordinatorProtocol {
+    private(set) var navigationController: UINavigationController
+    private(set) var rootViewController: MapViewController
+    weak var parentCoordinator: TabCoordinatorProtocol?
+
+    init(navigationController: UINavigationController, parentCoordinator: TabCoordinatorProtocol) {
         self.navigationController = navigationController
+        self.parentCoordinator = parentCoordinator
+        self.rootViewController = MapViewController.instantiate()
+
     }
 
     func businessSelected(_ business: Business) {
@@ -22,8 +42,9 @@ final class MainCoordinator: Coordinator {
     func downloadCompleted(with businesses: [Business]) {
         let vc = BusinessesViewController.instantiate()
         vc.coordinator = self
+        let decoder = DecoderWrapper(decoder: JSONDecoder())
         let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
-        let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient)
+        let businessSearchClient = BusinessSearchClient(decoder: decoder, serviceClient: serviceClient)
         let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, delegate: vc)
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
@@ -54,19 +75,15 @@ final class MainCoordinator: Coordinator {
     }
 
     func searchButtonTapped(latitude: Double, longitude: Double) {
-        guard let mapVC = navigationController.viewControllers.first(where: { $0 is MapViewController }) as? MapViewController else { return }
-
         let vc = BusinessSearchViewController.instantiate()
         vc.coordinator = self
-        vc.delegate = mapVC
+        vc.delegate = rootViewController
         vc.configure(latitude: latitude, longitude: longitude)
 
         navigationController.present(vc, animated: true)
     }
 
     func start() {
-        let vc = MapViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        rootViewController.coordinator = self
     }
 }

@@ -15,13 +15,14 @@ final class BusinessSearchViewController: UIViewController, Storyboarded {
     private var longitude: Double!
 
     weak var delegate: BusinessSearchViewControllerDelegate?
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: BusinessCoordinatorProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // TOOD: - Move BaseServiceClient's into an AppSession of some sort.
+        let decoder = DecoderWrapper(decoder: JSONDecoder())
         let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
-		let businessSearchClient = BusinessSearchClient(serviceClient: serviceClient)
+        let businessSearchClient = BusinessSearchClient(decoder: decoder, serviceClient: serviceClient)
 		model = BusinessSearchModel(businessSearchClient: businessSearchClient, delegate: self)
 
 		searchView.delegate = self

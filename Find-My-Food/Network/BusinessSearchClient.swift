@@ -13,9 +13,11 @@ protocol BusinessSearchClientProtocol {
 }
 
 final class BusinessSearchClient: BusinessSearchClientProtocol {
+    private let decoder: DecoderProtocol
     private let serviceClient: ServiceClientProtocol
 
-	init(serviceClient: ServiceClientProtocol) {
+    init(decoder: DecoderProtocol, serviceClient: ServiceClientProtocol) {
+        self.decoder = decoder
         self.serviceClient = serviceClient
     }
 
@@ -35,7 +37,7 @@ final class BusinessSearchClient: BusinessSearchClientProtocol {
             "radius": "\(radius)",
             "price": prices,
             "openNow": "\(openNow)"
-            // TODO: - Add location string for people wanting to manually input location
+            // TODO: - Add location string for people wanting to manually input location & make lat long optional.
         ]
 
         let headers = ["Authorization": "Bearer \(Secret.apiKey)"]
@@ -43,8 +45,13 @@ final class BusinessSearchClient: BusinessSearchClientProtocol {
         serviceClient.get(from: YelpRoutes.businessSearch, queryParams: queryParams, headers: headers) { result in
             switch result {
             case .success(let data):
-                let businesses = self.decodeBusinesses(data)
-                completion(businesses)
+                guard let response = try? self.decoder.decode(Response.self, from: data) else {
+                    print("Error occured decoding response")
+                    completion([])
+                    return
+                }
+
+                completion(response.businesses)
 
             case .failure(let error):
                 print("Error occurred searching for businesses: \(error.localizedDescription)")
@@ -69,16 +76,6 @@ final class BusinessSearchClient: BusinessSearchClientProtocol {
                 print("Error occurred downloading image: \(error.localizedDescription)")
                 completion(nil)
             }
-        }
-    }
-
-    private func decodeBusinesses(_ data: Data) -> [Business] {
-        do {
-            let responseDict = try JSONDecoder().decode(Response.self, from: data)
-            return responseDict.businesses
-        } catch {
-            print("Error occurred decoding businesses: \(error.localizedDescription)")
-            return []
         }
     }
 }

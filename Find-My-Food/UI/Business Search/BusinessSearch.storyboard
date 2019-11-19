@@ -144,7 +144,7 @@
                             <outlet property="fourthPriceButton" destination="XBv-qO-uCZ" id="pQG-Kl-qbS"/>
                             <outlet property="locationTextField" destination="5PI-H7-dos" id="dxs-1W-GrR"/>
                             <outlet property="openNowSwitch" destination="RVU-OQ-pok" id="QMn-6N-P5o"/>
-                            <outlet property="radiusPicker" destination="Zz5-Iu-VT9" id="NOw-Az-RlS"/>
+                            <outlet property="radiusPickerView" destination="Zz5-Iu-VT9" id="NOw-Az-RlS"/>
                             <outlet property="scrollView" destination="9kL-Jf-0D3" id="QdQ-7f-Vc0"/>
                             <outlet property="searchButton" destination="MKz-zX-jB1" id="wIn-Wl-ik5"/>
                             <outlet property="searchTextField" destination="tSv-1O-vH7" id="q1e-hp-2ZR"/>

@@ -1,7 +1,5 @@
 import UIKit
 
-protocol Coordinator {
-    var navigationController: UINavigationController { get set }
-
-    func start()
+protocol Coordinator: class {
+    var navigationController: UINavigationController { get }
 }

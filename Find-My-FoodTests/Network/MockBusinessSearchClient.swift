@@ -3,10 +3,8 @@ import Foundation
 @testable import Find_My_Food
 
 final class MockBusinessSearchClient: BusinessSearchClientProtocol {
-    
     final class Stub {
-        var imageCallCount: Int { imageCalledWith.count }
-        var imageCalledWith = [String]()
+        var imageCallCount = 0
         var imageShouldCompleteWith: Data? = Data(base64Encoded: "empty")
         var searchCallCount: Int { searchCalledWith.count }
         var searchCalledWith = [(business: String, latitude: Double, longitude: Double, radius: Int, prices: [Int], openNow: Bool, completion: ([Business]) -> Void)]()
@@ -16,7 +14,7 @@ final class MockBusinessSearchClient: BusinessSearchClientProtocol {
     var stub = Stub()
 
     func image(at urlString: String, completion: @escaping (Data?) -> Void) {
-        stub.imageCalledWith.append(urlString)
+        stub.imageCallCount += 1
         completion(stub.imageShouldCompleteWith)
     }
     
