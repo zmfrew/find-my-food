@@ -17,14 +17,25 @@ final class BusinessesModelSpec: QuickSpec {
             testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
         }
         
-        // MARK: - businessCount: Int
-        describe("businessCount: Int") {
-            it("returns correct number of businesses") {
-                expect(testObject.businessCount).to(equal(3))
+        // MARK: - init()
+        describe("init") {
+            context("given images are not downloaded yet") {
+                it("does not call dataDidUpdate after setting businesses") {
+                    testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+                    
+                    expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(0))
+                }
             }
         }
         
-        // MARK: - business(for row: Int) -> Business?
+        // MARK: - var businessCount: Int
+        describe("businessCount: Int") {
+            it("returns correct number of businesses") {
+                expect(testObject.businessCount).to(equal(20))
+            }
+        }
+        
+        // MARK: - func business(for row: Int) -> Business?
         describe("business(for row: Int) -> Business?") {
             context("given a valid index") {
                 it("returns the expected business") {
@@ -45,18 +56,28 @@ final class BusinessesModelSpec: QuickSpec {
         describe("image(for business: Business") {
             context("given data returns from image search") {
                 it("calls dataDidUpdate on the delegate")  {
+                    let image = UIImage(named: "US", in: Bundle(for: BusinessesModelSpec.self), with: nil)
+                    mockBusinessSearchClient.stub.imageShouldCompleteWith = image?.jpegData(compressionQuality: 0.8)
                     
+                    testObject.image(for: businesses.first!)
+                    
+                    expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(1))
+                    expect(mockBusinessSearchClient.stub.imageCallCount).to(equal(testObject.businessCount + 1))
                 }
             }
             
             context("given no data returns from image search") {
                 it("does not call dataDidUpdate on the delegate") {
+                    mockBusinessSearchClient.stub.imageShouldCompleteWith = nil
                     
+                    testObject.image(for: businesses.first!)
+                    expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(0))
+                    expect(mockBusinessSearchClient.stub.imageCallCount).to(equal(testObject.businessCount + 1))
                 }
             }
         }
         
-        // MARK: - randomBusiness() -> Business?
+        // MARK: - func randomBusiness() -> Business?
         describe("randomBusiness()") {
             context("given businesses is not empty") {
                 it("returns a business") {

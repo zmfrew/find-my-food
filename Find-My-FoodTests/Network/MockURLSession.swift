@@ -2,10 +2,10 @@ import Foundation
 
 @testable import Find_My_Food
 
-final class MockUrlSession: URLSessionWrapperInterface {
+final class MockUrlSession: URLSessionProtocol {
 	final class Stub {
         var dataTaskCallCount: Int {
-            return dataTaskCalledWith.count
+            dataTaskCalledWith.count
         }
 		var dataTaskCalledWith = [(request: URLRequest, completionHandler: (Data?, URLResponse?, Error?) -> Void)]()
 	}

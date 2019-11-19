@@ -19,8 +19,8 @@ final class ArrayExtensionSpec: QuickSpec {
             
             context("given an empty array") {
                 it("returns false") {
-                    let numArr: [Int] = []
-                    let stringArr: [String] = []
+                    let numArr = [Int]()
+                    let stringArr = [String]()
                     
                     expect(numArr.isNotEmpty).to(beFalse())
                     expect(stringArr.isNotEmpty).to(beFalse())

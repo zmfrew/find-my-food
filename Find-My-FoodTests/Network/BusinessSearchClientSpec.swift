@@ -6,16 +6,16 @@ import Nimble
 final class BusinessSearchClientSpec: QuickSpec {
     override func spec() {
         var testObject: BusinessSearchClient!
+        var mockDecoder: MockDecoder!
         var mockServiceClient: MockServiceClient!
-		var mockNetworkIndicator: MockNetworkIndicator!
         
         beforeEach {
+            mockDecoder = MockDecoder()
             mockServiceClient = MockServiceClient()
-			mockNetworkIndicator = MockNetworkIndicator()
-			testObject = BusinessSearchClient(serviceClient: mockServiceClient, networkIndicator: mockNetworkIndicator)
+            testObject = BusinessSearchClient(decoder: mockDecoder, serviceClient: mockServiceClient)
         }
         
-        // MARK: - search(for business: String, completion: @escaping ([Business]) -> Void)
+        // MARK: - func search(for business: String, completion: @escaping ([Business]) -> Void)
         describe("search(for business: String, completion: @escaping ([Business]) -> Void)") {
             context("given success and data is returned") {
                 it("decodes and returns an array of businesses") {
@@ -25,14 +25,16 @@ final class BusinessSearchClientSpec: QuickSpec {
                         "term": searchText,
                         "latitude": "\(38.752209)",
                         "longitude": "\(-89.986610)",
-                        "radius": "40000"
+                        "radius": "40000",
+                        "price": "1",
+                        "openNow": "false"
                     ]
                     let expectedHeaders = ["Authorization": "Bearer \(Secret.apiKey)"]
                     
-                    mockServiceClient.stub.getShouldReturn = .success(TestData.businessData())
+                    mockServiceClient.stub.getShouldCompleteWith = .success(TestData.businessData())
                     
-                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610) { businesses in
-                        expect(businesses).to(equal(expectedBusinesses))
+                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
+                        expect(businesses).toEventually(equal(expectedBusinesses))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                        
                        let (url, queryParams, headers, _) = mockServiceClient.stub.getCalledWith.first!
@@ -40,8 +42,6 @@ final class BusinessSearchClientSpec: QuickSpec {
                         expect(url).to(equal(YelpRoutes.businessSearch))
                         expect(queryParams).to(equal(expectedQueryParams))
                         expect(headers).to(equal(expectedHeaders))
-						expect(mockNetworkIndicator.stub.activityDidBeginCallCount).to(equal(1))
-						expect(mockNetworkIndicator.stub.activityDidEndCallCount).to(equal(1))
                     }
                 }
             }
@@ -53,11 +53,13 @@ final class BusinessSearchClientSpec: QuickSpec {
                         "term": searchText,
                         "latitude": "\(38.752209)",
                         "longitude": "\(-89.986610)",
-                        "radius": "40000"
+                        "radius": "40000",
+                        "price": "1",
+                        "openNow": "false"
                     ]
                     let expectedHeaders = ["Authorization": "Bearer \(Secret.apiKey)"]
                     
-                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610) { businesses in
+                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
                         expect(businesses).to(equal([]))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                         
@@ -66,8 +68,6 @@ final class BusinessSearchClientSpec: QuickSpec {
                         expect(url).to(equal(YelpRoutes.businessSearch))
                         expect(queryParams).to(equal(expectedQueryParams))
                         expect(headers).to(equal(expectedHeaders))
-						expect(mockNetworkIndicator.stub.activityDidBeginCallCount).to(equal(1))
-						expect(mockNetworkIndicator.stub.activityDidEndCallCount).to(equal(1))
                     }
                 }
             }
@@ -78,7 +78,7 @@ final class BusinessSearchClientSpec: QuickSpec {
             context("given a valid url and get completes with data") {
                 it("completes with data") {
                     let expectedData = Data(capacity: 0)
-                    mockServiceClient.stub.getShouldReturn = .success(expectedData)
+                    mockServiceClient.stub.getShouldCompleteWith = .success(expectedData)
                     
                     testObject.image(at: "developer.apple.com") { data in
                         expect(data).to(equal(expectedData))
@@ -90,7 +90,7 @@ final class BusinessSearchClientSpec: QuickSpec {
             context("given a valid url and get completes with an error") {
                 it("completes with nil") {
                     let expectedError = NSError(domain: "expected error", code: -1, userInfo: nil)
-                    mockServiceClient.stub.getShouldReturn = .failure(expectedError)
+                    mockServiceClient.stub.getShouldCompleteWith = .failure(expectedError)
                     
                     testObject.image(at: "apple.com") { data in
                         expect(data).to(beNil())

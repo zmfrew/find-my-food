@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,37 +16,146 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSv-1O-vH7">
-                                <rect key="frame" x="16" y="192" width="382" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKz-zX-jB1">
-                                <rect key="frame" x="183" y="277.5" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="searchButtonTapped:" destination="1Md-DA-Sfz" eventType="touchUpInside" id="TiO-W1-Goi"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-Jf-0D3">
+                                <rect key="frame" x="16" y="60" width="382" height="786"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l02-Ea-ZgZ">
+                                        <rect key="frame" x="0.0" y="20" width="382" height="696"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give us a restaurant or keyword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSv-1O-vH7">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tcp-Jp-vjg">
+                                                <rect key="frame" x="0.0" y="42" width="382" height="244.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many miles away?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7E-wn-CWa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz5-Iu-VT9">
+                                                        <rect key="frame" x="0.0" y="28.5" width="382" height="216"/>
+                                                    </pickerView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NAu-aN-dsk">
+                                                <rect key="frame" x="0.0" y="294.5" width="382" height="282.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How expensive?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsT-ki-eMu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-G2-OZH">
+                                                        <rect key="frame" x="0.0" y="28.5" width="382" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRo-Wp-MdL" customClass="PriceButton" customModule="Find_My_Food" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="92.5" height="30"/>
+                                                                <state key="normal" title="$"/>
+                                                                <connections>
+                                                                    <action selector="priceButtonTapped:" destination="1Md-DA-Sfz" eventType="touchUpInside" id="lHh-8L-9AI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BbQ-s8-3c8" customClass="PriceButton" customModule="Find_My_Food" customModuleProvider="target">
+                                                                <rect key="frame" x="96.5" y="0.0" width="92.5" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="$$"/>
+                                                                <connections>
+                                                                    <action selector="priceButtonTapped:" destination="1Md-DA-Sfz" eventType="touchUpInside" id="3Sj-Mc-XRh"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kaO-tJ-xy2" customClass="PriceButton" customModule="Find_My_Food" customModuleProvider="target">
+                                                                <rect key="frame" x="193" y="0.0" width="92.5" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="$$$"/>
+                                                                <connections>
+                                                                    <action selector="priceButtonTapped:" destination="1Md-DA-Sfz" eventType="touchUpInside" id="CM8-mP-cos"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XBv-qO-uCZ" customClass="PriceButton" customModule="Find_My_Food" customModuleProvider="target">
+                                                                <rect key="frame" x="289.5" y="0.0" width="92.5" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="$$$$"/>
+                                                                <connections>
+                                                                    <action selector="priceButtonTapped:" destination="1Md-DA-Sfz" eventType="touchUpInside" id="sNc-KW-LRS"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alG-nt-l3Y">
+                                                        <rect key="frame" x="0.0" y="66.5" width="382" height="216"/>
+                                                    </pickerView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="blj-uL-vPG">
+                                                <rect key="frame" x="0.0" y="585" width="382" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Now?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hX-t8-0bp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RVU-OQ-pok">
+                                                        <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Where do you want to find restaurants?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5PI-H7-dos">
+                                                <rect key="frame" x="0.0" y="624" width="382" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKz-zX-jB1">
+                                                <rect key="frame" x="0.0" y="666" width="382" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchButtonTapped:" destination="1Md-DA-Sfz" eventType="touchUpInside" id="TiO-W1-Goi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="l02-Ea-ZgZ" firstAttribute="width" secondItem="9kL-Jf-0D3" secondAttribute="width" id="0nl-I5-iSP"/>
+                                    <constraint firstItem="l02-Ea-ZgZ" firstAttribute="top" secondItem="9kL-Jf-0D3" secondAttribute="top" constant="20" id="D9y-iy-8gG"/>
+                                    <constraint firstAttribute="bottom" secondItem="l02-Ea-ZgZ" secondAttribute="bottom" constant="106.5" id="d7u-zp-WQa"/>
+                                    <constraint firstAttribute="trailing" secondItem="l02-Ea-ZgZ" secondAttribute="trailing" constant="20" id="knD-1y-J4T"/>
+                                    <constraint firstItem="l02-Ea-ZgZ" firstAttribute="leading" secondItem="9kL-Jf-0D3" secondAttribute="leading" id="weh-gF-X0V"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="4R7-1C-ych"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="dQy-Yu-W8b"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MKz-zX-jB1" firstAttribute="centerX" secondItem="1Md-DA-Sfz" secondAttribute="centerX" id="Cl9-o1-4SP"/>
-                            <constraint firstAttribute="trailing" secondItem="tSv-1O-vH7" secondAttribute="trailing" constant="16" id="CrQ-Gg-87T"/>
-                            <constraint firstItem="tSv-1O-vH7" firstAttribute="top" secondItem="1Md-DA-Sfz" secondAttribute="top" constant="192" id="mvq-HA-dou"/>
-                            <constraint firstItem="tSv-1O-vH7" firstAttribute="leading" secondItem="1Md-DA-Sfz" secondAttribute="leading" constant="16" id="peA-7E-cgj"/>
-                            <constraint firstItem="MKz-zX-jB1" firstAttribute="top" secondItem="tSv-1O-vH7" secondAttribute="bottom" constant="51.5" id="thK-FV-cXI"/>
+                            <constraint firstItem="lH4-Or-KZ7" firstAttribute="trailing" secondItem="9kL-Jf-0D3" secondAttribute="trailing" constant="16" id="D3v-XR-zEm"/>
+                            <constraint firstItem="lH4-Or-KZ7" firstAttribute="bottom" secondItem="9kL-Jf-0D3" secondAttribute="bottom" constant="16" id="FJn-KG-bw3"/>
+                            <constraint firstItem="9kL-Jf-0D3" firstAttribute="leading" secondItem="lH4-Or-KZ7" secondAttribute="leading" constant="16" id="e2c-YC-1Gh"/>
+                            <constraint firstItem="9kL-Jf-0D3" firstAttribute="top" secondItem="lH4-Or-KZ7" secondAttribute="top" constant="16" id="qyV-Qe-oNT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lH4-Or-KZ7"/>
                         <connections>
+                            <outlet property="firstPriceButton" destination="iRo-Wp-MdL" id="H2n-40-KhT"/>
+                            <outlet property="fourthPriceButton" destination="XBv-qO-uCZ" id="pQG-Kl-qbS"/>
+                            <outlet property="locationTextField" destination="5PI-H7-dos" id="dxs-1W-GrR"/>
+                            <outlet property="openNowSwitch" destination="RVU-OQ-pok" id="QMn-6N-P5o"/>
+                            <outlet property="radiusPickerView" destination="Zz5-Iu-VT9" id="NOw-Az-RlS"/>
+                            <outlet property="scrollView" destination="9kL-Jf-0D3" id="QdQ-7f-Vc0"/>
                             <outlet property="searchButton" destination="MKz-zX-jB1" id="wIn-Wl-ik5"/>
                             <outlet property="searchTextField" destination="tSv-1O-vH7" id="q1e-hp-2ZR"/>
+                            <outlet property="secondPriceButton" destination="BbQ-s8-3c8" id="i0T-jB-e4u"/>
+                            <outlet property="thirdPriceButton" destination="kaO-tJ-xy2" id="Czc-jf-AUw"/>
                         </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Af0-PO-uLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="98"/>
+            <point key="canvasLocation" x="1611.5942028985507" y="97.767857142857139"/>
         </scene>
     </scenes>
 </document>
