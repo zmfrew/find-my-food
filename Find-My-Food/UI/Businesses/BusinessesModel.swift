@@ -43,7 +43,7 @@ final class BusinessesModel: BusinessModelProtocol {
 
     func image(for business: Business) {
         DispatchQueue.global(qos: .userInitiated).async {
-            self.businessSearchClient.image(at: business.imageUrlString) { [weak self] data in
+            self.businessSearchClient.image(at: business.imageURLString) { [weak self] data in
                 guard let self = self else { return }
 
                 if let data = data,

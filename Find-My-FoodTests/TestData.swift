@@ -4,7 +4,29 @@ import Foundation
 
 enum TestData {
     static func createBusiness() -> Business {
-        return Business(id: "test id", alias: "test alias", name: "test name", imageUrlString: "test imageUrlString", isClosed: false, urlString: "test urlString", reviewCount: 0, categories: [], rating: 1.0, coordinates: Coordinate(latitude: 1.0, longitude: 1.0), transactions: [], priceLevel: nil, location: Business.Location(address1: "test address1", address2: "test address2", address3: "test address3", city: "test city", zipCode: "test zipCode", country: "test country", state: "test state", displayAddress: []), phone: "test phone", displayPhone: "test displayPhone", distance: 1.0)
+        return Business(alias: "test alias",
+                        categories: [],
+                        coordinates: Coordinate(latitude: 1.0, longitude: 1.0),
+                        displayPhone: "test displayPhone",
+                        distance: 1.0,
+                        id: "test id",
+                        image: nil,
+                        imageURLString: "test imageURLString",
+                        isClosed: false,
+                        location: Business.Location(address1: "test address1",
+                                                    address2: "test address2",
+                                                    address3: "test address3",
+                                                    city: "test city",
+                                                    country: "test country",
+                                                    displayAddress: [],
+                                                    state: "test state", zipCode: "test zipCode"),
+                        name: "test name",
+                        phone: "test phone",
+                        priceLevel: "test priceLevel",
+                        rating: 1.0,
+                        reviewCount: 0,
+                        transactions: [],
+                        urlString: "test urlString")
     }
     
     static func businessData() -> Data {

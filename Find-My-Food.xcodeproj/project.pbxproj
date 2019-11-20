@@ -11,6 +11,15 @@
 		570B4F74237A06AE000FCA90 /* SettingsTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570B4F73237A06AE000FCA90 /* SettingsTable.storyboard */; };
 		57133BD12374BD3500DDB2D9 /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133BD02374BD3500DDB2D9 /* PriceButton.swift */; };
 		57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */; };
+		571ABE9023847C3A004F0003 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE8F23847C3A004F0003 /* CoreDataStack.swift */; };
+		571ABE9323847CE9004F0003 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9223847CE9004F0003 /* AppSession.swift */; };
+		571ABE9623847EF5004F0003 /* Find-My-Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */; };
+		5734439723858798001022AA /* CDCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439123858798001022AA /* CDCategory+CoreDataClass.swift */; };
+		5734439823858798001022AA /* CDCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */; };
+		5734439923858798001022AA /* CDLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439323858798001022AA /* CDLocation+CoreDataClass.swift */; };
+		5734439A23858798001022AA /* CDLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439423858798001022AA /* CDLocation+CoreDataProperties.swift */; };
+		5734439B23858798001022AA /* CDBusiness+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */; };
+		5734439C23858798001022AA /* CDBusiness+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439623858798001022AA /* CDBusiness+CoreDataProperties.swift */; };
 		575225ED23722D600023085E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EC23722D600023085E /* Int+Extension.swift */; };
 		575225EF23722DF40023085E /* Int+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EE23722DF40023085E /* Int+ExtensionSpec.swift */; };
 		575AAF28237A08DB004FAB58 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF27237A08DB004FAB58 /* SettingsTableViewController.swift */; };
@@ -122,6 +131,15 @@
 		570B4F73237A06AE000FCA90 /* SettingsTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTable.storyboard; sourceTree = "<group>"; };
 		57133BD02374BD3500DDB2D9 /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessesModelDelegate.swift; sourceTree = "<group>"; };
+		571ABE8F23847C3A004F0003 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		571ABE9223847CE9004F0003 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
+		571ABE9523847EF5004F0003 /* Find-My-Food.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Find-My-Food.xcdatamodel"; sourceTree = "<group>"; };
+		5734439123858798001022AA /* CDCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5734439323858798001022AA /* CDLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5734439423858798001022AA /* CDLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBusiness+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5734439623858798001022AA /* CDBusiness+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBusiness+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		575225EC23722D600023085E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		575225EE23722DF40023085E /* Int+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		575AAF27237A08DB004FAB58 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +284,29 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		571ABE8E23847B8C004F0003 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5734439123858798001022AA /* CDCategory+CoreDataClass.swift */,
+				5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */,
+				5734439323858798001022AA /* CDLocation+CoreDataClass.swift */,
+				5734439423858798001022AA /* CDLocation+CoreDataProperties.swift */,
+				5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */,
+				5734439623858798001022AA /* CDBusiness+CoreDataProperties.swift */,
+				571ABE8F23847C3A004F0003 /* CoreDataStack.swift */,
+				571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		571ABE9123847CE3004F0003 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				571ABE9223847CE9004F0003 /* AppSession.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
 		575AAF2B237A331C004FAB58 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +349,7 @@
 		57E50722237B3C4D0061CBB6 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				571ABE8E23847B8C004F0003 /* CoreData */,
 				57E50725237B3CCA0061CBB6 /* UserDefaults */,
 			);
 			path = Persistence;
@@ -361,6 +403,7 @@
 		B69E339E2322912E00A4477E /* Find-My-Food */ = {
 			isa = PBXGroup;
 			children = (
+				571ABE9123847CE3004F0003 /* Session */,
 				57E50722237B3C4D0061CBB6 /* Persistence */,
 				579C21A12368B8F50015D0BE /* Location */,
 				B69E3447232294B200A4477E /* Config */,
@@ -765,12 +808,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5734439C23858798001022AA /* CDBusiness+CoreDataProperties.swift in Sources */,
 				B69E33EB2322912F00A4477E /* BusinessesViewController.swift in Sources */,
 				57B9175C237CBE020052D014 /* FavoritesViewController.swift in Sources */,
+				5734439823858798001022AA /* CDCategory+CoreDataProperties.swift in Sources */,
 				575225ED23722D600023085E /* Int+Extension.swift in Sources */,
 				57EEC11F23590B410076B9FD /* BusinessDetailView.swift in Sources */,
 				57DCCA402357722E00CEA8DE /* Secret.swift in Sources */,
 				57C7B10023751451001AF112 /* TabCoordinator.swift in Sources */,
+				571ABE9323847CE9004F0003 /* AppSession.swift in Sources */,
 				B69E33F62322912F00A4477E /* Business.swift in Sources */,
 				57E5071F237B351F0061CBB6 /* Coordinator.swift in Sources */,
 				575AAF28237A08DB004FAB58 /* SettingsTableViewController.swift in Sources */,
@@ -781,6 +827,8 @@
 				B69E33EE2322912F00A4477E /* MapView.swift in Sources */,
 				B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */,
 				575AAF31237A374C004FAB58 /* Radius.swift in Sources */,
+				571ABE9623847EF5004F0003 /* Find-My-Food.xcdatamodeld in Sources */,
+				5734439723858798001022AA /* CDCategory+CoreDataClass.swift in Sources */,
 				57C3CB8B236A314B007E1B9A /* String+Extension.swift in Sources */,
 				57E75D44237B5C93009F3256 /* DecoderWrapper.swift in Sources */,
 				B69E33E82322912F00A4477E /* BusinessesView.swift in Sources */,
@@ -795,10 +843,13 @@
 				B69E33ED2322912F00A4477E /* MapViewController.swift in Sources */,
 				B6D5D601233B077C004138F5 /* BusinessCoordinator.swift in Sources */,
 				B69E33F22322912F00A4477E /* BusinessSearchModel.swift in Sources */,
+				571ABE9023847C3A004F0003 /* CoreDataStack.swift in Sources */,
+				5734439A23858798001022AA /* CDLocation+CoreDataProperties.swift in Sources */,
 				B69E33E92322912F00A4477E /* BusinessTableViewCell.swift in Sources */,
 				57E50724237B3C690061CBB6 /* UserDefaultKey.swift in Sources */,
 				579C21A52368B9110015D0BE /* GeocoderProtocol.swift in Sources */,
 				B69E33FA2322912F00A4477E /* URLSessionWrapper.swift in Sources */,
+				5734439B23858798001022AA /* CDBusiness+CoreDataClass.swift in Sources */,
 				575AAF2A237A0BB6004FAB58 /* SettingsModel.swift in Sources */,
 				B69E33FF2322912F00A4477E /* AppDelegate.swift in Sources */,
 				57C3CB88236A30AF007E1B9A /* URL+Extension.swift in Sources */,
@@ -807,6 +858,7 @@
 				B69E33F42322912F00A4477E /* Coordinate.swift in Sources */,
 				57B9175E237CBE2C0052D014 /* FavoritesCoordinator.swift in Sources */,
 				B6D5D5FF233B06D5004138F5 /* Storyboarded.swift in Sources */,
+				5734439923858798001022AA /* CDLocation+CoreDataClass.swift in Sources */,
 				579C21A72368B91F0015D0BE /* LocationManagerInterface.swift in Sources */,
 				57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */,
 			);
@@ -1112,6 +1164,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				571ABE9523847EF5004F0003 /* Find-My-Food.xcdatamodel */,
+			);
+			currentVersion = 571ABE9523847EF5004F0003 /* Find-My-Food.xcdatamodel */;
+			path = "Find-My-Food.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B69E33732322909000A4477E /* Project object */;
 }

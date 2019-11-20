@@ -14,7 +14,7 @@ final class BusinessSpec: QuickSpec {
                 expect(firstBusiness.id).to(equal("FmGF1B-Rpsjq1f5b56qMwg"))
                 expect(firstBusiness.alias).to(equal("molinari-delicatessen-san-francisco"))
                 expect(firstBusiness.name).to(equal("Molinari Delicatessen"))
-                expect(firstBusiness.imageUrlString).to(equal("https://s3-media3.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg"))
+                expect(firstBusiness.imageURLString).to(equal("https://s3-media3.fl.yelpcdn.com/bphoto/6He-NlZrAv2mDV-yg6jW3g/o.jpg"))
                 expect(firstBusiness.image).to(beNil())
                 expect(firstBusiness.isClosed).to(beFalse())
                 expect(firstBusiness.urlString).to(equal("https://www.yelp.com/biz/molinari-delicatessen-san-francisco?adjust_creative=kzhjn27Bx3CErspNt_sViA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=kzhjn27Bx3CErspNt_sViA"))
@@ -59,59 +59,35 @@ final class BusinessSpec: QuickSpec {
                 it("returns a new business") {
                     let business = TestData.businessesFromJson().first!
                     
-                    let newBusiness = business.copy(id: "test id",
-                                                    alias: "test alias",
-                                                    name: "test name",
-                                                    imageUrlString: "test image url string",
-                                                    image: UIImage(),
-                                                    isClosed: true,
-                                                    urlString: "test url string",
-                                                    reviewCount: 0,
-                                                    categories: [],
-                                                    rating: 5.0,
-                                                    coordinates: Coordinate(latitude: 0, longitude: 0),
-                                                    transactions: [],
-                                                    priceLevel: "test price level",
-                                                    location: Business.Location(address1: "test address 1",
-                                                                                address2: "test address 2",
-                                                                                address3: "test address 3",
-                                                                                city: "test city",
-                                                                                zipCode: "test zip code",
-                                                                                country: "test country",
-                                                                                state: "test state",
-                                                                                displayAddress: []),
-                                                    phone: "test phone",
-                                                    displayPhone: "test display phone",
-                                                    distance: 0)
+                    let newBusiness = business.copy(alias: "test alias", categories: [], coordinates: Coordinate(latitude: 0, longitude: 0), displayPhone: "test display phone", distance: 0, id: "test id", image: UIImage(), imageURLString: "test image url string", isClosed: true, location: Business.Location(address1: "test address 1", address2: "test address 2", address3: "test address 3", city: "test city", country: "test zip code", displayAddress: [], state: "test state", zipCode: "test zipCode"), name: "test name", phone: "test phone", priceLevel: "test price level", rating: 5.0, reviewCount: 0, transactions: [], urlString: "test url string")
                     
                     expect(business).toNot(equal(newBusiness))
                     
-                    expect(newBusiness.id).to(equal("test id"))
                     expect(newBusiness.alias).to(equal("test alias"))
-                    expect(newBusiness.name).to(equal("test name"))
-                    expect(newBusiness.imageUrlString).to(equal("test image url string"))
-                    expect(newBusiness.image).to(equal(UIImage()))
-                    expect(newBusiness.isClosed).to(beTrue())
-                    expect(newBusiness.urlString).to(equal("test url string"))
-                    expect(newBusiness.reviewCount).to(equal(0))
                     expect(newBusiness.categories).to(beEmpty())
-                    expect(newBusiness.rating).to(equal(5.0))
                     expect(newBusiness.coordinates.latitude).to(equal(0))
                     expect(newBusiness.coordinates.longitude).to(equal(0))
-                    expect(newBusiness.transactions).to(beEmpty())
-                    expect(newBusiness.priceLevel).to(equal("test price level"))
+                    expect(newBusiness.displayPhone).to(equal("test display phone"))
+                    expect(newBusiness.distance).to(equal(0))
+                    expect(newBusiness.id).to(equal("test id"))
+                    expect(newBusiness.image).to(equal(UIImage()))
+                    expect(newBusiness.imageURLString).to(equal("test image url string"))
+                    expect(newBusiness.isClosed).to(beTrue())
                     expect(newBusiness.location.address1).to(equal("test address 1"))
                     expect(newBusiness.location.address2).to(equal("test address 2"))
                     expect(newBusiness.location.address3).to(equal("test address 3"))
                     expect(newBusiness.location.city).to(equal("test city"))
-                    expect(newBusiness.location.zipCode).to(equal("test zip code"))
                     expect(newBusiness.location.country).to(equal("test country"))
+                    expect(newBusiness.location.displayAddress).to(beEmpty())
                     expect(newBusiness.location.state).to(equal("test state"))
-                    expect(newBusiness.location.displayAddress).to(beEmpty())
-                    expect(newBusiness.location.displayAddress).to(beEmpty())
+                    expect(newBusiness.location.zipCode).to(equal("test zip code"))
+                    expect(newBusiness.name).to(equal("test name"))
                     expect(newBusiness.phone).to(equal("test phone"))
-                    expect(newBusiness.displayPhone).to(equal("test display phone"))
-                    expect(newBusiness.distance).to(equal(0))
+                    expect(newBusiness.priceLevel).to(equal("test price level"))
+                    expect(newBusiness.rating).to(equal(5.0))
+                    expect(newBusiness.reviewCount).to(equal(0))
+                    expect(newBusiness.transactions).to(beEmpty())
+                    expect(newBusiness.urlString).to(equal("test url string"))
                 }
             }
             
