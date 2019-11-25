@@ -7,12 +7,10 @@ final class FavoritesCoordinatorSpec: QuickSpec {
     override func spec() {
         var testObject: FavoritesCoordinator!
         var navController: UINavigationController!
-        var mockTabCoordinator: MockTabCoordinator!
         
         beforeEach {
             navController = UINavigationController()
-            mockTabCoordinator = MockTabCoordinator()
-            testObject = FavoritesCoordinator(navigationController: navController, parentCoordinator: mockTabCoordinator)
+            testObject = FavoritesCoordinator(navigationController: navController)
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = navController
             window.makeKeyAndVisible()

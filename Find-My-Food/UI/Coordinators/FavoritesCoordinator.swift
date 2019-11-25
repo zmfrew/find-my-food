@@ -9,16 +9,15 @@ protocol FavoritesCoordinatorProtocol: Coordinator {
 
 final class FavoritesCoordinator: FavoritesCoordinatorProtocol {
     private(set) var navigationController: UINavigationController
-     private(set) var rootViewController: FavoritesViewController
-     weak var parentCoordinator: TabCoordinatorProtocol?
+    private(set) var rootViewController: FavoritesViewController
 
-     init(navigationController: UINavigationController, parentCoordinator: TabCoordinatorProtocol) {
-         self.navigationController = navigationController
-         self.parentCoordinator = parentCoordinator
-         self.rootViewController = FavoritesViewController.instantiate()
-     }
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        self.rootViewController = FavoritesViewController.instantiate()
+    }
 
-     func start() {
-         rootViewController.coordinator = self
-     }
+    func start() {
+        rootViewController.coordinator = self
+        navigationController.pushViewController(rootViewController, animated: true)
+    }
 }

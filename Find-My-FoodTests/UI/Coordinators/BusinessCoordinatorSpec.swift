@@ -7,12 +7,10 @@ final class BusinessCoordinatorSpec: QuickSpec {
     override func spec() {
         var testObject: BusinessCoordinator!
         var navController: UINavigationController!
-        var mockTabCoordinator: MockTabCoordinator!
         
         beforeEach {
             navController = UINavigationController()
-            mockTabCoordinator = MockTabCoordinator()
-            testObject = BusinessCoordinator(navigationController: navController, parentCoordinator: mockTabCoordinator)
+            testObject = BusinessCoordinator(navigationController: navController)
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = navController
             window.makeKeyAndVisible()

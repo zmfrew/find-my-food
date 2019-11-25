@@ -19,13 +19,10 @@ protocol BusinessCoordinatorProtocol: Coordinator {
 final class BusinessCoordinator: BusinessCoordinatorProtocol {
     private(set) var navigationController: UINavigationController
     private(set) var rootViewController: MapViewController
-    weak var parentCoordinator: TabCoordinatorProtocol?
 
-    init(navigationController: UINavigationController, parentCoordinator: TabCoordinatorProtocol) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.parentCoordinator = parentCoordinator
         self.rootViewController = MapViewController.instantiate()
-
     }
 
     func businessSelected(_ business: Business) {
@@ -85,5 +82,6 @@ final class BusinessCoordinator: BusinessCoordinatorProtocol {
 
     func start() {
         rootViewController.coordinator = self
+        navigationController.pushViewController(rootViewController, animated: true)
     }
 }

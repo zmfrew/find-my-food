@@ -59,7 +59,7 @@ final class BusinessSpec: QuickSpec {
                 it("returns a new business") {
                     let business = TestData.businessesFromJson().first!
                     
-                    let newBusiness = business.copy(alias: "test alias", categories: [], coordinates: Coordinate(latitude: 0, longitude: 0), displayPhone: "test display phone", distance: 0, id: "test id", image: UIImage(), imageURLString: "test image url string", isClosed: true, location: Business.Location(address1: "test address 1", address2: "test address 2", address3: "test address 3", city: "test city", country: "test zip code", displayAddress: [], state: "test state", zipCode: "test zipCode"), name: "test name", phone: "test phone", priceLevel: "test price level", rating: 5.0, reviewCount: 0, transactions: [], urlString: "test url string")
+                    let newBusiness = business.copy(alias: "test alias", categories: [], coordinates: Coordinate(latitude: 0, longitude: 0), displayPhone: "test display phone", distance: 0, id: "test id", image: UIImage(), imageURLString: "test image url string", isClosed: true, location: Business.Location(address1: "test address 1", address2: "test address 2", address3: "test address 3", city: "test city", country: "test country", displayAddress: [], state: "test state", zipCode: "test zipCode"), name: "test name", phone: "test phone", priceLevel: "test price level", rating: 5.0, reviewCount: 0, transactions: [], urlString: "test url string")
                     
                     expect(business).toNot(equal(newBusiness))
                     
@@ -80,7 +80,7 @@ final class BusinessSpec: QuickSpec {
                     expect(newBusiness.location.country).to(equal("test country"))
                     expect(newBusiness.location.displayAddress).to(beEmpty())
                     expect(newBusiness.location.state).to(equal("test state"))
-                    expect(newBusiness.location.zipCode).to(equal("test zip code"))
+                    expect(newBusiness.location.zipCode).to(equal("test zipCode"))
                     expect(newBusiness.name).to(equal("test name"))
                     expect(newBusiness.phone).to(equal("test phone"))
                     expect(newBusiness.priceLevel).to(equal("test price level"))
