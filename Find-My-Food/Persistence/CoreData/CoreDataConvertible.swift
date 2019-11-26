@@ -1,8 +1,8 @@
 import CoreData
 
 protocol CoreDataConvertible {
-    associatedtype ConvertableType
+    associatedtype ConvertibleType
 
-    func convert() -> ConvertableType
-    @discardableResult init(_ object: ConvertableType)
+    func convert() -> ConvertibleType
+    @discardableResult init(_ object: ConvertibleType, context: NSManagedObjectContext)
 }

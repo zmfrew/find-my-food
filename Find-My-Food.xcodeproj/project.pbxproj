@@ -12,7 +12,7 @@
 		57133BD12374BD3500DDB2D9 /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133BD02374BD3500DDB2D9 /* PriceButton.swift */; };
 		57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */; };
 		571ABE9023847C3A004F0003 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE8F23847C3A004F0003 /* CoreDataStack.swift */; };
-		571ABE9323847CE9004F0003 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9223847CE9004F0003 /* AppSession.swift */; };
+		571ABE9323847CE9004F0003 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9223847CE9004F0003 /* UserSession.swift */; };
 		571ABE9623847EF5004F0003 /* Find-My-Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */; };
 		5734439723858798001022AA /* CDCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439123858798001022AA /* CDCategory+CoreDataClass.swift */; };
 		5734439823858798001022AA /* CDCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */; };
@@ -29,6 +29,7 @@
 		575AAF2F237A33D5004FAB58 /* MockSettingsModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF2E237A33D5004FAB58 /* MockSettingsModelDelegate.swift */; };
 		575AAF31237A374C004FAB58 /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF30237A374C004FAB58 /* Radius.swift */; };
 		575B87F3238C7E4600BFE84C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575B87F2238C7E4600BFE84C /* MainTabBarController.swift */; };
+		575B87FB238DD79E00BFE84C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575B87FA238DD79E00BFE84C /* CoreDataManager.swift */; };
 		579C21A32368B8FE0015D0BE /* GeocoderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A22368B8FE0015D0BE /* GeocoderWrapper.swift */; };
 		579C21A52368B9110015D0BE /* GeocoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A42368B9110015D0BE /* GeocoderProtocol.swift */; };
 		579C21A72368B91F0015D0BE /* LocationManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */; };
@@ -131,7 +132,7 @@
 		57133BD02374BD3500DDB2D9 /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessesModelDelegate.swift; sourceTree = "<group>"; };
 		571ABE8F23847C3A004F0003 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		571ABE9223847CE9004F0003 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
+		571ABE9223847CE9004F0003 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		571ABE9523847EF5004F0003 /* Find-My-Food.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Find-My-Food.xcdatamodel"; sourceTree = "<group>"; };
 		5734439123858798001022AA /* CDCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		575AAF2E237A33D5004FAB58 /* MockSettingsModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingsModelDelegate.swift; sourceTree = "<group>"; };
 		575AAF30237A374C004FAB58 /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
 		575B87F2238C7E4600BFE84C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		575B87FA238DD79E00BFE84C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		579C21A22368B8FE0015D0BE /* GeocoderWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderWrapper.swift; sourceTree = "<group>"; };
 		579C21A42368B9110015D0BE /* GeocoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderProtocol.swift; sourceTree = "<group>"; };
 		579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerInterface.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			children = (
 				5734439D238589D4001022AA /* CoreDataConvertible.swift */,
 				571ABE8F23847C3A004F0003 /* CoreDataStack.swift */,
+				575B87FA238DD79E00BFE84C /* CoreDataManager.swift */,
 				571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */,
 				575B87F7238DB70700BFE84C /* Entities */,
 			);
@@ -294,7 +297,7 @@
 		571ABE9123847CE3004F0003 /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				571ABE9223847CE9004F0003 /* AppSession.swift */,
+				571ABE9223847CE9004F0003 /* UserSession.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -853,7 +856,7 @@
 				575225ED23722D600023085E /* Int+Extension.swift in Sources */,
 				57EEC11F23590B410076B9FD /* BusinessDetailView.swift in Sources */,
 				57DCCA402357722E00CEA8DE /* Secret.swift in Sources */,
-				571ABE9323847CE9004F0003 /* AppSession.swift in Sources */,
+				571ABE9323847CE9004F0003 /* UserSession.swift in Sources */,
 				B69E33F62322912F00A4477E /* Business.swift in Sources */,
 				57E5071F237B351F0061CBB6 /* Coordinator.swift in Sources */,
 				575AAF28237A08DB004FAB58 /* SettingsTableViewController.swift in Sources */,
@@ -898,6 +901,7 @@
 				B6D5D5FF233B06D5004138F5 /* Storyboarded.swift in Sources */,
 				5734439923858798001022AA /* CDLocation+CoreDataClass.swift in Sources */,
 				579C21A72368B91F0015D0BE /* LocationManagerInterface.swift in Sources */,
+				575B87FB238DD79E00BFE84C /* CoreDataManager.swift in Sources */,
 				57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
