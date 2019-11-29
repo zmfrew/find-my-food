@@ -6,7 +6,7 @@ enum TestData {
     static func createBusiness() -> Business {
         Business(alias: "test alias",
                  categories: [],
-                 coordinates: Coordinate(latitude: 1.0, longitude: 1.0),
+                 coordinate: Coordinate(latitude: 1.0, longitude: 1.0),
                  displayPhone: "test displayPhone",
                  distance: 1.0,
                  id: "test id",

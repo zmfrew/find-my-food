@@ -30,6 +30,8 @@
 		575B87F3238C7E4600BFE84C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575B87F2238C7E4600BFE84C /* MainTabBarController.swift */; };
 		575B87FB238DD79E00BFE84C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575B87FA238DD79E00BFE84C /* CoreDataManager.swift */; };
 		575BCF532391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BCF522391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift */; };
+		575BCF562391D7BA00DE9CBB /* CDCoordinate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BCF542391D7BA00DE9CBB /* CDCoordinate+CoreDataClass.swift */; };
+		575BCF572391D7BA00DE9CBB /* CDCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BCF552391D7BA00DE9CBB /* CDCoordinate+CoreDataProperties.swift */; };
 		579C21A32368B8FE0015D0BE /* GeocoderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A22368B8FE0015D0BE /* GeocoderWrapper.swift */; };
 		579C21A52368B9110015D0BE /* GeocoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A42368B9110015D0BE /* GeocoderProtocol.swift */; };
 		579C21A72368B91F0015D0BE /* LocationManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */; };
@@ -150,6 +152,8 @@
 		575B87F2238C7E4600BFE84C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		575B87FA238DD79E00BFE84C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		575BCF522391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDBusiness+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		575BCF542391D7BA00DE9CBB /* CDCoordinate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCoordinate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		575BCF552391D7BA00DE9CBB /* CDCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		579C21A22368B8FE0015D0BE /* GeocoderWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderWrapper.swift; sourceTree = "<group>"; };
 		579C21A42368B9110015D0BE /* GeocoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderProtocol.swift; sourceTree = "<group>"; };
 		579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerInterface.swift; sourceTree = "<group>"; };
@@ -349,11 +353,21 @@
 		575B87F7238DB70700BFE84C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				575BCF582391D7BF00DE9CBB /* CDCoordinate */,
 				573443A3238591B1001022AA /* CDBusiness */,
 				573443A2238591A9001022AA /* CDLocation */,
 				573443A1238591A1001022AA /* CDCategory */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		575BCF582391D7BF00DE9CBB /* CDCoordinate */ = {
+			isa = PBXGroup;
+			children = (
+				575BCF542391D7BA00DE9CBB /* CDCoordinate+CoreDataClass.swift */,
+				575BCF552391D7BA00DE9CBB /* CDCoordinate+CoreDataProperties.swift */,
+			);
+			path = CDCoordinate;
 			sourceTree = "<group>";
 		};
 		579C21A12368B8F50015D0BE /* Location */ = {
@@ -861,6 +875,7 @@
 				575AAF28237A08DB004FAB58 /* SettingsTableViewController.swift in Sources */,
 				57E50721237B3BC60061CBB6 /* Price.swift in Sources */,
 				579C21A92368B92A0015D0BE /* LocationManagerWrapper.swift in Sources */,
+				575BCF572391D7BA00DE9CBB /* CDCoordinate+CoreDataProperties.swift in Sources */,
 				57E5071D237B32FF0061CBB6 /* SettingsCoordinator.swift in Sources */,
 				57133BD12374BD3500DDB2D9 /* PriceButton.swift in Sources */,
 				B69E33EE2322912F00A4477E /* MapView.swift in Sources */,
@@ -892,6 +907,7 @@
 				5734439B23858798001022AA /* CDBusiness+CoreDataClass.swift in Sources */,
 				575AAF2A237A0BB6004FAB58 /* SettingsModel.swift in Sources */,
 				B69E33FF2322912F00A4477E /* AppDelegate.swift in Sources */,
+				575BCF562391D7BA00DE9CBB /* CDCoordinate+CoreDataClass.swift in Sources */,
 				57C3CB88236A30AF007E1B9A /* URL+Extension.swift in Sources */,
 				579C21A32368B8FE0015D0BE /* GeocoderWrapper.swift in Sources */,
 				B69E33F92322912F00A4477E /* BusinessSearchClient.swift in Sources */,

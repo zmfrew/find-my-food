@@ -1,5 +1,5 @@
 import CoreData
-import Foundation
+import UIKit
 
 final class CDBusiness: NSManagedObject {
     @nonobjc class func fetchRequest() -> NSFetchRequest<CDBusiness> {
@@ -12,6 +12,7 @@ extension CDBusiness: CoreDataConvertible {
         self.init(context: context)
         self.alias = object.alias
         self.categories = Set(object.categories.map { CDCategory($0, context: context) })
+        self.coordinate = CDCoordinate(object.coordinate, context: context)
         self.displayPhone = object.displayPhone
         self.distance = object.distance
         self.id = object.id
@@ -29,7 +30,29 @@ extension CDBusiness: CoreDataConvertible {
     }
 
     func convert() -> Business? {
+        guard let coordinate = self.coordinate.convert(),
+            let imageData = self.image,
+            let location = self.location.convert()
+        else { return nil }
 
-        return nil
+        let categories = self.categories.compactMap { $0.convert() }
+
+        return Business(alias: self.alias,
+                        categories: categories,
+                        coordinate: coordinate,
+                        displayPhone: self.displayPhone,
+                        distance: self.distance,
+                        id: self.id,
+                        image: UIImage(data: imageData),
+                        imageURLString: self.imageURLString,
+                        isClosed: self.isClosed,
+                        location: location,
+                        name: self.name,
+                        phone: self.phone,
+                        priceLevel: self.priceLevel,
+                        rating: self.rating,
+                        reviewCount: Int(self.reviewCount),
+                        transactions: self.transactions,
+                        urlString: self.urlString)
     }
 }

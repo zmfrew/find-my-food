@@ -3,7 +3,7 @@ import UIKit
 struct Business {
     let alias: String
     let categories: [Category]
-    let coordinates: Coordinate
+    let coordinate: Coordinate
     let displayPhone: String
     let distance: Double
     let id: String
@@ -40,7 +40,7 @@ extension Business: Equatable {
     static func == (lhs: Business, rhs: Business) -> Bool {
         lhs.alias == rhs.alias &&
             lhs.categories == rhs.categories &&
-            lhs.coordinates == rhs.coordinates &&
+            lhs.coordinate == rhs.coordinate &&
             lhs.displayPhone == rhs.displayPhone &&
             lhs.distance == rhs.distance &&
             lhs.id == rhs.id &&
@@ -78,7 +78,7 @@ extension Business {
 
         Business(alias: alias ?? self.alias,
                         categories: categories ?? self.categories,
-                        coordinates: coordinates ?? self.coordinates,
+                        coordinate: coordinates ?? self.coordinate,
                         displayPhone: displayPhone ?? self.displayPhone,
                         distance: distance ?? self.distance,
                         id: id ?? self.id,
@@ -106,7 +106,7 @@ extension Business: Decodable {
 
         let alias = try container.decode(String.self, forKey: .alias)
         let categories = try container.decode([Category].self, forKey: .categories)
-        let coordinates = try container.decode(Coordinate.self, forKey: .coordinates)
+        let coordinate = try container.decode(Coordinate.self, forKey: .coordinates)
         let displayPhone = try container.decode(String.self, forKey: .display_phone)
         let distance = try container.decode(Double.self, forKey: .distance)
         let id = try container.decode(String.self, forKey: .id)
@@ -123,7 +123,7 @@ extension Business: Decodable {
 
         self.init(alias: alias,
                   categories: categories,
-                  coordinates: coordinates,
+                  coordinate: coordinate,
                   displayPhone: displayPhone,
                   distance: distance,
                   id: id,

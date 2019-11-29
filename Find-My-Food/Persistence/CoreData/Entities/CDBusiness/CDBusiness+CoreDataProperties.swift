@@ -4,6 +4,7 @@ import Foundation
 extension CDBusiness {
     @NSManaged var alias: String
     @NSManaged var categories: Set<CDCategory>
+    @NSManaged var coordinate: CDCoordinate
     @NSManaged var displayPhone: String
     @NSManaged var distance: Double
     @NSManaged var id: String
