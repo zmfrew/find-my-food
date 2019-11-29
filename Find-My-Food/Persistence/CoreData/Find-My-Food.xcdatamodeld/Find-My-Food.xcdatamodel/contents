@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDBusiness" representedClassName="CDBusiness" syncable="YES">
         <attribute name="alias" optional="YES" attributeType="String"/>
         <attribute name="displayPhone" optional="YES" attributeType="String"/>
@@ -15,13 +15,13 @@
         <attribute name="reviewCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="transactions" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="urlString" optional="YES" attributeType="String"/>
-        <relationship name="category" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDCategory" inverseName="business" inverseEntity="CDCategory"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDCategory" inverseName="business" inverseEntity="CDCategory"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDLocation" inverseName="business" inverseEntity="CDLocation"/>
     </entity>
     <entity name="CDCategory" representedClassName="CDCategory" syncable="YES">
         <attribute name="alias" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="business" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="category" inverseEntity="CDBusiness"/>
+        <relationship name="business" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="categories" inverseEntity="CDBusiness"/>
     </entity>
     <entity name="CDLocation" representedClassName="CDLocation" syncable="YES">
         <attribute name="address1" optional="YES" attributeType="String"/>
@@ -32,7 +32,7 @@
         <attribute name="displayAddress" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="state" optional="YES" attributeType="String"/>
         <attribute name="zipCode" optional="YES" attributeType="String"/>
-        <relationship name="business" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="location" inverseEntity="CDBusiness"/>
+        <relationship name="business" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="location" inverseEntity="CDBusiness"/>
     </entity>
     <elements>
         <element name="CDBusiness" positionX="-63" positionY="-18" width="128" height="283"/>

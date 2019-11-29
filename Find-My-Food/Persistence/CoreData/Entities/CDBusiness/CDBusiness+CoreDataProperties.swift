@@ -2,33 +2,26 @@ import CoreData
 import Foundation
 
 extension CDBusiness {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<CDBusiness> {
-        return NSFetchRequest<CDBusiness>(entityName: "CDBusiness")
-    }
-
-    @NSManaged public var alias: String?
-    @NSManaged public var displayPhone: String?
-    @NSManaged public var distance: Double
-    @NSManaged public var id: String?
-    @NSManaged public var image: Data?
-    @NSManaged public var imageURLString: String?
-    @NSManaged public var isClosed: Bool
-    @NSManaged public var name: String?
-    @NSManaged public var phone: String?
-    @NSManaged public var priceLevel: String?
-    @NSManaged public var rating: Double
-    @NSManaged public var reviewCount: Int16
-    @NSManaged public var transactions: [String]?
-    @NSManaged public var urlString: String?
-    @NSManaged public var category: NSSet?
-    @NSManaged public var location: CDLocation?
-
+    @NSManaged var alias: String
+    @NSManaged var categories: Set<CDCategory>
+    @NSManaged var displayPhone: String
+    @NSManaged var distance: Double
+    @NSManaged var id: String
+    @NSManaged var image: Data?
+    @NSManaged var imageURLString: String
+    @NSManaged var isClosed: Bool
+    @NSManaged var location: CDLocation
+    @NSManaged var name: String
+    @NSManaged var phone: String
+    @NSManaged var priceLevel: String?
+    @NSManaged var rating: Double
+    @NSManaged var reviewCount: Int16
+    @NSManaged var transactions: [String]
+    @NSManaged var urlString: String
 }
 
 // MARK: Generated accessors for category
 extension CDBusiness {
-
     @objc(addCategoryObject:)
     @NSManaged public func addToCategory(_ value: CDCategory)
 
@@ -36,9 +29,8 @@ extension CDBusiness {
     @NSManaged public func removeFromCategory(_ value: CDCategory)
 
     @objc(addCategory:)
-    @NSManaged public func addToCategory(_ values: NSSet)
+    @NSManaged public func addToCategory(_ values: Set<CDCategory>)
 
     @objc(removeCategory:)
-    @NSManaged public func removeFromCategory(_ values: NSSet)
-
+    @NSManaged public func removeFromCategory(_ values: Set<CDCategory>)
 }

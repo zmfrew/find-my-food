@@ -38,7 +38,7 @@ struct Business {
 
 extension Business: Equatable {
     static func == (lhs: Business, rhs: Business) -> Bool {
-        return lhs.alias == rhs.alias &&
+        lhs.alias == rhs.alias &&
             lhs.categories == rhs.categories &&
             lhs.coordinates == rhs.coordinates &&
             lhs.displayPhone == rhs.displayPhone &&
@@ -76,7 +76,7 @@ extension Business {
               transactions: [String]? = nil,
               urlString: String? = nil) -> Business {
 
-        return Business(alias: alias ?? self.alias,
+        Business(alias: alias ?? self.alias,
                         categories: categories ?? self.categories,
                         coordinates: coordinates ?? self.coordinates,
                         displayPhone: displayPhone ?? self.displayPhone,

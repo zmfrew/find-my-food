@@ -37,7 +37,7 @@ final class SettingsModel: SettingsModelProtocol {
     }
 
     func radius(at index: Int) -> Int {
-        return radiusData.element(at: index) ?? Radius.rangeMax
+        radiusData.element(at: index) ?? Radius.rangeMax
     }
 
     func selectedDefaults(darkMode: Bool, defaultLocation: String?, radiusIndex: Int) {

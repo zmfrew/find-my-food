@@ -1,7 +1,20 @@
 import CoreData
 import Foundation
 
-@objc(CDCategory)
-public class CDCategory: NSManagedObject {
+final class CDCategory: NSManagedObject {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<CDCategory> {
+          NSFetchRequest<CDCategory>(entityName: "CDCategory")
+      }
+}
 
+extension CDCategory: CoreDataConvertible {
+    @discardableResult convenience init(_ object: Business.Category, context: NSManagedObjectContext) {
+        self.init(context: context)
+        self.alias = object.alias
+        self.title = object.title
+    }
+
+    func convert() -> Business.Category? {
+        Business.Category(alias: self.alias, title: self.title)
+    }
 }

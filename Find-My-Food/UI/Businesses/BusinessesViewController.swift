@@ -18,7 +18,7 @@ final class BusinessesViewController: UIViewController, Storyboarded {
 
 extension BusinessesViewController: BusinessesModelDelegate {
     func dataDidUpdate() {
-        self.businessesView.dataDidUpdate()
+        businessesView.dataDidUpdate()
     }
 }
 
