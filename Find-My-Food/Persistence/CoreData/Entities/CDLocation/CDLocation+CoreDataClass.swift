@@ -3,7 +3,7 @@ import Foundation
 
 final class CDLocation: NSManagedObject {
     @nonobjc class func fetchRequest() -> NSFetchRequest<CDLocation> {
-        NSFetchRequest<CDLocation>(entityName: "CDLocation")
+        NSFetchRequest<CDLocation>(entityName: String(describing: self))
     }
 }
 

@@ -3,7 +3,7 @@ import Foundation
 
 final class CDCoordinate: NSManagedObject {
     @nonobjc func fetchRequest() -> NSFetchRequest<CDCoordinate> {
-        NSFetchRequest<CDCoordinate>(entityName: "CDCoordinate")
+        NSFetchRequest<CDCoordinate>(entityName: String(describing: self))
     }
 }
 

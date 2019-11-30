@@ -22,6 +22,9 @@
 		5734439E238589D4001022AA /* CoreDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439D238589D4001022AA /* CoreDataConvertible.swift */; };
 		575225ED23722D600023085E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EC23722D600023085E /* Int+Extension.swift */; };
 		575225EF23722DF40023085E /* Int+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EE23722DF40023085E /* Int+ExtensionSpec.swift */; };
+		57551F6C2391F77600DBE1C4 /* CDCategorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */; };
+		57551F6D2391FC1500DBE1C4 /* Find-My-Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */; };
+		57551F762392013200DBE1C4 /* CoreDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439D238589D4001022AA /* CoreDataConvertible.swift */; };
 		575AAF28237A08DB004FAB58 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF27237A08DB004FAB58 /* SettingsTableViewController.swift */; };
 		575AAF2A237A0BB6004FAB58 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF29237A0BB6004FAB58 /* SettingsModel.swift */; };
 		575AAF2D237A332E004FAB58 /* SettingsModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF2C237A332E004FAB58 /* SettingsModelSpec.swift */; };
@@ -144,6 +147,7 @@
 		5734439D238589D4001022AA /* CoreDataConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConvertible.swift; sourceTree = "<group>"; };
 		575225EC23722D600023085E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		575225EE23722DF40023085E /* Int+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ExtensionSpec.swift"; sourceTree = "<group>"; };
+		57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCategorySpec.swift; sourceTree = "<group>"; };
 		575AAF27237A08DB004FAB58 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		575AAF29237A0BB6004FAB58 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		575AAF2C237A332E004FAB58 /* SettingsModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelSpec.swift; sourceTree = "<group>"; };
@@ -333,6 +337,54 @@
 			path = CDBusiness;
 			sourceTree = "<group>";
 		};
+		57551F652391F73700DBE1C4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				57551F662391F73A00DBE1C4 /* Entities */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		57551F662391F73A00DBE1C4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				57551F6A2391F75400DBE1C4 /* CDCoordinate */,
+				57551F692391F75000DBE1C4 /* CDBusiness */,
+				57551F682391F74A00DBE1C4 /* CDLocation */,
+				57551F672391F74500DBE1C4 /* CDCategory */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		57551F672391F74500DBE1C4 /* CDCategory */ = {
+			isa = PBXGroup;
+			children = (
+				57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */,
+			);
+			path = CDCategory;
+			sourceTree = "<group>";
+		};
+		57551F682391F74A00DBE1C4 /* CDLocation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CDLocation;
+			sourceTree = "<group>";
+		};
+		57551F692391F75000DBE1C4 /* CDBusiness */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CDBusiness;
+			sourceTree = "<group>";
+		};
+		57551F6A2391F75400DBE1C4 /* CDCoordinate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CDCoordinate;
+			sourceTree = "<group>";
+		};
 		575AAF2B237A331C004FAB58 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +473,7 @@
 		57E5072A237B40A70061CBB6 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				57551F652391F73700DBE1C4 /* CoreData */,
 				57E5072B237B40AA0061CBB6 /* User Defaults */,
 			);
 			path = Persistence;
@@ -933,6 +986,7 @@
 				B69E347D2322F21000A4477E /* TestData.swift in Sources */,
 				B69E34852322F21700A4477E /* Array+ExtensionSpec.swift in Sources */,
 				B69E34842322F21400A4477E /* BusinessSearchClientSpec.swift in Sources */,
+				57551F762392013200DBE1C4 /* CoreDataConvertible.swift in Sources */,
 				57E5072D237B40BF0061CBB6 /* UserDefaultKeySpec.swift in Sources */,
 				57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */,
 				B69E34822322F21400A4477E /* MockURLSession.swift in Sources */,
@@ -948,6 +1002,8 @@
 				B69E346E2322F1F700A4477E /* BusinessesModelSpec.swift in Sources */,
 				B69E347C2322F21000A4477E /* CoordinateSpec.swift in Sources */,
 				B69E346F2322F1FC00A4477E /* MockMapModelDelegate.swift in Sources */,
+				57551F6D2391FC1500DBE1C4 /* Find-My-Food.xcdatamodeld in Sources */,
+				57551F6C2391F77600DBE1C4 /* CDCategorySpec.swift in Sources */,
 				B69E34712322F1FF00A4477E /* BusinessSearchModelSpec.swift in Sources */,
 				575AAF2F237A33D5004FAB58 /* MockSettingsModelDelegate.swift in Sources */,
 				57E50731237B43DC0061CBB6 /* MockSettingsCoordinator.swift in Sources */,

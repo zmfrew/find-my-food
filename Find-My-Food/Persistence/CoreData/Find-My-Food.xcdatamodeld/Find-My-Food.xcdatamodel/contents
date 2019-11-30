@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDBusiness" representedClassName="CDBusiness" syncable="YES">
-        <attribute name="alias" optional="YES" attributeType="String"/>
-        <attribute name="displayPhone" optional="YES" attributeType="String"/>
-        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="alias" attributeType="String"/>
+        <attribute name="displayPhone" attributeType="String"/>
+        <attribute name="distance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
-        <attribute name="imageURLString" optional="YES" attributeType="String"/>
-        <attribute name="isClosed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="phone" optional="YES" attributeType="String"/>
-        <attribute name="priceLevel" optional="YES" attributeType="String"/>
-        <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="reviewCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="transactions" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="urlString" optional="YES" attributeType="String"/>
-        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDCategory" inverseName="business" inverseEntity="CDCategory"/>
-        <relationship name="coordinate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCoordinate" inverseName="business" inverseEntity="CDCoordinate"/>
-        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDLocation" inverseName="business" inverseEntity="CDLocation"/>
+        <attribute name="imageURLString" attributeType="String"/>
+        <attribute name="isClosed" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="phone" attributeType="String"/>
+        <attribute name="priceLevel" attributeType="String"/>
+        <attribute name="rating" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="reviewCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="transactions" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="urlString" attributeType="String"/>
+        <relationship name="categories" toMany="YES" deletionRule="Nullify" destinationEntity="CDCategory" inverseName="business" inverseEntity="CDCategory"/>
+        <relationship name="coordinate" maxCount="1" deletionRule="Nullify" destinationEntity="CDCoordinate" inverseName="business" inverseEntity="CDCoordinate"/>
+        <relationship name="location" maxCount="1" deletionRule="Nullify" destinationEntity="CDLocation" inverseName="business" inverseEntity="CDLocation"/>
     </entity>
     <entity name="CDCategory" representedClassName="CDCategory" syncable="YES">
-        <attribute name="alias" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="business" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="categories" inverseEntity="CDBusiness"/>
+        <attribute name="alias" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="business" maxCount="1" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="categories" inverseEntity="CDBusiness"/>
     </entity>
     <entity name="CDCoordinate" representedClassName="CDCoordinate" syncable="YES">
-        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="business" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="coordinate" inverseEntity="CDBusiness"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="business" maxCount="1" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="coordinate" inverseEntity="CDBusiness"/>
     </entity>
     <entity name="CDLocation" representedClassName="CDLocation" syncable="YES">
-        <attribute name="address1" optional="YES" attributeType="String"/>
+        <attribute name="address1" attributeType="String"/>
         <attribute name="address2" optional="YES" attributeType="String"/>
         <attribute name="address3" optional="YES" attributeType="String"/>
-        <attribute name="city" optional="YES" attributeType="String"/>
-        <attribute name="country" optional="YES" attributeType="String"/>
-        <attribute name="displayAddress" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="state" optional="YES" attributeType="String"/>
-        <attribute name="zipCode" optional="YES" attributeType="String"/>
-        <relationship name="business" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="location" inverseEntity="CDBusiness"/>
+        <attribute name="city" attributeType="String"/>
+        <attribute name="country" attributeType="String"/>
+        <attribute name="displayAddress" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="state" attributeType="String"/>
+        <attribute name="zipCode" attributeType="String"/>
+        <relationship name="business" maxCount="1" deletionRule="Nullify" destinationEntity="CDBusiness" inverseName="location" inverseEntity="CDBusiness"/>
     </entity>
     <elements>
         <element name="CDBusiness" positionX="-63" positionY="-18" width="128" height="298"/>
-        <element name="CDCategory" positionX="-54" positionY="99" width="128" height="88"/>
-        <element name="CDCoordinate" positionX="-45" positionY="126" width="128" height="88"/>
+        <element name="CDCategory" positionX="-54" positionY="99" width="128" height="28"/>
+        <element name="CDCoordinate" positionX="-45" positionY="126" width="128" height="28"/>
         <element name="CDLocation" positionX="-36" positionY="117" width="128" height="178"/>
     </elements>
 </model>

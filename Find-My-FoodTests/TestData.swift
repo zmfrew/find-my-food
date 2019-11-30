@@ -1,6 +1,31 @@
+import CoreData
+import Quick
 import Foundation
 
 @testable import Find_My_Food
+
+final class Setup: QuickConfiguration {
+    override class func configure(_ configuration: Configuration!) {
+        let mom = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
+        let container = NSPersistentContainer(name: "Find-My-Food", managedObjectModel: mom)
+        let description = NSPersistentStoreDescription()
+        description.type = NSInMemoryStoreType
+        description.shouldAddStoreAsynchronously = false
+        
+        container.persistentStoreDescriptions = [description]
+        container.loadPersistentStores { (description, error) in
+            precondition( description.type == NSInMemoryStoreType )
+            
+            if let error = error {
+                fatalError("Creating in memory core data manager failed: \(error.localizedDescription)")
+            }
+        }
+        
+        globalInMemoryCoreDataManager = CoreDataManager(persistentContainer: container)
+    }
+}
+
+private(set) var globalInMemoryCoreDataManager: CoreDataManager!
 
 enum TestData {
     static func createBusiness() -> Business {

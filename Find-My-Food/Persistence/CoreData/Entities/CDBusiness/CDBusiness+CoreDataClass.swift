@@ -3,7 +3,7 @@ import UIKit
 
 final class CDBusiness: NSManagedObject {
     @nonobjc class func fetchRequest() -> NSFetchRequest<CDBusiness> {
-        NSFetchRequest<CDBusiness>(entityName: "CDBusiness")
+        NSFetchRequest<CDBusiness>(entityName: String(describing: self))
     }
 }
 

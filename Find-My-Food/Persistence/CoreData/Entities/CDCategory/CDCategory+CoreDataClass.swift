@@ -1,9 +1,11 @@
 import CoreData
 import Foundation
 
-final class CDCategory: NSManagedObject {
+final class CDCategory: NSManagedObject { }
+
+extension CDCategory {
     @nonobjc class func fetchRequest() -> NSFetchRequest<CDCategory> {
-          NSFetchRequest<CDCategory>(entityName: "CDCategory")
+        NSFetchRequest<CDCategory>(entityName: String(describing: self))
       }
 }
 
