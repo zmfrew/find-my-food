@@ -1,7 +1,10 @@
 import CoreData
 import UIKit
 
-final class CDBusiness: NSManagedObject {
+@objc(CDBusiness)
+final class CDBusiness: NSManagedObject { }
+
+extension CDBusiness {
     @nonobjc class func fetchRequest() -> NSFetchRequest<CDBusiness> {
         NSFetchRequest<CDBusiness>(entityName: String(describing: self))
     }

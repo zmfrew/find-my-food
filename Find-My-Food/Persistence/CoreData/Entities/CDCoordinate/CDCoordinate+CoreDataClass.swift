@@ -1,8 +1,11 @@
 import CoreData
 import Foundation
 
-final class CDCoordinate: NSManagedObject {
-    @nonobjc func fetchRequest() -> NSFetchRequest<CDCoordinate> {
+@objc(CDCoordinate)
+final class CDCoordinate: NSManagedObject { }
+
+extension CDCoordinate {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<CDCoordinate> {
         NSFetchRequest<CDCoordinate>(entityName: String(describing: self))
     }
 }

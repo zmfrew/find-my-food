@@ -2,7 +2,9 @@ import CoreData
 import Foundation
 
 @objc(CDLocation)
-final class CDLocation: NSManagedObject {
+final class CDLocation: NSManagedObject { }
+
+extension CDLocation {
     @nonobjc class func fetchRequest() -> NSFetchRequest<CDLocation> {
         NSFetchRequest<CDLocation>(entityName: String(describing: self))
     }
