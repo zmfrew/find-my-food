@@ -1,5 +1,6 @@
 import CoreData
 import Foundation
+
 @objc(CDCategory)
 final class CDCategory: NSManagedObject { }
 

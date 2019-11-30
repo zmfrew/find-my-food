@@ -25,6 +25,7 @@
 		57551F762392013200DBE1C4 /* CoreDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439D238589D4001022AA /* CoreDataConvertible.swift */; };
 		57551F9E239228A300DBE1C4 /* CDCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439123858798001022AA /* CDCategory+CoreDataClass.swift */; };
 		57551F9F239228A300DBE1C4 /* CDCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */; };
+		57551FA123922A8300DBE1C4 /* CDLocationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57551FA023922A8300DBE1C4 /* CDLocationSpec.swift */; };
 		575AAF28237A08DB004FAB58 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF27237A08DB004FAB58 /* SettingsTableViewController.swift */; };
 		575AAF2A237A0BB6004FAB58 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF29237A0BB6004FAB58 /* SettingsModel.swift */; };
 		575AAF2D237A332E004FAB58 /* SettingsModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF2C237A332E004FAB58 /* SettingsModelSpec.swift */; };
@@ -148,6 +149,7 @@
 		575225EC23722D600023085E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		575225EE23722DF40023085E /* Int+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCategorySpec.swift; sourceTree = "<group>"; };
+		57551FA023922A8300DBE1C4 /* CDLocationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLocationSpec.swift; sourceTree = "<group>"; };
 		575AAF27237A08DB004FAB58 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		575AAF29237A0BB6004FAB58 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		575AAF2C237A332E004FAB58 /* SettingsModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelSpec.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 		57551F682391F74A00DBE1C4 /* CDLocation */ = {
 			isa = PBXGroup;
 			children = (
+				57551FA023922A8300DBE1C4 /* CDLocationSpec.swift */,
 			);
 			path = CDLocation;
 			sourceTree = "<group>";
@@ -1005,6 +1008,7 @@
 				57551F6D2391FC1500DBE1C4 /* Find-My-Food.xcdatamodeld in Sources */,
 				57551F6C2391F77600DBE1C4 /* CDCategorySpec.swift in Sources */,
 				B69E34712322F1FF00A4477E /* BusinessSearchModelSpec.swift in Sources */,
+				57551FA123922A8300DBE1C4 /* CDLocationSpec.swift in Sources */,
 				575AAF2F237A33D5004FAB58 /* MockSettingsModelDelegate.swift in Sources */,
 				57E50731237B43DC0061CBB6 /* MockSettingsCoordinator.swift in Sources */,
 				57C7B1092375AF2D001AF112 /* MockBusinessCoordinator.swift in Sources */,
