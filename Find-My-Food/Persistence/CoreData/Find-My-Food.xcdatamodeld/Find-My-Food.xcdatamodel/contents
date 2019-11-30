@@ -42,8 +42,8 @@
     </entity>
     <elements>
         <element name="CDBusiness" positionX="-63" positionY="-18" width="128" height="298"/>
-        <element name="CDCategory" positionX="-54" positionY="99" width="128" height="28"/>
-        <element name="CDCoordinate" positionX="-45" positionY="126" width="128" height="28"/>
+        <element name="CDCategory" positionX="-54" positionY="99" width="128" height="88"/>
+        <element name="CDCoordinate" positionX="-45" positionY="126" width="128" height="88"/>
         <element name="CDLocation" positionX="-36" positionY="117" width="128" height="178"/>
     </elements>
 </model>

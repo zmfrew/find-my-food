@@ -13,7 +13,6 @@ final class CDCategorySpec: QuickSpec {
             coreDataManager = globalInMemoryCoreDataManager
             testObject = CDCategory(context: coreDataManager.viewContext)
         }
-        // FIXME: - Make this work!
         
         describe("NSManaged properties") {
             it("has the correct types") {
@@ -32,12 +31,21 @@ final class CDCategorySpec: QuickSpec {
         }
         
         describe("CoreDataConvertible") {
+            let expectedCategory = TestData.businessesFromJson().first!.categories.first!
+
+            beforeEach {
+                testObject = CDCategory(expectedCategory, context: coreDataManager.viewContext)
+            }
+            
             it("is initialized from a Category") {
-                
+                expect(testObject.alias).to(equal(expectedCategory.alias))
+                expect(testObject.title).to(equal(expectedCategory.title))
             }
             
             it("can be converted to a Category") {
+                let category = testObject.convert()
                 
+                expect(category).to(equal(expectedCategory))
             }
         }
     }

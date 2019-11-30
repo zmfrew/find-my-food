@@ -14,8 +14,6 @@
 		571ABE9023847C3A004F0003 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE8F23847C3A004F0003 /* CoreDataStack.swift */; };
 		571ABE9323847CE9004F0003 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9223847CE9004F0003 /* UserSession.swift */; };
 		571ABE9623847EF5004F0003 /* Find-My-Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */; };
-		5734439723858798001022AA /* CDCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439123858798001022AA /* CDCategory+CoreDataClass.swift */; };
-		5734439823858798001022AA /* CDCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */; };
 		5734439923858798001022AA /* CDLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439323858798001022AA /* CDLocation+CoreDataClass.swift */; };
 		5734439A23858798001022AA /* CDLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439423858798001022AA /* CDLocation+CoreDataProperties.swift */; };
 		5734439B23858798001022AA /* CDBusiness+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */; };
@@ -25,6 +23,8 @@
 		57551F6C2391F77600DBE1C4 /* CDCategorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */; };
 		57551F6D2391FC1500DBE1C4 /* Find-My-Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */; };
 		57551F762392013200DBE1C4 /* CoreDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439D238589D4001022AA /* CoreDataConvertible.swift */; };
+		57551F9E239228A300DBE1C4 /* CDCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439123858798001022AA /* CDCategory+CoreDataClass.swift */; };
+		57551F9F239228A300DBE1C4 /* CDCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */; };
 		575AAF28237A08DB004FAB58 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF27237A08DB004FAB58 /* SettingsTableViewController.swift */; };
 		575AAF2A237A0BB6004FAB58 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF29237A0BB6004FAB58 /* SettingsModel.swift */; };
 		575AAF2D237A332E004FAB58 /* SettingsModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF2C237A332E004FAB58 /* SettingsModelSpec.swift */; };
@@ -915,10 +915,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57551F9E239228A300DBE1C4 /* CDCategory+CoreDataClass.swift in Sources */,
+				57551F9F239228A300DBE1C4 /* CDCategory+CoreDataProperties.swift in Sources */,
 				B69E33EB2322912F00A4477E /* BusinessesViewController.swift in Sources */,
 				575B87F3238C7E4600BFE84C /* MainTabBarController.swift in Sources */,
 				57B9175C237CBE020052D014 /* FavoritesViewController.swift in Sources */,
-				5734439823858798001022AA /* CDCategory+CoreDataProperties.swift in Sources */,
 				575225ED23722D600023085E /* Int+Extension.swift in Sources */,
 				57EEC11F23590B410076B9FD /* BusinessDetailView.swift in Sources */,
 				57DCCA402357722E00CEA8DE /* Secret.swift in Sources */,
@@ -935,7 +936,6 @@
 				B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */,
 				575AAF31237A374C004FAB58 /* Radius.swift in Sources */,
 				571ABE9623847EF5004F0003 /* Find-My-Food.xcdatamodeld in Sources */,
-				5734439723858798001022AA /* CDCategory+CoreDataClass.swift in Sources */,
 				57C3CB8B236A314B007E1B9A /* String+Extension.swift in Sources */,
 				57E75D44237B5C93009F3256 /* DecoderWrapper.swift in Sources */,
 				B69E33E82322912F00A4477E /* BusinessesView.swift in Sources */,
