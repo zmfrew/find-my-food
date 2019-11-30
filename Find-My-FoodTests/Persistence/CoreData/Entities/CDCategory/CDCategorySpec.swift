@@ -25,9 +25,11 @@ final class CDCategorySpec: QuickSpec {
         }
         
         describe("fetch request") {
-            let fetchRequest: NSFetchRequest<CDCategory> = CDCategory.fetchRequest()
+            it("has the correct entityName") {
+                let fetchRequest: NSFetchRequest<CDCategory> = CDCategory.fetchRequest()
             
-            expect(fetchRequest.entityName).to(equal("CDCategory"))
+                expect(fetchRequest.entityName).to(equal("CDCategory"))
+            }
         }
         
         describe("CoreDataConvertible") {

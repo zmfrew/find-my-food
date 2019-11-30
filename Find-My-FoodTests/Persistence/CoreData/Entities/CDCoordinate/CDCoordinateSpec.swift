@@ -27,9 +27,11 @@ final class CDCoordinateSpec: QuickSpec {
         }
         
         describe("fetch request") {
-            let fetchRequest: NSFetchRequest<CDCoordinate> = CDCoordinate.fetchRequest()
+            it("has the correct entityName") {
+                let fetchRequest: NSFetchRequest<CDCoordinate> = CDCoordinate.fetchRequest()
             
-            expect(fetchRequest.entityName).to(equal("CDCoordinate"))
+                expect(fetchRequest.entityName).to(equal("CDCoordinate"))
+            }
         }
         
         describe("CoreDataConvertible") {
@@ -39,12 +41,12 @@ final class CDCoordinateSpec: QuickSpec {
                 testObject = CDCoordinate(expectedCoordinate, context: coreDataManager.viewContext)
             }
             
-            it("is initialized from a Category") {
+            it("is initialized from a Coordinate") {
                 expect(testObject.latitude).to(equal(expectedCoordinate.latitude))
                 expect(testObject.longitude).to(equal(expectedCoordinate.longitude))
             }
             
-            it("can be converted to a Category") {
+            it("can be converted to a Coordinate") {
                 let coordinate = testObject.convert()
                 
                 expect(coordinate).to(equal(expectedCoordinate))

@@ -37,9 +37,11 @@ final class CDLocationSpec: QuickSpec {
         }
         
         describe("fetch request") {
-            let fetchRequest: NSFetchRequest<CDLocation> = CDLocation.fetchRequest()
+            it("has the correct entityName") {
+                let fetchRequest: NSFetchRequest<CDLocation> = CDLocation.fetchRequest()
             
-            expect(fetchRequest.entityName).to(equal("CDLocation"))
+                expect(fetchRequest.entityName).to(equal("CDLocation"))
+            }
         }
         
         describe("CoreDataConvertible") {
@@ -49,7 +51,7 @@ final class CDLocationSpec: QuickSpec {
                 testObject = CDLocation(expectedLocation, context: coreDataManager.viewContext)
             }
             
-            it("is initialized from a Category") {
+            it("is initialized from a Location") {
                 expect(testObject.address1).to(equal(expectedLocation.address1))
                 expect(testObject.address2).to(equal(expectedLocation.address2))
                 expect(testObject.address3).to(equal(expectedLocation.address3))
@@ -60,7 +62,7 @@ final class CDLocationSpec: QuickSpec {
                 expect(testObject.zipCode).to(equal(expectedLocation.zipCode))
             }
             
-            it("can be converted to a Category") {
+            it("can be converted to a Location") {
                 let location = testObject.convert()
                 
                 expect(location).to(equal(expectedLocation))

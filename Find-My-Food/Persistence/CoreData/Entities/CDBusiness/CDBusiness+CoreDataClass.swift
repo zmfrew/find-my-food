@@ -34,7 +34,6 @@ extension CDBusiness: CoreDataConvertible {
 
     func convert() -> Business? {
         guard let coordinate = self.coordinate.convert(),
-            let imageData = self.image,
             let location = self.location.convert()
         else { return nil }
 
@@ -46,7 +45,7 @@ extension CDBusiness: CoreDataConvertible {
                         displayPhone: self.displayPhone,
                         distance: self.distance,
                         id: self.id,
-                        image: UIImage(data: imageData),
+                        image: UIImage(data: self.image ?? Data(capacity: 0)),
                         imageURLString: self.imageURLString,
                         isClosed: self.isClosed,
                         location: location,
