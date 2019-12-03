@@ -52,6 +52,9 @@ final class BusinessSearchView: UIView {
                                              selector: #selector(keyboardWillHide),
                                              name: UIResponder.keyboardWillHideNotification,
                                              object: nil)
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        addGestureRecognizer(tap)
     }
 
     @IBAction private func priceButtonTapped(_ sender: PriceButton) {
@@ -66,6 +69,10 @@ final class BusinessSearchView: UIView {
 
         delegate?.search(for: business, radius: radius, prices: selectedPrices, openNow: openNow)
 	}
+
+    @objc func dismissKeyboard() {
+        endEditing(true)
+    }
 
     @objc func keyboardWillShow(notification: NSNotification) {
 

@@ -1,13 +1,12 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
+    private let businessCoordinator = BusinessCoordinator(navigationController: UINavigationController())
+    private let favoritesCoordinator = FavoritesCoordinator(navigationController: UINavigationController())
+    private let settingsCoordinator = SettingsCoordinator(navigationController: UINavigationController())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let businessCoordinator = BusinessCoordinator(navigationController: UINavigationController())
-        let favoritesCoordinator = FavoritesCoordinator(navigationController: UINavigationController())
-        let settingsCoordinator = SettingsCoordinator(navigationController: UINavigationController())
 
         start(with: [businessCoordinator, favoritesCoordinator, settingsCoordinator])
     }
