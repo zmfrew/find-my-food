@@ -1,15 +1,27 @@
 import UIKit
 
-final class BusinessTableViewCell: UITableViewCell {
-	@IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var addressLabel: UILabel!
-    @IBOutlet private weak var ratingLabel: UILabel!
-    @IBOutlet private weak var businessImageView: UIImageView!
+protocol BusinessTableViewCellDelegate: class {
+    func favoriteTapped(on cell: BusinessTableViewCell)
+}
 
-    func decorateView(with name: String, address: String, rating: Double, image: UIImage?) {
-		nameLabel.text = name
+final class BusinessTableViewCell: UITableViewCell {
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var businessImageView: UIImageView!
+    @IBOutlet private weak var favoriteButton: UIButton! // TODO: - Fill the favorite button in if it's already a favorite.
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var ratingLabel: UILabel!
+
+    weak var delegate: BusinessTableViewCellDelegate?
+
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        delegate?.favoriteTapped(on: self)
+    }
+
+    func decorateView(with address: String, delegate: BusinessTableViewCellDelegate, image: UIImage?, name: String, rating: Double) {
         addressLabel.text = address
-        ratingLabel.text = "\(rating)"
+        self.delegate = delegate
         businessImageView.image = image
+        nameLabel.text = name
+        ratingLabel.text = "\(rating)"
 	}
 }

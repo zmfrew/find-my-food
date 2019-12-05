@@ -33,11 +33,15 @@ extension BusinessesViewController: BusinessesViewDelegate {
         coordinator?.businessSelected(business)
     }
 
+    func favorite(at index: Int) {
+        model.favorite(at: index)
+    }
+
     func image(for business: Business) {
         model.image(for: business)
     }
 
-    func randomizeButtonTapped() {
+    func randomize() {
         guard let business = model.randomBusiness() else { return }
 
         coordinator?.businessSelected(business)

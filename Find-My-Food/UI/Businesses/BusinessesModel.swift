@@ -4,6 +4,7 @@ protocol BusinessModelProtocol {
     var businessCount: Int { get }
 
     func business(for row: Int) -> Business?
+    func favorite(at index: Int)
     func image(for business: Business)
     func randomBusiness() -> Business?
 }
@@ -35,6 +36,13 @@ final class BusinessesModel: BusinessModelProtocol {
 
     func business(for row: Int) -> Business? {
         businesses.element(at: row)
+    }
+
+    func favorite(at index: Int) {
+        guard let business = business(for: index) else { return }
+        
+        // TODO: - Save to CoreData
+        // if successful, change the star to be filled in.
     }
 
     func randomBusiness() -> Business? {
