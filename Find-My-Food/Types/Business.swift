@@ -10,6 +10,7 @@ struct Business {
     var image: UIImage?
     let imageURLString: String
     let isClosed: Bool
+    var isFavorite: Bool = false
     let location: Location
     let name: String
     let phone: String
@@ -67,6 +68,7 @@ extension Business {
               image: UIImage? = nil,
               imageURLString: String? = nil,
               isClosed: Bool? = nil,
+              isFavorite: Bool? = false,
               location: Location? = nil,
               name: String? = nil,
               phone: String? = nil,
@@ -85,6 +87,7 @@ extension Business {
                         image: image ?? self.image,
                         imageURLString: imageURLString ?? self.imageURLString,
                         isClosed: isClosed ?? self.isClosed,
+                        isFavorite: isFavorite ?? self.isFavorite,
                         location: location ?? self.location,
                         name: name ?? self.name,
                         phone: phone ?? self.phone,

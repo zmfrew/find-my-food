@@ -34,6 +34,14 @@ extension BusinessesView {
         self.tableView.reloadData()
     }
 
+    func saveDidSucceed(at index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        guard let cell = tableView.cellForRow(at: indexPath) as? BusinessTableViewCell else { return }
+
+        cell.favoriteDidSucceed()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+
     func updateResultsCount(_ results: Int) {
         resultsCountLabel.text = "\(results) results found"
     }
@@ -51,7 +59,7 @@ extension BusinessesView: UITableViewDataSource {
 
         let address = business.location.displayAddress.joined(separator: " ")
 
-        cell.decorateView(with: address, delegate: self, image: business.image, name: business.name, rating: business.rating)
+        cell.decorateView(with: address, delegate: self, image: business.image, isFavorite: business.isFavorite, name: business.name, rating: business.rating)
 
 		return cell
 	}

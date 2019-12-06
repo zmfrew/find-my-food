@@ -13,15 +13,22 @@ final class BusinessTableViewCell: UITableViewCell {
 
     weak var delegate: BusinessTableViewCellDelegate?
 
-    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+    @IBAction private func favoriteButtonTapped(_ sender: UIButton) {
         delegate?.favoriteTapped(on: self)
     }
+}
 
-    func decorateView(with address: String, delegate: BusinessTableViewCellDelegate, image: UIImage?, name: String, rating: Double) {
+extension BusinessTableViewCell {
+    func decorateView(with address: String, delegate: BusinessTableViewCellDelegate, image: UIImage?, isFavorite: Bool, name: String, rating: Double) {
         addressLabel.text = address
         self.delegate = delegate
         businessImageView.image = image
+        favoriteButton.setImage(UIImage(systemName: isFavorite ? "star.fill" : "star"), for: .normal)
         nameLabel.text = name
         ratingLabel.text = "\(rating)"
 	}
+
+    func favoriteDidSucceed() {
+        favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
 }

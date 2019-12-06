@@ -14,14 +14,14 @@ final class BusinessesModelSpec: QuickSpec {
             businesses = TestData.businessesFromJson()
             mockBusinessSearchClient = MockBusinessSearchClient()
             mockDelegate = MockBusinessesModelDelegate()
-            testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+            testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: mockDelegate)
         }
         
         // MARK: - init()
         describe("init") {
             context("given images are not downloaded yet") {
                 it("does not call dataDidUpdate after setting businesses") {
-                    testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+                    testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: mockDelegate)
                     
                     expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(0))
                 }
@@ -72,7 +72,7 @@ final class BusinessesModelSpec: QuickSpec {
                     
                     testObject.image(for: businesses.first!)
                     expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(0))
-                    expect(mockBusinessSearchClient.stub.imageCallCount).to(equal(testObject.businessCount + 1))
+                    expect(mockBusinessSearchClient.stub.imageCallCount).toEventually(equal(testObject.businessCount + 1))
                 }
             }
         }
@@ -88,7 +88,7 @@ final class BusinessesModelSpec: QuickSpec {
             
             context("given businesses is not empty") {
                 it("returns nil") {
-                    let emptyTestObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+                    let emptyTestObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: mockDelegate)
                     
                     expect(emptyTestObject.randomBusiness()).to(beNil())
                 }

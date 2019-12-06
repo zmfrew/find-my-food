@@ -11,6 +11,8 @@ protocol BusinessModelProtocol {
 
 protocol BusinessesModelDelegate: class {
     func dataDidUpdate()
+    func saveDidFail()
+    func saveDidSucceed(at index: Int)
 }
 
 final class BusinessesModel: BusinessModelProtocol {
@@ -22,13 +24,18 @@ final class BusinessesModel: BusinessModelProtocol {
         }
     }
     private let businessSearchClient: BusinessSearchClientProtocol
+    private let coreDataManager: CoreDataManagerProtocol
     var businessCount: Int { businesses.count }
 
     weak var delegate: BusinessesModelDelegate?
-
-    init(businesses: [Business], businessSearchClient: BusinessSearchClientProtocol, delegate: BusinessesModelDelegate) {
+    // TODO: - TESTS!!!!!
+    init(businesses: [Business],
+         businessSearchClient: BusinessSearchClientProtocol,
+         coreDataManager: CoreDataManagerProtocol,
+         delegate: BusinessesModelDelegate) {
         self.businesses = businesses
         self.businessSearchClient = businessSearchClient
+        self.coreDataManager = coreDataManager
         self.delegate = delegate
 
         businesses.forEach { image(for: $0) }
@@ -40,9 +47,20 @@ final class BusinessesModel: BusinessModelProtocol {
 
     func favorite(at index: Int) {
         guard let business = business(for: index) else { return }
-        
+
         // TODO: - Save to CoreData
-        // if successful, change the star to be filled in.
+        coreDataManager.save([business]) { result in
+            switch result {
+            case .success:
+
+                self.businesses[index] = business.copy(isFavorite: true)
+                self.delegate?.saveDidSucceed(at: index)
+
+            case .failure(let error):
+                self.delegate?.saveDidFail()
+                print("Error occurred saving data: \(error.localizedDescription)")
+            }
+        }
     }
 
     func randomBusiness() -> Business? {

@@ -3,6 +3,7 @@ import Foundation
 
 protocol CoreDataManagerProtocol {
     var viewContext: NSManagedObjectContext { get }
+
     func save(_ businesses: [Business], completion: @escaping (Result<Void, Error>) -> Void)
 }
 
@@ -19,9 +20,9 @@ final class CoreDataManager: CoreDataManagerProtocol {
         guard businesses.isNotEmpty else { completion(.success(())); return }
 
         viewContext.perform {
-            // businesses.forEach { CDBusiness(object: $0, context: managedObjectContext) }
+            businesses.forEach { CDBusiness($0, context: self.viewContext) }
 
-            // completion(managedObjectContext.performSave())
+            completion(self.viewContext.performSave())
         }
     }
 }

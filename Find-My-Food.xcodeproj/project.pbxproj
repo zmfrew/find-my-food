@@ -36,6 +36,7 @@
 		575B87F3238C7E4600BFE84C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575B87F2238C7E4600BFE84C /* MainTabBarController.swift */; };
 		575B87FB238DD79E00BFE84C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575B87FA238DD79E00BFE84C /* CoreDataManager.swift */; };
 		575BCF532391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BCF522391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift */; };
+		5797AC23239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797AC22239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift */; };
 		579C21A32368B8FE0015D0BE /* GeocoderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A22368B8FE0015D0BE /* GeocoderWrapper.swift */; };
 		579C21A52368B9110015D0BE /* GeocoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A42368B9110015D0BE /* GeocoderProtocol.swift */; };
 		579C21A72368B91F0015D0BE /* LocationManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */; };
@@ -162,6 +163,7 @@
 		575BCF522391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDBusiness+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		575BCF542391D7BA00DE9CBB /* CDCoordinate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCoordinate+CoreDataClass.swift"; sourceTree = "<group>"; };
 		575BCF552391D7BA00DE9CBB /* CDCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5797AC22239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		579C21A22368B8FE0015D0BE /* GeocoderWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderWrapper.swift; sourceTree = "<group>"; };
 		579C21A42368B9110015D0BE /* GeocoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderProtocol.swift; sourceTree = "<group>"; };
 		579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerInterface.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				57C3CB87236A30AF007E1B9A /* URL+Extension.swift */,
 				57C3CB89236A3145007E1B9A /* String+Extension.swift */,
 				575225EC23722D600023085E /* Int+Extension.swift */,
+				5797AC22239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -930,6 +933,7 @@
 				57551F9E239228A300DBE1C4 /* CDCategory+CoreDataClass.swift in Sources */,
 				57551F9F239228A300DBE1C4 /* CDCategory+CoreDataProperties.swift in Sources */,
 				B69E33EB2322912F00A4477E /* BusinessesViewController.swift in Sources */,
+				5797AC23239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift in Sources */,
 				575B87F3238C7E4600BFE84C /* MainTabBarController.swift in Sources */,
 				57B9175C237CBE020052D014 /* FavoritesViewController.swift in Sources */,
 				575225ED23722D600023085E /* Int+Extension.swift in Sources */,

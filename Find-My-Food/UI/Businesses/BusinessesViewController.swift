@@ -20,6 +20,16 @@ extension BusinessesViewController: BusinessesModelDelegate {
     func dataDidUpdate() {
         businessesView.dataDidUpdate()
     }
+
+    func saveDidFail() {
+        let alert = UIAlertController(title: "Oh no!", message: "Favoriting failed. Please try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
+    func saveDidSucceed(at index: Int) {
+        businessesView.saveDidSucceed(at: index)
+    }
 }
 
 extension BusinessesViewController: BusinessesViewDelegate {
