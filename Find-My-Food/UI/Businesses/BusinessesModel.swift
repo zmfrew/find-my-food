@@ -28,7 +28,7 @@ final class BusinessesModel: BusinessModelProtocol {
     var businessCount: Int { businesses.count }
 
     weak var delegate: BusinessesModelDelegate?
-    // TODO: - TESTS!!!!!
+
     init(businesses: [Business],
          businessSearchClient: BusinessSearchClientProtocol,
          coreDataManager: CoreDataManagerProtocol,
@@ -46,9 +46,11 @@ final class BusinessesModel: BusinessModelProtocol {
     }
 
     func favorite(at index: Int) {
-        guard let business = business(for: index) else { return }
+        guard let business = business(for: index) else {
+            delegate?.saveDidFail()
+            return
+        }
 
-        // TODO: - Save to CoreData
         coreDataManager.save([business]) { result in
             switch result {
             case .success:

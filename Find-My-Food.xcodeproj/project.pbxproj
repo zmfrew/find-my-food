@@ -55,6 +55,7 @@
 		57C3CB8B236A314B007E1B9A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3CB89236A3145007E1B9A /* String+Extension.swift */; };
 		57C3CB90236A31D2007E1B9A /* String+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3CB8E236A31A2007E1B9A /* String+ExtensionSpec.swift */; };
 		57C7B1092375AF2D001AF112 /* MockBusinessCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */; };
+		57D2DD6C239D78B100FD08A8 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2DD6B239D78B100FD08A8 /* MockCoreDataManager.swift */; };
 		57DCCA402357722E00CEA8DE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA3F2357722E00CEA8DE /* Secret.swift */; };
 		57DCCA672358EE6F00CEA8DE /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */; };
 		57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */; };
@@ -181,6 +182,7 @@
 		57C3CB89236A3145007E1B9A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		57C3CB8E236A31A2007E1B9A /* String+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessCoordinator.swift; sourceTree = "<group>"; };
+		57D2DD6B239D78B100FD08A8 /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
 		57DCCA3F2357722E00CEA8DE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
 		57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				57551F6A2391F75400DBE1C4 /* CDCoordinate */,
 				57551F682391F74A00DBE1C4 /* CDLocation */,
 				57551F672391F74500DBE1C4 /* CDCategory */,
+				57D2DD6B239D78B100FD08A8 /* MockCoreDataManager.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D2DD6C239D78B100FD08A8 /* MockCoreDataManager.swift in Sources */,
 				57A508C52392322700471FFD /* CoordinateSpec.swift in Sources */,
 				B69E34802322F21400A4477E /* MockBusinessSearchClient.swift in Sources */,
 				57B91767237CC4340052D014 /* FavoritesCoordinatorSpec.swift in Sources */,
