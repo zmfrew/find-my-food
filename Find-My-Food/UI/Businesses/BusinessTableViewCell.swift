@@ -37,4 +37,8 @@ extension BusinessTableViewCell {
     func favoriteDidSucceed() {
         favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
     }
+
+    func hideFavoriteButton() {
+        favoriteButton.isHidden = true
+    }
 }

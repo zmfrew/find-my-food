@@ -9,13 +9,18 @@ protocol FavoritesModelProtocol {
 
 protocol FavoritesModelDelegate: class, FetchedResultsControllerDelegate {
     func dataDidUpdate()
+    func downloadDidEnd()
 }
 
 final class FavoritesModel: FavoritesModelProtocol {
-    private let frc: BusinessFetchedResultsControllerProtocol
+    private var frc: BusinessFetchedResultsControllerProtocol
     var businessCount: Int { frc.numberOfObjects(in: 0) }
 
-    weak var delegate: FavoritesModelDelegate?
+    weak var delegate: FavoritesModelDelegate? {
+        didSet {
+            frc.delegate = self.delegate
+        }
+    }
 
     init(delegate: FavoritesModelDelegate,
          frc: BusinessFetchedResultsControllerProtocol) {
@@ -30,6 +35,7 @@ final class FavoritesModel: FavoritesModelProtocol {
     func loadBusinesses() {
         DispatchQueue.main.async {
             self.frc.performFetch()
+            self.delegate?.downloadDidEnd()
         }
     }
 

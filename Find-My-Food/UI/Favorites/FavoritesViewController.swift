@@ -19,6 +19,10 @@ extension FavoritesViewController: FavoritesModelDelegate {
     func dataDidUpdate() {
         favoritesView.dataDidUpdate()
     }
+
+    func downloadDidEnd() {
+        favoritesView.downloadDidEnd()
+    }
 }
 
 extension FavoritesViewController: FavoritesViewDelegate {
