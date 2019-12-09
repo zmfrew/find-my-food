@@ -5,12 +5,12 @@ import Nimble
 
 final class BusinessCoordinatorSpec: QuickSpec {
     override func spec() {
-        var testObject: BusinessCoordinator!
+        var testObject: SearchCoordinator!
         var navController: UINavigationController!
         
         beforeEach {
             navController = UINavigationController()
-            testObject = BusinessCoordinator(navigationController: navController)
+            testObject = SearchCoordinator(navigationController: navController)
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = navController
             window.makeKeyAndVisible()

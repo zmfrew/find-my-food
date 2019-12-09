@@ -15,7 +15,7 @@ final class BusinessSearchViewController: UIViewController, Storyboarded {
     private var longitude: Double!
 
     weak var delegate: BusinessSearchViewControllerDelegate?
-    weak var coordinator: BusinessCoordinatorProtocol?
+    weak var coordinator: SearchCoordinatorProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()

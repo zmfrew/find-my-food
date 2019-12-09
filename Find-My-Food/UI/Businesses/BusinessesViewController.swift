@@ -3,7 +3,7 @@ import UIKit
 final class BusinessesViewController: UIViewController, Storyboarded {
 	private var businessesView: BusinessesView { self.view as! BusinessesView } //swiftlint:disable:this force_cast
 	private var model: BusinessModelProtocol!
-    weak var coordinator: BusinessCoordinatorProtocol?
+    weak var coordinator: SearchCoordinatorProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,8 @@ extension BusinessesViewController: BusinessesModelDelegate {
 }
 
 extension BusinessesViewController: BusinessesViewDelegate {
+    var businessCount: Int { model.businessCount }
+
 	func business(for row: Int) -> Business? {
 		model.business(for: row)
 	}
@@ -56,8 +58,4 @@ extension BusinessesViewController: BusinessesViewDelegate {
 
         coordinator?.businessSelected(business)
     }
-
-	var businessCount: Int {
-		model.businessCount
-	}
 }

@@ -59,7 +59,12 @@ extension BusinessesView: UITableViewDataSource {
 
         let address = business.location.displayAddress.joined(separator: " ")
 
-        cell.decorateView(with: address, delegate: self, image: business.image, isFavorite: business.isFavorite, name: business.name, rating: business.rating)
+        cell.decorateView(with: address,
+                          delegate: self,
+                          image: business.image,
+                          isFavorite: business.isFavorite,
+                          name: business.name,
+                          rating: business.rating)
 
 		return cell
 	}

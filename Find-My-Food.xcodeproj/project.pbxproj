@@ -56,6 +56,11 @@
 		57C3CB90236A31D2007E1B9A /* String+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C3CB8E236A31A2007E1B9A /* String+ExtensionSpec.swift */; };
 		57C7B1092375AF2D001AF112 /* MockBusinessCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */; };
 		57D2DD6C239D78B100FD08A8 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2DD6B239D78B100FD08A8 /* MockCoreDataManager.swift */; };
+		57D2DD6E239DBC6D00FD08A8 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2DD6D239DBC6D00FD08A8 /* FavoritesView.swift */; };
+		57D2DD70239DBEAC00FD08A8 /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2DD6F239DBEAC00FD08A8 /* FavoritesModel.swift */; };
+		57D2DD72239DC0F500FD08A8 /* BusinessCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2DD71239DC0F500FD08A8 /* BusinessCoordinator.swift */; };
+		57D2DD74239DC5F700FD08A8 /* FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2DD73239DC5F700FD08A8 /* FetchedResultsController.swift */; };
+		57D2DD76239DC73900FD08A8 /* BusinessFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2DD75239DC73900FD08A8 /* BusinessFetchedResultsController.swift */; };
 		57DCCA402357722E00CEA8DE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA3F2357722E00CEA8DE /* Secret.swift */; };
 		57DCCA672358EE6F00CEA8DE /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */; };
 		57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */; };
@@ -121,7 +126,7 @@
 		B69E34842322F21400A4477E /* BusinessSearchClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E42322912F00A4477E /* BusinessSearchClientSpec.swift */; };
 		B69E34852322F21700A4477E /* Array+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E33E62322912F00A4477E /* Array+ExtensionSpec.swift */; };
 		B6D5D5FF233B06D5004138F5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D5FE233B06D5004138F5 /* Storyboarded.swift */; };
-		B6D5D601233B077C004138F5 /* BusinessCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D600233B077C004138F5 /* BusinessCoordinator.swift */; };
+		B6D5D601233B077C004138F5 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D5D600233B077C004138F5 /* SearchCoordinator.swift */; };
 		B6D5D603233B0DFF004138F5 /* BusinessSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -183,6 +188,11 @@
 		57C3CB8E236A31A2007E1B9A /* String+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessCoordinator.swift; sourceTree = "<group>"; };
 		57D2DD6B239D78B100FD08A8 /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
+		57D2DD6D239DBC6D00FD08A8 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		57D2DD6F239DBEAC00FD08A8 /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
+		57D2DD71239DC0F500FD08A8 /* BusinessCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCoordinator.swift; sourceTree = "<group>"; };
+		57D2DD73239DC5F700FD08A8 /* FetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsController.swift; sourceTree = "<group>"; };
+		57D2DD75239DC73900FD08A8 /* BusinessFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFetchedResultsController.swift; sourceTree = "<group>"; };
 		57DCCA3F2357722E00CEA8DE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
 		57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
@@ -252,7 +262,7 @@
 		B69E34512322977900A4477E /* Find-My-FoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find-My-FoodTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69E346423229A1E00A4477E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6D5D5FE233B06D5004138F5 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		B6D5D600233B077C004138F5 /* BusinessCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCoordinator.swift; sourceTree = "<group>"; };
+		B6D5D600233B077C004138F5 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		B6D5D602233B0DFF004138F5 /* BusinessSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessSearch.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,6 +312,7 @@
 		571ABE8E23847B8C004F0003 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				57D2DD73239DC5F700FD08A8 /* FetchedResultsController.swift */,
 				5734439D238589D4001022AA /* CoreDataConvertible.swift */,
 				571ABE8F23847C3A004F0003 /* CoreDataStack.swift */,
 				575B87FA238DD79E00BFE84C /* CoreDataManager.swift */,
@@ -342,6 +353,7 @@
 			children = (
 				5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */,
 				575BCF522391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift */,
+				57D2DD75239DC73900FD08A8 /* BusinessFetchedResultsController.swift */,
 			);
 			path = CDBusiness;
 			sourceTree = "<group>";
@@ -449,7 +461,9 @@
 		57B9175A237CBDEE0052D014 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				57D2DD6F239DBEAC00FD08A8 /* FavoritesModel.swift */,
 				57B9175B237CBE020052D014 /* FavoritesViewController.swift */,
+				57D2DD6D239DBC6D00FD08A8 /* FavoritesView.swift */,
 				57B9175F237CBEFC0052D014 /* Favorites.storyboard */,
 			);
 			path = Favorites;
@@ -760,7 +774,8 @@
 			isa = PBXGroup;
 			children = (
 				B6D5D5FE233B06D5004138F5 /* Storyboarded.swift */,
-				B6D5D600233B077C004138F5 /* BusinessCoordinator.swift */,
+				B6D5D600233B077C004138F5 /* SearchCoordinator.swift */,
+				57D2DD71239DC0F500FD08A8 /* BusinessCoordinator.swift */,
 				57E5071C237B32FF0061CBB6 /* SettingsCoordinator.swift */,
 				57B9175D237CBE2C0052D014 /* FavoritesCoordinator.swift */,
 				57E5071E237B351F0061CBB6 /* Coordinator.swift */,
@@ -935,10 +950,12 @@
 				57551FA523922F2500DBE1C4 /* CDLocation+CoreDataProperties.swift in Sources */,
 				57551F9E239228A300DBE1C4 /* CDCategory+CoreDataClass.swift in Sources */,
 				57551F9F239228A300DBE1C4 /* CDCategory+CoreDataProperties.swift in Sources */,
+				57D2DD74239DC5F700FD08A8 /* FetchedResultsController.swift in Sources */,
 				B69E33EB2322912F00A4477E /* BusinessesViewController.swift in Sources */,
 				5797AC23239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift in Sources */,
 				575B87F3238C7E4600BFE84C /* MainTabBarController.swift in Sources */,
 				57B9175C237CBE020052D014 /* FavoritesViewController.swift in Sources */,
+				57D2DD76239DC73900FD08A8 /* BusinessFetchedResultsController.swift in Sources */,
 				575225ED23722D600023085E /* Int+Extension.swift in Sources */,
 				57EEC11F23590B410076B9FD /* BusinessDetailView.swift in Sources */,
 				57DCCA402357722E00CEA8DE /* Secret.swift in Sources */,
@@ -952,6 +969,7 @@
 				57133BD12374BD3500DDB2D9 /* PriceButton.swift in Sources */,
 				B69E33EE2322912F00A4477E /* MapView.swift in Sources */,
 				B69E33F32322912F00A4477E /* BusinessSearchView.swift in Sources */,
+				57D2DD70239DBEAC00FD08A8 /* FavoritesModel.swift in Sources */,
 				575AAF31237A374C004FAB58 /* Radius.swift in Sources */,
 				571ABE9623847EF5004F0003 /* Find-My-Food.xcdatamodeld in Sources */,
 				57C3CB8B236A314B007E1B9A /* String+Extension.swift in Sources */,
@@ -960,6 +978,7 @@
 				B69E33F12322912F00A4477E /* BusinessSearchViewController.swift in Sources */,
 				B69E33E72322912F00A4477E /* BusinessesModel.swift in Sources */,
 				57E50727237B3CD60061CBB6 /* UserDefaultsWrapper.swift in Sources */,
+				57D2DD6E239DBC6D00FD08A8 /* FavoritesView.swift in Sources */,
 				B69E33F82322912F00A4477E /* YelpRoutes.swift in Sources */,
 				B69E33FB2322912F00A4477E /* BaseServiceClient.swift in Sources */,
 				575BCF532391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift in Sources */,
@@ -967,7 +986,8 @@
 				B69E33EF2322912F00A4477E /* MapModel.swift in Sources */,
 				B69E33FC2322912F00A4477E /* Array+Extension.swift in Sources */,
 				B69E33ED2322912F00A4477E /* MapViewController.swift in Sources */,
-				B6D5D601233B077C004138F5 /* BusinessCoordinator.swift in Sources */,
+				B6D5D601233B077C004138F5 /* SearchCoordinator.swift in Sources */,
+				57D2DD72239DC0F500FD08A8 /* BusinessCoordinator.swift in Sources */,
 				B69E33F22322912F00A4477E /* BusinessSearchModel.swift in Sources */,
 				571ABE9023847C3A004F0003 /* CoreDataStack.swift in Sources */,
 				B69E33E92322912F00A4477E /* BusinessTableViewCell.swift in Sources */,

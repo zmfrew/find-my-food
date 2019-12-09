@@ -19,7 +19,13 @@ final class BusinessTableViewCell: UITableViewCell {
 }
 
 extension BusinessTableViewCell {
-    func decorateView(with address: String, delegate: BusinessTableViewCellDelegate, image: UIImage?, isFavorite: Bool, name: String, rating: Double) {
+    //swiftlint:disable function_parameter_count
+    func decorateView(with address: String,
+                      delegate: BusinessTableViewCellDelegate,
+                      image: UIImage?,
+                      isFavorite: Bool,
+                      name: String,
+                      rating: Double) {
         addressLabel.text = address
         self.delegate = delegate
         businessImageView.image = image

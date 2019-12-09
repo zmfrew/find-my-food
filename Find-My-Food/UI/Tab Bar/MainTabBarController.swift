@@ -1,7 +1,7 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-    private let businessCoordinator = BusinessCoordinator(navigationController: UINavigationController())
+    private let businessCoordinator = SearchCoordinator(navigationController: UINavigationController())
     private let favoritesCoordinator = FavoritesCoordinator(navigationController: UINavigationController())
     private let settingsCoordinator = SettingsCoordinator(navigationController: UINavigationController())
 
@@ -12,7 +12,7 @@ class MainTabBarController: UITabBarController {
     }
 
     private func start(with coordinators: [Coordinator]) {
-        let businessSearchCoordinator = coordinators.first(where: { $0 is BusinessCoordinatorProtocol }) as! BusinessCoordinatorProtocol //swiftlint:disable:this force_cast line_length
+        let businessSearchCoordinator = coordinators.first(where: { $0 is SearchCoordinatorProtocol }) as! SearchCoordinatorProtocol //swiftlint:disable:this force_cast line_length
         businessSearchCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
 
         let favoritesCoordinator = coordinators.first(where: { $0 is FavoritesCoordinatorProtocol }) as! FavoritesCoordinatorProtocol //swiftlint:disable:this force_cast line_length

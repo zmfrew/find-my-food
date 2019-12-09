@@ -2,7 +2,7 @@ import UIKit
 
 @testable import Find_My_Food
 
-final class MockBusinessCoordinator: BusinessCoordinatorProtocol {
+final class MockBusinessCoordinator: SearchCoordinatorProtocol {
     
     final class Stub {
         var navigationControllerShouldReturn = UINavigationController()
