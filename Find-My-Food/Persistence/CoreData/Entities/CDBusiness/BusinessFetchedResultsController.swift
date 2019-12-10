@@ -14,7 +14,7 @@ protocol BusinessFetchedResultsControllerProtocol {
 
 final class BusinessFetchedResultsController: BusinessFetchedResultsControllerProtocol {
 
-    fileprivate(set) var fetchedResultsController: NSFetchedResultsController<CDBusiness>
+    private(set) var fetchedResultsController: NSFetchedResultsController<CDBusiness>
 
     init(managedObjectContext: NSManagedObjectContext) {
         let fetchRequest: NSFetchRequest<CDBusiness> = CDBusiness.fetchRequest()
