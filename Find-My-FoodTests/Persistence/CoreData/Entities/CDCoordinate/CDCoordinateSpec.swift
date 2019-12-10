@@ -16,11 +16,9 @@ final class CDCoordinateSpec: QuickSpec {
         
         describe("NSManaged properties") {
             it("has the correct types") {
-                testObject.business = nil
                 testObject.latitude = 0.0
                 testObject.longitude = 0.0
                 
-                expect(testObject.business).to(beAKindOf(CDBusiness?.self))
                 expect(testObject.latitude).to(beAKindOf(Double.self))
                 expect(testObject.longitude).to(beAKindOf(Double.self))
             }

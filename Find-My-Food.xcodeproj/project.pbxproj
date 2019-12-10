@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5701EC6F23623827004A4EAA /* BusinessCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701EC6E23623827004A4EAA /* BusinessCoordinatorSpec.swift */; };
+		5701EC6F23623827004A4EAA /* SearchCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701EC6E23623827004A4EAA /* SearchCoordinatorSpec.swift */; };
 		570B4F74237A06AE000FCA90 /* SettingsTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570B4F73237A06AE000FCA90 /* SettingsTable.storyboard */; };
 		57133BD12374BD3500DDB2D9 /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57133BD02374BD3500DDB2D9 /* PriceButton.swift */; };
 		57173C242364C1A500BF7E2C /* MockBusinessesModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */; };
@@ -16,6 +16,8 @@
 		571ABE9623847EF5004F0003 /* Find-My-Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */; };
 		5734439B23858798001022AA /* CDBusiness+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */; };
 		5734439E238589D4001022AA /* CoreDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439D238589D4001022AA /* CoreDataConvertible.swift */; };
+		57444F2E23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57444F2D23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift */; };
+		57444F2F23A052AF00D5790F /* CDCoordinateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57551FA223922C2900DBE1C4 /* CDCoordinateSpec.swift */; };
 		575225ED23722D600023085E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EC23722D600023085E /* Int+Extension.swift */; };
 		575225EF23722DF40023085E /* Int+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EE23722DF40023085E /* Int+ExtensionSpec.swift */; };
 		57551F6C2391F77600DBE1C4 /* CDCategorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */; };
@@ -141,7 +143,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5701EC6E23623827004A4EAA /* BusinessCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCoordinatorSpec.swift; sourceTree = "<group>"; };
+		5701EC6E23623827004A4EAA /* SearchCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinatorSpec.swift; sourceTree = "<group>"; };
 		570B4F73237A06AE000FCA90 /* SettingsTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTable.storyboard; sourceTree = "<group>"; };
 		57133BD02374BD3500DDB2D9 /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
 		57173C232364C1A500BF7E2C /* MockBusinessesModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessesModelDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		5734439423858798001022AA /* CDLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBusiness+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5734439D238589D4001022AA /* CoreDataConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConvertible.swift; sourceTree = "<group>"; };
+		57444F2D23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFetchedResultsControllerSpec.swift; sourceTree = "<group>"; };
 		575225EC23722D600023085E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		575225EE23722DF40023085E /* Int+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCategorySpec.swift; sourceTree = "<group>"; };
@@ -289,7 +292,7 @@
 		5701EC6D2362381A004A4EAA /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				5701EC6E23623827004A4EAA /* BusinessCoordinatorSpec.swift */,
+				5701EC6E23623827004A4EAA /* SearchCoordinatorSpec.swift */,
 				57E50730237B43DC0061CBB6 /* MockSettingsCoordinator.swift */,
 				57B91764237CC2F20052D014 /* MockFavoritesCoordinator.swift */,
 				57C7B1082375AF2D001AF112 /* MockBusinessCoordinator.swift */,
@@ -398,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				57A508C62392329500471FFD /* CDBusinessSpec.swift */,
+				57444F2D23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift */,
 			);
 			path = CDBusiness;
 			sourceTree = "<group>";
@@ -1022,6 +1026,7 @@
 				B69E34812322F21400A4477E /* MockServiceClient.swift in Sources */,
 				B69E347D2322F21000A4477E /* TestData.swift in Sources */,
 				B69E34852322F21700A4477E /* Array+ExtensionSpec.swift in Sources */,
+				57444F2E23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift in Sources */,
 				B69E34842322F21400A4477E /* BusinessSearchClientSpec.swift in Sources */,
 				57551F762392013200DBE1C4 /* CoreDataConvertible.swift in Sources */,
 				57E5072D237B40BF0061CBB6 /* UserDefaultKeySpec.swift in Sources */,
@@ -1035,7 +1040,7 @@
 				57E5072F237B414D0061CBB6 /* MockUserDefaults.swift in Sources */,
 				575AAF2D237A332E004FAB58 /* SettingsModelSpec.swift in Sources */,
 				B69E347F2322F21400A4477E /* YelpRoutesSpec.swift in Sources */,
-				5701EC6F23623827004A4EAA /* BusinessCoordinatorSpec.swift in Sources */,
+				5701EC6F23623827004A4EAA /* SearchCoordinatorSpec.swift in Sources */,
 				B69E346E2322F1F700A4477E /* BusinessesModelSpec.swift in Sources */,
 				B69E346F2322F1FC00A4477E /* MockMapModelDelegate.swift in Sources */,
 				57551F6D2391FC1500DBE1C4 /* Find-My-Food.xcdatamodeld in Sources */,
@@ -1048,6 +1053,7 @@
 				B69E34702322F1FC00A4477E /* MapModelSpec.swift in Sources */,
 				57C3CB90236A31D2007E1B9A /* String+ExtensionSpec.swift in Sources */,
 				57B91765237CC2F20052D014 /* MockFavoritesCoordinator.swift in Sources */,
+				57444F2F23A052AF00D5790F /* CDCoordinateSpec.swift in Sources */,
 				B69E34782322F21000A4477E /* ResponseSpec.swift in Sources */,
 				57A508C72392329500471FFD /* CDBusinessSpec.swift in Sources */,
 				57E50735237B52050061CBB6 /* SettingsCoordinatorSpec.swift in Sources */,

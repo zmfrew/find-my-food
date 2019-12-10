@@ -61,12 +61,12 @@ final class BusinessCoordinatorSpec: QuickSpec {
             }
         }
         
-        // MARK: - func locationButtonTapped(_ business: Business)
+        // MARK: - func location(for business: Business)
         describe("locationButtonTapped(_ business: Business)") {
             it("pushes a MapViewController on the navigation stack and sets the coordinator") {
                 let business = TestData.createBusiness()
                 
-                testObject.locationButtonTapped(business)
+                testObject.location(for: business)
                 
                 let mapVC = testObject.navigationController.viewControllers.first(where: { $0 is MapViewController}) as! MapViewController
                 expect(testObject.navigationController.viewControllers).toNot(beEmpty())
