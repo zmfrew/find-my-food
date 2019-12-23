@@ -13,19 +13,19 @@ protocol FavoritesModelDelegate: class, FetchedResultsControllerDelegate {
 }
 
 final class FavoritesModel: FavoritesModelProtocol {
-    private var frc: BusinessFetchedResultsControllerProtocol
     var businessCount: Int { frc.numberOfObjects(in: 0) }
-
     weak var delegate: FavoritesModelDelegate? {
         didSet {
             frc.delegate = self.delegate
         }
     }
+    private var frc: BusinessFetchedResultsControllerProtocol
 
     init(delegate: FavoritesModelDelegate,
          frc: BusinessFetchedResultsControllerProtocol) {
         self.delegate = delegate
         self.frc = frc
+        self.frc.delegate = delegate
     }
 
     func business(at indexPath: IndexPath) -> Business? {

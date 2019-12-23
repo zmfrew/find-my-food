@@ -63,7 +63,11 @@ extension FavoritesView: UITableViewDataSource {
     }
 }
 
-extension FavoritesView: UITableViewDelegate { }
+extension FavoritesView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.businessSelected(at: indexPath)
+    }
+}
 
 extension FavoritesView: BusinessTableViewCellDelegate {
     func favoriteTapped(on cell: BusinessTableViewCell) { }
