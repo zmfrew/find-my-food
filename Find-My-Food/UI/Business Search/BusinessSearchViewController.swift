@@ -9,13 +9,12 @@ extension BusinessSearchViewControllerDelegate {
 }
 
 final class BusinessSearchViewController: UIViewController, Storyboarded {
-    private var model: BusinessSearchModelProtocol!
-	private var searchView: BusinessSearchView { view as! BusinessSearchView } //swiftlint:disable:this force_cast
+    weak var coordinator: SearchCoordinatorProtocol?
+    weak var delegate: BusinessSearchViewControllerDelegate?
     private var latitude: Double!
     private var longitude: Double!
-
-    weak var delegate: BusinessSearchViewControllerDelegate?
-    weak var coordinator: SearchCoordinatorProtocol?
+    private var model: BusinessSearchModelProtocol!
+    private var searchView: BusinessSearchView { view as! BusinessSearchView } //swiftlint:disable:this force_cast
 
     override func viewDidLoad() {
         super.viewDidLoad()

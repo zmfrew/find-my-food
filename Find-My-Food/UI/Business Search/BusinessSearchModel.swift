@@ -17,9 +17,9 @@ protocol BusinessSearchModelDelegate: class {
 
 final class BusinessSearchModel: BusinessSearchModelProtocol {
     private(set) var businesses = [Business]()
+    private weak var delegate: BusinessSearchModelDelegate?
     private let businessSearchClient: BusinessSearchClientProtocol
     private(set) var selectedPrices = [String]()
-    private weak var delegate: BusinessSearchModelDelegate?
 
     init(businessSearchClient: BusinessSearchClientProtocol, delegate: BusinessSearchModelDelegate) {
         self.businessSearchClient = businessSearchClient

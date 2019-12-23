@@ -13,12 +13,12 @@ protocol SettingsModelDelegate: class {
 }
 
 final class SettingsModel: SettingsModelProtocol {
-    private let radiusData: [Int]
     private var defaultLocation: String?
+    private weak var delegate: SettingsModelDelegate?
     private var isDarkModeActive = false
+    private let radiusData: [Int]
     private var radiusIndex = Radius.rangeMax
     private let userDefaults: UserDefaultsProtocol
-    private weak var delegate: SettingsModelDelegate?
 
     var radiusCount: Int { radiusData.count }
 

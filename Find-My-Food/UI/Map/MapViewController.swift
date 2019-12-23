@@ -3,9 +3,9 @@ import MapKit
 import UIKit
 // TODO: - Use local cache if the search params are the same.
 final class MapViewController: UIViewController, Storyboarded {
-    private var model: MapModel!
-    private var mapView: MapView { view as! MapView } //swiftlint:disable:this force_cast
     weak var coordinator: BusinessCoordinator?
+    private var mapView: MapView { view as! MapView } //swiftlint:disable:this force_cast
+    private var model: MapModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -23,9 +23,9 @@ final class BusinessesModel: BusinessModelProtocol {
             }
         }
     }
+    var businessCount: Int { businesses.count }
     private let businessSearchClient: BusinessSearchClientProtocol
     private let coreDataManager: CoreDataManagerProtocol
-    var businessCount: Int { businesses.count }
 
     weak var delegate: BusinessesModelDelegate?
 

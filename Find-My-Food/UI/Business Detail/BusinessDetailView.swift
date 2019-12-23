@@ -5,11 +5,11 @@ protocol BusinessDetailViewDelegate: class {
 }
 
 final class BusinessDetailView: UIView {
-    @IBOutlet private weak var ratingLabel: UILabel!
-    @IBOutlet private weak var categoriesLabel: UILabel!
-    @IBOutlet private weak var phoneNumberButton: UIButton!
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var businessImageView: UIImageView!
+    @IBOutlet private weak var categoriesLabel: UILabel!
+    @IBOutlet private weak var phoneNumberButton: UIButton!
+    @IBOutlet private weak var ratingLabel: UILabel!
     private var phoneNumber = ""
     private var displayPhoneNumber = ""
     private weak var delegate: BusinessDetailViewDelegate?

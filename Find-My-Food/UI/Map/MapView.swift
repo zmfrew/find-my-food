@@ -10,9 +10,9 @@ protocol MapViewDelegate: class {
 }
 
 final class MapView: UIView {
+    @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var map: MKMapView!
     @IBOutlet private weak var searchButton: UIButton!
-    @IBOutlet private weak var containerView: UIView!
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     weak var delegate: MapViewDelegate?
 

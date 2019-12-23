@@ -2,9 +2,9 @@ import CoreData
 import UIKit
 
 final class FavoritesViewController: UIViewController, Storyboarded {
+    weak var coordinator: BusinessCoordinator?
     private var favoritesView: FavoritesView { view as! FavoritesView } //swiftlint:disable:this force_cast
     private var model: FavoritesModelProtocol!
-    weak var coordinator: BusinessCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
