@@ -2,8 +2,7 @@ import UIKit
 
 @testable import Find_My_Food
 
-final class MockBusinessCoordinator: BusinessCoordinatorProtocol {
-    
+final class MockBusinessCoordinator: SearchCoordinatorProtocol {
     final class Stub {
         var navigationControllerShouldReturn = UINavigationController()
         var rootViewControllerShouldReturn = MapViewController()
@@ -31,6 +30,8 @@ final class MockBusinessCoordinator: BusinessCoordinatorProtocol {
     func downloadDidEnd() { }
     
     func locationButtonTapped(_ business: Business) { }
+    
+    func location(for business: Business) { }
     
     func pop(_ animated: Bool) { }
     

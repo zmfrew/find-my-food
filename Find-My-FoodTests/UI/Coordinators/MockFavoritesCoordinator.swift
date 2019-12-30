@@ -19,6 +19,14 @@ final class MockFavoritesCoordinator: FavoritesCoordinatorProtocol {
         stub.rootViewControllerShouldReturn
     }
         
+    func businessSelected(_ business: Business) { }
+    
+    func downloadCompleted(with businesses: [Business]) { }
+    
+    func location(for business: Business) { }
+    
+    func searchButtonTapped(latitude: Double, longitude: Double) { }
+    
     func start() {
         stub.startCallCount += 1
     }

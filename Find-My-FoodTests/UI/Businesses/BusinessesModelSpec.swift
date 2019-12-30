@@ -8,20 +8,22 @@ final class BusinessesModelSpec: QuickSpec {
         var testObject: BusinessesModel!
         var businesses: [Business]!
         var mockBusinessSearchClient: MockBusinessSearchClient!
+        var mockCoreDataManager: MockCoreDataManager!
         var mockDelegate: MockBusinessesModelDelegate!
         
         beforeEach {
             businesses = TestData.businessesFromJson()
             mockBusinessSearchClient = MockBusinessSearchClient()
+            mockCoreDataManager = MockCoreDataManager()
             mockDelegate = MockBusinessesModelDelegate()
-            testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+            testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate)
         }
         
         // MARK: - init()
         describe("init") {
             context("given images are not downloaded yet") {
                 it("does not call dataDidUpdate after setting businesses") {
-                    testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+                    testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate)
                     
                     expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(0))
                 }
@@ -52,6 +54,40 @@ final class BusinessesModelSpec: QuickSpec {
             }
         }
         
+        // MARK: - func favorite(at index: Int)
+        describe("favorite(at index: Int)") {
+            context("given a valid business and successful result") {
+                it("calls saveDidSucceed on the delegate") {
+                    testObject.favorite(at: 0)
+
+                    expect(mockDelegate.stub.saveDidSucceedCallCount).toEventually(equal(1))
+                    expect(mockDelegate.stub.saveDidSucceedCalledWith.first).toEventually(equal(0))
+                }
+            }
+            
+            context("given a valid business and unsuccessful result") {
+                it("calls saveDidFail on the delegate") {
+                    mockCoreDataManager.stub.saveShouldCompleteWith = .failure(NSError(domain: "test error", code: -1, userInfo: nil))
+                    
+                    testObject.favorite(at: 0)
+                    
+                    expect(mockDelegate.stub.saveDidSucceedCallCount).toEventually(equal(0))
+                    expect(mockDelegate.stub.saveDidFailCallCount).toEventually(equal(1))
+                }
+            }
+            
+            context("given an invalid business") {
+                it("calls saveDidFail on the delegate") {
+                testObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate)
+                
+                testObject.favorite(at: 0)
+                
+                expect(mockDelegate.stub.saveDidSucceedCallCount).toEventually(equal(0))
+                expect(mockDelegate.stub.saveDidFailCallCount).toEventually(equal(1))
+                }
+            }
+        }
+        
         // MARK: - func image(for business: Business)
         describe("image(for business: Business") {
             context("given data returns from image search") {
@@ -72,7 +108,7 @@ final class BusinessesModelSpec: QuickSpec {
                     
                     testObject.image(for: businesses.first!)
                     expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(0))
-                    expect(mockBusinessSearchClient.stub.imageCallCount).to(equal(testObject.businessCount + 1))
+                    expect(mockBusinessSearchClient.stub.imageCallCount).toEventually(equal(testObject.businessCount + 1))
                 }
             }
         }
@@ -88,7 +124,7 @@ final class BusinessesModelSpec: QuickSpec {
             
             context("given businesses is not empty") {
                 it("returns nil") {
-                    let emptyTestObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+                    let emptyTestObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: mockDelegate)
                     
                     expect(emptyTestObject.randomBusiness()).to(beNil())
                 }

@@ -2,8 +2,8 @@ import UIKit
 
 final class BusinessesViewController: UIViewController, Storyboarded {
 	private var businessesView: BusinessesView { self.view as! BusinessesView } //swiftlint:disable:this force_cast
-	private var model: BusinessModelProtocol!
-    weak var coordinator: BusinessCoordinatorProtocol?
+    weak var coordinator: SearchCoordinatorProtocol?
+    private var model: BusinessModelProtocol!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +18,23 @@ final class BusinessesViewController: UIViewController, Storyboarded {
 
 extension BusinessesViewController: BusinessesModelDelegate {
     func dataDidUpdate() {
-        self.businessesView.dataDidUpdate()
+        businessesView.dataDidUpdate()
+    }
+
+    func saveDidFail() {
+        let alert = UIAlertController(title: "Oh no!", message: "Favoriting failed. Please try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
+
+    func saveDidSucceed(at index: Int) {
+        businessesView.saveDidSucceed(at: index)
     }
 }
 
 extension BusinessesViewController: BusinessesViewDelegate {
+    var businessCount: Int { model.businessCount }
+
 	func business(for row: Int) -> Business? {
 		model.business(for: row)
 	}
@@ -33,17 +45,17 @@ extension BusinessesViewController: BusinessesViewDelegate {
         coordinator?.businessSelected(business)
     }
 
+    func favorite(at index: Int) {
+        model.favorite(at: index)
+    }
+
     func image(for business: Business) {
         model.image(for: business)
     }
 
-    func randomizeButtonTapped() {
+    func randomize() {
         guard let business = model.randomBusiness() else { return }
 
         coordinator?.businessSelected(business)
     }
-
-	var businessCount: Int {
-		model.businessCount
-	}
 }

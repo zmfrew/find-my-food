@@ -8,9 +8,9 @@ protocol MapModelDelegate: class {
 }
 
 final class MapModel {
+    private weak var delegate: MapModelDelegate?
     private let geocoder: GeocoderProtocol!
     private let locationManager: LocationManagerProtocol!
-    private weak var delegate: MapModelDelegate?
 
     var location: CLLocation? { locationManager.location }
 

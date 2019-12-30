@@ -5,14 +5,15 @@ protocol BusinessesViewDelegate: class {
 
     func business(for row: Int) -> Business?
     func businessSelected(at index: Int)
+    func favorite(at index: Int)
     func image(for business: Business)
-    func randomizeButtonTapped()
+    func randomize()
 }
 
 final class BusinessesView: UIView {
-	@IBOutlet private weak var resultsCountLabel: UILabel!
-	@IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var randomizeButton: UIButton!
+    @IBOutlet private weak var resultsCountLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
     weak var delegate: BusinessesViewDelegate?
 
 	override func awakeFromNib() {
@@ -22,14 +23,23 @@ final class BusinessesView: UIView {
         // TODO: - Shape this button, change the color, update the text, and add gesture recognizer to move it around the screen.
         randomizeButton.layer.cornerRadius = 12
 	}
+
     @IBAction private func randomizeButtonTapped(_ sender: UIButton) {
-        delegate?.randomizeButtonTapped()
+        delegate?.randomize()
     }
 }
 
 extension BusinessesView {
     func dataDidUpdate() {
         self.tableView.reloadData()
+    }
+
+    func saveDidSucceed(at index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        guard let cell = tableView.cellForRow(at: indexPath) as? BusinessTableViewCell else { return }
+
+        cell.favoriteDidSucceed()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 
     func updateResultsCount(_ results: Int) {
@@ -49,7 +59,12 @@ extension BusinessesView: UITableViewDataSource {
 
         let address = business.location.displayAddress.joined(separator: " ")
 
-        cell.decorateView(with: business.name, address: address, rating: business.rating, image: business.image)
+        cell.decorateView(with: address,
+                          delegate: self,
+                          image: business.image,
+                          isFavorite: business.isFavorite,
+                          name: business.name,
+                          rating: business.rating)
 
 		return cell
 	}
@@ -59,4 +74,12 @@ extension BusinessesView: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.businessSelected(at: indexPath.row)
 	}
+}
+
+extension BusinessesView: BusinessTableViewCellDelegate {
+    func favoriteTapped(on cell: BusinessTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+
+        delegate?.favorite(at: indexPath.row)
+    }
 }

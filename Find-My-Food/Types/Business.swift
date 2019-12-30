@@ -1,23 +1,24 @@
 import UIKit
 
 struct Business {
-    let id: String
     let alias: String
-    let name: String
-    let imageUrlString: String
-    var image: UIImage?
-    let isClosed: Bool
-    let urlString: String
-    let reviewCount: Int
     let categories: [Category]
-    let rating: Double
-    let coordinates: Coordinate
-    let transactions: [String]
-    let priceLevel: String?
-    let location: Location
-    let phone: String
+    let coordinate: Coordinate
     let displayPhone: String
     let distance: Double
+    let id: String
+    var image: UIImage?
+    let imageURLString: String
+    let isClosed: Bool
+    var isFavorite: Bool = false
+    let location: Location
+    let name: String
+    let phone: String
+    let priceLevel: String?
+    let rating: Double
+    let reviewCount: Int
+    let transactions: [String]
+    let urlString: String
 
     struct Category: Equatable {
         let alias: String
@@ -29,71 +30,72 @@ struct Business {
         let address2: String?
         let address3: String?
         let city: String
-        let zipCode: String
         let country: String
-        let state: String
         let displayAddress: [String]
+        let state: String
+        let zipCode: String
     }
 }
 
 extension Business: Equatable {
     static func == (lhs: Business, rhs: Business) -> Bool {
-        return lhs.id == rhs.id &&
-            lhs.alias == rhs.alias &&
-            lhs.alias == rhs.alias &&
-            lhs.name == rhs.name &&
-            lhs.imageUrlString == rhs.imageUrlString &&
-            lhs.isClosed == rhs.isClosed &&
-            lhs.urlString == rhs.urlString &&
-            lhs.reviewCount == rhs.reviewCount &&
+        lhs.alias == rhs.alias &&
             lhs.categories == rhs.categories &&
-            lhs.rating == rhs.rating &&
-            lhs.coordinates == rhs.coordinates &&
-            lhs.transactions == rhs.transactions &&
-            lhs.priceLevel == rhs.priceLevel &&
-            lhs.location == rhs.location &&
-            lhs.phone == rhs.phone &&
+            lhs.coordinate == rhs.coordinate &&
             lhs.displayPhone == rhs.displayPhone &&
-            lhs.distance == rhs.distance
+            lhs.distance == rhs.distance &&
+            lhs.id == rhs.id &&
+            lhs.imageURLString == rhs.imageURLString &&
+            lhs.isClosed == rhs.isClosed &&
+            lhs.location == rhs.location &&
+            lhs.name == rhs.name &&
+            lhs.phone == rhs.phone &&
+            lhs.priceLevel == rhs.priceLevel &&
+            lhs.rating == rhs.rating &&
+            lhs.reviewCount == rhs.reviewCount &&
+            lhs.transactions == rhs.transactions &&
+            lhs.urlString == rhs.urlString
     }
 }
 
 extension Business {
-    func copy(id: String? = nil,
-              alias: String? = nil,
-              name: String? = nil,
-              imageUrlString: String? = nil,
-              image: UIImage? = nil,
-              isClosed: Bool? = nil,
-              urlString: String? = nil,
-              reviewCount: Int? = nil,
+    func copy(alias: String? = nil,
               categories: [Category]? = nil,
-              rating: Double? = nil,
               coordinates: Coordinate? = nil,
-              transactions: [String]? = nil,
-              priceLevel: String? = nil,
-              location: Location? = nil,
-              phone: String? = nil,
               displayPhone: String? = nil,
-              distance: Double? = nil) -> Business {
+              distance: Double? = nil,
+              id: String? = nil,
+              image: UIImage? = nil,
+              imageURLString: String? = nil,
+              isClosed: Bool? = nil,
+              isFavorite: Bool? = false,
+              location: Location? = nil,
+              name: String? = nil,
+              phone: String? = nil,
+              priceLevel: String? = nil,
+              rating: Double? = nil,
+              reviewCount: Int? = nil,
+              transactions: [String]? = nil,
+              urlString: String? = nil) -> Business {
 
-        return Business(id: id ?? self.id,
-                        alias: alias ?? self.alias,
-                        name: name ?? self.name,
-                        imageUrlString: imageUrlString ?? self.imageUrlString,
-                        image: image ?? self.image,
-                        isClosed: isClosed ?? self.isClosed,
-                        urlString: urlString ?? self.urlString,
-                        reviewCount: reviewCount ?? self.reviewCount,
+        Business(alias: alias ?? self.alias,
                         categories: categories ?? self.categories,
-                        rating: rating ?? self.rating,
-                        coordinates: coordinates ?? self.coordinates,
-                        transactions: transactions ?? self.transactions,
-                        priceLevel: priceLevel ?? self.priceLevel,
-                        location: location ?? self.location,
-                        phone: phone ?? self.phone,
+                        coordinate: coordinates ?? self.coordinate,
                         displayPhone: displayPhone ?? self.displayPhone,
-                        distance: distance ?? self.distance)
+                        distance: distance ?? self.distance,
+                        id: id ?? self.id,
+                        image: image ?? self.image,
+                        imageURLString: imageURLString ?? self.imageURLString,
+                        isClosed: isClosed ?? self.isClosed,
+                        isFavorite: isFavorite ?? self.isFavorite,
+                        location: location ?? self.location,
+                        name: name ?? self.name,
+                        phone: phone ?? self.phone,
+                        priceLevel: priceLevel ?? self.priceLevel,
+                        rating: rating ?? self.rating,
+                        reviewCount: reviewCount ?? self.reviewCount,
+                        transactions: transactions ?? self.transactions,
+                        urlString: urlString ?? self.urlString)
     }
 }
 
@@ -105,39 +107,40 @@ extension Business: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Business.CodingKeys.self)
 
-        let id = try container.decode(String.self, forKey: .id)
         let alias = try container.decode(String.self, forKey: .alias)
-        let name = try container.decode(String.self, forKey: .name)
-        let imageUrlString = try container.decode(String.self, forKey: .image_url)
-        let isClosed = try container.decode(Bool.self, forKey: .is_closed)
-        let urlString = try container.decode(String.self, forKey: .url)
-        let reviewCount = try container.decode(Int.self, forKey: .review_count)
         let categories = try container.decode([Category].self, forKey: .categories)
-        let rating = try container.decode(Double.self, forKey: .rating)
-        let coordinates = try container.decode(Coordinate.self, forKey: .coordinates)
-        let transactions = try container.decode([String].self, forKey: .transactions)
-        let priceLevel = try container.decodeIfPresent(String.self, forKey: .price)
-        let location = try container.decode(Location.self, forKey: .location)
-        let phone = try container.decode(String.self, forKey: .phone)
+        let coordinate = try container.decode(Coordinate.self, forKey: .coordinates)
         let displayPhone = try container.decode(String.self, forKey: .display_phone)
         let distance = try container.decode(Double.self, forKey: .distance)
+        let id = try container.decode(String.self, forKey: .id)
+        let imageURLString = try container.decode(String.self, forKey: .image_url)
+        let isClosed = try container.decode(Bool.self, forKey: .is_closed)
+        let location = try container.decode(Location.self, forKey: .location)
+        let name = try container.decode(String.self, forKey: .name)
+        let phone = try container.decode(String.self, forKey: .phone)
+        let priceLevel = try container.decodeIfPresent(String.self, forKey: .price)
+        let reviewCount = try container.decode(Int.self, forKey: .review_count)
+        let rating = try container.decode(Double.self, forKey: .rating)
+        let transactions = try container.decode([String].self, forKey: .transactions)
+        let urlString = try container.decode(String.self, forKey: .url)
 
-        self.init(id: id,
-                  alias: alias,
-                  name: name,
-                  imageUrlString: imageUrlString,
-                  isClosed: isClosed,
-                  urlString: urlString,
-                  reviewCount: reviewCount,
+        self.init(alias: alias,
                   categories: categories,
-                  rating: rating,
-                  coordinates: coordinates,
-                  transactions: transactions,
-                  priceLevel: priceLevel,
-                  location: location,
-                  phone: phone,
+                  coordinate: coordinate,
                   displayPhone: displayPhone,
-                  distance: distance)
+                  distance: distance,
+                  id: id,
+                  image: nil,
+                  imageURLString: imageURLString,
+                  isClosed: isClosed,
+                  location: location,
+                  name: name,
+                  phone: phone,
+                  priceLevel: priceLevel,
+                  rating: rating,
+                  reviewCount: reviewCount,
+                  transactions: transactions,
+                  urlString: urlString)
     }
 }
 
@@ -164,9 +167,9 @@ extension Business.Location: Decodable {
                   address2: address2,
                   address3: address3,
                   city: city,
-                  zipCode: zipCode,
                   country: country,
+                  displayAddress: displayAddress,
                   state: state,
-                  displayAddress: displayAddress)
+                  zipCode: zipCode)
     }
 }

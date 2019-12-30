@@ -7,12 +7,10 @@ final class SettingsCoordinatorSpec: QuickSpec {
     override func spec() {
         var testObject: SettingsCoordinator!
         var navController: UINavigationController!
-        var mockTabCoordinator: MockTabCoordinator!
         
         beforeEach {
             navController = UINavigationController()
-            mockTabCoordinator = MockTabCoordinator()
-            testObject = SettingsCoordinator(navigationController: navController, parentCoordinator: mockTabCoordinator)
+            testObject = SettingsCoordinator(navigationController: navController)
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = navController
             window.makeKeyAndVisible()

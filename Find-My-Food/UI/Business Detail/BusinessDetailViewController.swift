@@ -2,9 +2,10 @@ import UIKit
 
 final class BusinessDetailViewController: UIViewController, Storyboarded {
     @IBOutlet private weak var locationButton: UIBarButtonItem!
-    private var detailView: BusinessDetailView { view as! BusinessDetailView } //swiftlint:disable:this force_cast
+
     private var business: Business?
-    weak var coordinator: BusinessCoordinatorProtocol?
+    weak var coordinator: BusinessCoordinator?
+    private var detailView: BusinessDetailView { view as! BusinessDetailView } //swiftlint:disable:this force_cast
 
     func configure(with business: Business) {
         detailView.configure(with: business, delegate: self)
@@ -15,7 +16,7 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
     @IBAction private func locationButtonTapped(_ sender: UIBarButtonItem) {
         guard let business = business else { return }
 
-        coordinator?.locationButtonTapped(business)
+        coordinator?.location(for: business)
     }
 }
 
