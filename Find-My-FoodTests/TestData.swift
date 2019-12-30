@@ -28,6 +28,24 @@ final class Setup: QuickConfiguration {
 private(set) var globalInMemoryCoreDataManager: CoreDataManager!
 
 enum TestData {
+    static func businessData() -> Data {
+        let path = Bundle(identifier: "com.zachfrew.Find-My-FoodTests")!.path(forResource: "businesses", ofType: "json")!
+        return try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+    }
+    
+    static func businessesFromJson() -> [Business] {
+        let path = Bundle(identifier: "com.zachfrew.Find-My-FoodTests")!.path(forResource: "businesses", ofType: "json")!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        let response = try! JSONDecoder().decode(Response.self, from: data)
+        return response.businesses
+    }
+    
+    static func businessesFromMockBusinessesFile() -> [Business] {
+        let path = Bundle(identifier: "com.zachfrew.Find-My-FoodTests")!.path(forResource: "MockBusinesses", ofType: "json")!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        return try! JSONDecoder().decode([Business].self, from: data)
+    }
+    
     static func createBusiness() -> Business {
         Business(alias: "test alias",
                  categories: [],
@@ -54,22 +72,8 @@ enum TestData {
                  urlString: "test urlString")
     }
     
-    static func businessData() -> Data {
-        let path = Bundle(identifier: "com.zachfrew.Find-My-FoodTests")!.path(forResource: "businesses", ofType: "json")!
-        return try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-    }
-    
-    static func businessesFromJson() -> [Business] {
-        let path = Bundle(identifier: "com.zachfrew.Find-My-FoodTests")!.path(forResource: "businesses", ofType: "json")!
-        let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-        let response = try! JSONDecoder().decode(Response.self, from: data)
-        return response.businesses
-    }
-    
-    static func businessesFromMockBusinessesFile() -> [Business] {
-        let path = Bundle(identifier: "com.zachfrew.Find-My-FoodTests")!.path(forResource: "MockBusinesses", ofType: "json")!
-        let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-        return try! JSONDecoder().decode([Business].self, from: data)
+    static func createCDBusiness() -> CDBusiness {
+        CDBusiness(TestData.createBusiness(), context: globalInMemoryCoreDataManager.viewContext)
     }
     
     static func responseFromJson() -> Response {

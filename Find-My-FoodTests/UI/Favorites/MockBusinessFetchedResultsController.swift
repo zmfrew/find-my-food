@@ -14,6 +14,9 @@ final class MockBusinessFetchedResultsController: BusinessFetchedResultsControll
         var delegateCallCount = 0
         var delegateShouldReturn: FetchedResultsControllerDelegate? = nil
         var fetchedResultsControllerShouldReturn: NSFetchedResultsController<CDBusiness> = NSFetchedResultsController(fetchRequest: MockBusinessFetchedResultsController.fetchRequest, managedObjectContext: globalInMemoryCoreDataManager.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        var cdObjectCallCount: Int { cdObjectCalledWith.count }
+        var cdObjectCalledWith = [IndexPath]()
+        var cdObjectShouldReturn: CDBusiness? = nil
         var numberOfSectionsShouldReturn = 0
         var numberOfObjectsCallCount: Int { numberOfObjectsCalledWith.count }
         var numberOfObjectsCalledWith = [Int]()
@@ -49,6 +52,11 @@ final class MockBusinessFetchedResultsController: BusinessFetchedResultsControll
     
     convenience init(managedObjectContext: NSManagedObjectContext) {
         self.init()
+    }
+    
+    func cdObject(at indexPath: IndexPath) -> CDBusiness? {
+        stub.cdObjectCalledWith.append(indexPath)
+        return stub.cdObjectShouldReturn
     }
     
     func numberOfObjects(in section: Int) -> Int {

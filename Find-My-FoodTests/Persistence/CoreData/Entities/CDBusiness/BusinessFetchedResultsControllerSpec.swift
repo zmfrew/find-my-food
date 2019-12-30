@@ -13,34 +13,48 @@ final class BusinessFetchedResultsControllerSpec: QuickSpec {
             testObject = BusinessFetchedResultsController(managedObjectContext: mockCoreDataManager.viewContext)
         }
         
+        // MARK: - init
         describe("initialization") {
             it("has no delegate") {
                 expect(testObject.delegate).to(beNil())
             }
-        }
-        
-        context("fetched result controller") {
-            it("uses the managed object context from init") {
-                expect(testObject.fetchedResultsController.managedObjectContext).to(beIdenticalTo(mockCoreDataManager.viewContext))
-            }
             
-            it("does not set a section name key path") {
-                expect(testObject.fetchedResultsController.sectionNameKeyPath).to(beNil())
-            }
-            
-            it("has no cache") {
-                expect(testObject.fetchedResultsController.cacheName).to(beNil())
-            }
-            
-            context("fetch request") {
-                it("does not have a predicate") {
-                    expect(testObject.fetchedResultsController.fetchRequest.predicate).to(beNil())
+            context("fetched result controller") {
+                it("uses the managed object context from init") {
+                    expect(testObject.fetchedResultsController.managedObjectContext).to(beIdenticalTo(mockCoreDataManager.viewContext))
                 }
                 
-                it("has one sort descriptor on name ascending") {
-                    expect(testObject.fetchedResultsController.fetchRequest.sortDescriptors?.count).to(equal(1))
-                    expect(testObject.fetchedResultsController.fetchRequest.sortDescriptors?.first?.key).to(equal("name"))
-                    expect(testObject.fetchedResultsController.fetchRequest.sortDescriptors?.first?.ascending).to(beTrue())
+                it("does not set a section name key path") {
+                    expect(testObject.fetchedResultsController.sectionNameKeyPath).to(beNil())
+                }
+                
+                it("has no cache") {
+                    expect(testObject.fetchedResultsController.cacheName).to(beNil())
+                }
+                
+                context("fetch request") {
+                    it("does not have a predicate") {
+                        expect(testObject.fetchedResultsController.fetchRequest.predicate).to(beNil())
+                    }
+                    
+                    it("has one sort descriptor on name ascending") {
+                        expect(testObject.fetchedResultsController.fetchRequest.sortDescriptors?.count).to(equal(1))
+                        expect(testObject.fetchedResultsController.fetchRequest.sortDescriptors?.first?.key).to(equal("name"))
+                        expect(testObject.fetchedResultsController.fetchRequest.sortDescriptors?.first?.ascending).to(beTrue())
+                    }
+                }
+            }
+        }
+        
+        // MARK: - func cdObject(at indexPath: IndexPath) -> CDBusiness?
+        describe("cdObject(at indexPath: IndexPath) -> CDBusiness?") {
+            it("calls object(at: indexPath) on frc") {
+                mockCoreDataManager.save([TestData.createBusiness()]) { _ in
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    
+                    testObject.performFetch()
+                    
+                    expect(testObject.cdObject(at: indexPath)).toNot(beNil())
                 }
             }
         }

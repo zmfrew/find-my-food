@@ -41,6 +41,7 @@ final class FavoritesModelSpec: QuickSpec {
                     mockFRC.stub.objectShouldReturn = expectedBusiness
                     
                     expect(testObject.business(at: IndexPath(row: 0, section: 0))).to(equal(expectedBusiness))
+                    expect(mockFRC.stub.objectCallCount).to(equal(1))
                 }
             }
             
@@ -49,9 +50,39 @@ final class FavoritesModelSpec: QuickSpec {
                     mockFRC.stub.objectShouldReturn = nil
                     
                     expect(testObject.business(at: IndexPath(row: 0, section: 0))).to(beNil())
+                    expect(mockFRC.stub.objectCallCount).to(equal(1))
                 }
             }
         }
+        
+        // MARK: - func delete(at indexPath: IndexPath)
+        describe("delete(at indexPath: IndexPath)") {
+            context("given frc.cdObject returns a business") {
+                it("calls delete") {
+                    mockFRC.stub.cdObjectShouldReturn = TestData.createCDBusiness()
+                    
+                    let expectedIndexPath = IndexPath(row: 0, section: 0)
+                    
+                    testObject.delete(at: expectedIndexPath)
+                    
+                    expect(mockFRC.stub.cdObjectCallCount).to(equal(1))
+                    expect(mockFRC.stub.cdObjectCalledWith.first).to(equal(expectedIndexPath))                }
+            }
+            
+            context("given frc.cdObject returns nil") {
+                it("does not call delete") {
+                    mockFRC.stub.cdObjectShouldReturn = nil
+                    
+                    let expectedIndexPath = IndexPath(row: 0, section: 0)
+                    
+                    testObject.delete(at: expectedIndexPath)
+                    
+                    expect(mockFRC.stub.cdObjectCallCount).to(equal(1))
+                    expect(mockFRC.stub.cdObjectCalledWith.first).to(equal(expectedIndexPath))
+                }
+            }
+        }
+        
         // MARK: - func loadBusinesses()
         describe("loadBusinesses()") {
             it("calls performFetch on frc and downloadDidEnd on delegate") {
