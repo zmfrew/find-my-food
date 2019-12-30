@@ -1,5 +1,5 @@
 import CoreData
-// TODO: - Tests
+
 protocol BusinessFetchedResultsControllerProtocol {
     var delegate: FetchedResultsControllerDelegate? { get set }
     var fetchedResultsController: NSFetchedResultsController<CDBusiness> { get }
