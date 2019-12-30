@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDBusiness" representedClassName="CDBusiness" syncable="YES">
         <attribute name="alias" attributeType="String"/>
         <attribute name="displayPhone" attributeType="String"/>
@@ -15,9 +15,9 @@
         <attribute name="reviewCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="transactions" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
         <attribute name="urlString" attributeType="String"/>
-        <relationship name="categories" toMany="YES" deletionRule="Nullify" destinationEntity="CDCategory" inverseName="business" inverseEntity="CDCategory"/>
-        <relationship name="coordinate" maxCount="1" deletionRule="Nullify" destinationEntity="CDCoordinate" inverseName="business" inverseEntity="CDCoordinate"/>
-        <relationship name="location" maxCount="1" deletionRule="Nullify" destinationEntity="CDLocation" inverseName="business" inverseEntity="CDLocation"/>
+        <relationship name="categories" toMany="YES" deletionRule="Cascade" destinationEntity="CDCategory" inverseName="business" inverseEntity="CDCategory"/>
+        <relationship name="coordinate" maxCount="1" deletionRule="Cascade" destinationEntity="CDCoordinate" inverseName="business" inverseEntity="CDCoordinate"/>
+        <relationship name="location" maxCount="1" deletionRule="Cascade" destinationEntity="CDLocation" inverseName="business" inverseEntity="CDLocation"/>
     </entity>
     <entity name="CDCategory" representedClassName="CDCategory" syncable="YES">
         <attribute name="alias" attributeType="String"/>
