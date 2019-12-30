@@ -14,6 +14,9 @@
 		571ABE9023847C3A004F0003 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE8F23847C3A004F0003 /* CoreDataStack.swift */; };
 		571ABE9323847CE9004F0003 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9223847CE9004F0003 /* UserSession.swift */; };
 		571ABE9623847EF5004F0003 /* Find-My-Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 571ABE9423847EF5004F0003 /* Find-My-Food.xcdatamodeld */; };
+		5727353C23BA442E00D29CCA /* FavoritesModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5727353B23BA442E00D29CCA /* FavoritesModelSpec.swift */; };
+		5727353E23BA449100D29CCA /* MockFavoritesModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5727353D23BA449100D29CCA /* MockFavoritesModelDelegate.swift */; };
+		5727354123BA498100D29CCA /* MockBusinessFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5727353F23BA451500D29CCA /* MockBusinessFetchedResultsController.swift */; };
 		5734439B23858798001022AA /* CDBusiness+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */; };
 		5734439E238589D4001022AA /* CoreDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439D238589D4001022AA /* CoreDataConvertible.swift */; };
 		57444F2E23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57444F2D23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift */; };
@@ -150,6 +153,9 @@
 		571ABE8F23847C3A004F0003 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		571ABE9223847CE9004F0003 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		571ABE9523847EF5004F0003 /* Find-My-Food.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Find-My-Food.xcdatamodel"; sourceTree = "<group>"; };
+		5727353B23BA442E00D29CCA /* FavoritesModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModelSpec.swift; sourceTree = "<group>"; };
+		5727353D23BA449100D29CCA /* MockFavoritesModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoritesModelDelegate.swift; sourceTree = "<group>"; };
+		5727353F23BA451500D29CCA /* MockBusinessFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessFetchedResultsController.swift; sourceTree = "<group>"; };
 		5734439123858798001022AA /* CDCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5734439223858798001022AA /* CDCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5734439323858798001022AA /* CDLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -333,6 +339,16 @@
 			path = Session;
 			sourceTree = "<group>";
 		};
+		5727353A23BA442000D29CCA /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				5727353B23BA442E00D29CCA /* FavoritesModelSpec.swift */,
+				5727353F23BA451500D29CCA /* MockBusinessFetchedResultsController.swift */,
+				5727353D23BA449100D29CCA /* MockFavoritesModelDelegate.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		573443A1238591A1001022AA /* CDCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,9 +492,9 @@
 		57DCCA652358EE4500CEA8DE /* Business Detail */ = {
 			isa = PBXGroup;
 			children = (
-				57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */,
 				57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */,
 				57EEC11E23590B410076B9FD /* BusinessDetailView.swift */,
+				57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */,
 			);
 			path = "Business Detail";
 			sourceTree = "<group>";
@@ -657,6 +673,7 @@
 			isa = PBXGroup;
 			children = (
 				5701EC6D2362381A004A4EAA /* Coordinators */,
+				5727353A23BA442000D29CCA /* Favorites */,
 				575AAF2B237A331C004FAB58 /* Settings */,
 				B69E33C42322912F00A4477E /* Businesses */,
 				B69E33C72322912F00A4477E /* Map */,
@@ -1034,6 +1051,7 @@
 				B69E34822322F21400A4477E /* MockURLSession.swift in Sources */,
 				B69E34772322F21000A4477E /* BusinessSpec.swift in Sources */,
 				579C21AB2368C9310015D0BE /* MockGeocoder.swift in Sources */,
+				5727353E23BA449100D29CCA /* MockFavoritesModelDelegate.swift in Sources */,
 				57E75D46237B5CDD009F3256 /* MockDecoder.swift in Sources */,
 				575225EF23722DF40023085E /* Int+ExtensionSpec.swift in Sources */,
 				579C21AD2368CAA40015D0BE /* MockLocationManager.swift in Sources */,
@@ -1051,11 +1069,13 @@
 				57E50731237B43DC0061CBB6 /* MockSettingsCoordinator.swift in Sources */,
 				57C7B1092375AF2D001AF112 /* MockBusinessCoordinator.swift in Sources */,
 				B69E34702322F1FC00A4477E /* MapModelSpec.swift in Sources */,
+				5727353C23BA442E00D29CCA /* FavoritesModelSpec.swift in Sources */,
 				57C3CB90236A31D2007E1B9A /* String+ExtensionSpec.swift in Sources */,
 				57B91765237CC2F20052D014 /* MockFavoritesCoordinator.swift in Sources */,
 				57444F2F23A052AF00D5790F /* CDCoordinateSpec.swift in Sources */,
 				B69E34782322F21000A4477E /* ResponseSpec.swift in Sources */,
 				57A508C72392329500471FFD /* CDBusinessSpec.swift in Sources */,
+				5727354123BA498100D29CCA /* MockBusinessFetchedResultsController.swift in Sources */,
 				57E50735237B52050061CBB6 /* SettingsCoordinatorSpec.swift in Sources */,
 				B69E34722322F1FF00A4477E /* MockBusinessSearchModelDelegate.swift in Sources */,
 			);

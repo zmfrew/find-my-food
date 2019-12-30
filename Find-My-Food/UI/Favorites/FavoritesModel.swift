@@ -6,7 +6,7 @@ protocol FavoritesModelProtocol {
     func business(at indexPath: IndexPath) -> Business?
     func loadBusinesses()
 }
-// TODO: - Tests
+
 protocol FavoritesModelDelegate: class, FetchedResultsControllerDelegate {
     func dataDidUpdate()
     func downloadDidEnd()
