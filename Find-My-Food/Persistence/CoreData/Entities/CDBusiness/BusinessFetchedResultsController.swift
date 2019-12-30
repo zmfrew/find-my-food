@@ -6,6 +6,7 @@ protocol BusinessFetchedResultsControllerProtocol {
     var numberOfSections: Int { get }
 
     init(managedObjectContext: NSManagedObjectContext)
+    func cdObject(at indexPath: IndexPath) -> CDBusiness?
     func numberOfObjects(in section: Int) -> Int
     func object(at indexPath: IndexPath) -> CDBusiness.ConvertibleType?
     func performFetch()
@@ -24,6 +25,10 @@ final class BusinessFetchedResultsController: BusinessFetchedResultsControllerPr
                                                                    managedObjectContext: managedObjectContext,
                                                                    sectionNameKeyPath: nil,
                                                                    cacheName: nil)
+    }
+
+    func cdObject(at indexPath: IndexPath) -> CDBusiness? {
+        fetchedResultsController.object(at: indexPath)
     }
 }
 

@@ -41,6 +41,10 @@ extension FavoritesViewController: FavoritesViewDelegate {
     func loadBusinesses() {
         model.loadBusinesses()
     }
+
+    func delete(at indexPath: IndexPath) {
+        model.delete(at: indexPath)
+    }
 }
 
 extension FavoritesViewController: NSFetchedResultsControllerDelegate {

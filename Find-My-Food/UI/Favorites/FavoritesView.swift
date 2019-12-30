@@ -5,6 +5,7 @@ protocol FavoritesViewDelegate: class {
 
     func business(at indexPath: IndexPath) -> Business?
     func businessSelected(at indexPath: IndexPath)
+    func delete(at indexPath: IndexPath)
     func loadBusinesses()
 }
 
@@ -66,6 +67,12 @@ extension FavoritesView: UITableViewDataSource {
 extension FavoritesView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.businessSelected(at: indexPath)
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+
+        delegate?.delete(at: indexPath)
     }
 }
 

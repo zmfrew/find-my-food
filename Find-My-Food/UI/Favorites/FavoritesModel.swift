@@ -4,6 +4,7 @@ protocol FavoritesModelProtocol {
     var businessCount: Int { get }
 
     func business(at indexPath: IndexPath) -> Business?
+    func delete(at indexPath: IndexPath)
     func loadBusinesses()
 }
 
@@ -30,6 +31,13 @@ final class FavoritesModel: FavoritesModelProtocol {
 
     func business(at indexPath: IndexPath) -> Business? {
         frc.object(at: indexPath)
+    }
+
+    func delete(at indexPath: IndexPath) {
+        guard let business = frc.cdObject(at: indexPath) else { return }
+
+        business.managedObjectContext?.delete(business)
+        business.managedObjectContext?.performSave()
     }
 
     func loadBusinesses() {
