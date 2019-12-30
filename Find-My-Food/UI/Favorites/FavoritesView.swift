@@ -28,7 +28,7 @@ final class FavoritesView: UIView {
         delegate?.loadBusinesses()
     }
 }
-// TODO: - Add swipe to delete functionality.
+
 extension FavoritesView {
     func dataDidUpdate() {
         tableView.reloadData()
