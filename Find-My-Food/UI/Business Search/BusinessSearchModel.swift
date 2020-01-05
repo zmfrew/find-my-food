@@ -6,7 +6,12 @@ protocol BusinessSearchModelProtocol {
     var selectedPrices: [String] { get }
 
     func deSelected(_ price: String)
-    func search(for business: String, latitude: Double, longitude: Double, radius: Int, prices: [String], openNow: Bool)
+    func search(for business: String,
+                latitude: Double,
+                longitude: Double,
+                radius: Int,
+                prices: [String],
+                openNow: Bool)
     func selected(_ price: String)
 }
 
@@ -27,14 +32,18 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
     }
 
     func deSelected(_ price: String) {
-        guard selectedPrices.contains(price) else { return }
+        guard selectedPrices.contains(price),
+            let index = selectedPrices.firstIndex(of: price) else { return }
 
-        if let index = selectedPrices.firstIndex(of: price) {
-            selectedPrices.remove(at: index)
-        }
+        selectedPrices.remove(at: index)
     }
 
-    func search(for business: String, latitude: Double, longitude: Double, radius: Int, prices: [String], openNow: Bool) {
+    func search(for business: String,
+                latitude: Double,
+                longitude: Double,
+                radius: Int,
+                prices: [String],
+                openNow: Bool) {
         let intPrices = prices.compactMap { $0.priceToInt }.sorted()
         let prices = intPrices.isNotEmpty ? intPrices : Price.values
 
