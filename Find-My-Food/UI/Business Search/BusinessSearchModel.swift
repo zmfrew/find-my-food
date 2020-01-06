@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 //swiftlint:disable function_parameter_count
 
 protocol BusinessSearchModelProtocol {
@@ -6,9 +6,11 @@ protocol BusinessSearchModelProtocol {
     var selectedPrices: [String] { get }
 
     func deSelected(_ price: String)
+    func presentLocationError()
     func search(for business: String,
-                latitude: Double,
-                longitude: Double,
+                latitude: Double?,
+                location: String?,
+                longitude: Double?,
                 radius: Int,
                 prices: [String],
                 openNow: Bool)
@@ -18,6 +20,7 @@ protocol BusinessSearchModelProtocol {
 protocol BusinessSearchModelDelegate: class {
     func downloadDidBegin()
     func downloadDidEnd()
+    func present(_ viewControllerToPresent: UIViewController, animated: Bool)
 }
 
 final class BusinessSearchModel: BusinessSearchModelProtocol {
@@ -38,9 +41,16 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
         selectedPrices.remove(at: index)
     }
 
+    func presentLocationError() {
+        let alert = UIAlertController(title: "Oh no!", message: "Please activate location services or enter a location to search for restaurants!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        delegate?.present(alert, animated: true)
+    }
+
     func search(for business: String,
-                latitude: Double,
-                longitude: Double,
+                latitude: Double?,
+                location: String?,
+                longitude: Double?,
                 radius: Int,
                 prices: [String],
                 openNow: Bool) {
@@ -51,6 +61,7 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
         DispatchQueue.global(qos: .userInitiated).async {
             self.businessSearchClient.search(for: business,
                                              latitude: latitude,
+                                             location: location,
                                              longitude: longitude,
                                              radius: radius.milesToMeters,
                                              prices: prices, openNow: openNow) { [weak self] businesses in

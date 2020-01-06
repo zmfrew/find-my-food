@@ -70,7 +70,7 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
         navigationController.popViewController(animated: animated)
     }
 
-    func searchButtonTapped(latitude: Double, longitude: Double) {
+    func searchButtonTapped(latitude: Double?, longitude: Double?) {
         let vc = BusinessSearchViewController.instantiate()
         vc.coordinator = self
         vc.delegate = rootViewController

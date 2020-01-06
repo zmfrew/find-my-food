@@ -33,7 +33,7 @@ final class FavoritesCoordinator: FavoritesCoordinatorProtocol {
         navigationController.pushViewController(vc, animated: false)
     }
 
-    func searchButtonTapped(latitude: Double, longitude: Double) { }
+    func searchButtonTapped(latitude: Double?, longitude: Double?) { }
 
     func start() {
         rootViewController.coordinator = self
