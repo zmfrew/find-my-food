@@ -13,12 +13,12 @@ protocol SettingsModelDelegate: class {
 }
 
 final class SettingsModel: SettingsModelProtocol {
-    private let radiusData: [Int]
     private var defaultLocation: String?
+    private weak var delegate: SettingsModelDelegate?
     private var isDarkModeActive = false
+    private let radiusData: [Int]
     private var radiusIndex = Radius.rangeMax
     private let userDefaults: UserDefaultsProtocol
-    private weak var delegate: SettingsModelDelegate?
 
     var radiusCount: Int { radiusData.count }
 
@@ -37,7 +37,7 @@ final class SettingsModel: SettingsModelProtocol {
     }
 
     func radius(at index: Int) -> Int {
-        return radiusData.element(at: index) ?? Radius.rangeMax
+        radiusData.element(at: index) ?? Radius.rangeMax
     }
 
     func selectedDefaults(darkMode: Bool, defaultLocation: String?, radiusIndex: Int) {

@@ -20,10 +20,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We need your location to find restaurants around you!</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need your location to find restaurants around you!</string>
 	<key>NSLocationUsageDescription</key>
 	<string>We need your location to find restaurants around you!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

@@ -124,17 +124,5 @@ final class MapModelSpec: QuickSpec {
                 }
             }
         }
-        
-        // MARK: - func locationServicesDisabled()
-        describe("locationServicesDisabled()") {
-            it("calls presentLocationDisabledAlert on the delegate") {
-                testObject.locationServicesDisabled()
-                
-                expect(mockDelegate.stub.presentLocationDisabledAlertCallCount).to(equal(1))
-                expect(mockDelegate.stub.presentLocationDisabledAlertCalledWith.first?.title).to(equal("Your location services are disabled for this application."))
-                expect(mockDelegate.stub.presentLocationDisabledAlertCalledWith.first?.message).to(equal("Please go to settings and enable location services to better locate restaurants!"))
-                expect(mockDelegate.stub.presentLocationDisabledAlertCalledWith.first?.enableSettingsLink).to(beTrue())
-            }
-        }
     }
 }

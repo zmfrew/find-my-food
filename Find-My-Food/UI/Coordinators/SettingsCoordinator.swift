@@ -10,11 +10,9 @@ protocol SettingsCoordinatorProtocol: Coordinator {
 final class SettingsCoordinator: SettingsCoordinatorProtocol {
     private(set) var navigationController: UINavigationController
     private(set) var rootViewController: SettingsTableViewController
-    weak var parentCoordinator: TabCoordinatorProtocol?
 
-    init(navigationController: UINavigationController, parentCoordinator: TabCoordinatorProtocol) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.parentCoordinator = parentCoordinator
         self.rootViewController = SettingsTableViewController.instantiate()
     }
 
@@ -22,5 +20,6 @@ final class SettingsCoordinator: SettingsCoordinatorProtocol {
         rootViewController.coordinator = self
         let model = SettingsModel(radiusData: Radius.range, delegate: rootViewController, userDefaults: UserDefaultsWrapper())
         rootViewController.configure(with: model)
+        navigationController.pushViewController(rootViewController, animated: true)
     }
 }

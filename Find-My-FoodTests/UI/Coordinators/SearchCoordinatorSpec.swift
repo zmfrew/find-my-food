@@ -5,14 +5,12 @@ import Nimble
 
 final class BusinessCoordinatorSpec: QuickSpec {
     override func spec() {
-        var testObject: BusinessCoordinator!
+        var testObject: SearchCoordinator!
         var navController: UINavigationController!
-        var mockTabCoordinator: MockTabCoordinator!
         
         beforeEach {
             navController = UINavigationController()
-            mockTabCoordinator = MockTabCoordinator()
-            testObject = BusinessCoordinator(navigationController: navController, parentCoordinator: mockTabCoordinator)
+            testObject = SearchCoordinator(navigationController: navController)
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = navController
             window.makeKeyAndVisible()
@@ -55,7 +53,7 @@ final class BusinessCoordinatorSpec: QuickSpec {
                 let decoder = DecoderWrapper(decoder: JSONDecoder())
                 let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
                 let businessSearchClient = BusinessSearchClient(decoder: decoder, serviceClient: serviceClient)
-                let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, delegate: businessesVC)
+                let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: businessesVC)
                
                 expect(businessesModel.delegate).to(be(businessesVC))
                 expect(testObject.navigationController.viewControllers).toNot(beEmpty())
@@ -63,12 +61,12 @@ final class BusinessCoordinatorSpec: QuickSpec {
             }
         }
         
-        // MARK: - func locationButtonTapped(_ business: Business)
+        // MARK: - func location(for business: Business)
         describe("locationButtonTapped(_ business: Business)") {
             it("pushes a MapViewController on the navigation stack and sets the coordinator") {
                 let business = TestData.createBusiness()
                 
-                testObject.locationButtonTapped(business)
+                testObject.location(for: business)
                 
                 let mapVC = testObject.navigationController.viewControllers.first(where: { $0 is MapViewController}) as! MapViewController
                 expect(testObject.navigationController.viewControllers).toNot(beEmpty())

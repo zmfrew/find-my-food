@@ -7,15 +7,40 @@ final class FavoritesCoordinatorSpec: QuickSpec {
     override func spec() {
         var testObject: FavoritesCoordinator!
         var navController: UINavigationController!
-        var mockTabCoordinator: MockTabCoordinator!
         
         beforeEach {
             navController = UINavigationController()
-            mockTabCoordinator = MockTabCoordinator()
-            testObject = FavoritesCoordinator(navigationController: navController, parentCoordinator: mockTabCoordinator)
+            testObject = FavoritesCoordinator(navigationController: navController)
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = navController
             window.makeKeyAndVisible()
+        }
+        
+        // MARK: - func businessSelected(_ business: Business)
+        describe("businessSelected(_ business: Business)") {
+            it("pushes a BusinessDetailViewController on the navigation stack") {
+                let business = TestData.businessesFromJson().first!
+                
+                testObject.businessSelected(business)
+                
+                let detailVC = testObject.navigationController.viewControllers.first(where: { $0 is BusinessDetailViewController}) as! BusinessDetailViewController
+                
+                expect(testObject.navigationController.viewControllers).toNot(beEmpty())
+                expect(detailVC.coordinator).to(be(testObject))
+            }
+        }
+        
+        // MARK: - func location(for business: Business)
+        describe("locationButtonTapped(_ business: Business)") {
+            it("pushes a MapViewController on the navigation stack and sets the coordinator") {
+                let business = TestData.createBusiness()
+                
+                testObject.location(for: business)
+                
+                let mapVC = testObject.navigationController.viewControllers.first(where: { $0 is MapViewController}) as! MapViewController
+                expect(testObject.navigationController.viewControllers).toNot(beEmpty())
+                expect(mapVC.coordinator).to(be(testObject))
+            }
         }
         
         // MARK: - func start()

@@ -5,14 +5,13 @@ protocol MapViewDelegate: class {
     var location: CLLocation? { get }
 
     func fitRegion(to: [MKPlacemark])
-    func locationServicesDisabled()
     func searchButtonTapped()
 }
 
 final class MapView: UIView {
+    @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var map: MKMapView!
     @IBOutlet private weak var searchButton: UIButton!
-    @IBOutlet private weak var containerView: UIView!
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     weak var delegate: MapViewDelegate?
 
@@ -25,11 +24,6 @@ final class MapView: UIView {
     }
 
     @IBAction private func searchButtonTapped(_ sender: Any) {
-        guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
-            delegate?.locationServicesDisabled()
-            return
-        }
-
         delegate?.searchButtonTapped()
         containerView.isHidden = false
     }

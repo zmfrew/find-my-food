@@ -2,15 +2,14 @@ import CoreLocation
 import MapKit
 
 protocol MapModelDelegate: class {
-    func presentLocationDisabledAlert(title: String, message: String, enableSettingsLink: Bool)
     func set(_ placemarks: [MKPlacemark])
     func set(_ region: MKCoordinateRegion)
 }
 
 final class MapModel {
+    private weak var delegate: MapModelDelegate?
     private let geocoder: GeocoderProtocol!
     private let locationManager: LocationManagerProtocol!
-    private weak var delegate: MapModelDelegate?
 
     var location: CLLocation? { locationManager.location }
 
@@ -47,11 +46,5 @@ final class MapModel {
 
             self.delegate?.set(placemarks)
         }
-    }
-
-    func locationServicesDisabled() {
-        delegate?.presentLocationDisabledAlert(title: "Your location services are disabled for this application.",
-                             message: "Please go to settings and enable location services to better locate restaurants!",
-                             enableSettingsLink: true)
     }
 }

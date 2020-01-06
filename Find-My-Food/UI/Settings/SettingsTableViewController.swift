@@ -6,9 +6,8 @@ final class SettingsTableViewController: UITableViewController, Storyboarded {
     @IBOutlet private weak var radiusPickerView: UIPickerView!
     @IBOutlet private weak var saveButton: UIButton!
 
-    private var model: SettingsModelProtocol!
-
     weak var coordinator: SettingsCoordinatorProtocol?
+    private var model: SettingsModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +38,7 @@ final class SettingsTableViewController: UITableViewController, Storyboarded {
 
 extension SettingsTableViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

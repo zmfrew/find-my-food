@@ -3,8 +3,9 @@ import Foundation
 
 protocol BusinessSearchClientProtocol {
     func search(for business: String,
-                latitude: Double,
-                longitude: Double,
+                latitude: Double?,
+                location: String?,
+                longitude: Double?,
                 radius: Int,
                 prices: [Int],
                 openNow: Bool,
@@ -22,23 +23,34 @@ final class BusinessSearchClient: BusinessSearchClientProtocol {
     }
 
     func search(for business: String,
-                latitude: Double,
-                longitude: Double,
+                latitude: Double?,
+                location: String?,
+                longitude: Double?,
                 radius: Int,
                 prices: [Int],
                 openNow: Bool,
                 completion: @escaping ([Business]) -> Void) {
         let prices = prices.map { String($0) }.joined(separator: ", ")
 
-		let queryParams = [
-            "term": business,
-            "latitude": "\(latitude)",
-            "longitude": "\(longitude)",
-            "radius": "\(radius)",
-            "price": prices,
-            "openNow": "\(openNow)"
-            // TODO: - Add location string for people wanting to manually input location & make lat long optional.
-        ]
+        let queryParams: [String: String]
+        if let latitude = latitude, let longitude = longitude {
+            queryParams = [
+                "term": business,
+                "latitude": "\(latitude)",
+                "longitude": "\(longitude)",
+                "radius": "\(radius)",
+                "price": prices,
+                "openNow": "\(openNow)"
+            ]
+        } else {
+            queryParams = [
+                "term": business,
+                "location": location!,
+                "radius": "\(radius)",
+                "price": prices,
+                "openNow": "\(openNow)"
+            ]
+        }
 
         let headers = ["Authorization": "Bearer \(Secret.apiKey)"]
 
