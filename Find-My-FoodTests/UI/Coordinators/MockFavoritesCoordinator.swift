@@ -25,7 +25,7 @@ final class MockFavoritesCoordinator: FavoritesCoordinatorProtocol {
     
     func location(for business: Business) { }
     
-    func searchButtonTapped(latitude: Double, longitude: Double) { }
+    func searchButtonTapped(latitude: Double?, longitude: Double?) { }
     
     func start() {
         stub.startCallCount += 1

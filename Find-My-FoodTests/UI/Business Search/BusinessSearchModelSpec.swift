@@ -47,6 +47,23 @@ final class BusinessSearchModelSpec: QuickSpec {
             }
         }
         
+        // MARK: - func presentLocationError()
+        describe("presentLocationError()") {
+            it("calls present with an alert on the delegate") {
+                let expectedAlert = UIAlertController(title: "Oh no!",
+                                              message: "Please activate location services or enter a location to search for restaurants!",
+                                              preferredStyle: .alert)
+                expectedAlert.addAction(UIAlertAction(title: "Ok", style: .default))
+                
+                testObject.presentLocationError()
+               
+                expect(mockDelegate.stub.presentCallCount).to(equal(1))
+                expect((mockDelegate.stub.presentCalledWith.first?.viewControllerToPresent as? UIAlertController)?.message).to(equal(expectedAlert.message))
+                expect((mockDelegate.stub.presentCalledWith.first?.viewControllerToPresent as? UIAlertController)?.title).to(equal(expectedAlert.title))
+                expect((mockDelegate.stub.presentCalledWith.first?.viewControllerToPresent as? UIAlertController)?.preferredStyle).to(equal(expectedAlert.preferredStyle))
+            }
+        }
+        
         // MARK: - func search(for business: String)
         describe("search(for business:)") {
             context("given businessSearchClient returns businesses") {
@@ -58,7 +75,7 @@ final class BusinessSearchModelSpec: QuickSpec {
                     
                     mockBusinessSearchClient.stub.searchShouldCompleteWith = expectedBusinesses
                     
-                    testObject.search(for: "Peel", latitude: 38.752209, longitude: -89.986610, radius: 0, prices: ["$"], openNow: false)
+                    testObject.search(for: "Peel", latitude: 38.752209, location: nil, longitude: -89.986610, radius: 0, prices: ["$"], openNow: false)
                    
                     expect(mockDelegate.stub.downloadDidBeginCallCount).toEventually(equal(1))
                     expect(mockDelegate.stub.downloadDidEndCallCount).toEventually(equal(1))
@@ -72,7 +89,7 @@ final class BusinessSearchModelSpec: QuickSpec {
                     
                     mockBusinessSearchClient.stub.searchShouldCompleteWith = expectedBusinesses
                     
-                    testObject.search(for: "Chophouse", latitude: 38.752209, longitude: -89.986610, radius: 0, prices: ["$$"], openNow: false)
+                    testObject.search(for: "Chophouse", latitude: 38.752209, location: nil, longitude: -89.986610, radius: 0, prices: ["$$"], openNow: false)
                     
                     expect(mockDelegate.stub.downloadDidBeginCallCount).toEventually(equal(1))
                     expect(mockDelegate.stub.downloadDidEndCallCount).toEventually(equal(1))

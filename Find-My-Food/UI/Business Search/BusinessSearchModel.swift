@@ -42,7 +42,9 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
     }
 
     func presentLocationError() {
-        let alert = UIAlertController(title: "Oh no!", message: "Please activate location services or enter a location to search for restaurants!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Oh no!",
+                                      message: "Please activate location services or enter a location to search for restaurants!",
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         delegate?.present(alert, animated: true)
     }

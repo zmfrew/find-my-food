@@ -35,7 +35,7 @@ final class MockBusinessCoordinator: SearchCoordinatorProtocol {
     
     func pop(_ animated: Bool) { }
     
-    func searchButtonTapped(latitude: Double, longitude: Double) { }
+    func searchButtonTapped(latitude: Double?, longitude: Double?) { }
     
     func start() {
         stub.startCallCount += 1
