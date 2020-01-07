@@ -10,6 +10,7 @@ protocol SettingsModelProtocol {
 
 protocol SettingsModelDelegate: class {
     func dataDidUpdate(_ darkMode: Bool, location: String?, selectRadius: Int)
+    func saveDidEnd()
 }
 
 final class SettingsModel: SettingsModelProtocol {
@@ -44,5 +45,7 @@ final class SettingsModel: SettingsModelProtocol {
         userDefaults.set(darkMode, forKey: UserDefaultKey.darkMode)
         userDefaults.set(defaultLocation, forKey: UserDefaultKey.defaultLocation)
         userDefaults.set(radiusIndex, forKey: UserDefaultKey.radiusIndex)
+
+        delegate?.saveDidEnd()
     }
 }

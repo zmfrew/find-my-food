@@ -58,4 +58,12 @@ extension SettingsTableViewController: SettingsModelDelegate {
         defaultLocationTextField.text = location
         radiusPickerView.selectRow(selectRadius, inComponent: 0, animated: true)
     }
+
+    func saveDidEnd() {
+        let alert = UIAlertController(title: "Successfully saved ✅", message: nil, preferredStyle: .alert)
+        present(alert, animated: true) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
 }

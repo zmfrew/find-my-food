@@ -92,6 +92,7 @@ final class SettingsModelSpec: QuickSpec {
                     testObject.selectedDefaults(darkMode: false, defaultLocation: "test default", radiusIndex: 0)
                     
                     expect(mockUserDefaults.stub.setCallCount).to(equal(3))
+                    expect(mockDelegate.stub.saveDidEndCallCount).to(equal(1))
                     
                     expect(mockUserDefaults.stub.setCalledWith.first?.value as? Bool).to(beFalse())
                     expect(mockUserDefaults.stub.setCalledWith.first?.forKey).to(equal(UserDefaultKey.darkMode))
@@ -109,6 +110,7 @@ final class SettingsModelSpec: QuickSpec {
                     testObject.selectedDefaults(darkMode: false, defaultLocation: nil, radiusIndex: 0)
                     
                     expect(mockUserDefaults.stub.setCallCount).to(equal(3))
+                    expect(mockDelegate.stub.saveDidEndCallCount).to(equal(1))
                     
                     expect(mockUserDefaults.stub.setCalledWith.first?.value as? Bool).to(beFalse())
                     expect(mockUserDefaults.stub.setCalledWith.first?.forKey).to(equal(UserDefaultKey.darkMode))
