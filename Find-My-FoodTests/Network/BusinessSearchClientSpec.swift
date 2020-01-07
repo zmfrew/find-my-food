@@ -17,7 +17,7 @@ final class BusinessSearchClientSpec: QuickSpec {
         
         // MARK: - func search(for business: String, completion: @escaping ([Business]) -> Void)
         describe("search(for business: String, completion: @escaping ([Business]) -> Void)") {
-            context("given success and data is returned") {
+            context("with lat and long, given success and data is returned") {
                 it("decodes and returns an array of businesses") {
                     let expectedBusinesses = TestData.businessesFromJson()
                     let searchText = "Chipotle"
@@ -33,7 +33,7 @@ final class BusinessSearchClientSpec: QuickSpec {
                     
                     mockServiceClient.stub.getShouldCompleteWith = .success(TestData.businessData())
                     
-                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
+                    testObject.search(for: searchText, latitude: 38.752209, location: nil, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
                         expect(businesses).toEventually(equal(expectedBusinesses))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                        
@@ -42,6 +42,34 @@ final class BusinessSearchClientSpec: QuickSpec {
                         expect(url).to(equal(YelpRoutes.businessSearch))
                         expect(queryParams).to(equal(expectedQueryParams))
                         expect(headers).to(equal(expectedHeaders))
+                    }
+                }
+                
+                context("with location, given success and data is returned") {
+                    it("decodes and returns an array of businesses") {
+                        let expectedBusinesses = TestData.businessesFromJson()
+                        let searchText = "Chipotle"
+                        let expectedQueryParams = [
+                            "term": searchText,
+                            "location": "mock location",
+                            "radius": "40000",
+                            "price": "1",
+                            "openNow": "false"
+                        ]
+                        let expectedHeaders = ["Authorization": "Bearer \(Secret.apiKey)"]
+                        
+                        mockServiceClient.stub.getShouldCompleteWith = .success(TestData.businessData())
+                        
+                        testObject.search(for: searchText, latitude: nil, location: "mock location", longitude: nil, radius: 40_000, prices: [1], openNow: false) { businesses in
+                            expect(businesses).toEventually(equal(expectedBusinesses))
+                            expect(mockServiceClient.stub.getCallCount).to(equal(1))
+                            
+                            let (url, queryParams, headers, _) = mockServiceClient.stub.getCalledWith.first!
+                            
+                            expect(url).to(equal(YelpRoutes.businessSearch))
+                            expect(queryParams).to(equal(expectedQueryParams))
+                            expect(headers).to(equal(expectedHeaders))
+                        }
                     }
                 }
             }
@@ -59,7 +87,7 @@ final class BusinessSearchClientSpec: QuickSpec {
                     ]
                     let expectedHeaders = ["Authorization": "Bearer \(Secret.apiKey)"]
                     
-                    testObject.search(for: searchText, latitude: 38.752209, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
+                    testObject.search(for: searchText, latitude: 38.752209, location: nil, longitude: -89.986610, radius: 40_000, prices: [1], openNow: false) { businesses in
                         expect(businesses).to(equal([]))
                         expect(mockServiceClient.stub.getCallCount).to(equal(1))
                         

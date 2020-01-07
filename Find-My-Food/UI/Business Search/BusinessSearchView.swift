@@ -2,7 +2,12 @@ import UIKit
 
 protocol BusinessSearchViewDelegate: class {
     func deSelected(_ price: String)
-    func search(for business: String, radius: Int, prices: [String], openNow: Bool)
+    func presentLocationError()
+    func search(for business: String,
+                location: String?,
+                openNow: Bool,
+                prices: [String],
+                radius: Int)
     func selected(_ price: String)
 }
 
@@ -15,7 +20,7 @@ final class BusinessSearchView: UIView {
     @IBOutlet private weak var fourthPriceButton: PriceButton!
     @IBOutlet private weak var radiusPickerView: UIPickerView!
     @IBOutlet private weak var openNowSwitch: UISwitch!
-    @IBOutlet private weak var locationTextField: UITextField! // TODO: - Hide and display this based on user's location being shared or not.
+    @IBOutlet private weak var locationTextField: UITextField!
 	@IBOutlet private weak var searchButton: UIButton!
 
     private let activityIndicator = UIActivityIndicatorView(style: .large)
@@ -67,7 +72,15 @@ final class BusinessSearchView: UIView {
         let radius = radiusPickerData[radiusPickerView.selectedRow(inComponent: 0)]
         let openNow = openNowSwitch.isOn
 
-        delegate?.search(for: business, radius: radius, prices: selectedPrices, openNow: openNow)
+        if !locationTextField.isHidden && locationTextField.text == nil {
+            delegate?.presentLocationError()
+        } else {
+            delegate?.search(for: business,
+                             location: locationTextField.text,
+                             openNow: openNow,
+                             prices: selectedPrices,
+                             radius: radius)
+        }
 	}
 
     @objc func dismissKeyboard() {
@@ -99,6 +112,10 @@ extension BusinessSearchView {
 
     func downloadDidEnd() {
         activityIndicator.stopAnimating()
+    }
+
+    func shouldHideLocationTextField(_ flag: Bool) {
+        locationTextField.isHidden = flag
     }
 }
 

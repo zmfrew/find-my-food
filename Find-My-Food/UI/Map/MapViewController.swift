@@ -69,17 +69,10 @@ extension MapViewController: MapViewDelegate {
         model.fitRegion(to: placemarks)
     }
 
-    func locationServicesDisabled() {
-        model.locationServicesDisabled()
-    }
-
     func searchButtonTapped() {
-        if let latitude = model.location?.coordinate.latitude,
-            let longitude = model.location?.coordinate.longitude {
-            coordinator?.searchButtonTapped(latitude: latitude, longitude: longitude)
-        } else {
-            model.locationServicesDisabled()
-        }
+        coordinator?.searchButtonTapped(latitude: model.location?.coordinate.latitude,
+                                        longitude: model.location?.coordinate.longitude)
+
     }
 }
 

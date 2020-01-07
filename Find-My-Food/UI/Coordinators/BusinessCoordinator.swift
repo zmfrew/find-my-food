@@ -6,5 +6,5 @@ protocol BusinessCoordinator: Coordinator {
     func businessSelected(_ business: Business)
     func downloadCompleted(with businesses: [Business])
     func location(for business: Business)
-    func searchButtonTapped(latitude: Double, longitude: Double)
+    func searchButtonTapped(latitude: Double?, longitude: Double?)
 }

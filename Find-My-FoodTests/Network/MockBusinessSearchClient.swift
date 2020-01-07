@@ -7,7 +7,7 @@ final class MockBusinessSearchClient: BusinessSearchClientProtocol {
         var imageCallCount = 0
         var imageShouldCompleteWith: Data? = Data(base64Encoded: "empty")
         var searchCallCount: Int { searchCalledWith.count }
-        var searchCalledWith = [(business: String, latitude: Double, longitude: Double, radius: Int, prices: [Int], openNow: Bool, completion: ([Business]) -> Void)]()
+        var searchCalledWith = [(business: String, latitude: Double?, location: String?, longitude: Double?, radius: Int, prices: [Int], openNow: Bool, completion: ([Business]) -> Void)]()
         var searchShouldCompleteWith = [Business]()
     }
 
@@ -18,8 +18,8 @@ final class MockBusinessSearchClient: BusinessSearchClientProtocol {
         completion(stub.imageShouldCompleteWith)
     }
     
-    func search(for business: String, latitude: Double, longitude: Double, radius: Int, prices: [Int], openNow: Bool, completion: @escaping ([Business]) -> Void) {
-		stub.searchCalledWith.append((business, latitude, longitude, radius, prices, openNow, completion))
+    func search(for business: String, latitude: Double?, location: String?, longitude: Double?, radius: Int, prices: [Int], openNow: Bool, completion: @escaping ([Business]) -> Void) {
+        stub.searchCalledWith.append((business, latitude, location, longitude, radius, prices, openNow, completion))
         completion(stub.searchShouldCompleteWith)
 	}
 }

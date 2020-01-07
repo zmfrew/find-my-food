@@ -11,8 +11,8 @@ extension BusinessSearchViewControllerDelegate {
 final class BusinessSearchViewController: UIViewController, Storyboarded {
     weak var coordinator: SearchCoordinatorProtocol?
     weak var delegate: BusinessSearchViewControllerDelegate?
-    private var latitude: Double!
-    private var longitude: Double!
+    private var latitude: Double?
+    private var longitude: Double?
     private var model: BusinessSearchModelProtocol!
     private var searchView: BusinessSearchView { view as! BusinessSearchView } //swiftlint:disable:this force_cast
 
@@ -32,9 +32,15 @@ final class BusinessSearchViewController: UIViewController, Storyboarded {
 
     }
 
-    func configure(latitude: Double, longitude: Double) {
-        self.latitude = latitude
-        self.longitude = longitude
+    func configure(latitude: Double?, longitude: Double?) {
+        if let latitude = latitude,
+            let longitude = longitude {
+            self.latitude = latitude
+            self.longitude = longitude
+            searchView.shouldHideLocationTextField(true)
+        } else {
+            searchView.shouldHideLocationTextField(false)
+        }
     }
 
     func hideView() {
@@ -52,6 +58,10 @@ extension BusinessSearchViewController: BusinessSearchModelDelegate {
         coordinator?.dismiss()
         delegate?.downloadCompleted(with: model.businesses)
     }
+
+    func present(_ viewControllerToPresent: UIViewController, animated: Bool) {
+        present(viewControllerToPresent, animated: animated, completion: nil)
+    }
 }
 
 extension BusinessSearchViewController: BusinessSearchViewDelegate {
@@ -59,9 +69,22 @@ extension BusinessSearchViewController: BusinessSearchViewDelegate {
         model.deSelected(price)
     }
 
-    func search(for business: String, radius: Int, prices: [String], openNow: Bool) {
+    func presentLocationError() {
+        model.presentLocationError()
+    }
 
-        model.search(for: business, latitude: latitude, longitude: longitude, radius: radius, prices: prices, openNow: openNow)
+    func search(for business: String,
+                location: String?,
+                openNow: Bool,
+                prices: [String],
+                radius: Int) {
+        model.search(for: business,
+                     latitude: latitude,
+                     location: location,
+                     longitude: longitude,
+                     radius: radius,
+                     prices: prices,
+                     openNow: openNow)
     }
 
     func selected(_ price: String) {
