@@ -8,11 +8,13 @@ final class BusinessSearchModelSpec: QuickSpec {
         var testObject: BusinessSearchModel!
         var mockBusinessSearchClient: MockBusinessSearchClient!
         var mockDelegate: MockBusinessSearchModelDelegate!
+        var mockSession: MockUserSession!
         
         beforeEach {
             mockBusinessSearchClient = MockBusinessSearchClient()
             mockDelegate = MockBusinessSearchModelDelegate()
-            testObject = BusinessSearchModel(businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate)
+            mockSession = MockUserSession()
+            testObject = BusinessSearchModel(businessSearchClient: mockBusinessSearchClient, delegate: mockDelegate, session: mockSession)
         }
         
         // MARK: - func deSelected(_ price: String)
@@ -43,6 +45,31 @@ final class BusinessSearchModelSpec: QuickSpec {
                     testObject.deSelected("$$$")
                     
                     expect(testObject.selectedPrices).to(equal(expectedPrices))
+                }
+            }
+        }
+        
+        // MARK: - func loadDefaults() -> (radius: Int, location: String?)
+        describe("loadDefaults() -> (radius: Int, location: String?)") {
+            context("given session.userDefaults.object(forkey:) returns a radius and location") {
+                it("returns a radius and location") {
+                    mockSession.stub.userDefaultsShouldReturn.stub.objectCalledWithRadiusIndex = 8
+                    mockSession.stub.userDefaultsShouldReturn.stub.objectCalledWithDefaultLocation = "Breckenridge, CO"
+                    
+                    let (radius, location) = testObject.loadDefaults()
+                    expect(radius).to(equal(8))
+                    expect(location).to(equal("Breckenridge, CO"))
+                }
+            }
+            
+            context("given session.userDefaults.object(forkey:) returns a nil for radius and location") {
+                it("returns Radius.max and nil for location") {
+                    mockSession.stub.userDefaultsShouldReturn.stub.objectCalledWithRadiusIndex = nil
+                    mockSession.stub.userDefaultsShouldReturn.stub.objectCalledWithDefaultLocation = nil
+                    
+                    let (radius, location) = testObject.loadDefaults()
+                    expect(radius).to(equal(24))
+                    expect(location).to(beNil())
                 }
             }
         }

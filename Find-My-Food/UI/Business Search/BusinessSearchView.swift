@@ -43,8 +43,6 @@ final class BusinessSearchView: UIView {
 
         radiusPickerView.delegate = self
         radiusPickerView.dataSource = self
-        // TODO: - Use the default radius in UserDefaults here.
-        radiusPickerView.selectRow(Radius.rangeMax, inComponent: 0, animated: false)
 
         searchTextField.delegate = self
         locationTextField.delegate = self
@@ -116,6 +114,11 @@ extension BusinessSearchView {
 
     func shouldHideLocationTextField(_ flag: Bool) {
         locationTextField.isHidden = flag
+    }
+
+    func set(radius: Int, location: String?) {
+        radiusPickerView.selectRow(radius, inComponent: 0, animated: false)
+        locationTextField.text = location
     }
 }
 

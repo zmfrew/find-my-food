@@ -6,6 +6,7 @@ protocol BusinessSearchModelProtocol {
     var selectedPrices: [String] { get }
 
     func deSelected(_ price: String)
+    func loadDefaults() -> (radius: Int, location: String?)
     func presentLocationError()
     func search(for business: String,
                 latitude: Double?,
@@ -28,10 +29,12 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
     private weak var delegate: BusinessSearchModelDelegate?
     private let businessSearchClient: BusinessSearchClientProtocol
     private(set) var selectedPrices = [String]()
+    private let session: UserSessionProtocol
 
-    init(businessSearchClient: BusinessSearchClientProtocol, delegate: BusinessSearchModelDelegate) {
+    init(businessSearchClient: BusinessSearchClientProtocol, delegate: BusinessSearchModelDelegate, session: UserSessionProtocol) {
         self.businessSearchClient = businessSearchClient
         self.delegate = delegate
+        self.session = session
     }
 
     func deSelected(_ price: String) {
@@ -39,6 +42,13 @@ final class BusinessSearchModel: BusinessSearchModelProtocol {
             let index = selectedPrices.firstIndex(of: price) else { return }
 
         selectedPrices.remove(at: index)
+    }
+
+    func loadDefaults() -> (radius: Int, location: String?) {
+        let radius = session.userDefaults.object(forKey: UserDefaultKey.radiusIndex) as? Int ?? Radius.rangeMax
+        let location = session.userDefaults.object(forKey: UserDefaultKey.defaultLocation) as? String
+
+        return (radius: radius, location: location)
     }
 
     func presentLocationError() {

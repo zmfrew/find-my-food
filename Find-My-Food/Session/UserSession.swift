@@ -1,7 +1,12 @@
 import CoreData
 import Foundation
 
-final class UserSession {
+protocol UserSessionProtocol {
+    var coreDataManager: CoreDataManagerProtocol { get }
+    var userDefaults: UserDefaultsProtocol { get }
+}
+
+final class UserSession: UserSessionProtocol {
     lazy var coreDataManager: CoreDataManagerProtocol = {
         let container = NSPersistentContainer(name: "Find-My-Food")
         container.loadPersistentStores { _, error in

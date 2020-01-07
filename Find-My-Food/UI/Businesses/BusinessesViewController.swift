@@ -1,7 +1,7 @@
 import UIKit
 
 final class BusinessesViewController: UIViewController, Storyboarded {
-	private var businessesView: BusinessesView { self.view as! BusinessesView } //swiftlint:disable:this force_cast
+	private var businessesView: BusinessesView { view as! BusinessesView } //swiftlint:disable:this force_cast
     weak var coordinator: SearchCoordinatorProtocol?
     private var model: BusinessModelProtocol!
 
