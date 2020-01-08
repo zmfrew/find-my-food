@@ -18,6 +18,7 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.navigationBar.prefersLargeTitles = true
         self.rootViewController = MapViewController.instantiate()
     }
 
@@ -41,7 +42,9 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
         let businessesModel = BusinessesModel(businesses: businesses,
                                               businessSearchClient: businessSearchClient,
                                               coreDataManager: UserSession.shared.coreDataManager,
-                                              delegate: vc, frc: BusinessFetchedResultsController(managedObjectContext: UserSession.shared.coreDataManager.viewContext))
+                                              delegate: vc,
+                                              frc: BusinessFetchedResultsController(managedObjectContext:
+                                                UserSession.shared.coreDataManager.viewContext))
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
     }

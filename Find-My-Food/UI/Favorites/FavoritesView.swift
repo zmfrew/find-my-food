@@ -21,7 +21,9 @@ final class FavoritesView: UIView {
         tableView.refreshControl = refreshControl
         tableView.dataSource = self
         tableView.delegate = self
+
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .darkGray
     }
 
     @objc private func refresh() {

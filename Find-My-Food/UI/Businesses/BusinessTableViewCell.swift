@@ -7,11 +7,18 @@ protocol BusinessTableViewCellDelegate: class {
 final class BusinessTableViewCell: UITableViewCell {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var businessImageView: UIImageView!
+    @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var favoriteButton: UIButton!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
 
     weak var delegate: BusinessTableViewCellDelegate?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        businessImageView.layer.cornerRadius = businessImageView.frame.width / 2
+        containerView.layer.cornerRadius = 8
+    }
 
     @IBAction private func favoriteButtonTapped(_ sender: UIButton) {
         delegate?.favoriteTapped(on: self)

@@ -13,6 +13,7 @@ final class FavoritesCoordinator: FavoritesCoordinatorProtocol {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.navigationBar.prefersLargeTitles = true
         self.rootViewController = FavoritesViewController.instantiate()
     }
 
