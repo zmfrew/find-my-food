@@ -10,20 +10,22 @@ final class BusinessesModelSpec: QuickSpec {
         var mockBusinessSearchClient: MockBusinessSearchClient!
         var mockCoreDataManager: MockCoreDataManager!
         var mockDelegate: MockBusinessesModelDelegate!
+        var mockFRC: MockBusinessFetchedResultsController!
         
         beforeEach {
             businesses = TestData.businessesFromJson()
             mockBusinessSearchClient = MockBusinessSearchClient()
             mockCoreDataManager = MockCoreDataManager()
             mockDelegate = MockBusinessesModelDelegate()
-            testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate)
+            mockFRC = MockBusinessFetchedResultsController()
+            testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate, frc: mockFRC)
         }
         
         // MARK: - init()
         describe("init") {
             context("given images are not downloaded yet") {
                 it("does not call dataDidUpdate after setting businesses") {
-                    testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate)
+                    testObject = BusinessesModel(businesses: businesses, businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate, frc: mockFRC)
                     
                     expect(mockDelegate.stub.dataDidUpdateCallCount).toEventually(equal(0))
                 }
@@ -78,7 +80,7 @@ final class BusinessesModelSpec: QuickSpec {
             
             context("given an invalid business") {
                 it("calls saveDidFail on the delegate") {
-                testObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate)
+                    testObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, coreDataManager: mockCoreDataManager, delegate: mockDelegate, frc: mockFRC)
                 
                 testObject.favorite(at: 0)
                 
@@ -113,6 +115,25 @@ final class BusinessesModelSpec: QuickSpec {
             }
         }
         
+        // MARK: - func isFavorite(_ business: Business) -> Bool
+        describe("isFavorite(_ business: Business) -> Bool") {
+            context("given frc contains the business id") {
+                it("returns true") {
+                    mockFRC.stub.containsShouldReturn = true
+                    
+                    expect(testObject.isFavorite(TestData.createBusiness())).to(beTrue())
+                }
+            }
+            
+            context("given frc does not contains the business id") {
+                it("returns false") {
+                    mockFRC.stub.containsShouldReturn = false
+                    
+                    expect(testObject.isFavorite(TestData.createBusiness())).to(beFalse())
+                }
+            }
+        }
+        
         // MARK: - func randomBusiness() -> Business?
         describe("randomBusiness()") {
             context("given businesses is not empty") {
@@ -124,7 +145,7 @@ final class BusinessesModelSpec: QuickSpec {
             
             context("given businesses is not empty") {
                 it("returns nil") {
-                    let emptyTestObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: mockDelegate)
+                    let emptyTestObject = BusinessesModel(businesses: [], businessSearchClient: mockBusinessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: mockDelegate, frc: mockFRC)
                     
                     expect(emptyTestObject.randomBusiness()).to(beNil())
                 }

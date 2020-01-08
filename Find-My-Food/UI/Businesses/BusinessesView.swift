@@ -7,6 +7,7 @@ protocol BusinessesViewDelegate: class {
     func businessSelected(at index: Int)
     func favorite(at index: Int)
     func image(for business: Business)
+    func isFavorite(_ business: Business) -> Bool
     func randomize()
 }
 
@@ -62,7 +63,7 @@ extension BusinessesView: UITableViewDataSource {
         cell.decorateView(with: address,
                           delegate: self,
                           image: business.image,
-                          isFavorite: business.isFavorite,
+                          isFavorite: delegate?.isFavorite(business),
                           name: business.name,
                           rating: business.rating)
 

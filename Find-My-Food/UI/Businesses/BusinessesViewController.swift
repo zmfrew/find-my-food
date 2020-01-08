@@ -53,6 +53,10 @@ extension BusinessesViewController: BusinessesViewDelegate {
         model.image(for: business)
     }
 
+    func isFavorite(_ business: Business) -> Bool {
+        model.isFavorite(business)
+    }
+
     func randomize() {
         guard let business = model.randomBusiness() else { return }
 

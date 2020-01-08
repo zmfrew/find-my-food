@@ -7,7 +7,7 @@ protocol BusinessTableViewCellDelegate: class {
 final class BusinessTableViewCell: UITableViewCell {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var businessImageView: UIImageView!
-    @IBOutlet private weak var favoriteButton: UIButton! // TODO: - Fill the favorite button in if it's already a favorite.
+    @IBOutlet private weak var favoriteButton: UIButton! 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
 
@@ -23,15 +23,15 @@ extension BusinessTableViewCell {
     func decorateView(with address: String,
                       delegate: BusinessTableViewCellDelegate,
                       image: UIImage?,
-                      isFavorite: Bool,
+                      isFavorite: Bool?,
                       name: String,
                       rating: Double) {
         addressLabel.text = address
         self.delegate = delegate
         businessImageView.image = image
-        favoriteButton.setImage(UIImage(systemName: isFavorite ? "star.fill" : "star"), for: .normal)
+        favoriteButton.setImage(UIImage(systemName: isFavorite ?? false ? "star.fill" : "star"), for: .normal)
         nameLabel.text = name
-        ratingLabel.text = "\(rating)"
+        ratingLabel.text = "Rating: \(rating)"
 	}
 
     func favoriteDidSucceed() {

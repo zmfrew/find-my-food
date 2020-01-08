@@ -53,7 +53,7 @@ final class BusinessCoordinatorSpec: QuickSpec {
                 let decoder = DecoderWrapper(decoder: JSONDecoder())
                 let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
                 let businessSearchClient = BusinessSearchClient(decoder: decoder, serviceClient: serviceClient)
-                let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: businessesVC)
+                let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: businessesVC, frc: MockBusinessFetchedResultsController())
                
                 expect(businessesModel.delegate).to(be(businessesVC))
                 expect(testObject.navigationController.viewControllers).toNot(beEmpty())

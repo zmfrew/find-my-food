@@ -41,7 +41,7 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
         let businessesModel = BusinessesModel(businesses: businesses,
                                               businessSearchClient: businessSearchClient,
                                               coreDataManager: UserSession.shared.coreDataManager,
-                                              delegate: vc)
+                                              delegate: vc, frc: BusinessFetchedResultsController(managedObjectContext: UserSession.shared.coreDataManager.viewContext))
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
     }
