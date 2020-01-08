@@ -21,7 +21,6 @@ final class BusinessesView: UIView {
         super.awakeFromNib()
         tableView.dataSource = self
         tableView.delegate = self
-        // TODO: - Shape this button, change the color, update the text, and add gesture recognizer to move it around the screen.
         randomizeButton.layer.cornerRadius = 12
 	}
 
