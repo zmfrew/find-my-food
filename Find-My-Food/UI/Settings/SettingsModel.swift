@@ -5,18 +5,17 @@ protocol SettingsModelProtocol {
 
     func loadDefaults()
     func radius(at index: Int) -> Int
-    func selectedDefaults(darkMode: Bool, defaultLocation: String?, radiusIndex: Int)
+    func selectedDefaults(defaultLocation: String?, radiusIndex: Int)
 }
 
 protocol SettingsModelDelegate: class {
-    func dataDidUpdate(_ darkMode: Bool, location: String?, selectRadius: Int)
+    func dataDidUpdate(location: String?, selectRadius: Int)
     func saveDidEnd()
 }
 
 final class SettingsModel: SettingsModelProtocol {
     private var defaultLocation: String?
     private weak var delegate: SettingsModelDelegate?
-    private var isDarkModeActive = false
     private let radiusData: [Int]
     private var radiusIndex = Radius.rangeMax
     private let userDefaults: UserDefaultsProtocol
@@ -30,19 +29,17 @@ final class SettingsModel: SettingsModelProtocol {
     }
 
     func loadDefaults() {
-        isDarkModeActive = userDefaults.object(forKey: UserDefaultKey.darkMode) as? Bool ?? false
         defaultLocation = userDefaults.object(forKey: UserDefaultKey.defaultLocation) as? String
         radiusIndex = userDefaults.object(forKey: UserDefaultKey.radiusIndex) as? Int ?? 24
 
-        delegate?.dataDidUpdate(isDarkModeActive, location: defaultLocation, selectRadius: radiusIndex)
+        delegate?.dataDidUpdate(location: defaultLocation, selectRadius: radiusIndex)
     }
 
     func radius(at index: Int) -> Int {
         radiusData.element(at: index) ?? Radius.rangeMax
     }
 
-    func selectedDefaults(darkMode: Bool, defaultLocation: String?, radiusIndex: Int) {
-        userDefaults.set(darkMode, forKey: UserDefaultKey.darkMode)
+    func selectedDefaults(defaultLocation: String?, radiusIndex: Int) {
         userDefaults.set(defaultLocation, forKey: UserDefaultKey.defaultLocation)
         userDefaults.set(radiusIndex, forKey: UserDefaultKey.radiusIndex)
 

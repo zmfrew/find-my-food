@@ -5,12 +5,6 @@ import Nimble
 
 final class UserDefaultKeySpec: QuickSpec {
     override func spec() {
-        describe("darkMode key") {
-            it("returns DarkMode string") {
-                expect(UserDefaultKey.darkMode).to(equal("DarkMode"))
-            }
-        }
-        
         describe("radiusIndex key") {
             it("returns RadiusIndex string") {
                 expect(UserDefaultKey.radiusIndex).to(equal("RadiusIndex"))
