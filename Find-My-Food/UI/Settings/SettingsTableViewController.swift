@@ -10,16 +10,12 @@ final class SettingsTableViewController: UITableViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         saveButton.layer.cornerRadius = 10
-
         radiusPickerView.delegate = self
         radiusPickerView.dataSource = self
         radiusPickerView.selectRow(Radius.rangeMax, inComponent: 0, animated: false)
-        radiusPickerView.setValue(UIColor.white, forKey: "textColor")
-
         tableView.tableFooterView = UIView()
-        tableView.backgroundColor = .darkGray
+        tableView.backgroundColor = .background
         coordinator?.statusBar(backgroundColor: .white)
     }
 

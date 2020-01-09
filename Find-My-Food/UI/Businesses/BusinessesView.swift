@@ -23,8 +23,9 @@ final class BusinessesView: UIView {
         tableView.delegate = self
         randomizeButton.layer.cornerRadius = 12
         let view = UIView()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .background
         tableView.tableFooterView = view
+        tableView.separatorStyle = .none
 	}
 
     @IBAction private func randomizeButtonTapped(_ sender: UIButton) {

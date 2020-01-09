@@ -9,6 +9,7 @@ final class BusinessesViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
 		businessesView.delegate = self
         businessesView.updateResultsCount(model.businessCount)
+        coordinator?.statusBar(backgroundColor: .white)
 	}
 
 	func configure(with model: BusinessModelProtocol) {

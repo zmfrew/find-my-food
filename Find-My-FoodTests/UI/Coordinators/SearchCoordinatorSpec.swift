@@ -115,5 +115,14 @@ final class BusinessCoordinatorSpec: QuickSpec {
                 expect(mapVC.coordinator).to(be(testObject))
             }
         }
+        
+        // MARK: - func statusBar(backgroundColor: UIColor)
+        describe("statusBar(backgroundColor: UIColor)") {
+            it("sets the backgroundColor on the navigationController statusBar") {
+                testObject.statusBar(backgroundColor: .white)
+                
+                expect(testObject.navigationController.view.subviews.contains(where: { $0.backgroundColor == .white })).to(beTrue())
+            }
+        }
     }
 }

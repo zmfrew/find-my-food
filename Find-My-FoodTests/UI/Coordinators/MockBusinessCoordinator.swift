@@ -40,4 +40,6 @@ final class MockBusinessCoordinator: SearchCoordinatorProtocol {
     func start() {
         stub.startCallCount += 1
     }
+    
+    func statusBar(backgroundColor: UIColor) { }
 }

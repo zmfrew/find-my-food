@@ -30,7 +30,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Zso-7l-Ghu" secondAttribute="bottom" constant="8" id="7ic-9J-dXH"/>
                                                 <constraint firstItem="Zso-7l-Ghu" firstAttribute="leading" secondItem="b6e-yr-dGy" secondAttribute="leading" constant="32" id="AoO-vy-kh7"/>
@@ -59,10 +59,10 @@
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </pickerView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="tLN-64-ch9" secondAttribute="bottom" id="4Vu-5Z-gEg"/>
                                                 <constraint firstAttribute="trailing" secondItem="tLN-64-ch9" secondAttribute="trailing" id="8t1-Oz-bbW"/>
@@ -97,7 +97,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Pdx-gT-0o0" secondAttribute="bottom" constant="8" id="Ngb-Us-soy"/>
                                                 <constraint firstItem="Pdx-gT-0o0" firstAttribute="centerX" secondItem="AFE-3I-rPS" secondAttribute="centerX" id="Wbn-rm-Dk5"/>

@@ -9,7 +9,6 @@ final class MapViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         model = MapModel(delegate: self, geocoder: GeocoderWrapper(), locationManager: LocationManagerWrapper())
         mapView.delegate = self
     }

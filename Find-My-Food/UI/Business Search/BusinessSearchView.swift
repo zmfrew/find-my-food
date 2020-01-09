@@ -33,7 +33,7 @@ final class BusinessSearchView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         activityIndicator.center = self.center
-        activityIndicator.color = .darkGray
+        activityIndicator.color = .background
         addSubview(activityIndicator)
 
         firstPriceButton.delegate = self

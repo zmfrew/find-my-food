@@ -10,6 +10,7 @@ protocol SearchCoordinatorProtocol: BusinessCoordinator {
     func downloadDidEnd()
     func pop(_ animated: Bool)
     func start()
+    func statusBar(backgroundColor: UIColor)
 }
 
 final class SearchCoordinator: SearchCoordinatorProtocol {
@@ -19,6 +20,7 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.navigationBar.prefersLargeTitles = true
+        self.navigationController.navigationBar.backgroundColor = .white
         self.rootViewController = MapViewController.instantiate()
     }
 
@@ -85,5 +87,9 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
     func start() {
         rootViewController.coordinator = self
         navigationController.pushViewController(rootViewController, animated: true)
+    }
+
+    func statusBar(backgroundColor: UIColor) {
+        navigationController.statusBar(backgroundColor: backgroundColor)
     }
 }
