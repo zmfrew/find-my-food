@@ -47,6 +47,8 @@ final class BusinessSearchView: UIView {
         searchTextField.delegate = self
         locationTextField.delegate = self
 
+        searchButton.layer.cornerRadius = 8
+
       NotificationCenter.default.addObserver(self,
                                              selector: #selector(keyboardWillShow),
                                              name: UIResponder.keyboardWillShowNotification,

@@ -3,20 +3,36 @@ import UIKit
 final class BusinessDetailViewController: UIViewController, Storyboarded {
     @IBOutlet private weak var locationButton: UIBarButtonItem!
 
-    private var business: Business?
     weak var coordinator: BusinessCoordinator?
     private var detailView: BusinessDetailView { view as! BusinessDetailView } //swiftlint:disable:this force_cast
+    private var model: BusinessDetailModelProtocol!
 
-    func configure(with business: Business) {
-        detailView.configure(with: business, delegate: self)
-        title = business.name
-        self.business = business
+    func configure(with model: BusinessDetailModelProtocol) {
+        detailView.configure(with: model.business, delegate: self)
+        title = model.business.name
     }
 
     @IBAction private func locationButtonTapped(_ sender: UIBarButtonItem) {
-        guard let business = business else { return }
+        coordinator?.location(for: model.business)
+    }
+}
 
-        coordinator?.location(for: business)
+extension BusinessDetailViewController: BusinessDetailModelDelegate {
+    func saveDidFail() {
+        let alert = UIAlertController(title: "Successfully saved ✅", message: nil, preferredStyle: .alert)
+        present(alert, animated: true) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.dismiss(animated: true, completion: nil)
+                self.detailView.saveDidSucceed()
+            }
+        }
+    }
+
+    func saveDidSucceed() {
+        let alert = UIAlertController(title: "Save saved ❌", message: nil, preferredStyle: .alert)
+        present(alert, animated: true) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 }
 
@@ -33,5 +49,9 @@ extension BusinessDetailViewController: BusinessDetailViewDelegate {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
         self.present(alert, animated: true)
+    }
+
+    func favorite() {
+        model.favorite()
     }
 }

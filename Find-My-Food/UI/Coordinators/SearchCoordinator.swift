@@ -27,7 +27,10 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
     func businessSelected(_ business: Business) {
         let vc = BusinessDetailViewController.instantiate()
         vc.coordinator = self
-        vc.configure(with: business)
+        let model = BusinessDetailModel(business: business,
+                                        coreDataManager: UserSession.shared.coreDataManager,
+                                        delegate: vc)
+        vc.configure(with: model)
         navigationController.pushViewController(vc, animated: true)
     }
 
