@@ -8,6 +8,7 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
     private var model: BusinessDetailModelProtocol!
 
     func configure(with model: BusinessDetailModelProtocol) {
+        self.model = model
         detailView.configure(with: model.business, delegate: self)
         title = model.business.name
     }
@@ -19,18 +20,18 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
 
 extension BusinessDetailViewController: BusinessDetailModelDelegate {
     func saveDidFail() {
-        let alert = UIAlertController(title: "Successfully saved ✅", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Save failed ❌", message: nil, preferredStyle: .alert)
         present(alert, animated: true) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.dismiss(animated: true, completion: nil)
-                self.detailView.saveDidSucceed()
             }
         }
     }
 
     func saveDidSucceed() {
-        let alert = UIAlertController(title: "Save saved ❌", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Successfully saved ✅", message: nil, preferredStyle: .alert)
         present(alert, animated: true) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.dismiss(animated: true, completion: nil)
+                self.detailView.saveDidSucceed()
             }
         }
     }
