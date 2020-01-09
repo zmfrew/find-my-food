@@ -10,6 +10,7 @@ protocol SearchCoordinatorProtocol: BusinessCoordinator {
     func downloadDidEnd()
     func pop(_ animated: Bool)
     func start()
+    func statusBar(backgroundColor: UIColor)
 }
 
 final class SearchCoordinator: SearchCoordinatorProtocol {
@@ -18,13 +19,18 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.navigationBar.prefersLargeTitles = true
+        self.navigationController.navigationBar.backgroundColor = .white
         self.rootViewController = MapViewController.instantiate()
     }
 
     func businessSelected(_ business: Business) {
         let vc = BusinessDetailViewController.instantiate()
         vc.coordinator = self
-        vc.configure(with: business)
+        let model = BusinessDetailModel(business: business,
+                                        coreDataManager: UserSession.shared.coreDataManager,
+                                        delegate: vc)
+        vc.configure(with: model)
         navigationController.pushViewController(vc, animated: true)
     }
 
@@ -41,7 +47,9 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
         let businessesModel = BusinessesModel(businesses: businesses,
                                               businessSearchClient: businessSearchClient,
                                               coreDataManager: UserSession.shared.coreDataManager,
-                                              delegate: vc)
+                                              delegate: vc,
+                                              frc: BusinessFetchedResultsController(managedObjectContext:
+                                                UserSession.shared.coreDataManager.viewContext))
         vc.configure(with: businessesModel)
         navigationController.pushViewController(vc, animated: true)
     }
@@ -82,5 +90,9 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
     func start() {
         rootViewController.coordinator = self
         navigationController.pushViewController(rootViewController, animated: true)
+    }
+
+    func statusBar(backgroundColor: UIColor) {
+        navigationController.statusBar(backgroundColor: backgroundColor)
     }
 }

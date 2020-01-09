@@ -1,7 +1,6 @@
 import UIKit
 
 final class SettingsTableViewController: UITableViewController, Storyboarded {
-    @IBOutlet private weak var darkModeSwitch: UISwitch!
     @IBOutlet private weak var defaultLocationTextField: UITextField!
     @IBOutlet private weak var radiusPickerView: UIPickerView!
     @IBOutlet private weak var saveButton: UIButton!
@@ -11,24 +10,21 @@ final class SettingsTableViewController: UITableViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         saveButton.layer.cornerRadius = 10
-
         radiusPickerView.delegate = self
         radiusPickerView.dataSource = self
         radiusPickerView.selectRow(Radius.rangeMax, inComponent: 0, animated: false)
-
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .background
+        coordinator?.statusBar(backgroundColor: .white)
     }
 
     @IBAction private func saveButtonTapped(_ sender: UIButton) {
         let selectedRadius = radiusPickerView.selectedRow(inComponent: 0)
-
-        let isDarkModeActive = darkModeSwitch.isOn
         let defaultLocation = defaultLocationTextField.text
         let radiusIndex = model.radius(at: selectedRadius)
 
-        model.selectedDefaults(darkMode: isDarkModeActive, defaultLocation: defaultLocation, radiusIndex: radiusIndex)
+        model.selectedDefaults(defaultLocation: defaultLocation, radiusIndex: radiusIndex)
     }
 
     func configure(with model: SettingsModelProtocol) {
@@ -53,9 +49,16 @@ extension SettingsTableViewController: UIPickerViewDelegate {
 }
 
 extension SettingsTableViewController: SettingsModelDelegate {
-    func dataDidUpdate(_ darkMode: Bool, location: String?, selectRadius: Int) {
-        darkModeSwitch.setOn(darkMode, animated: true)
+    func dataDidUpdate(location: String?, selectRadius: Int) {
         defaultLocationTextField.text = location
         radiusPickerView.selectRow(selectRadius, inComponent: 0, animated: true)
+    }
+
+    func saveDidEnd() {
+        let alert = UIAlertController(title: "Successfully saved ✅", message: nil, preferredStyle: .alert)
+        present(alert, animated: true) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 }

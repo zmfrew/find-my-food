@@ -7,6 +7,7 @@ protocol BusinessFetchedResultsControllerProtocol {
 
     init(managedObjectContext: NSManagedObjectContext)
     func cdObject(at indexPath: IndexPath) -> CDBusiness?
+    func contains(_ id: String) -> Bool
     func numberOfObjects(in section: Int) -> Int
     func object(at indexPath: IndexPath) -> CDBusiness.ConvertibleType?
     func performFetch()
@@ -29,6 +30,10 @@ final class BusinessFetchedResultsController: BusinessFetchedResultsControllerPr
 
     func cdObject(at indexPath: IndexPath) -> CDBusiness? {
         fetchedResultsController.object(at: indexPath)
+    }
+
+    func contains(_ id: String) -> Bool {
+        fetchedResultsController.fetchedObjects?.contains(where: { $0.id == id }) ?? false
     }
 }
 

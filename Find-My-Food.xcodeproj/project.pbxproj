@@ -21,6 +21,8 @@
 		5734439E238589D4001022AA /* CoreDataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734439D238589D4001022AA /* CoreDataConvertible.swift */; };
 		57444F2E23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57444F2D23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift */; };
 		57444F2F23A052AF00D5790F /* CDCoordinateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57551FA223922C2900DBE1C4 /* CDCoordinateSpec.swift */; };
+		574C471923C68998009E991C /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C471823C68998009E991C /* UINavigationController+Extension.swift */; };
+		574C471B23C68BE8009E991C /* UINavigationController+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C471A23C68BE8009E991C /* UINavigationController+ExtensionSpec.swift */; };
 		575225ED23722D600023085E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EC23722D600023085E /* Int+Extension.swift */; };
 		575225EF23722DF40023085E /* Int+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575225EE23722DF40023085E /* Int+ExtensionSpec.swift */; };
 		57551F6C2391F77600DBE1C4 /* CDCategorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */; };
@@ -42,6 +44,7 @@
 		575B87FB238DD79E00BFE84C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575B87FA238DD79E00BFE84C /* CoreDataManager.swift */; };
 		575BCF532391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575BCF522391C2CB00DE9CBB /* CDBusiness+CoreDataProperties.swift */; };
 		5797AC23239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797AC22239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift */; };
+		5798E33823C53CAF00B4B7AF /* MockUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5798E33723C53CAF00B4B7AF /* MockUserSession.swift */; };
 		579C21A32368B8FE0015D0BE /* GeocoderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A22368B8FE0015D0BE /* GeocoderWrapper.swift */; };
 		579C21A52368B9110015D0BE /* GeocoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A42368B9110015D0BE /* GeocoderProtocol.swift */; };
 		579C21A72368B91F0015D0BE /* LocationManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */; };
@@ -69,6 +72,11 @@
 		57DCCA402357722E00CEA8DE /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA3F2357722E00CEA8DE /* Secret.swift */; };
 		57DCCA672358EE6F00CEA8DE /* BusinessDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */; };
 		57DCCA692358F36700CEA8DE /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */; };
+		57DDF91323C77AD200DB884F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDF91223C77AD200DB884F /* UIColor+Extension.swift */; };
+		57DDF91523C77B0800DB884F /* UIColor+ExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDF91423C77B0800DB884F /* UIColor+ExtensionSpec.swift */; };
+		57DDF91723C7988100DB884F /* BusinessDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDF91623C7988100DB884F /* BusinessDetailModel.swift */; };
+		57DDF91A23C79AEB00DB884F /* BusinessDetailModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDF91923C79AEB00DB884F /* BusinessDetailModelSpec.swift */; };
+		57DDF91C23C79C0600DB884F /* MockBusinessDetailModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDF91B23C79C0600DB884F /* MockBusinessDetailModelDelegate.swift */; };
 		57E5071D237B32FF0061CBB6 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5071C237B32FF0061CBB6 /* SettingsCoordinator.swift */; };
 		57E5071F237B351F0061CBB6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5071E237B351F0061CBB6 /* Coordinator.swift */; };
 		57E50721237B3BC60061CBB6 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E50720237B3BC60061CBB6 /* Price.swift */; };
@@ -163,6 +171,8 @@
 		5734439523858798001022AA /* CDBusiness+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDBusiness+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5734439D238589D4001022AA /* CoreDataConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConvertible.swift; sourceTree = "<group>"; };
 		57444F2D23A04FFF00D5790F /* BusinessFetchedResultsControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFetchedResultsControllerSpec.swift; sourceTree = "<group>"; };
+		574C471823C68998009E991C /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		574C471A23C68BE8009E991C /* UINavigationController+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		575225EC23722D600023085E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		575225EE23722DF40023085E /* Int+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ExtensionSpec.swift"; sourceTree = "<group>"; };
 		57551F6B2391F77600DBE1C4 /* CDCategorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCategorySpec.swift; sourceTree = "<group>"; };
@@ -179,6 +189,7 @@
 		575BCF542391D7BA00DE9CBB /* CDCoordinate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCoordinate+CoreDataClass.swift"; sourceTree = "<group>"; };
 		575BCF552391D7BA00DE9CBB /* CDCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5797AC22239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
+		5798E33723C53CAF00B4B7AF /* MockUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserSession.swift; sourceTree = "<group>"; };
 		579C21A22368B8FE0015D0BE /* GeocoderWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderWrapper.swift; sourceTree = "<group>"; };
 		579C21A42368B9110015D0BE /* GeocoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderProtocol.swift; sourceTree = "<group>"; };
 		579C21A62368B91F0015D0BE /* LocationManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerInterface.swift; sourceTree = "<group>"; };
@@ -205,6 +216,11 @@
 		57DCCA3F2357722E00CEA8DE /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessDetail.storyboard; sourceTree = "<group>"; };
 		57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
+		57DDF91223C77AD200DB884F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		57DDF91423C77B0800DB884F /* UIColor+ExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ExtensionSpec.swift"; sourceTree = "<group>"; };
+		57DDF91623C7988100DB884F /* BusinessDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailModel.swift; sourceTree = "<group>"; };
+		57DDF91923C79AEB00DB884F /* BusinessDetailModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailModelSpec.swift; sourceTree = "<group>"; };
+		57DDF91B23C79C0600DB884F /* MockBusinessDetailModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBusinessDetailModelDelegate.swift; sourceTree = "<group>"; };
 		57E5071C237B32FF0061CBB6 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		57E5071E237B351F0061CBB6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		57E50720237B3BC60061CBB6 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
@@ -493,8 +509,18 @@
 			isa = PBXGroup;
 			children = (
 				57DCCA682358F36700CEA8DE /* BusinessDetailViewController.swift */,
+				57DDF91623C7988100DB884F /* BusinessDetailModel.swift */,
 				57EEC11E23590B410076B9FD /* BusinessDetailView.swift */,
 				57DCCA662358EE6F00CEA8DE /* BusinessDetail.storyboard */,
+			);
+			path = "Business Detail";
+			sourceTree = "<group>";
+		};
+		57DDF91823C79ADD00DB884F /* Business Detail */ = {
+			isa = PBXGroup;
+			children = (
+				57DDF91923C79AEB00DB884F /* BusinessDetailModelSpec.swift */,
+				57DDF91B23C79C0600DB884F /* MockBusinessDetailModelDelegate.swift */,
 			);
 			path = "Business Detail";
 			sourceTree = "<group>";
@@ -647,11 +673,13 @@
 		B69E33BA2322912F00A4477E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				574C471823C68998009E991C /* UINavigationController+Extension.swift */,
 				B69E33BB2322912F00A4477E /* Array+Extension.swift */,
 				57C3CB87236A30AF007E1B9A /* URL+Extension.swift */,
 				57C3CB89236A3145007E1B9A /* String+Extension.swift */,
 				575225EC23722D600023085E /* Int+Extension.swift */,
 				5797AC22239A05D900FC2EF3 /* NSManagedObjectContext+Extension.swift */,
+				57DDF91223C77AD200DB884F /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -672,6 +700,7 @@
 		B69E33C32322912F00A4477E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				57DDF91823C79ADD00DB884F /* Business Detail */,
 				5701EC6D2362381A004A4EAA /* Coordinators */,
 				5727353A23BA442000D29CCA /* Favorites */,
 				575AAF2B237A331C004FAB58 /* Settings */,
@@ -706,6 +735,7 @@
 			isa = PBXGroup;
 			children = (
 				B69E33CD2322912F00A4477E /* BusinessSearchModelSpec.swift */,
+				5798E33723C53CAF00B4B7AF /* MockUserSession.swift */,
 				B69E33CF2322912F00A4477E /* MockBusinessSearchModelDelegate.swift */,
 			);
 			path = "Business Search";
@@ -755,6 +785,8 @@
 				B69E33E62322912F00A4477E /* Array+ExtensionSpec.swift */,
 				57C3CB8E236A31A2007E1B9A /* String+ExtensionSpec.swift */,
 				575225EE23722DF40023085E /* Int+ExtensionSpec.swift */,
+				574C471A23C68BE8009E991C /* UINavigationController+ExtensionSpec.swift */,
+				57DDF91423C77B0800DB884F /* UIColor+ExtensionSpec.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1009,11 +1041,13 @@
 				B69E33ED2322912F00A4477E /* MapViewController.swift in Sources */,
 				B6D5D601233B077C004138F5 /* SearchCoordinator.swift in Sources */,
 				57D2DD72239DC0F500FD08A8 /* BusinessCoordinator.swift in Sources */,
+				57DDF91723C7988100DB884F /* BusinessDetailModel.swift in Sources */,
 				B69E33F22322912F00A4477E /* BusinessSearchModel.swift in Sources */,
 				571ABE9023847C3A004F0003 /* CoreDataStack.swift in Sources */,
 				B69E33E92322912F00A4477E /* BusinessTableViewCell.swift in Sources */,
 				57E50724237B3C690061CBB6 /* UserDefaultKey.swift in Sources */,
 				579C21A52368B9110015D0BE /* GeocoderProtocol.swift in Sources */,
+				57DDF91323C77AD200DB884F /* UIColor+Extension.swift in Sources */,
 				B69E33FA2322912F00A4477E /* URLSessionWrapper.swift in Sources */,
 				5734439B23858798001022AA /* CDBusiness+CoreDataClass.swift in Sources */,
 				575AAF2A237A0BB6004FAB58 /* SettingsModel.swift in Sources */,
@@ -1024,6 +1058,7 @@
 				B69E33F42322912F00A4477E /* Coordinate.swift in Sources */,
 				5734439E238589D4001022AA /* CoreDataConvertible.swift in Sources */,
 				57B9175E237CBE2C0052D014 /* FavoritesCoordinator.swift in Sources */,
+				574C471923C68998009E991C /* UINavigationController+Extension.swift in Sources */,
 				B6D5D5FF233B06D5004138F5 /* Storyboarded.swift in Sources */,
 				579C21A72368B91F0015D0BE /* LocationManagerInterface.swift in Sources */,
 				575B87FB238DD79E00BFE84C /* CoreDataManager.swift in Sources */,
@@ -1038,8 +1073,11 @@
 				57D2DD6C239D78B100FD08A8 /* MockCoreDataManager.swift in Sources */,
 				57A508C52392322700471FFD /* CoordinateSpec.swift in Sources */,
 				B69E34802322F21400A4477E /* MockBusinessSearchClient.swift in Sources */,
+				574C471B23C68BE8009E991C /* UINavigationController+ExtensionSpec.swift in Sources */,
+				57DDF91523C77B0800DB884F /* UIColor+ExtensionSpec.swift in Sources */,
 				57B91767237CC4340052D014 /* FavoritesCoordinatorSpec.swift in Sources */,
 				B69E347E2322F21400A4477E /* BaseServiceClientSpec.swift in Sources */,
+				5798E33823C53CAF00B4B7AF /* MockUserSession.swift in Sources */,
 				B69E34812322F21400A4477E /* MockServiceClient.swift in Sources */,
 				B69E347D2322F21000A4477E /* TestData.swift in Sources */,
 				B69E34852322F21700A4477E /* Array+ExtensionSpec.swift in Sources */,
@@ -1053,6 +1091,7 @@
 				579C21AB2368C9310015D0BE /* MockGeocoder.swift in Sources */,
 				5727353E23BA449100D29CCA /* MockFavoritesModelDelegate.swift in Sources */,
 				57E75D46237B5CDD009F3256 /* MockDecoder.swift in Sources */,
+				57DDF91C23C79C0600DB884F /* MockBusinessDetailModelDelegate.swift in Sources */,
 				575225EF23722DF40023085E /* Int+ExtensionSpec.swift in Sources */,
 				579C21AD2368CAA40015D0BE /* MockLocationManager.swift in Sources */,
 				57E5072F237B414D0061CBB6 /* MockUserDefaults.swift in Sources */,
@@ -1069,6 +1108,7 @@
 				57E50731237B43DC0061CBB6 /* MockSettingsCoordinator.swift in Sources */,
 				57C7B1092375AF2D001AF112 /* MockBusinessCoordinator.swift in Sources */,
 				B69E34702322F1FC00A4477E /* MapModelSpec.swift in Sources */,
+				57DDF91A23C79AEB00DB884F /* BusinessDetailModelSpec.swift in Sources */,
 				5727353C23BA442E00D29CCA /* FavoritesModelSpec.swift in Sources */,
 				57C3CB90236A31D2007E1B9A /* String+ExtensionSpec.swift in Sources */,
 				57B91765237CC2F20052D014 /* MockFavoritesCoordinator.swift in Sources */,

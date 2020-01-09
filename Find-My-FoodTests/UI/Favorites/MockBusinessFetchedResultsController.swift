@@ -17,6 +17,8 @@ final class MockBusinessFetchedResultsController: BusinessFetchedResultsControll
         var cdObjectCallCount: Int { cdObjectCalledWith.count }
         var cdObjectCalledWith = [IndexPath]()
         var cdObjectShouldReturn: CDBusiness? = nil
+        var containsCalledWith = [String]()
+        var containsShouldReturn = false
         var numberOfSectionsShouldReturn = 0
         var numberOfObjectsCallCount: Int { numberOfObjectsCalledWith.count }
         var numberOfObjectsCalledWith = [Int]()
@@ -57,6 +59,11 @@ final class MockBusinessFetchedResultsController: BusinessFetchedResultsControll
     func cdObject(at indexPath: IndexPath) -> CDBusiness? {
         stub.cdObjectCalledWith.append(indexPath)
         return stub.cdObjectShouldReturn
+    }
+    
+    func contains(_ id: String) -> Bool {
+        stub.containsCalledWith.append(id)
+        return stub.containsShouldReturn
     }
     
     func numberOfObjects(in section: Int) -> Int {

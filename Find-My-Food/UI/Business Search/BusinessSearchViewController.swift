@@ -18,13 +18,15 @@ final class BusinessSearchViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TOOD: - Move BaseServiceClient's into an AppSession of some sort.
         let decoder = DecoderWrapper(decoder: JSONDecoder())
         let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
         let businessSearchClient = BusinessSearchClient(decoder: decoder, serviceClient: serviceClient)
-		model = BusinessSearchModel(businessSearchClient: businessSearchClient, delegate: self)
+        model = BusinessSearchModel(businessSearchClient: businessSearchClient, delegate: self, session: UserSession.shared)
 
 		searchView.delegate = self
+
+        let (radius, location) = model.loadDefaults()
+        searchView.set(radius: radius, location: location)
     }
 
     override func viewWillDisappear(_ animated: Bool) {

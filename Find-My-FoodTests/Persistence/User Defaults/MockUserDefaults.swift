@@ -6,7 +6,6 @@ final class MockUserDefaults: UserDefaultsProtocol {
     final class Stub {
         var objectCallCount: Int { objectCalledWith.count }
         var objectCalledWith = [String]()
-        var objectCalledWithDarkMode: Bool? = nil
         var objectCalledWithDefaultLocation: String? = nil
         var objectCalledWithRadiusIndex: Int? = nil
         var setCallCount: Int { setCalledWith.count }
@@ -18,9 +17,6 @@ final class MockUserDefaults: UserDefaultsProtocol {
     func object(forKey defaultName: String) -> Any? {
         stub.objectCalledWith.append(defaultName)
         switch defaultName {
-        case UserDefaultKey.darkMode:
-            return stub.objectCalledWithDarkMode
-            
         case UserDefaultKey.defaultLocation:
             return stub.objectCalledWithDefaultLocation
             

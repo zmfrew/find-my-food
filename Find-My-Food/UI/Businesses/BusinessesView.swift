@@ -7,6 +7,7 @@ protocol BusinessesViewDelegate: class {
     func businessSelected(at index: Int)
     func favorite(at index: Int)
     func image(for business: Business)
+    func isFavorite(_ business: Business) -> Bool
     func randomize()
 }
 
@@ -20,8 +21,11 @@ final class BusinessesView: UIView {
         super.awakeFromNib()
         tableView.dataSource = self
         tableView.delegate = self
-        // TODO: - Shape this button, change the color, update the text, and add gesture recognizer to move it around the screen.
         randomizeButton.layer.cornerRadius = 12
+        let view = UIView()
+        view.backgroundColor = .background
+        tableView.tableFooterView = view
+        tableView.separatorStyle = .none
 	}
 
     @IBAction private func randomizeButtonTapped(_ sender: UIButton) {
@@ -62,7 +66,7 @@ extension BusinessesView: UITableViewDataSource {
         cell.decorateView(with: address,
                           delegate: self,
                           image: business.image,
-                          isFavorite: business.isFavorite,
+                          isFavorite: delegate?.isFavorite(business),
                           name: business.name,
                           rating: business.rating)
 

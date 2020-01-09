@@ -53,7 +53,7 @@ final class BusinessCoordinatorSpec: QuickSpec {
                 let decoder = DecoderWrapper(decoder: JSONDecoder())
                 let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
                 let businessSearchClient = BusinessSearchClient(decoder: decoder, serviceClient: serviceClient)
-                let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: businessesVC)
+                let businessesModel = BusinessesModel(businesses: businesses, businessSearchClient: businessSearchClient, coreDataManager: globalInMemoryCoreDataManager, delegate: businessesVC, frc: MockBusinessFetchedResultsController())
                
                 expect(businessesModel.delegate).to(be(businessesVC))
                 expect(testObject.navigationController.viewControllers).toNot(beEmpty())
@@ -113,6 +113,15 @@ final class BusinessCoordinatorSpec: QuickSpec {
                 let mapVC = testObject.rootViewController
                 
                 expect(mapVC.coordinator).to(be(testObject))
+            }
+        }
+        
+        // MARK: - func statusBar(backgroundColor: UIColor)
+        describe("statusBar(backgroundColor: UIColor)") {
+            it("sets the backgroundColor on the navigationController statusBar") {
+                testObject.statusBar(backgroundColor: .white)
+                
+                expect(testObject.navigationController.view.subviews.contains(where: { $0.backgroundColor == .white })).to(beTrue())
             }
         }
     }

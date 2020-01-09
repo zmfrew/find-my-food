@@ -5,6 +5,8 @@ import UIKit
 final class MockSettingsCoordinator: SettingsCoordinatorProtocol {
     final class Stub {
         var startCallCount = 0
+        var statusBarCallCount: Int { statusBarCalledWith.count }
+        var statusBarCalledWith = [UIColor]()
         var navigationControllerShouldReturn = UINavigationController()
         var rootViewControllerShouldReturn = SettingsTableViewController()
     }
@@ -21,5 +23,9 @@ final class MockSettingsCoordinator: SettingsCoordinatorProtocol {
         
     func start() {
         stub.startCallCount += 1
+    }
+    
+    func statusBar(backgroundColor: UIColor) {
+        stub.statusBarCalledWith.append(backgroundColor)
     }
 }

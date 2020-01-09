@@ -5,6 +5,7 @@ protocol SettingsCoordinatorProtocol: Coordinator {
     var rootViewController: SettingsTableViewController { get }
 
     func start()
+    func statusBar(backgroundColor: UIColor)
 }
 
 final class SettingsCoordinator: SettingsCoordinatorProtocol {
@@ -13,6 +14,8 @@ final class SettingsCoordinator: SettingsCoordinatorProtocol {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.navigationBar.prefersLargeTitles = true
+        self.navigationController.navigationBar.backgroundColor = .white
         self.rootViewController = SettingsTableViewController.instantiate()
     }
 
@@ -21,5 +24,9 @@ final class SettingsCoordinator: SettingsCoordinatorProtocol {
         let model = SettingsModel(radiusData: Radius.range, delegate: rootViewController, userDefaults: UserDefaultsWrapper())
         rootViewController.configure(with: model)
         navigationController.pushViewController(rootViewController, animated: true)
+    }
+
+    func statusBar(backgroundColor: UIColor) {
+        navigationController.statusBar(backgroundColor: backgroundColor)
     }
 }

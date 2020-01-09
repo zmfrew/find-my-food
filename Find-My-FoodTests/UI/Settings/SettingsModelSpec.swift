@@ -36,14 +36,12 @@ final class SettingsModelSpec: QuickSpec {
         describe("loadDefaults()") {
             context("given all keys exist in user defaults") {
                 it("calls dataDidUpdate on the delegate with the loaded data") {
-                    mockUserDefaults.stub.objectCalledWithDarkMode = true
                     mockUserDefaults.stub.objectCalledWithDefaultLocation = "test default location"
                     mockUserDefaults.stub.objectCalledWithRadiusIndex = 0
                     
                     testObject.loadDefaults()
                     
                     expect(mockDelegate.stub.dataDidUpdateCallCount).to(equal(1))
-                    expect(mockDelegate.stub.dataDidUpdateCalledWith.first?.darkMode).to(beTrue())
                     expect(mockDelegate.stub.dataDidUpdateCalledWith.first?.location).to(equal("test default location"))
                     expect(mockDelegate.stub.dataDidUpdateCalledWith.first?.selectRadius).to(equal(0))
                 }
@@ -51,14 +49,12 @@ final class SettingsModelSpec: QuickSpec {
             
             context("given the keys do not exist in user defaults") {
                 it("calls dataDidUpdate on the delegate with the nil coalesced values") {
-                    mockUserDefaults.stub.objectCalledWithDarkMode = nil
                     mockUserDefaults.stub.objectCalledWithDefaultLocation = nil
                     mockUserDefaults.stub.objectCalledWithRadiusIndex = nil
                     
                     testObject.loadDefaults()
                     
                     expect(mockDelegate.stub.dataDidUpdateCallCount).to(equal(1))
-                    expect(mockDelegate.stub.dataDidUpdateCalledWith.first?.darkMode).to(beFalse())
                     expect(mockDelegate.stub.dataDidUpdateCalledWith.first?.location).to(beNil())
                     expect(mockDelegate.stub.dataDidUpdateCalledWith.first?.selectRadius).to(equal(24))
                 }
@@ -85,19 +81,17 @@ final class SettingsModelSpec: QuickSpec {
             }
         }
         
-        // MARK: - func selectedDefaults(darkMode: Bool, defaultLocation: String?, radiusIndex: Int)
-        describe("selectedDefaults(darkMode: Bool, defaultLocation: String?, radiusIndex: Int)") {
+        // MARK: - func selectedDefaults(defaultLocation: String?, radiusIndex: Int)
+        describe("selectedDefaults(defaultLocation: String?, radiusIndex: Int)") {
             context("given defaultLocation is not nil") {
                 it("sets defaults for all provided keys") {
-                    testObject.selectedDefaults(darkMode: false, defaultLocation: "test default", radiusIndex: 0)
+                    testObject.selectedDefaults(defaultLocation: "test default", radiusIndex: 0)
                     
-                    expect(mockUserDefaults.stub.setCallCount).to(equal(3))
+                    expect(mockUserDefaults.stub.setCallCount).to(equal(2))
+                    expect(mockDelegate.stub.saveDidEndCallCount).to(equal(1))
                     
-                    expect(mockUserDefaults.stub.setCalledWith.first?.value as? Bool).to(beFalse())
-                    expect(mockUserDefaults.stub.setCalledWith.first?.forKey).to(equal(UserDefaultKey.darkMode))
-                    
-                    expect(mockUserDefaults.stub.setCalledWith.element(at: 1)?.value as? String).to(equal("test default"))
-                    expect(mockUserDefaults.stub.setCalledWith.element(at: 1)?.forKey).to(equal(UserDefaultKey.defaultLocation))
+                    expect(mockUserDefaults.stub.setCalledWith.first?.value as? String).to(equal("test default"))
+                    expect(mockUserDefaults.stub.setCalledWith.first?.forKey).to(equal(UserDefaultKey.defaultLocation))
                     
                     expect(mockUserDefaults.stub.setCalledWith.last?.value as? Int).to(equal(0))
                     expect(mockUserDefaults.stub.setCalledWith.last?.forKey).to(equal(UserDefaultKey.radiusIndex))
@@ -106,15 +100,13 @@ final class SettingsModelSpec: QuickSpec {
             
             context("given location is nil") {
                 it("sets defaults on all keys") {
-                    testObject.selectedDefaults(darkMode: false, defaultLocation: nil, radiusIndex: 0)
+                    testObject.selectedDefaults(defaultLocation: nil, radiusIndex: 0)
                     
-                    expect(mockUserDefaults.stub.setCallCount).to(equal(3))
-                    
-                    expect(mockUserDefaults.stub.setCalledWith.first?.value as? Bool).to(beFalse())
-                    expect(mockUserDefaults.stub.setCalledWith.first?.forKey).to(equal(UserDefaultKey.darkMode))
-                    
-                    expect(mockUserDefaults.stub.setCalledWith.element(at: 1)?.value as? String).to(beNil())
-                    expect(mockUserDefaults.stub.setCalledWith.element(at: 1)?.forKey).to(equal(UserDefaultKey.defaultLocation))
+                    expect(mockUserDefaults.stub.setCallCount).to(equal(2))
+                    expect(mockDelegate.stub.saveDidEndCallCount).to(equal(1))
+                                        
+                    expect(mockUserDefaults.stub.setCalledWith.first?.value as? String).to(beNil())
+                    expect(mockUserDefaults.stub.setCalledWith.first?.forKey).to(equal(UserDefaultKey.defaultLocation))
                     
                     expect(mockUserDefaults.stub.setCalledWith.last?.value as? Int).to(equal(0))
                     expect(mockUserDefaults.stub.setCalledWith.last?.forKey).to(equal(UserDefaultKey.radiusIndex))

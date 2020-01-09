@@ -6,6 +6,7 @@ protocol BusinessModelProtocol {
     func business(for row: Int) -> Business?
     func favorite(at index: Int)
     func image(for business: Business)
+    func isFavorite(_ business: Business) -> Bool
     func randomBusiness() -> Business?
 }
 
@@ -26,17 +27,19 @@ final class BusinessesModel: BusinessModelProtocol {
     var businessCount: Int { businesses.count }
     private let businessSearchClient: BusinessSearchClientProtocol
     private let coreDataManager: CoreDataManagerProtocol
-
     weak var delegate: BusinessesModelDelegate?
+    private let frc: BusinessFetchedResultsControllerProtocol
 
     init(businesses: [Business],
          businessSearchClient: BusinessSearchClientProtocol,
          coreDataManager: CoreDataManagerProtocol,
-         delegate: BusinessesModelDelegate) {
+         delegate: BusinessesModelDelegate,
+         frc: BusinessFetchedResultsControllerProtocol) {
         self.businesses = businesses
         self.businessSearchClient = businessSearchClient
         self.coreDataManager = coreDataManager
         self.delegate = delegate
+        self.frc = frc
 
         businesses.forEach { image(for: $0) }
     }
@@ -63,6 +66,11 @@ final class BusinessesModel: BusinessModelProtocol {
                 print("Error occurred saving data: \(error.localizedDescription)")
             }
         }
+    }
+
+    func isFavorite(_ business: Business) -> Bool {
+        frc.performFetch()
+        return frc.contains(business.id)
     }
 
     func randomBusiness() -> Business? {
