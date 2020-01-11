@@ -41,6 +41,11 @@ final class BusinessSearchView: UIView {
         thirdPriceButton.delegate = self
         fourthPriceButton.delegate = self
 
+        firstPriceButton.layer.cornerRadius = 4
+        secondPriceButton.layer.cornerRadius = 4
+        thirdPriceButton.layer.cornerRadius = 4
+        fourthPriceButton.layer.cornerRadius = 4
+
         radiusPickerView.delegate = self
         radiusPickerView.dataSource = self
 
