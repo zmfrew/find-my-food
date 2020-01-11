@@ -4,8 +4,8 @@ Find-My-Food is a complete rewrite and redesign of an existing app I created cal
 ## Features
 * Search for local restaurants
 * See relevant info
-* Save your favorites (to be implemented)
-* Get directions to them (to be implemented)
+* Save your favorites 
+* Get directions to the restaurants
 
 ## Architecture
 * MVC 
