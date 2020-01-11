@@ -1278,7 +1278,7 @@
 					"@executable_path/Frameworks",
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zachfrew.Find-My-Food";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zacharyfrew.find-my-food";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1304,7 +1304,7 @@
 					"@executable_path/Frameworks",
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zachfrew.Find-My-Food";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zacharyfrew.find-my-food";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
