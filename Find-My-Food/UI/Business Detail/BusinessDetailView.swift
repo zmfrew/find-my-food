@@ -47,6 +47,7 @@ extension BusinessDetailView {
         displayPhoneNumber = business.displayPhone
 
         favoriteButton.setTitle(isFavorite ? "Favorited" : "Add to Favorites", for: .normal)
+        favoriteButton.isEnabled = !isFavorite
     }
 
     func saveDidSucceed() {
