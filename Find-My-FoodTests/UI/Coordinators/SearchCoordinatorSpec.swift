@@ -21,7 +21,7 @@ final class BusinessCoordinatorSpec: QuickSpec {
             it("pushes a BusinessDetailViewController on the navigation stack") {
                 let business = TestData.businessesFromJson().first!
                 
-                testObject.businessSelected(business)
+                testObject.businessSelected(business, isFavorite: false)
                 
                 let detailVC = testObject.navigationController.viewControllers.first(where: { $0 is BusinessDetailViewController}) as! BusinessDetailViewController
                 
@@ -113,15 +113,6 @@ final class BusinessCoordinatorSpec: QuickSpec {
                 let mapVC = testObject.rootViewController
                 
                 expect(mapVC.coordinator).to(be(testObject))
-            }
-        }
-        
-        // MARK: - func statusBar(backgroundColor: UIColor)
-        describe("statusBar(backgroundColor: UIColor)") {
-            it("sets the backgroundColor on the navigationController statusBar") {
-                testObject.statusBar(backgroundColor: .white)
-                
-                expect(testObject.navigationController.view.subviews.contains(where: { $0.backgroundColor == .white })).to(beTrue())
             }
         }
     }

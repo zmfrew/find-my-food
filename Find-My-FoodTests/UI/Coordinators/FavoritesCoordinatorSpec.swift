@@ -21,7 +21,7 @@ final class FavoritesCoordinatorSpec: QuickSpec {
             it("pushes a BusinessDetailViewController on the navigation stack") {
                 let business = TestData.businessesFromJson().first!
                 
-                testObject.businessSelected(business)
+                testObject.businessSelected(business, isFavorite: false)
                 
                 let detailVC = testObject.navigationController.viewControllers.first(where: { $0 is BusinessDetailViewController}) as! BusinessDetailViewController
                 

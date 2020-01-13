@@ -42,7 +42,8 @@ extension BusinessesViewController: BusinessesViewDelegate {
     func businessSelected(at index: Int) {
         guard let business = business(for: index) else { return }
 
-        coordinator?.businessSelected(business)
+        let isFavorite = model.isFavorite(business)
+        coordinator?.businessSelected(business, isFavorite: isFavorite)
     }
 
     func favorite(at index: Int) {
@@ -60,6 +61,6 @@ extension BusinessesViewController: BusinessesViewDelegate {
     func randomize() {
         guard let business = model.randomBusiness() else { return }
 
-        coordinator?.businessSelected(business)
+        coordinator?.businessSelected(business, isFavorite: true)
     }
 }

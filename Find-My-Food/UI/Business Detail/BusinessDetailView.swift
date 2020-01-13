@@ -32,7 +32,9 @@ final class BusinessDetailView: UIView {
 }
 
 extension BusinessDetailView {
-    func configure(with business: Business, delegate: BusinessDetailViewDelegate) {
+    func configure(with business: Business,
+                   delegate: BusinessDetailViewDelegate,
+                   isFavorite: Bool) {
         self.delegate = delegate
         ratingLabel.text = "\(business.rating)"
         categoriesLabel.text = business.categories.map { $0.title }.joined(separator: ", ")
@@ -43,6 +45,8 @@ extension BusinessDetailView {
 
         phoneNumber = business.phone
         displayPhoneNumber = business.displayPhone
+
+        favoriteButton.setTitle(isFavorite ? "Favorited" : "Add to Favorites", for: .normal)
     }
 
     func saveDidSucceed() {
