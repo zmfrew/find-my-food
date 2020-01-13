@@ -19,7 +19,7 @@ final class MockBusinessCoordinator: SearchCoordinatorProtocol {
         stub.rootViewControllerShouldReturn
     }
 
-    func businessSelected(_ business: Business) { }
+    func businessSelected(_ business: Business, isFavorite: Bool) { }
     
     func dismiss() { }
     
@@ -40,6 +40,4 @@ final class MockBusinessCoordinator: SearchCoordinatorProtocol {
     func start() {
         stub.startCallCount += 1
     }
-    
-    func statusBar(backgroundColor: UIColor) { }
 }

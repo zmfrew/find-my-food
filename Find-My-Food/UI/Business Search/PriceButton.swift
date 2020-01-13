@@ -23,7 +23,7 @@ final class PriceButton: UIButton {
             delegate?.selected(text)
         } else {
             tintColor = .systemBlue
-            backgroundColor = .white
+            backgroundColor = .clear
             delegate?.deSelected(text)
         }
     }

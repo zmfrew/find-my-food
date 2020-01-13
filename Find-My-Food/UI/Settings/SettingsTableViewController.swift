@@ -16,7 +16,6 @@ final class SettingsTableViewController: UITableViewController, Storyboarded {
         radiusPickerView.selectRow(Radius.rangeMax, inComponent: 0, animated: false)
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = .background
-        coordinator?.statusBar(backgroundColor: .white)
     }
 
     @IBAction private func saveButtonTapped(_ sender: UIButton) {
