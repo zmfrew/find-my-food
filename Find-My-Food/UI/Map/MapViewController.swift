@@ -11,6 +11,7 @@ final class MapViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         model = MapModel(delegate: self, geocoder: GeocoderWrapper(), locationManager: LocationManagerWrapper())
         mapView.delegate = self
+        extendedLayoutIncludesOpaqueBars = true
     }
 
     override func viewDidAppear(_ animated: Bool) {

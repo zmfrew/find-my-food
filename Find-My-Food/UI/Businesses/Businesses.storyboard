@@ -10,14 +10,14 @@
         <!--Businesses-->
         <scene sceneID="bfP-YO-gx8">
             <objects>
-                <viewController storyboardIdentifier="BusinessesViewController" id="Ko7-64-VuT" customClass="BusinessesViewController" customModule="Find_My_Food" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusinessesViewController" automaticallyAdjustsScrollViewInsets="NO" id="Ko7-64-VuT" customClass="BusinessesViewController" customModule="Find_My_Food" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vzm-LG-HTt" customClass="BusinessesView" customModule="Find_My_Food" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="172" estimatedRowHeight="172" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gdn-qT-voi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="742"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="742"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="businessCell" rowHeight="172" id="gOf-8a-8SD" customClass="BusinessTableViewCell" customModule="Find_My_Food" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="172"/>
@@ -84,7 +84,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="fDa-bs-nJU" firstAttribute="top" secondItem="e7b-AF-Ywj" secondAttribute="top" constant="8" id="3Ty-kV-YM9"/>
                                                 <constraint firstAttribute="trailing" secondItem="fDa-bs-nJU" secondAttribute="trailing" constant="16" id="FzV-B3-nab"/>
@@ -104,17 +104,17 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQW-8n-nbO">
-                                <rect key="frame" x="0.0" y="742" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="830" width="414" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(# of results)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm0-RV-2iu">
                                         <rect key="frame" x="158" y="6" width="98.5" height="20.5"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Xm0-RV-2iu" firstAttribute="centerY" secondItem="DQW-8n-nbO" secondAttribute="centerY" id="9RW-kg-eL6"/>
                                     <constraint firstItem="Xm0-RV-2iu" firstAttribute="centerX" secondItem="DQW-8n-nbO" secondAttribute="centerX" id="Csr-i3-Yks"/>
@@ -122,7 +122,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BU-lv-2Po">
-                                <rect key="frame" x="334" y="686" width="56" height="56"/>
+                                <rect key="frame" x="334" y="774" width="56" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3BU-lv-2Po" secondAttribute="height" multiplier="1:1" id="bD3-nN-MsK"/>
@@ -137,13 +137,13 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fAr-OU-3tN" firstAttribute="trailing" secondItem="Gdn-qT-voi" secondAttribute="trailing" id="57a-zR-FvW"/>
-                            <constraint firstItem="DQW-8n-nbO" firstAttribute="top" secondItem="Gdn-qT-voi" secondAttribute="bottom" id="5CK-QW-fJO"/>
                             <constraint firstItem="DQW-8n-nbO" firstAttribute="leading" secondItem="fAr-OU-3tN" secondAttribute="leading" id="PAU-5r-pjj"/>
                             <constraint firstItem="fAr-OU-3tN" firstAttribute="trailing" secondItem="3BU-lv-2Po" secondAttribute="trailing" constant="24" id="bMF-Ga-iIM"/>
                             <constraint firstItem="fAr-OU-3tN" firstAttribute="trailing" secondItem="DQW-8n-nbO" secondAttribute="trailing" id="cbr-yG-hXl"/>
+                            <constraint firstItem="fAr-OU-3tN" firstAttribute="bottom" secondItem="Gdn-qT-voi" secondAttribute="bottom" constant="32" id="cew-b0-ieg"/>
                             <constraint firstItem="fAr-OU-3tN" firstAttribute="bottom" secondItem="3BU-lv-2Po" secondAttribute="bottom" constant="32" id="rAK-T2-g4D"/>
                             <constraint firstItem="Gdn-qT-voi" firstAttribute="top" secondItem="fAr-OU-3tN" secondAttribute="top" id="scE-zc-0cz"/>
                             <constraint firstItem="Gdn-qT-voi" firstAttribute="leading" secondItem="fAr-OU-3tN" secondAttribute="leading" id="ykW-rj-dFv"/>
@@ -156,10 +156,9 @@
                             <outlet property="tableView" destination="Gdn-qT-voi" id="Vkw-YK-1zh"/>
                         </connections>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Businesses" id="Ud5-hQ-ZTq"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJt-pL-mXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
