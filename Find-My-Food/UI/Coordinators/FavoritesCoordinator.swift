@@ -17,13 +17,13 @@ final class FavoritesCoordinator: FavoritesCoordinatorProtocol {
         self.rootViewController = FavoritesViewController.instantiate()
     }
 
-    func businessSelected(_ business: Business) {
+    func businessSelected(_ business: Business, isFavorite: Bool) {
         let vc = BusinessDetailViewController.instantiate()
         vc.coordinator = self
         let model = BusinessDetailModel(business: business,
                                         coreDataManager: UserSession.shared.coreDataManager,
                                         delegate: vc)
-        vc.configure(with: model)
+        vc.configure(with: model, isFavorite: isFavorite)
         navigationController.pushViewController(vc, animated: true)
     }
 

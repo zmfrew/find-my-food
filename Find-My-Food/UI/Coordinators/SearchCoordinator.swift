@@ -10,7 +10,6 @@ protocol SearchCoordinatorProtocol: BusinessCoordinator {
     func downloadDidEnd()
     func pop(_ animated: Bool)
     func start()
-    func statusBar(backgroundColor: UIColor)
 }
 
 final class SearchCoordinator: SearchCoordinatorProtocol {
@@ -20,17 +19,16 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.navigationController.navigationBar.prefersLargeTitles = true
-        self.navigationController.navigationBar.backgroundColor = .white
         self.rootViewController = MapViewController.instantiate()
     }
 
-    func businessSelected(_ business: Business) {
+    func businessSelected(_ business: Business, isFavorite: Bool) {
         let vc = BusinessDetailViewController.instantiate()
         vc.coordinator = self
         let model = BusinessDetailModel(business: business,
                                         coreDataManager: UserSession.shared.coreDataManager,
                                         delegate: vc)
-        vc.configure(with: model)
+        vc.configure(with: model, isFavorite: isFavorite)
         navigationController.pushViewController(vc, animated: true)
     }
 
@@ -40,6 +38,7 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
 
     func downloadCompleted(with businesses: [Business]) {
         let vc = BusinessesViewController.instantiate()
+        vc.title = "Restaurants"
         vc.coordinator = self
         let decoder = DecoderWrapper(decoder: JSONDecoder())
         let serviceClient = BaseServiceClient(urlSession: URLSessionWrapper())
@@ -90,9 +89,5 @@ final class SearchCoordinator: SearchCoordinatorProtocol {
     func start() {
         rootViewController.coordinator = self
         navigationController.pushViewController(rootViewController, animated: true)
-    }
-
-    func statusBar(backgroundColor: UIColor) {
-        navigationController.statusBar(backgroundColor: backgroundColor)
     }
 }

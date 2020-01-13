@@ -7,9 +7,9 @@ final class BusinessDetailViewController: UIViewController, Storyboarded {
     private var detailView: BusinessDetailView { view as! BusinessDetailView } //swiftlint:disable:this force_cast
     private var model: BusinessDetailModelProtocol!
 
-    func configure(with model: BusinessDetailModelProtocol) {
+    func configure(with model: BusinessDetailModelProtocol, isFavorite: Bool) {
         self.model = model
-        detailView.configure(with: model.business, delegate: self)
+        detailView.configure(with: model.business, delegate: self, isFavorite: isFavorite)
         title = model.business.name
     }
 

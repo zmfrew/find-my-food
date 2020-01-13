@@ -35,7 +35,7 @@ extension FavoritesViewController: FavoritesViewDelegate {
     func businessSelected(at indexPath: IndexPath) {
         guard let business = business(at: indexPath) else { return }
 
-        coordinator?.businessSelected(business)
+        coordinator?.businessSelected(business, isFavorite: true)
     }
 
     func loadBusinesses() {

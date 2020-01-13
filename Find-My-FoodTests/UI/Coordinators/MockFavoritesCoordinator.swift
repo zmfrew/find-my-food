@@ -19,7 +19,7 @@ final class MockFavoritesCoordinator: FavoritesCoordinatorProtocol {
         stub.rootViewControllerShouldReturn
     }
         
-    func businessSelected(_ business: Business) { }
+    func businessSelected(_ business: Business, isFavorite: Bool) { }
     
     func downloadCompleted(with businesses: [Business]) { }
     

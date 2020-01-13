@@ -18,6 +18,8 @@ final class BusinessTableViewCell: UITableViewCell {
         super.awakeFromNib()
         businessImageView.layer.cornerRadius = businessImageView.frame.width / 2
         containerView.layer.cornerRadius = 8
+        containerView.backgroundColor = .background
+        contentView.backgroundColor = .systemGray2
     }
 
     @IBAction private func favoriteButtonTapped(_ sender: UIButton) {

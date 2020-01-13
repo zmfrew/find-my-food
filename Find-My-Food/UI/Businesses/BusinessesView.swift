@@ -22,9 +22,9 @@ final class BusinessesView: UIView {
         tableView.dataSource = self
         tableView.delegate = self
         randomizeButton.layer.cornerRadius = 12
-        let view = UIView()
-        view.backgroundColor = .background
-        tableView.tableFooterView = view
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .background
+        tableView.contentInsetAdjustmentBehavior = .never
         tableView.separatorStyle = .none
 	}
 
