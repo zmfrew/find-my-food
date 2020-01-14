@@ -4,9 +4,9 @@ This policy applies to all information collected or submitted in Find_My_Food ap
 ## Information we collect
 We are not collecting any data regarding location or user behavior. The only data stored on device is in regard to favorited restaurants. This information will never be shared without your consent. 
 
-## Technical basics
+## Technical basis
 
-If you enable location, we will use your location to find relevant restaurants. If you do not want to enable location, you can enter your locatoin manually.
+If you enable location, we will use your location to find relevant restaurants. If you do not want to enable location, you can enter your location manually.
 
 ## California Online Privacy Protection Act Compliance
 
