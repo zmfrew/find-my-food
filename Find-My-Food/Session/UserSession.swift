@@ -27,8 +27,6 @@ final class UserSession: UserSessionProtocol {
 
 // TODO: - Fix current bugs
 
-// TODO: - Bug: same item can be favorited multiple times
-// TODO: - Bug: randomize automatically makes it a favorite
 // TODO: - Bug: search view isn't centered
 // TODO: - Bug: address truncates on table view & on detail view
 // TODO: - Bug: show restaurants in the map view just by default
