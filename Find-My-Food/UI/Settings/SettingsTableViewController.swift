@@ -10,12 +10,15 @@ final class SettingsTableViewController: UITableViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveButton.layer.cornerRadius = 10
+        defaultLocationTextField.delegate = self
         radiusPickerView.delegate = self
         radiusPickerView.dataSource = self
         radiusPickerView.selectRow(Radius.rangeMax, inComponent: 0, animated: false)
+        saveButton.layer.cornerRadius = 10
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = .background
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
     @IBAction private func saveButtonTapped(_ sender: UIButton) {
@@ -26,6 +29,12 @@ final class SettingsTableViewController: UITableViewController, Storyboarded {
         model.selectedDefaults(defaultLocation: defaultLocation, radiusIndex: radiusIndex)
     }
 
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+extension SettingsTableViewController {
     func configure(with model: SettingsModelProtocol) {
         self.model = model
     }
@@ -42,8 +51,19 @@ extension SettingsTableViewController: UIPickerViewDataSource {
 }
 
 extension SettingsTableViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        dismissKeyboard()
+    }
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         "\(row + 1) \(row == 0 ? "mile" : "miles")"
+    }
+}
+
+extension SettingsTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
