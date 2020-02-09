@@ -24,8 +24,3 @@ final class UserSession: UserSessionProtocol {
 
     private init() { }
 }
-
-// TODO: - Fix current bugs
-
-// TODO: - Bug: address truncates on table view & on detail view
-// TODO: - Bug: show restaurants in the map view just by default
