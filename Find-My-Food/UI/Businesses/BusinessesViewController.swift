@@ -61,6 +61,6 @@ extension BusinessesViewController: BusinessesViewDelegate {
     func randomize() {
         guard let business = model.randomBusiness() else { return }
 
-        coordinator?.businessSelected(business, isFavorite: true)
+        coordinator?.businessSelected(business, isFavorite: isFavorite(business))
     }
 }

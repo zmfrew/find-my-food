@@ -39,6 +39,7 @@ extension BusinessTableViewCell {
         self.delegate = delegate
         businessImageView.image = image
         favoriteButton.setImage(UIImage(systemName: isFavorite ?? false ? "star.fill" : "star"), for: .normal)
+        favoriteButton.isUserInteractionEnabled = !(isFavorite ?? false)
         nameLabel.text = name
         ratingLabel.text = "Rating: \(rating)"
 	}

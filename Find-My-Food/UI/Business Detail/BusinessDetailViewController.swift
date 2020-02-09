@@ -30,7 +30,8 @@ extension BusinessDetailViewController: BusinessDetailModelDelegate {
     func saveDidSucceed() {
         let alert = UIAlertController(title: "Successfully saved ✅", message: nil, preferredStyle: .alert)
         present(alert, animated: true) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.dismiss(animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.dismiss(animated: true, completion: nil)
                 self.detailView.saveDidSucceed()
             }
         }
